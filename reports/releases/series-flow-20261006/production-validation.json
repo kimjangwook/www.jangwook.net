@@ -1,0 +1,1144 @@
+{
+  "base": "https://jangwook.net",
+  "articles": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "2eba9ace290afa99eeb56a7f68cd1a000af0fa72aa711fb65c54cfc0afb39783",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "inlineCaseOrder": [
+        "K63",
+        "K25"
+      ],
+      "promptAfterResults": true,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "6f410dcc982f68f30159c9ff90203cc81659e2837fbf56646c347fcee13e23b5",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "inlineCaseOrder": [
+        "K63",
+        "K25"
+      ],
+      "promptAfterResults": true,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "31b114cd862c9f0c14e95af1d01559254bfbc6dda9383e8aed4433004cc3fd58",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "inlineCaseOrder": [
+        "K63",
+        "K25"
+      ],
+      "promptAfterResults": true,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "7386dddf5334b247bdf91c058a4ef2633924e0044cd2f5b968a9d74edb344cab",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "inlineCaseOrder": [
+        "K63",
+        "K25"
+      ],
+      "promptAfterResults": true,
+      "SSR": true
+    }
+  ],
+  "responsive": [
+    {
+      "lang": "ko",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": []
+    }
+  ],
+  "noJS": [
+    {
+      "lang": "ko",
+      "inlinePractice": true,
+      "promptReadable": true
+    },
+    {
+      "lang": "en",
+      "inlinePractice": true,
+      "promptReadable": true
+    },
+    {
+      "lang": "ja",
+      "inlinePractice": true,
+      "promptReadable": true
+    },
+    {
+      "lang": "zh",
+      "inlinePractice": true,
+      "promptReadable": true
+    }
+  ],
+  "nativePlayback": [
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.132014,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.202273,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "en",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.208694,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "en",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.206041,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "ja",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.208625,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "ja",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.211259,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "zh",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.205443,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "zh",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.205324,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "ko",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.0832087916919588,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "ko",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.189185707652307,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "en",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.1852344998501987,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "en",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.194447374960184,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "ja",
+      "caseId": "K63",
+      "paused": false,
+      "time": 0.8873451248150872,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "ja",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.1901210826951925,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "zh",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.169598458962002,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "zh",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.1896058745980072,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K03-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K03-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K03-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K08-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K08-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K08-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K17-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K17-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K17-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K25-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K25-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K25-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K34-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K34-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K34-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K42-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K42-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K42-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K56-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K56-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K56-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K63-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K63-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K63-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K79-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K79-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K79-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K91-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K91-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K91-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K17.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K42.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K08.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K63.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K25.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K91.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K34.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K56.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K79.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K03.txt",
+      "hashMatch": true
+    }
+  ],
+  "preservation": [
+    {
+      "lang": "ko",
+      "promptSHA": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "promptSHA": "41e6b5dc18900f5d921541c92da0fdb2139f753d1d6c99b1183b1da9b698d767",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "promptSHA": "d3df13e1283cf354b7575615a5ab9c6ce788dffc65de317f8705c6f91c3f1181",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "promptSHA": "930c64aa94bb676a68c1055912722c3525aa668ac63fbcad6ca959ccab70e6b7",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "overview",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "ko",
+      "slug": "non-text-content",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "en",
+      "slug": "overview",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "en",
+      "slug": "non-text-content",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "en",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "ja",
+      "slug": "overview",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "ja",
+      "slug": "non-text-content",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "zh",
+      "slug": "overview",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "zh",
+      "slug": "non-text-content",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtUnchanged": true,
+      "articleIdentity": "updated"
+    }
+  ],
+  "errors": [],
+  "navigation": [
+    {
+      "lang": "ko",
+      "slug": "overview",
+      "path": "/series/accessibility/overview",
+      "sourceHash": "87970d6428959494079de93f24e88be12bdcaf0464e47c1490012e44ef3f8e45",
+      "headings": [
+        "사용자가 정보를 얻고 기능을 이용할 수 있도록 설계하기",
+        "WCAG를 구현과 평가의 공통 기준으로 읽기",
+        "화면의 상태와 완전한 이용 과정을 평가 범위에 포함하기",
+        "멀티모달 AI로 의미와 동작의 평가 범위 넓히기",
+        "최근 AI 평가 연구에서 읽을 수 있는 가능성과 조건",
+        "첫 실습: 한 이용 과정의 평가 계획 만들기",
+        "항목별 학습을 재사용할 수 있는 평가 과정으로 연결하기",
+        "평가 프롬프트를 사용하기 전에",
+        "다음 글로 이어가기",
+        "참고 자료"
+      ],
+      "tailLinks": [
+        {
+          "name": "전체 학습 순서",
+          "href": "/series/accessibility"
+        },
+        {
+          "name": "다음: 비텍스트 콘텐츠",
+          "href": "/series/accessibility/non-text-content"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "ko",
+      "slug": "non-text-content",
+      "path": "/series/accessibility/non-text-content",
+      "sourceHash": "1e02abc690e6c43579b47cb4f632f3680cc1cac0e57fc3357a71d12d1161ec36",
+      "headings": [
+        "같은 사진을 세 곳에 넣으면, 대체 텍스트도 같아야 할까요?",
+        "1.1.1이 요구하는 것은 같은 목적을 수행하는 텍스트 대안입니다",
+        "먼저 이미지가 맡은 일을 정합니다",
+        "링크와 버튼은 생김새보다 조작 목적을 전달합니다",
+        "복잡한 그래프는 한 문장의 alt로 끝내지 않습니다",
+        "사진 외의 표현과 기준의 예외도 검토합니다",
+        "멀티모달 AI에는 이미지와 코드, 문맥을 같은 대상으로 묶어 줍니다",
+        "개요 페이지에 두 프롬프트를 적용해 확인했습니다",
+        "사례를 넓힐 때는 정답 문장 하나보다 판단의 일관성을 봅니다",
+        "팀에서는 이미지 파일보다 사용 위치를 기준으로 관리합니다",
+        "실무 검토 체크리스트",
+        "평가 프롬프트를 사용하기 전에",
+        "다음 글로 이어가기",
+        "참고 자료"
+      ],
+      "tailLinks": [
+        {
+          "name": "이전: 웹 접근성 개요",
+          "href": "/series/accessibility/overview"
+        },
+        {
+          "name": "전체 학습 순서",
+          "href": "/series/accessibility"
+        },
+        {
+          "name": "다음: 녹음된 음성과 무음 영상",
+          "href": "/series/accessibility/audio-only-and-video-only-prerecorded"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "2eba9ace290afa99eeb56a7f68cd1a000af0fa72aa711fb65c54cfc0afb39783",
+      "headings": [
+        "소리를 듣거나 화면을 보지 못해도 같은 내용을 얻을 수 있어야 합니다",
+        "먼저 음성 전용인지, 영상 전용인지 구분합니다",
+        "음성 전사문에는 말뿐 아니라 이해에 필요한 소리도 담습니다",
+        "무음 영상은 동작의 순서와 결과를 설명해야 합니다",
+        "기존 글을 읽어 주는 매체는 예외 조건을 확인합니다",
+        "페이지에 대안을 연결하는 방법",
+        "멀티모달 AI에는 원본과 대안을 서로 독립적으로 제공합니다",
+        "판정과 실행 상태는 별도로 읽습니다",
+        "실습 페이지를 프롬프트로 평가한 결과",
+        "실무 체크리스트",
+        "평가 프롬프트를 사용하기 전에",
+        "다음 글로 이어가기",
+        "참고 자료"
+      ],
+      "tailLinks": [
+        {
+          "name": "이전: 비텍스트 콘텐츠",
+          "href": "/series/accessibility/non-text-content"
+        },
+        {
+          "name": "전체 학습 순서",
+          "href": "/series/accessibility"
+        },
+        {
+          "name": "다음: 녹화 자막",
+          "href": "/series/accessibility/captions-prerecorded"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "en",
+      "slug": "overview",
+      "path": "/en/series/accessibility/overview",
+      "sourceHash": "8f8ee57f5ccf081c73821852279e262530a29f9d6b1712eea13ca5fbdb04513e",
+      "headings": [
+        "Designing for Users to Obtain Information and Use Functionality",
+        "Reading WCAG as a Shared Basis for Implementation and Evaluation",
+        "Including Screen States and Complete User Processes in the Evaluation Scope",
+        "Expanding the Scope of Meaning and Behavior Evaluation with Multimodal AI",
+        "Possibilities and Conditions Indicated by Recent AI Evaluation Research",
+        "First Exercise: Creating an Evaluation Plan for One User Process",
+        "Connecting Criterion-by-Criterion Learning to a Reusable Evaluation Process",
+        "Before using the evaluation prompt",
+        "Continue to the next article",
+        "References"
+      ],
+      "tailLinks": [
+        {
+          "name": "Complete learning sequence",
+          "href": "/en/series/accessibility"
+        },
+        {
+          "name": "Next: Non-text Content",
+          "href": "/en/series/accessibility/non-text-content"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "en",
+      "slug": "non-text-content",
+      "path": "/en/series/accessibility/non-text-content",
+      "sourceHash": "dc51ce37d831a56c773856be23d58dc368fdd8db2e7f12fd85a0f3b47f68a2e7",
+      "headings": [
+        "If you use the same photo in three places, should the alternative text be the same?",
+        "1.1.1 requires a text alternative that serves the same purpose",
+        "First, determine the image’s job",
+        "Links and buttons convey the purpose of an action, not just their appearance",
+        "A complex graph needs more than a one-sentence alt",
+        "Review formats beyond photos and the criterion’s exceptions",
+        "Give multimodal AI images, code, and context tied to the same target",
+        "We applied two prompts to the overview page",
+        "When broadening the cases, check consistency of judgment rather than one correct sentence",
+        "Manage images by where they are used, not just by file",
+        "Practical review checklist",
+        "Before using the evaluation prompt",
+        "Continue to the next article",
+        "References"
+      ],
+      "tailLinks": [
+        {
+          "name": "Previous: Web Accessibility Overview",
+          "href": "/en/series/accessibility/overview"
+        },
+        {
+          "name": "Complete learning sequence",
+          "href": "/en/series/accessibility"
+        },
+        {
+          "name": "Next: Audio-only and Video-only (Prerecorded)",
+          "href": "/en/series/accessibility/audio-only-and-video-only-prerecorded"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "en",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/en/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "6f410dcc982f68f30159c9ff90203cc81659e2837fbf56646c347fcee13e23b5",
+      "headings": [
+        "People must be able to get the same content without hearing the sound or seeing the screen",
+        "First, distinguish audio-only from video-only content",
+        "Audio transcripts include not only speech, but also sounds needed for understanding",
+        "Silent video must describe the sequence of actions and their results",
+        "Check the exception conditions for media that reads existing text aloud",
+        "How to connect alternatives on the page",
+        "Provide multimodal AI with the original and the alternative independently",
+        "Read the decision and execution status separately",
+        "Results of evaluating the practice pages with the prompt",
+        "Practical checklist",
+        "Before using the evaluation prompt",
+        "Continue to the next article",
+        "References"
+      ],
+      "tailLinks": [
+        {
+          "name": "Previous: Non-text Content",
+          "href": "/en/series/accessibility/non-text-content"
+        },
+        {
+          "name": "Complete learning sequence",
+          "href": "/en/series/accessibility"
+        },
+        {
+          "name": "Next: Captions (Prerecorded)",
+          "href": "/en/series/accessibility/captions-prerecorded"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "ja",
+      "slug": "overview",
+      "path": "/ja/series/accessibility/overview",
+      "sourceHash": "7695c8a4219c9202fe08f1caffdc3f3165806466466e9cc31a09bc4934043d62",
+      "headings": [
+        "ユーザーが情報を得て機能を利用できるように設計する",
+        "WCAGを実装と評価の共通基準として読む",
+        "画面の状態と完全な利用過程を評価範囲に含める",
+        "マルチモーダルAIで意味と動作の評価範囲を広げる",
+        "最近のAI評価研究から読み取れる可能性と条件",
+        "最初の実習：一つの利用過程の評価計画を作る",
+        "項目別の学習を再利用可能な評価過程につなげる",
+        "評価プロンプトを使う前に",
+        "次の記事へ",
+        "参考資料"
+      ],
+      "tailLinks": [
+        {
+          "name": "学習順序の全体像",
+          "href": "/ja/series/accessibility"
+        },
+        {
+          "name": "次へ：非テキストコンテンツ",
+          "href": "/ja/series/accessibility/non-text-content"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "ja",
+      "slug": "non-text-content",
+      "path": "/ja/series/accessibility/non-text-content",
+      "sourceHash": "bb26b7943cd1473416a726df12aee41f957c4ccdedbbaf15b56bb1424304407d",
+      "headings": [
+        "同じ写真を3か所に置くなら、代替テキストも同じでよいのでしょうか？",
+        "1.1.1が求めるのは、同等の目的を果たすテキストによる代替です",
+        "まず、画像が担う役割を定めます",
+        "リンクとボタンでは、見た目より操作の目的を伝えます",
+        "複雑なグラフは、1文のaltだけで終わらせません",
+        "写真以外の表現と、基準の例外も検討します",
+        "マルチモーダルAIには、画像・コード・文脈を同じ対象としてまとめて渡します",
+        "概要ページに2つのプロンプトを適用して確認しました",
+        "事例を広げるときは、1つの正解文より判断の一貫性を見ます",
+        "チームでは、画像ファイルより使用箇所を基準に管理します",
+        "実務レビューのチェックリスト",
+        "評価プロンプトを使う前に",
+        "次の記事へ",
+        "参考資料"
+      ],
+      "tailLinks": [
+        {
+          "name": "前へ：ウェブアクセシビリティの概要",
+          "href": "/ja/series/accessibility/overview"
+        },
+        {
+          "name": "学習順序の全体像",
+          "href": "/ja/series/accessibility"
+        },
+        {
+          "name": "次へ：収録済みの音声及び無音映像",
+          "href": "/ja/series/accessibility/audio-only-and-video-only-prerecorded"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/ja/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "31b114cd862c9f0c14e95af1d01559254bfbc6dda9383e8aed4433004cc3fd58",
+      "headings": [
+        "音を聞けなくても画面を見られなくても、同じ内容を得られる必要があります",
+        "まず音声だけか、映像だけかを区別します",
+        "音声の書き起こしには、言葉だけでなく理解に必要な音も含めます",
+        "無音動画では、動作の順序と結果を説明する必要があります",
+        "既存の文章を読み上げるメディアでは、例外条件を確認します",
+        "ページに代替を関連付ける方法",
+        "マルチモーダルAIには、原本と代替を互いに独立して提供します",
+        "判定と実行状態は別々に読み取ります",
+        "実習ページをプロンプトで評価した結果",
+        "実務チェックリスト",
+        "評価プロンプトを使う前に",
+        "次の記事へ",
+        "参考資料"
+      ],
+      "tailLinks": [
+        {
+          "name": "前へ：非テキストコンテンツ",
+          "href": "/ja/series/accessibility/non-text-content"
+        },
+        {
+          "name": "学習順序の全体像",
+          "href": "/ja/series/accessibility"
+        },
+        {
+          "name": "次へ：収録済みのキャプション",
+          "href": "/ja/series/accessibility/captions-prerecorded"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "zh",
+      "slug": "overview",
+      "path": "/zh/series/accessibility/overview",
+      "sourceHash": "a8a34d3c6cc3486aaa77d3a4c1104cfc614b36ddc1fca4f3dd49e4a612d743fd",
+      "headings": [
+        "设计能让用户获取信息并使用功能的服务",
+        "将 WCAG 作为实现与评估的共同依据来理解",
+        "将界面状态和完整使用过程纳入评估范围",
+        "利用多模态 AI 扩展对语义和行为的评估范围",
+        "从近期 AI 评估研究中了解可能性与条件",
+        "第一次练习：为一个使用过程制定评估计划",
+        "将逐项学习连接成可复用的评估过程",
+        "使用评估提示词之前",
+        "继续阅读下一篇",
+        "参考资料"
+      ],
+      "tailLinks": [
+        {
+          "name": "完整学习顺序",
+          "href": "/zh/series/accessibility"
+        },
+        {
+          "name": "下一篇：非文本内容",
+          "href": "/zh/series/accessibility/non-text-content"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "zh",
+      "slug": "non-text-content",
+      "path": "/zh/series/accessibility/non-text-content",
+      "sourceHash": "c6b643881f2a44db4a9ead541eab15ca479a8f801152b85e2f303bf7b4b4e45b",
+      "headings": [
+        "同一张照片用在三个位置，替代文本也应该一样吗？",
+        "1.1.1 要求提供能够实现同等目的的文本替代",
+        "先确定图像承担的作用",
+        "链接和按钮应传达操作目的，而不是外观",
+        "复杂图表不能只用一句 alt 就结束",
+        "还要检查照片以外的呈现形式及准则的例外情况",
+        "为多模态 AI 将图像、代码和上下文关联到同一对象",
+        "已在概述页面上应用两份提示词进行验证",
+        "扩展案例时，应关注判断的一致性，而不是唯一的标准句子",
+        "团队管理应以使用位置为依据，而不是以图像文件为依据",
+        "实务检查清单",
+        "使用评估提示词之前",
+        "继续阅读下一篇",
+        "参考资料"
+      ],
+      "tailLinks": [
+        {
+          "name": "上一篇：网页无障碍概述",
+          "href": "/zh/series/accessibility/overview"
+        },
+        {
+          "name": "完整学习顺序",
+          "href": "/zh/series/accessibility"
+        },
+        {
+          "name": "下一篇：预录制音频与无声视频",
+          "href": "/zh/series/accessibility/audio-only-and-video-only-prerecorded"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/zh/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "7386dddf5334b247bdf91c058a4ef2633924e0044cd2f5b968a9d74edb344cab",
+      "headings": [
+        "即使听不到声音或看不到画面，也应能够获取相同内容",
+        "首先区分纯音频与纯视频",
+        "音频文字稿不仅要包含话语，也要包含理解内容所需的声音",
+        "无声视频应说明动作的顺序和结果",
+        "朗读已有文章的媒体，需要确认例外条件",
+        "如何在页面中关联替代内容",
+        "向多模态 AI 分别独立提供原始内容与替代内容",
+        "应分别看待判定与执行状态",
+        "用提示词评估练习页面的结果",
+        "实务检查清单",
+        "使用评估提示词之前",
+        "继续阅读下一篇",
+        "参考资料"
+      ],
+      "tailLinks": [
+        {
+          "name": "上一篇：非文本内容",
+          "href": "/zh/series/accessibility/non-text-content"
+        },
+        {
+          "name": "完整学习顺序",
+          "href": "/zh/series/accessibility"
+        },
+        {
+          "name": "下一篇：预录制字幕",
+          "href": "/zh/series/accessibility/captions-prerecorded"
+        }
+      ],
+      "chapter02Order": true,
+      "promptUnchanged": true,
+      "widths": [
+        1440,
+        390,
+        320
+      ],
+      "axeViolations": 0
+    }
+  ],
+  "preparation": [
+    {
+      "lang": "ko",
+      "noindex": true,
+      "notPublished": true
+    },
+    {
+      "lang": "en",
+      "noindex": true,
+      "notPublished": true
+    },
+    {
+      "lang": "ja",
+      "noindex": true,
+      "notPublished": true
+    },
+    {
+      "lang": "zh",
+      "noindex": true,
+      "notPublished": true
+    }
+  ]
+}

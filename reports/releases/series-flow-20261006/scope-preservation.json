@@ -1,0 +1,1727 @@
+{
+  "otherChapters": [
+    {
+      "lang": "ko",
+      "slug": "captions-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-description-or-media-alternative-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "captions-live",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-description-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "sign-language-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "extended-audio-description-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "media-alternative-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-only-live",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "info-and-relationships",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "meaningful-sequence",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "sensory-characteristics",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "orientation",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "identify-input-purpose",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "identify-purpose",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "use-of-color",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-control",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "contrast-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "resize-text",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "images-of-text",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "contrast-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "low-or-no-background-audio",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "visual-presentation",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "images-of-text-no-exception",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "reflow",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "non-text-contrast",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "text-spacing",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "content-on-hover-or-focus",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "keyboard",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "no-keyboard-trap",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "keyboard-no-exception",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "character-key-shortcuts",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "timing-adjustable",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "pause-stop-hide",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "no-timing",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "interruptions",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "re-authenticating",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "timeouts",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "three-flashes-or-below-threshold",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "three-flashes",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "animation-from-interactions",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "bypass-blocks",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "page-titled",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "focus-order",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "link-purpose-in-context",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "multiple-ways",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "headings-and-labels",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "focus-visible",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "location",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "link-purpose-link-only",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "section-headings",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "focus-not-obscured-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "focus-not-obscured-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "focus-appearance",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "pointer-gestures",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "pointer-cancellation",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "label-in-name",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "motion-actuation",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "target-size-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "concurrent-input-mechanisms",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "dragging-movements",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "target-size-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "language-of-page",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "language-of-parts",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "unusual-words",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "abbreviations",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "reading-level",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "pronunciation",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "on-focus",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "on-input",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "consistent-navigation",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "consistent-identification",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "change-on-request",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "consistent-help",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "error-identification",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "labels-or-instructions",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "error-suggestion",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "error-prevention-legal-financial-data",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "help",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "error-prevention-all",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "redundant-entry",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "accessible-authentication-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "accessible-authentication-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "name-role-value",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "status-messages",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "agentic-accessibility",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "captions-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "audio-description-or-media-alternative-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "captions-live",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "audio-description-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "sign-language-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "extended-audio-description-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "media-alternative-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "audio-only-live",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "info-and-relationships",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "meaningful-sequence",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "sensory-characteristics",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "orientation",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "identify-input-purpose",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "identify-purpose",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "use-of-color",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "audio-control",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "contrast-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "resize-text",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "images-of-text",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "contrast-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "low-or-no-background-audio",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "visual-presentation",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "images-of-text-no-exception",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "reflow",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "non-text-contrast",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "text-spacing",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "content-on-hover-or-focus",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "keyboard",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "no-keyboard-trap",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "keyboard-no-exception",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "character-key-shortcuts",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "timing-adjustable",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "pause-stop-hide",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "no-timing",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "interruptions",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "re-authenticating",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "timeouts",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "three-flashes-or-below-threshold",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "three-flashes",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "animation-from-interactions",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "bypass-blocks",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "page-titled",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "focus-order",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "link-purpose-in-context",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "multiple-ways",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "headings-and-labels",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "focus-visible",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "location",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "link-purpose-link-only",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "section-headings",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "focus-not-obscured-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "focus-not-obscured-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "focus-appearance",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "pointer-gestures",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "pointer-cancellation",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "label-in-name",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "motion-actuation",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "target-size-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "concurrent-input-mechanisms",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "dragging-movements",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "target-size-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "language-of-page",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "language-of-parts",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "unusual-words",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "abbreviations",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "reading-level",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "pronunciation",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "on-focus",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "on-input",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "consistent-navigation",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "consistent-identification",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "change-on-request",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "consistent-help",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "error-identification",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "labels-or-instructions",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "error-suggestion",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "error-prevention-legal-financial-data",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "help",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "error-prevention-all",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "redundant-entry",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "accessible-authentication-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "accessible-authentication-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "name-role-value",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "status-messages",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "slug": "agentic-accessibility",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "captions-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-description-or-media-alternative-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "captions-live",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-description-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "sign-language-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "extended-audio-description-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "media-alternative-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-only-live",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "info-and-relationships",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "meaningful-sequence",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "sensory-characteristics",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "orientation",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "identify-input-purpose",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "identify-purpose",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "use-of-color",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-control",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "contrast-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "resize-text",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "images-of-text",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "contrast-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "low-or-no-background-audio",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "visual-presentation",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "images-of-text-no-exception",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "reflow",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "non-text-contrast",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "text-spacing",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "content-on-hover-or-focus",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "keyboard",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "no-keyboard-trap",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "keyboard-no-exception",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "character-key-shortcuts",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "timing-adjustable",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "pause-stop-hide",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "no-timing",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "interruptions",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "re-authenticating",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "timeouts",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "three-flashes-or-below-threshold",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "three-flashes",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "animation-from-interactions",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "bypass-blocks",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "page-titled",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "focus-order",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "link-purpose-in-context",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "multiple-ways",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "headings-and-labels",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "focus-visible",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "location",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "link-purpose-link-only",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "section-headings",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "focus-not-obscured-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "focus-not-obscured-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "focus-appearance",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "pointer-gestures",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "pointer-cancellation",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "label-in-name",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "motion-actuation",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "target-size-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "concurrent-input-mechanisms",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "dragging-movements",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "target-size-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "language-of-page",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "language-of-parts",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "unusual-words",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "abbreviations",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "reading-level",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "pronunciation",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "on-focus",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "on-input",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "consistent-navigation",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "consistent-identification",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "change-on-request",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "consistent-help",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "error-identification",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "labels-or-instructions",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "error-suggestion",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "error-prevention-legal-financial-data",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "help",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "error-prevention-all",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "redundant-entry",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "accessible-authentication-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "accessible-authentication-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "name-role-value",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "status-messages",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "slug": "agentic-accessibility",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "captions-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-description-or-media-alternative-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "captions-live",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-description-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "sign-language-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "extended-audio-description-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "media-alternative-prerecorded",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-only-live",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "info-and-relationships",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "meaningful-sequence",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "sensory-characteristics",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "orientation",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "identify-input-purpose",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "identify-purpose",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "use-of-color",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-control",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "contrast-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "resize-text",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "images-of-text",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "contrast-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "low-or-no-background-audio",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "visual-presentation",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "images-of-text-no-exception",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "reflow",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "non-text-contrast",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "text-spacing",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "content-on-hover-or-focus",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "keyboard",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "no-keyboard-trap",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "keyboard-no-exception",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "character-key-shortcuts",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "timing-adjustable",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "pause-stop-hide",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "no-timing",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "interruptions",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "re-authenticating",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "timeouts",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "three-flashes-or-below-threshold",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "three-flashes",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "animation-from-interactions",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "bypass-blocks",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "page-titled",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "focus-order",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "link-purpose-in-context",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "multiple-ways",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "headings-and-labels",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "focus-visible",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "location",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "link-purpose-link-only",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "section-headings",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "focus-not-obscured-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "focus-not-obscured-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "focus-appearance",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "pointer-gestures",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "pointer-cancellation",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "label-in-name",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "motion-actuation",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "target-size-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "concurrent-input-mechanisms",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "dragging-movements",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "target-size-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "language-of-page",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "language-of-parts",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "unusual-words",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "abbreviations",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "reading-level",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "pronunciation",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "on-focus",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "on-input",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "consistent-navigation",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "consistent-identification",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "change-on-request",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "consistent-help",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "error-identification",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "labels-or-instructions",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "error-suggestion",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "error-prevention-legal-financial-data",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "help",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "error-prevention-all",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "redundant-entry",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "accessible-authentication-minimum",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "accessible-authentication-enhanced",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "name-role-value",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "status-messages",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "slug": "agentic-accessibility",
+      "unchanged": true
+    }
+  ],
+  "resultSections": [
+    {
+      "lang": "ko",
+      "allActualResultProsePreserved": true,
+      "sha256": "6489cfe4f928723517a4f7a198375f3d30e531f6145325ee7f9432c8f47f7f33"
+    },
+    {
+      "lang": "en",
+      "allActualResultProsePreserved": true,
+      "sha256": "400cacb0d4a59d5546ef16beb8cf79290061f3b2d92e37c3c8afc26d5c86dc0b"
+    },
+    {
+      "lang": "ja",
+      "allActualResultProsePreserved": true,
+      "sha256": "0bfaf831b08207dca338fb121defa7cdd773572bca0b631d2c76fc81dd961477"
+    },
+    {
+      "lang": "zh",
+      "allActualResultProsePreserved": true,
+      "sha256": "a92040bdbec1940330ade3d876d1f5a03824220d44760f9a2ba666233f3bb49a"
+    }
+  ],
+  "mediaFilesChanged": false
+}

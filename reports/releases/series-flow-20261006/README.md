@@ -15,3 +15,12 @@
 `node reports/releases/series-flow-20261006/verify.mjs https://jangwook.net production`
 
 각 언어·세 글의 SSR 승인 해시, 마무리 링크·순서, 참고 자료 뒤 프롬프트, 1440/390/320px와 axe, no-JS 학습 목록을 점검한다. 공개된 실제 결과 파일 40개 및 iframe 네 언어의 Chromium/WebKit 영상 재생·탐색도 확인한다. 원본 프롬프트와 초판 공개일 비교 기준은 15dadaf7이다.
+
+## 운영 결과
+
+- 배포 소스: `ddda1a428e59284b8a37faf52b3f90c6b5fd75f2`
+- Worker 버전: `eb2af18c-b9de-4440-9461-de9663bc1499`
+- 되돌릴 이전 버전: `742bd13e-954b-441e-8da0-c5c9ad7b7869`
+- 로컬·운영 모두 12개 글의 세 화면 폭과 no-JS 구성 확인, 4개 미공개 다음 글의 noindex 유지, 40개 실제 실행 자료 일치, 16개 Chromium/WebKit 영상 재생·탐색 확인. axe 오류 없음. svelte-check 오류·경고 없음, 테스트 23개 통과.
+- 85편 × 4언어의 미공개 콘텐츠 정본은 그대로 유지했고, 12개 프롬프트와 03의 실제 평가 결과 절을 보존했다. 새 모델 실행을 하지 않았다.
+- @effloow 영어 4개 스레드와 네 번째 글의 URL 단독 답글을 공개 확인. `x-publication-receipt.json`과 캡처 참조.

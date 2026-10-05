@@ -2,24 +2,6 @@
   "account": "effloow",
   "sourceHash": "8f8ee57f5ccf081c73821852279e262530a29f9d6b1712eea13ca5fbdb04513e",
   "canonicalURL": "https://jangwook.net/en/series/accessibility/overview",
-  "posts": [
-    "[1/4] I’ve aligned the first three articles in my accessibility series: define the evaluation scope, examine non-text content, then compare prerecorded audio and silent video with their alternatives. The same reading structure now connects all four language editions.",
-    "[2/4] Start with one user process and evidence you can actually inspect. The overview prompt helps plan criterion-level review. A plan is not a conformance result; unread materials and unverified states still need to be recorded.",
-    "[3/4] For images, identify the purpose at each use: information, decoration, action or a complex explanation. The non-text-content article puts the observed prompt results before the checklist, then explains how to supply evidence for your own review.",
-    "[4/4] The audio and silent-video article follows the same path: explanation, visible practice pages and recorded findings, then the checklist and prompt guidance. Closings connect the full learning sequence and adjacent topics. English overview link below."
-  ],
-  "koreanTranslations": [
-    "접근성 시리즈 첫 세 글을 정리했습니다. 평가 범위 정의, 비텍스트 콘텐츠 검토, 녹음된 음성과 무음 영상의 대안 비교로 이어집니다. 네 언어에서 같은 읽기 구조로 연결합니다.",
-    "실제 확인할 수 있는 증거와 한 이용 과정부터 시작합니다. 개요 프롬프트는 기준별 검토를 계획합니다. 계획은 적합성 결과가 아니며 읽지 못한 자료와 미확인 상태를 기록해야 합니다.",
-    "이미지는 사용 위치마다 정보·장식·동작·복잡한 설명 중 목적을 먼저 정합니다. 비텍스트 콘텐츠 글은 관측한 프롬프트 결과 뒤에 체크리스트를 두고 평가 증거 입력 방법을 설명합니다.",
-    "음성과 무음 영상 글도 설명, 공개 실습 화면과 실제 결과, 체크리스트, 프롬프트 안내로 이어집니다. 마무리는 전체 학습 순서와 인접 주제를 연결합니다. 영어 개요 링크는 아래 답글에 둡니다."
-  ],
-  "weightedLengths": [
-    267,
-    229,
-    251,
-    256
-  ],
   "approvedArticleIdentities": [
     {
       "lang": "ko",
@@ -94,5 +76,32 @@
       "firstPublishedAt": "2026-10-05T14:00:04.151669Z"
     }
   ],
-  "status": "published and verified"
+  "posts": [
+    {
+      "text": "[1/4] I’ve aligned the first three articles in my accessibility series: define the evaluation scope, examine non-text content, then compare prerecorded audio and silent video with their alternatives. The same reading structure now connects all four language editions.",
+      "url": "https://x.com/effloow/status/2107231335060488590"
+    },
+    {
+      "text": "[2/4] Start with one user process and evidence you can actually inspect. The overview prompt helps plan criterion-level review. A plan is not a conformance result; unread materials and unverified states still need to be recorded.",
+      "url": "https://x.com/effloow/status/2107231336641745061"
+    },
+    {
+      "text": "[3/4] For images, identify the purpose at each use: information, decoration, action or a complex explanation. The non-text-content article puts the observed prompt results before the checklist, then explains how to supply evidence for your own review.",
+      "url": "https://x.com/effloow/status/2107231338399162385"
+    },
+    {
+      "text": "[4/4] The audio and silent-video article follows the same path: explanation, visible practice pages and recorded findings, then the checklist and prompt guidance. Closings connect the full learning sequence and adjacent topics. English overview link below.",
+      "url": "https://x.com/effloow/status/2107231339909140905"
+    }
+  ],
+  "linkReply": {
+    "url": "https://x.com/effloow/status/2107231610332717371",
+    "parent": "https://x.com/effloow/status/2107231339909140905",
+    "text": "https://jangwook.net/en/series/accessibility/overview",
+    "shortURL": "https://t.co/7AGWz2JMUG",
+    "resolvedURL": "https://jangwook.net/en/series/accessibility/overview"
+  },
+  "verifiedAt": "2026-10-05T22:10:09.928Z",
+  "verification": "Computer Use confirmed account, all four exact public posts, fourth-post reply context and link target through actual opened tab.",
+  "screenshot": "x-publication.png"
 }

@@ -1,0 +1,17 @@
+{
+  "workerVersion": "eb2af18c-b9de-4440-9461-de9663bc1499",
+  "sourceCommit": "ddda1a428e59284b8a37faf52b3f90c6b5fd75f2",
+  "rollbackVersion": "742bd13e-954b-441e-8da0-c5c9ad7b7869",
+  "deployedAt": "2026-10-05T22:06:21.207924+00:00",
+  "scope": "Four-language chapter01-03 editorial flow/navigation update",
+  "dbMigrations": false,
+  "mailMode": "disabled",
+  "scheduleUnchanged": true,
+  "productionVerification": "passed",
+  "verificationCounts": {
+    "articles": 12,
+    "viewportChecks": 36,
+    "nativePlayback": 16,
+    "publicEvidenceFiles": 40
+  }
+}
