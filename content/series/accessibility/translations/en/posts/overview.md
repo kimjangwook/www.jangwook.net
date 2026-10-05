@@ -140,7 +140,18 @@ At the end of the series, we plan to address an agent architecture that connects
 
 User experience should be examined alongside evaluation against the criteria. W3C explains that involving users with disabilities in evaluation helps identify usability problems that checks against criteria alone may not reveal adequately. You cannot record AI responses simulating a user perspective as a replacement for that participation. [Involving Users in Evaluating Web Accessibility](https://www.w3.org/WAI/test-evaluate/involving-users/)
 
-What you need to prepare at the first stage is one user process to evaluate and materials for observing that process. In the next article, we will begin with 1.1.1, the non-text content criterion, to examine what alternatives should be provided for the information conveyed by images.
+What you need to prepare at the first stage is one user process to evaluate and materials for observing that process.
+
+## Before using the evaluation prompt
+
+Add the user process to evaluate and actual observation materials to the evaluation planning prompt below. First check whether the model can access the page, screenshots and code, and distinguish unread materials and unverified states in the evaluation scope. Use this prompt to define the materials and sequence for criterion-level review; creating a plan does not establish that a criterion has been met.
+
+## Continue to the next article
+
+This article covered how to define evaluation scope and evidence around one user process. The next article, **1.1.1 Non-text Content**, explains which information to provide as a text alternative according to an image’s purpose.
+
+- [Complete learning sequence](https://jangwook.net/series/accessibility)
+- [Next: Non-text Content](https://jangwook.net/series/accessibility/non-text-content)
 
 ## References
 

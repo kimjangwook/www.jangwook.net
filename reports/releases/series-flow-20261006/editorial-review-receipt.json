@@ -1,0 +1,7 @@
+{
+  "model": "gpt-6-astra",
+  "provider": "codex",
+  "effort": "high",
+  "elapsed_seconds": 13.64,
+  "scope": "Editorial translation/structure review, no new prompt executions"
+}

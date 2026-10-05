@@ -1,0 +1,10 @@
+
+> jangwook-net@2.0.0 check
+> node scripts/compile-content.mjs && node scripts/compile-archive.mjs && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
+
+Compiled 88 edited posts and prompts.
+{ archivePosts: 1424, excluded: 16, assets: 455, issues: 0 }
+Loading svelte-check in workspace: /private/tmp/jangwook-media-release-20261005
+Getting Svelte diagnostics...
+
+svelte-check found 0 errors and 0 warnings

@@ -268,7 +268,7 @@ CMS의 이미지 라이브러리에 저장한 기본 설명은 출발점으로 �
 
 - [이전: 웹 접근성 개요](https://jangwook.net/series/accessibility/overview)
 - [전체 학습 순서](https://jangwook.net/series/accessibility)
-- [다음: 녹음된 음성과 무음 영상 — 현재 준비 중](https://jangwook.net/series/accessibility/audio-only-and-video-only-prerecorded)
+- [다음: 녹음된 음성과 무음 영상](https://jangwook.net/series/accessibility/audio-only-and-video-only-prerecorded)
 
 ## 참고 자료
 

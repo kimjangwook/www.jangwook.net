@@ -1,0 +1,10 @@
+{
+  "decision": "pass",
+  "findings": [
+    "The supplied edits follow the chapter02 body sequence across all four languages: explanatory content and existing evaluation results precede the checklist, usage guidance, closing transition, and References. The overview appropriately adds guidance and a transition without inventing criterion-specific sections.",
+    "The revised passages preserve meaning across Korean, English, Japanese, and Chinese and maintain an appropriate educator tone. Closings recap the current topic and introduce the next, with matching previous/curriculum/next targets and ordering; the overview correctly omits previous.",
+    "Static preparation notices are removed from the published body. Describing the next topic does not claim that its destination is published. The shown diffs introduce no new trial results or evidence claims and show no changes to empirical prompt instructions or results.",
+    "This pass covers the supplied editorial excerpts and diffs only. The full prompt panel’s rendering after the body, shared navigation placement, and the unpublished destination’s preparation/noindex state require template or rendered-page evidence not included here; they are not verified by this review."
+  ],
+  "corrections": []
+}

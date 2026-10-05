@@ -167,31 +167,6 @@ Retest plan: Compare the same original range, the entire alternative, and the ve
 
 The verified result in this record extends only to the inaccuracy and the fail decision. Revision and retesting are proposals and are not marked as completed work. Evaluators should communicate the location, original, alternative, difference, and user impact, and the person responsible for revisions should be able to use that record to find the problem again.
 
-## Practical checklist
-
-A check mark means that the review was performed. Checking every box does not mean the criterion has been met. Record the decision, evidence IDs, time locations, and unreviewed scope separately for each item.
-
-- [ ] **C01 Applicability**: Checked the media inventory for the page and necessary states, and distinguished prerecorded audio-only, video-only, and other types based on actual content. Media that could not be opened was retained as unreviewed rather than excluded.
-- [ ] **C02 Version matching**: Linked the final original's version and full duration to the alternative's version. Did not use a draft script or a different edit as the original.
-- [ ] **C03 Audio information**: Checked whether speech, conditions, negatives, speakers, and sounds needed for understanding in applicable audio-only content correspond to the transcript. If no such media exists, recorded the reason.
-- [ ] **C04 Video information**: Compared the text, actions, sequence, changes, and results in applicable video-only content with the alternative. If only some frames were reviewed, recorded the gaps in time coverage.
-- [ ] **C05 Permitted alternative**: Verified one sufficient text or audio alternative for video-only content. Did not treat both paths as failures merely because text was absent.
-- [ ] **C06 Actual provision**: Actually checked the alternative link, body text, or audio file, and checked that an error screen, summary, or different version was not returned instead.
-- [ ] **C07 Exception evidence**: If the exception for an alternative to existing text was applied, verified that there was no additional information absent from the text and that the alternative relationship was clearly labeled.
-- [ ] **C08 Independent observation**: Did not copy the alternative document into the original observation materials. If relying on derived transcripts or frames, recorded that path and the scope of verification.
-- [ ] **C09 Execution record**: Recorded the materials, time ranges, and tools actually processed, along with failures, blocked access, and unreviewed scope. Did not mark materials supplied only as URLs as having been read.
-- [ ] **C10 Evidence-based decision**: Distinguished pass, fail, not applicable, and inconclusive, and explained important differences using locations in the original and alternative. Did not present unverified model confidence figures as accuracy.
-- [ ] **C11 Revision and retesting**: Recorded a plan to recheck the same original ranges, all remaining content, and the actual delivery page after correcting omissions and inaccuracies.
-- [ ] **C12 Scope distinction**: Did not expand this criterion's result into overall WCAG conformance. Captions, player keyboard operation, and accessibility issues in the document itself are managed separately under the relevant criteria.
-
-## Before using the evaluation prompt
-
-The prompt below is for connecting and comparing originals and alternatives. First define the scope using the evaluation planning prompt in the [series overview](/en/series/accessibility/overview), then supply the actual materials needed for this criterion. Do not expect collection, playback, and comparison to be complete merely by entering a URL.
-
-When incorporating the prompt into a team's evaluation process, it is advisable to first compare cases with a complete alternative, a missing important condition, a video with only an audio alternative, the exception for media alternatives to text, and an original that cannot be processed. In particular, check whether an audio alternative is incorrectly failed or insufficient evidence is treated as a pass. Retest the same cases when the model or input path changes.
-
-This article's prompt receives the material inventory, original observations, alternatives, exception claims, and processing errors as separate inputs. Verified ranges are recorded numerically, and if the collection record and the scope of actual content review differ, only their verified intersection is used. The duration of an audio alternative is not mixed into the review coverage of the original video, and gaps remain as grounds for an inconclusive decision.
-
 ## Results of evaluating the practice pages with the prompt
 
 The two practice pages below use the same silent video and different text alternatives. K63 describes all five steps; K25 omits the Security screen and the warning and confirmation before creating a new code. Compare the original with each alternative, then inspect the actual prompt results. This is a fictional recovery-code guide with no real accounts or codes.
@@ -253,15 +228,41 @@ This test is a comparison against reference answers prepared during drafting, no
 
 This prompt is structured to compare originals and alternatives with a fixed scope and material pathway. When connecting a new model, tool, or media type, retest normal, omission, exception, and processing-failure cases, and do not include materials that were not actually processed as evidence for a pass.
 
-### Final prompt for the exercise
+
+## Practical checklist
+
+A check mark means that the review was performed. Checking every box does not mean the criterion has been met. Record the decision, evidence IDs, time locations, and unreviewed scope separately for each item.
+
+- [ ] **C01 Applicability**: Checked the media inventory for the page and necessary states, and distinguished prerecorded audio-only, video-only, and other types based on actual content. Media that could not be opened was retained as unreviewed rather than excluded.
+- [ ] **C02 Version matching**: Linked the final original's version and full duration to the alternative's version. Did not use a draft script or a different edit as the original.
+- [ ] **C03 Audio information**: Checked whether speech, conditions, negatives, speakers, and sounds needed for understanding in applicable audio-only content correspond to the transcript. If no such media exists, recorded the reason.
+- [ ] **C04 Video information**: Compared the text, actions, sequence, changes, and results in applicable video-only content with the alternative. If only some frames were reviewed, recorded the gaps in time coverage.
+- [ ] **C05 Permitted alternative**: Verified one sufficient text or audio alternative for video-only content. Did not treat both paths as failures merely because text was absent.
+- [ ] **C06 Actual provision**: Actually checked the alternative link, body text, or audio file, and checked that an error screen, summary, or different version was not returned instead.
+- [ ] **C07 Exception evidence**: If the exception for an alternative to existing text was applied, verified that there was no additional information absent from the text and that the alternative relationship was clearly labeled.
+- [ ] **C08 Independent observation**: Did not copy the alternative document into the original observation materials. If relying on derived transcripts or frames, recorded that path and the scope of verification.
+- [ ] **C09 Execution record**: Recorded the materials, time ranges, and tools actually processed, along with failures, blocked access, and unreviewed scope. Did not mark materials supplied only as URLs as having been read.
+- [ ] **C10 Evidence-based decision**: Distinguished pass, fail, not applicable, and inconclusive, and explained important differences using locations in the original and alternative. Did not present unverified model confidence figures as accuracy.
+- [ ] **C11 Revision and retesting**: Recorded a plan to recheck the same original ranges, all remaining content, and the actual delivery page after correcting omissions and inaccuracies.
+- [ ] **C12 Scope distinction**: Did not expand this criterion's result into overall WCAG conformance. Captions, player keyboard operation, and accessibility issues in the document itself are managed separately under the relevant criteria.
+
+## Before using the evaluation prompt
+
+The prompt below is for connecting and comparing originals and alternatives. First define the scope using the evaluation planning prompt in the [series overview](/en/series/accessibility/overview), then supply the actual materials needed for this criterion. Do not expect collection, playback, and comparison to be complete merely by entering a URL.
+
+When incorporating the prompt into a team's evaluation process, it is advisable to first compare cases with a complete alternative, a missing important condition, a video with only an audio alternative, the exception for media alternatives to text, and an original that cannot be processed. In particular, check whether an audio alternative is incorrectly failed or insufficient evidence is treated as a pass. Retest the same cases when the model or input path changes.
+
+This article's prompt receives the material inventory, original observations, alternatives, exception claims, and processing errors as separate inputs. Verified ranges are recorded numerically, and if the collection record and the scope of actual content review differ, only their verified intersection is used. The duration of an audio alternative is not mixed into the review coverage of the original video, and gaps remain as grounds for an inconclusive decision.
 
 The following criterion prompt preserves the instructions actually used for these cases. Use the [overview planning prompt](/en/series/accessibility/overview#evaluation-prompt) to define the target and collection scope, then supply actual inputs and independently observed source evidence. The case input files illustrate the required material. A URL alone is insufficient; do not reuse the alternative as an observation of the original. The instructions include evidence recording and branches for pass, fail, exceptions, missing evidence and processing errors. They are the final instructions for the validated scope, not a guarantee of accuracy for every video or whole-site WCAG conformance.
 
-<!-- evaluation-prompt -->
+## Continue to the next article
 
-## The next article covers video with sound
+This article distinguished transcripts for audio-only content from text and audio alternatives for video-only content. The next article, **1.2.2 Captions (Prerecorded)**, covers how to deliver dialogue and important sounds at the right playback times when video and audio are combined.
 
-This article distinguished transcripts for audio-only content from text and audio alternatives for video-only content. The next [article on prerecorded captions](/en/series/accessibility/captions-prerecorded) will examine how to convey dialogue and important sounds in sync with playback when video and audio are present together. The next article is still in preparation.
+- [Previous: Non-text Content](https://jangwook.net/series/accessibility/non-text-content)
+- [Complete learning sequence](https://jangwook.net/series/accessibility)
+- [Next: Captions (Prerecorded)](https://jangwook.net/series/accessibility/captions-prerecorded)
 
 ## References
 

@@ -268,7 +268,7 @@ CMS 图像库中保存的默认描述可以作为起点。但仍应能够根据�
 
 - [上一篇：网页无障碍概述](https://jangwook.net/series/accessibility/overview)
 - [完整学习顺序](https://jangwook.net/series/accessibility)
-- [下一篇：预录制音频与无声视频——正在准备中](https://jangwook.net/series/accessibility/audio-only-and-video-only-prerecorded)
+- [下一篇：预录制音频与无声视频](https://jangwook.net/series/accessibility/audio-only-and-video-only-prerecorded)
 
 ## 参考资料
 

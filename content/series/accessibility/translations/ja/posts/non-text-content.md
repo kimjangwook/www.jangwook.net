@@ -268,7 +268,7 @@ CMSの画像ライブラリに保存した基本の説明は、出発点とし�
 
 - [前へ：ウェブアクセシビリティの概要](https://jangwook.net/series/accessibility/overview)
 - [学習順序の全体像](https://jangwook.net/series/accessibility)
-- [次へ：収録済みの音声及び無音映像 — 現在準備中](https://jangwook.net/series/accessibility/audio-only-and-video-only-prerecorded)
+- [次へ：収録済みの音声及び無音映像](https://jangwook.net/series/accessibility/audio-only-and-video-only-prerecorded)
 
 ## 参考資料
 

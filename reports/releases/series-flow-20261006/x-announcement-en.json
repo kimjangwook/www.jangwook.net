@@ -1,0 +1,98 @@
+{
+  "account": "effloow",
+  "sourceHash": "8f8ee57f5ccf081c73821852279e262530a29f9d6b1712eea13ca5fbdb04513e",
+  "canonicalURL": "https://jangwook.net/en/series/accessibility/overview",
+  "posts": [
+    "[1/4] I’ve aligned the first three articles in my accessibility series: define the evaluation scope, examine non-text content, then compare prerecorded audio and silent video with their alternatives. The same reading structure now connects all four language editions.",
+    "[2/4] Start with one user process and evidence you can actually inspect. The overview prompt helps plan criterion-level review. A plan is not a conformance result; unread materials and unverified states still need to be recorded.",
+    "[3/4] For images, identify the purpose at each use: information, decoration, action or a complex explanation. The non-text-content article puts the observed prompt results before the checklist, then explains how to supply evidence for your own review.",
+    "[4/4] The audio and silent-video article follows the same path: explanation, visible practice pages and recorded findings, then the checklist and prompt guidance. Closings connect the full learning sequence and adjacent topics. English overview link below."
+  ],
+  "koreanTranslations": [
+    "접근성 시리즈 첫 세 글을 정리했습니다. 평가 범위 정의, 비텍스트 콘텐츠 검토, 녹음된 음성과 무음 영상의 대안 비교로 이어집니다. 네 언어에서 같은 읽기 구조로 연결합니다.",
+    "실제 확인할 수 있는 증거와 한 이용 과정부터 시작합니다. 개요 프롬프트는 기준별 검토를 계획합니다. 계획은 적합성 결과가 아니며 읽지 못한 자료와 미확인 상태를 기록해야 합니다.",
+    "이미지는 사용 위치마다 정보·장식·동작·복잡한 설명 중 목적을 먼저 정합니다. 비텍스트 콘텐츠 글은 관측한 프롬프트 결과 뒤에 체크리스트를 두고 평가 증거 입력 방법을 설명합니다.",
+    "음성과 무음 영상 글도 설명, 공개 실습 화면과 실제 결과, 체크리스트, 프롬프트 안내로 이어집니다. 마무리는 이전 주제·전체 순서·다음 주제를 연결합니다. 영어 개요 링크는 아래 답글에 둡니다."
+  ],
+  "weightedLengths": [
+    267,
+    229,
+    251,
+    256
+  ],
+  "approvedArticleIdentities": [
+    {
+      "lang": "ko",
+      "slug": "overview",
+      "sourceHash": "87970d6428959494079de93f24e88be12bdcaf0464e47c1490012e44ef3f8e45",
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "ko",
+      "slug": "non-text-content",
+      "sourceHash": "1e02abc690e6c43579b47cb4f632f3680cc1cac0e57fc3357a71d12d1161ec36",
+      "firstPublishedAt": "2026-10-03T13:32:25Z"
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "sourceHash": "2eba9ace290afa99eeb56a7f68cd1a000af0fa72aa711fb65c54cfc0afb39783",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z"
+    },
+    {
+      "lang": "en",
+      "slug": "overview",
+      "sourceHash": "8f8ee57f5ccf081c73821852279e262530a29f9d6b1712eea13ca5fbdb04513e",
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "en",
+      "slug": "non-text-content",
+      "sourceHash": "dc51ce37d831a56c773856be23d58dc368fdd8db2e7f12fd85a0f3b47f68a2e7",
+      "firstPublishedAt": "2026-10-03T13:32:25Z"
+    },
+    {
+      "lang": "en",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "sourceHash": "6f410dcc982f68f30159c9ff90203cc81659e2837fbf56646c347fcee13e23b5",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z"
+    },
+    {
+      "lang": "ja",
+      "slug": "overview",
+      "sourceHash": "7695c8a4219c9202fe08f1caffdc3f3165806466466e9cc31a09bc4934043d62",
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "ja",
+      "slug": "non-text-content",
+      "sourceHash": "bb26b7943cd1473416a726df12aee41f957c4ccdedbbaf15b56bb1424304407d",
+      "firstPublishedAt": "2026-10-03T13:32:25Z"
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "sourceHash": "31b114cd862c9f0c14e95af1d01559254bfbc6dda9383e8aed4433004cc3fd58",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z"
+    },
+    {
+      "lang": "zh",
+      "slug": "overview",
+      "sourceHash": "a8a34d3c6cc3486aaa77d3a4c1104cfc614b36ddc1fca4f3dd49e4a612d743fd",
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "zh",
+      "slug": "non-text-content",
+      "sourceHash": "c6b643881f2a44db4a9ead541eab15ca479a8f801152b85e2f303bf7b4b4e45b",
+      "firstPublishedAt": "2026-10-03T13:32:25Z"
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "sourceHash": "7386dddf5334b247bdf91c058a4ef2633924e0044cd2f5b968a9d74edb344cab",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z"
+    }
+  ],
+  "status": "draft; publish only after production verification"
+}

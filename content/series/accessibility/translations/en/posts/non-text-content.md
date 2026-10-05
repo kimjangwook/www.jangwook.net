@@ -268,7 +268,7 @@ This article connected the purpose of non-text content with its alternatives. Th
 
 - [Previous: Web Accessibility Overview](https://jangwook.net/series/accessibility/overview)
 - [Complete learning sequence](https://jangwook.net/series/accessibility)
-- [Next: Audio-only and Video-only (Prerecorded) — currently in preparation](https://jangwook.net/series/accessibility/audio-only-and-video-only-prerecorded)
+- [Next: Audio-only and Video-only (Prerecorded)](https://jangwook.net/series/accessibility/audio-only-and-video-only-prerecorded)
 
 ## References
 
