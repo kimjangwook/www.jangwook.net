@@ -1,0 +1,69 @@
+{
+  "records": [
+    {
+      "domain": "www.jangwook.net",
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "status": 200,
+      "sourceHash": "98783a900df62ea766dcdf0326c38d9b28b4e77710e745dba56b6f4f6716a488",
+      "titleMatch": true
+    },
+    {
+      "domain": "www.jangwook.net",
+      "lang": "ko",
+      "slug": "captions-prerecorded",
+      "status": 200,
+      "sourceHash": "3edfb5e1875d2eab4db27f65d58e882bfdc64b45266836b1df86bea10249e3bc",
+      "titleMatch": true
+    },
+    {
+      "domain": "www.jangwook.net",
+      "lang": "en",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "status": 200,
+      "sourceHash": "f5c69a5a061d86111b85d44b238a680ba3231691fcc37dafc5822f16092003d1",
+      "titleMatch": true
+    },
+    {
+      "domain": "www.jangwook.net",
+      "lang": "en",
+      "slug": "captions-prerecorded",
+      "status": 200,
+      "sourceHash": "49ec08ce5f13b6d0e830cd4d7902f6c0d77213407c19fb0179445ca861400189",
+      "titleMatch": true
+    },
+    {
+      "domain": "www.jangwook.net",
+      "lang": "ja",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "status": 200,
+      "sourceHash": "2f7c475ad602eca3984dbdc69b51daeef71f97cceb9d5c741ba136c0e414891d",
+      "titleMatch": true
+    },
+    {
+      "domain": "www.jangwook.net",
+      "lang": "ja",
+      "slug": "captions-prerecorded",
+      "status": 200,
+      "sourceHash": "99a6253f83a0612074e8275b51458e8009713a1c1f0a2aa9a8fea5ae9451f1d0",
+      "titleMatch": true
+    },
+    {
+      "domain": "www.jangwook.net",
+      "lang": "zh",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "status": 200,
+      "sourceHash": "458390ef4fe7fa3c9d8afa2af68900b0ec128679df762849e5329b19562a9da8",
+      "titleMatch": true
+    },
+    {
+      "domain": "www.jangwook.net",
+      "lang": "zh",
+      "slug": "captions-prerecorded",
+      "status": 200,
+      "sourceHash": "23f430cc1bd995f2776323d010fa7e01d2928bc0030aa7d8c3069df927bba8df",
+      "titleMatch": true
+    }
+  ],
+  "adsStatus": 200
+}

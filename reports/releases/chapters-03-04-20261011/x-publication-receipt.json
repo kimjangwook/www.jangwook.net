@@ -1,0 +1,28 @@
+{
+  "account": "effloow",
+  "sourceHash": "49ec08ce5f13b6d0e830cd4d7902f6c0d77213407c19fb0179445ca861400189",
+  "posts": [
+    {
+      "url": "https://x.com/effloow/status/2109257729030439105",
+      "text": "[1/4] A caption track can exist and still tell someone to do the wrong thing. Chapter 04 of my accessibility series examines negation, speaker identity, meaningful sounds and timing under WCAG 2.2 SC 1.2.2."
+    },
+    {
+      "url": "https://x.com/effloow/status/2109257730716512687",
+      "text": "[2/4] The embedded practice pages let you compare complete captions with missing warnings, reversed instructions and delayed cues. A separate transcript helps readers, but usually does not replace synchronized captions."
+    },
+    {
+      "url": "https://x.com/effloow/status/2109257732251644133",
+      "text": "[3/4] Across 14 controlled conditions in three sessions, Claude returned 42 decisions matching the fixed reference. It compared transcripts, sound records, cues and screenshots; this was not a test of the model directly listening to video."
+    },
+    {
+      "url": "https://x.com/effloow/status/2109257734248182126",
+      "text": "[4/4] Matching decisions do not prove complete or accurate evidence. Keep observed speech times separate from caption cue times, and record gaps. Chapters 03 and 04 are now available in four languages, with practice pages and reusable prompts."
+    }
+  ],
+  "replyUrl": "https://x.com/effloow/status/2109258534022209835",
+  "replyParentUrl": "https://x.com/effloow/status/2109257734248182126",
+  "linkDestination": "https://jangwook.net/en/series/accessibility/captions-prerecorded",
+  "verifiedAt": "2026-10-11T12:24:00.906759+00:00",
+  "verification": "All four posts and self reply visible in the connected conversation; fourth post shows one reply and linked article card.",
+  "screenshot": "x-publication.png"
+}

@@ -1,0 +1,24 @@
+{
+  "workerVersion": "73baf036-5ea6-44dd-b111-c35b409ffe15",
+  "sourceCommit": "5e18e46ed5ad94af8ed382fb4a96b7d921d7b3d9",
+  "rollbackVersion": "eb2af18c-b9de-4440-9461-de9663bc1499",
+  "verifiedAt": "2026-10-11T12:20:18.690971+00:00",
+  "scope": "Chapter03 correction and chapter04 first publication in ko/en/ja/zh",
+  "productionVerification": "passed",
+  "counts": {
+    "articles": 8,
+    "practicePages": 56,
+    "nativePlayback": 24,
+    "responsive": 24,
+    "noJS": 8
+  },
+  "adsPreserved": true,
+  "tagPreserved": true,
+  "productionDBMigrations": false,
+  "mailMode": "disabled",
+  "cronUnchanged": true,
+  "xPublication": "completed",
+  "xThreadUrl": "https://x.com/effloow/status/2109257729030439105",
+  "xLinkReplyUrl": "https://x.com/effloow/status/2109258534022209835",
+  "xVerifiedAt": "2026-10-11T12:24:00.906759+00:00"
+}

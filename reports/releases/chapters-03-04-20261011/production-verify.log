@@ -1,0 +1,17 @@
+Verifying chromium ko audio-only-and-video-only-prerecorded
+Verifying chromium ko captions-prerecorded
+Verifying chromium en audio-only-and-video-only-prerecorded
+Verifying chromium en captions-prerecorded
+Verifying chromium ja audio-only-and-video-only-prerecorded
+Verifying chromium ja captions-prerecorded
+Verifying chromium zh audio-only-and-video-only-prerecorded
+Verifying chromium zh captions-prerecorded
+Verifying webkit ko audio-only-and-video-only-prerecorded
+Verifying webkit ko captions-prerecorded
+Verifying webkit en audio-only-and-video-only-prerecorded
+Verifying webkit en captions-prerecorded
+Verifying webkit ja audio-only-and-video-only-prerecorded
+Verifying webkit ja captions-prerecorded
+Verifying webkit zh audio-only-and-video-only-prerecorded
+Verifying webkit zh captions-prerecorded
+{"base":"https://jangwook.net","articles":8,"practice":56,"responsive":24,"nativePlayback":24,"errors":[]}

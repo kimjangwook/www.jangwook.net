@@ -1,7 +1,7 @@
 {
   "account": "effloow",
   "sourceHash": "49ec08ce5f13b6d0e830cd4d7902f6c0d77213407c19fb0179445ca861400189",
-  "status": "prepared-not-posted",
+  "status": "posted",
   "posts": [
     {
       "text": "[1/4] A caption track can exist and still tell someone to do the wrong thing. Chapter 04 of my accessibility series examines negation, speaker identity, meaningful sounds and timing under WCAG 2.2 SC 1.2.2.",
@@ -26,5 +26,13 @@
   ],
   "linkReply": "https://jangwook.net/en/series/accessibility/captions-prerecorded",
   "linkReplyParent": "fourth-post",
-  "companionSourceHash": "f5c69a5a061d86111b85d44b238a680ba3231691fcc37dafc5822f16092003d1"
+  "companionSourceHash": "f5c69a5a061d86111b85d44b238a680ba3231691fcc37dafc5822f16092003d1",
+  "verifiedAt": "2026-10-11T12:24:00.906759+00:00",
+  "postUrls": [
+    "https://x.com/effloow/status/2109257729030439105",
+    "https://x.com/effloow/status/2109257730716512687",
+    "https://x.com/effloow/status/2109257732251644133",
+    "https://x.com/effloow/status/2109257734248182126"
+  ],
+  "linkReplyUrl": "https://x.com/effloow/status/2109258534022209835"
 }
