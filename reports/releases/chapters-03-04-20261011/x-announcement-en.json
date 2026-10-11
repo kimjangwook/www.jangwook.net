@@ -1,0 +1,30 @@
+{
+  "account": "effloow",
+  "sourceHash": "49ec08ce5f13b6d0e830cd4d7902f6c0d77213407c19fb0179445ca861400189",
+  "status": "prepared-not-posted",
+  "posts": [
+    {
+      "text": "[1/4] A caption track can exist and still tell someone to do the wrong thing. Chapter 04 of my accessibility series examines negation, speaker identity, meaningful sounds and timing under WCAG 2.2 SC 1.2.2.",
+      "ko": "자막 트랙이 있어도 이용자에게 잘못된 행동을 지시할 수 있습니다. 접근성 시리즈 04편은 WCAG 2.2의 1.2.2를 기준으로 부정 표현, 화자, 중요한 소리와 시간을 다룹니다.",
+      "weighted_length": 206
+    },
+    {
+      "text": "[2/4] The embedded practice pages let you compare complete captions with missing warnings, reversed instructions and delayed cues. A separate transcript helps readers, but usually does not replace synchronized captions.",
+      "ko": "글 안의 실습 페이지에서 전체 자막과 경고음 누락, 뒤집힌 지시, 지연된 자막을 비교할 수 있습니다. 별도 전사문은 유용하지만 일반적으로 동기화 자막을 대신하지 않습니다.",
+      "weighted_length": 219
+    },
+    {
+      "text": "[3/4] Across 14 controlled conditions in three sessions, Claude returned 42 decisions matching the fixed reference. It compared transcripts, sound records, cues and screenshots; this was not a test of the model directly listening to video.",
+      "ko": "세 세션에서 14개 통제 조건을 검토했고 Claude의 42개 판정이 고정 기준 답과 일치했습니다. 전사, 소리 기록, 큐와 화면을 비교했으며 모델이 영상을 직접 듣는 시험은 아니었습니다.",
+      "weighted_length": 239
+    },
+    {
+      "text": "[4/4] Matching decisions do not prove complete or accurate evidence. Keep observed speech times separate from caption cue times, and record gaps. Chapters 03 and 04 are now available in four languages, with practice pages and reusable prompts.",
+      "ko": "판정 일치는 근거의 완전성이나 정확성을 보장하지 않습니다. 관찰된 발화 시각과 자막 큐 시각을 구분하고 누락 범위를 기록합니다. 03·04편은 네 언어의 실습 페이지와 재사용할 프롬프트를 제공합니다.",
+      "weighted_length": 243
+    }
+  ],
+  "linkReply": "https://jangwook.net/en/series/accessibility/captions-prerecorded",
+  "linkReplyParent": "fourth-post",
+  "companionSourceHash": "f5c69a5a061d86111b85d44b238a680ba3231691fcc37dafc5822f16092003d1"
+}

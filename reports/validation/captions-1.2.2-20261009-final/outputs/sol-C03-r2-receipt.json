@@ -1,0 +1,29 @@
+{
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "case_id": "C03",
+  "kind": "criterion",
+  "repeat": 2,
+  "input_sha256": "ec60c1fba127c1529aa026954353fc0379357a5562ce93dbd7cc39db91c32c3d",
+  "prompt_sha256": "4be49379539ed08887a37ee44b87c5227fefb6ea04ff0fd01f55c4022028b90e",
+  "reference_sha256": "27e0a838a553eb33c115cf396089e6e1c2a5ac0a35822f66264c03d600c61e36",
+  "image_hashes": {
+    "DISPLAY-C03-1": "53d92011b49fe978ac26004c386ceff01850e69e086aafd63f64a94b2e225dd7",
+    "DISPLAY-C03-2": "518912b7abf8f9abeed89d6edec5667d348bba67bda95799c90a37869b7fd1bc",
+    "DISPLAY-C03-3": "4439bb89c7ba206343eb9e4cdf951287cd5ed7c29c5625757e0e19d0315144d8"
+  },
+  "started_at": "2026-10-09T05:41:24Z",
+  "status": "completed",
+  "context": "Fresh stateless Responses request; no other outputs or reference answers supplied.",
+  "model_returned": "gpt-6.1-sol",
+  "finish_reason": "stop",
+  "usage": {
+    "input_tokens": 12575,
+    "output_tokens": 4016,
+    "cached_input_tokens": 0,
+    "images": 0,
+    "search_calls": 0
+  },
+  "decision": "fail",
+  "elapsed_seconds": 104.76
+}

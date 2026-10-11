@@ -1,0 +1,95 @@
+{
+  "terminal": {
+    "id": "resp_0a8d7d1ae34bbfde016ac87c2f8764819193dcb5ca7616a67f",
+    "model": "gpt-6.1-sol",
+    "status": "completed",
+    "usage": {
+      "input_tokens": 12776,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "output_tokens": 4095,
+      "output_tokens_details": {
+        "reasoning_tokens": 482
+      },
+      "total_tokens": 16871,
+      "attribution": {
+        "items": {
+          "msg_0a8d7d1ae34bbfde016ac87c2f881c8191966fbf779652353d": {
+            "input_tokens": 12774,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "content": [
+              {
+                "input_tokens": 8708,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 10,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 1345,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 10,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 1345,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 10,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 1346,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              }
+            ]
+          },
+          "msg_0a8d7d1ae34bbfde016ac87c44287c8191ad8a2407e2c9e0a7": {
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 3613,
+            "content": [
+              {
+                "input_tokens": 0,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 3613
+              }
+            ]
+          },
+          "rs_0a8d7d1ae34bbfde016ac87c31126c8191b6488dd315ef9cfc": {
+            "input_tokens": 2,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 482
+          }
+        }
+      }
+    },
+    "incomplete_details": null
+  },
+  "output_text": "判定为 **fail**：M1 的 A2 自幕把“不要在保存新复原代码前丢弃旧代码”反转成“在保存前丢弃”，改变了关键否定与操作条件，违反 WCAG 2.2 成功标准 1.2.2。该结论依据独立原音转写、实际浏览器字幕记录及附件画面；原画面“先确认新代码保存状态”的提示也支持这一语义差异，但自动转写仍有识别误差的可能。本次仅审阅提供的处理记录与 PNG，没有直接听音、连续播放视频或访问 URL；未确认的末尾区间单独保留，不影响已确认问题的 fail 判定。\n\n```json\n{\n  \"criterion\": \"1.2.2\",\n  \"level\": \"A\",\n  \"prompt_version\": \"0.1.0\",\n  \"scope\": {\n    \"url_and_state\": \"http://127.0.0.1:8944/cases/C02；所提供的 Chromium 页面状态。范围为文章正文及唯一教学视频，不含页脚导航。\",\n    \"inventory_complete_within_scope\": true,\n    \"execution\": \"run\",\n    \"decision\": \"fail\",\n    \"reason\": \"范围内唯一媒体 M1 的 A2 字幕反转原音的否定及保存前不得丢弃旧代码的条件；存在已确认的语义不准确问题。\"\n  },\n  \"evidence_use\": {\n    \"direct_audio_review\": false,\n    \"direct_continuous_video_review\": false,\n    \"used_evidence_ids\": [\n      \"MEDIA-C02\",\n      \"PAGE-C02\",\n      \"SOURCE-ASR\",\n      \"SOURCE-AUDIO\",\n      \"SOURCE-SOUND\",\n      \"SOURCE-VISUAL\",\n      \"ENCODE-LINK\",\n      \"DELIVERY-C02\",\n      \"DISPLAY-C02-1\",\n      \"DISPLAY-C02-2\",\n      \"DISPLAY-C02-3\"\n    ],\n    \"derived_processing_and_limits\": [\n      \"审阅提供的文本记录及三张实际附加 PNG；没有额外浏览器、音频或视频执行工具。\",\n      \"SOURCE-ASR 记录独立解码原 MP4 音频并用 faster-whisper large-v3 转写，未使用候选字幕或制作脚本；处理范围为 0–31.1893125 秒。识别及词级时间可能有误差，概率值不等于真实性保证。\",\n      \"SOURCE-AUDIO 通过原 MP4 解码音频与独立录音的归一化相关确认六段录音及角色；只支持本受控材料的来源和时段，不是通用说话人识别结果。\",\n      \"SOURCE-SOUND 记录两次音调的测量时段；保安确认失败的含义来自 PAGE-C02，非由频率检测自行推断。\",\n      \"SOURCE-VISUAL 与 ENCODE-LINK 记录全体 749 帧解码、七个静态场景及固定字幕布局，并与逐条活动字幕采样相联系；连续覆盖依据限于该受控结构，不是仅由代表截图推断。\",\n      \"DELIVERY-C02 提供字幕已加载、处于 showing 状态、逐条活动队列及实际播放和拖动记录；本评估者没有亲自执行这些操作。\",\n      \"原音转写、来源处理记录与候选字幕分别使用。A2 的独立转写和 DISPLAY-C02-1 中先确认保存状态的原画面相互支持，而实际显示字幕给出相反操作。\"\n    ]\n  },\n  \"media\": [\n    {\n      \"media_id\": \"M1\",\n      \"classification\": \"预先录制的同步音视频，包含两位画面外说话人的对话及有信息意义的双警告音，适用 1.2.2。\",\n      \"classification_evidence_ids\": [\n        \"MEDIA-C02\",\n        \"SOURCE-ASR\",\n        \"SOURCE-AUDIO\",\n        \"SOURCE-SOUND\",\n        \"PAGE-C02\",\n        \"SOURCE-VISUAL\"\n      ],\n      \"execution\": \"run\",\n      \"decision\": \"fail\",\n      \"reason\": \"A2 在 7.6–11.6 秒实际显示的字幕将原音的禁止提前丢弃旧代码改成要求提前丢弃；其余已比较单元未发现同类语义违例。未确认的末尾区间不撤销已确认的失败。\",\n      \"exception\": {\n        \"claimed\": false,\n        \"no_extra_information\": false,\n        \"clearly_labeled\": false,\n        \"verified\": false,\n        \"evidence_ids\": [\n          \"PAGE-C02\",\n          \"SOURCE-ASR\"\n        ]\n      },\n      \"caption_delivery\": {\n        \"kind\": \"closed\",\n        \"actually_observed\": true,\n        \"evidence_ids\": [\n          \"PAGE-C02\",\n          \"DELIVERY-C02\",\n          \"DISPLAY-C02-1\",\n          \"DISPLAY-C02-2\",\n          \"DISPLAY-C02-3\"\n        ]\n      },\n      \"coverage\": {\n        \"complete\": false,\n        \"processed_ranges\": [\n          {\n            \"start_seconds\": 0,\n            \"end_seconds\": 31.1893125,\n            \"evidence_ids\": [\n              \"SOURCE-ASR\",\n              \"SOURCE-AUDIO\",\n              \"SOURCE-SOUND\",\n              \"SOURCE-VISUAL\",\n              \"ENCODE-LINK\",\n              \"DELIVERY-C02\",\n              \"DISPLAY-C02-1\",\n              \"DISPLAY-C02-2\",\n              \"DISPLAY-C02-3\"\n            ],\n            \"reason\": \"采用提供的原音处理范围与全帧、受控静态布局和字幕显示处理范围的交集；属于派生记录审阅，不是直接连续播放。\"\n          }\n        ],\n        \"unreviewed_ranges\": [\n          {\n            \"start_seconds\": 31.1893125,\n            \"end_seconds\": 31.208333,\n            \"reason\": \"媒体标称长度超出独立转写处理范围；不把约 0.019 秒尾段自动补为已完成音声、字幕及显示对应检查。\"\n          }\n        ]\n      },\n      \"comparisons\": [\n        {\n          \"original_start_seconds\": 0.94,\n          \"original_end_seconds\": 3.04,\n          \"original_content\": \" 안내자：设置中选择安全。原文为“설정에서 보안을 선택합니다.”；原录音区间 1–3.4 秒，ASR 时间近似。\",\n          \"caption_location\": \"A1；line=76；DISPLAY-C02-1 的 2 秒画面\",\n          \"caption_start_seconds\": 1,\n          \"caption_end_seconds\": 3.4,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"DELIVERY-C02\",\n            \"DISPLAY-C02-1\",\n            \"SOURCE-VISUAL\"\n          ],\n          \"user_impact\": \"字幕保留操作及 안내자 角色；样本中未遮挡指示文字或按钮，记录中的显示区间与录音区间一致。\"\n        },\n        {\n          \"original_start_seconds\": 3.8,\n          \"original_end_seconds\": 6.56,\n          \"original_content\": \"사용자：“이전 코드를 지금 버려도 되나요?”；原录音区间 4–7 秒，ASR 时间近似。\",\n          \"caption_location\": \"B1；line=76；DISPLAY-C02-1 的 5 秒画面\",\n          \"caption_start_seconds\": 4,\n          \"caption_end_seconds\": 7,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"DELIVERY-C02\",\n            \"DISPLAY-C02-1\",\n            \"SOURCE-VISUAL\"\n          ],\n          \"user_impact\": \"保留询问能否立即丢弃旧代码的含义，并标明画面外说话人切换为 사용자。\"\n        },\n        {\n          \"original_start_seconds\": 7.71,\n          \"original_end_seconds\": 11.18,\n          \"original_content\": \"안내자：“아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.”；原录音区间 7.6–11.6 秒。9.4 秒原画面另提示“새 코드의 저장 상태를 먼저 확인하세요.”。\",\n          \"caption_location\": \"A2；line=76；9.4 秒活动队列及 DISPLAY-C02-1：“안내자: 네. 새 복구 코드를 저장하기 전에 버리세요.”\",\n          \"caption_start_seconds\": 7.6,\n          \"caption_end_seconds\": 11.6,\n          \"relation\": \"inaccurate\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"DELIVERY-C02\",\n            \"DISPLAY-C02-1\"\n          ],\n          \"user_impact\": \"“아니요／버리지 마세요”被改为“네／버리세요”，使依靠字幕的用户理解为在保存新复原代码之前丢弃旧代码，颠倒关键操作条件。\"\n        },\n        {\n          \"original_start_seconds\": 12.2,\n          \"original_end_seconds\": 12.82,\n          \"original_content\": \"12.2–12.4 秒及 12.62–12.82 秒两次警告音；页面说明其表示安全确认失败。\",\n          \"caption_location\": \"SFX；line=76；DISPLAY-C02-1 的 12.5 秒及 DISPLAY-C02-2 的 15 秒画面\",\n          \"caption_start_seconds\": 12.2,\n          \"caption_end_seconds\": 15.82,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-SOUND\",\n            \"PAGE-C02\",\n            \"DELIVERY-C02\",\n            \"DISPLAY-C02-1\",\n            \"DISPLAY-C02-2\",\n            \"SOURCE-VISUAL\"\n          ],\n          \"user_impact\": \"“[보안 확인 실패를 알리는 경고음 두 번]”保留次数及信息含义；在结果画面中延续显示，未因此确认时间错配或重要信息遮挡。\"\n        },\n        {\n          \"original_start_seconds\": 16.47,\n          \"original_end_seconds\": 19,\n          \"original_content\": \"안내자：“보안 확인을 다시 끝낸 뒤 발급을 확인합니다.”；原录音区间 16.42–19.46 秒。\",\n          \"caption_location\": \"A3；line=76；DISPLAY-C02-2 的 17.8 秒画面\",\n          \"caption_start_seconds\": 16.42,\n          \"caption_end_seconds\": 19.46,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"DELIVERY-C02\",\n            \"DISPLAY-C02-2\",\n            \"SOURCE-VISUAL\"\n          ],\n          \"user_impact\": \"保留再次完成安全确认后才确认发放的操作顺序，样本中未遮挡重要画面内容。\"\n        },\n        {\n          \"original_start_seconds\": 20,\n          \"original_end_seconds\": 22.14,\n          \"original_content\": \"안내자：“새 코드를 안전한 곳에 저장합니다.”；该段所属完整录音区间为 20.06–26.7 秒。\",\n          \"caption_location\": \"A4 前句；line=76；DISPLAY-C02-2 的 22 秒及 25 秒画面\",\n          \"caption_start_seconds\": 20.06,\n          \"caption_end_seconds\": 26.7,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"DELIVERY-C02\",\n            \"DISPLAY-C02-2\",\n            \"SOURCE-VISUAL\"\n          ],\n          \"user_impact\": \"保留安全保存新代码的指示；与下一句合并显示 6.64 秒，附件显示全文，未见被控件截断或遮挡指示与按钮。\"\n        },\n        {\n          \"original_start_seconds\": 22.76,\n          \"original_end_seconds\": 26.02,\n          \"original_content\": \"안내자：“새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.”\",\n          \"caption_location\": \"A4 后句；line=76；DISPLAY-C02-2 的 22 秒及 25 秒画面\",\n          \"caption_start_seconds\": 20.06,\n          \"caption_end_seconds\": 26.7,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"DELIVERY-C02\",\n            \"DISPLAY-C02-2\",\n            \"SOURCE-VISUAL\"\n          ],\n          \"user_impact\": \"保留重新发放后旧代码不能再使用的条件及否定；虽与前句共同提前显示，但在对应原音及保存画面期间持续可见，未确认理解顺序受损。\"\n        },\n        {\n          \"original_start_seconds\": 27.45,\n          \"original_end_seconds\": 29.08,\n          \"original_content\": \"안내자：“발급 완료 화면을 확인합니다.”；原录音区间 27.3–29.58 秒。\",\n          \"caption_location\": \"A5；line=76；DISPLAY-C02-3 的 28.3 秒画面\",\n          \"caption_start_seconds\": 27.3,\n          \"caption_end_seconds\": 29.58,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"DELIVERY-C02\",\n            \"DISPLAY-C02-3\",\n            \"SOURCE-VISUAL\"\n          ],\n          \"user_impact\": \"保留确认发放完成画面的指示及说话人，附件中字幕与完成画面同时可见。\"\n        }\n      ],\n      \"missing_evidence\": [\n        \"31.1893125–31.208333 秒尾段的原始声音内容及字幕对应检查记录。\"\n      ],\n      \"recommendations\": [\n        {\n          \"change\": \"将 M1 的 A2 改为“안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.”，或其他保留相同否定与条件的表述；无需仅为本问题改变现有 7.6–11.6 秒时段。\",\n          \"retest\": \"独立复听原 MP4 的 7.6–11.6 秒，确认否定和保存前的条件；重新加载字幕并在 9.4 秒及该队列完整显示期间核对实际文字、角色、同步、可读性及遮挡。不得用修正后的字幕反证原音。\"\n        },\n        {\n          \"change\": \"补齐末尾约 0.019 秒的覆盖记录，不把未处理时间推定为无声或符合要求。\",\n          \"retest\": \"检查原媒体尾段是否有需传达的声音，并记录对应字幕及显示状态；若确无相关声音，补充该观察后再更新覆盖完整性。\"\n        }\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"limits\": [\n    \"本次 run 表示审阅提供资料和附件，不表示访问目标 URL、直接听音或执行连续视频播放。\",\n    \"正文仅说明教学用途、画面外对话及警告音含义，没有提供全部操作信息，也未明确标示视频为正文的媒体替代；不适用该例外。\",\n    \"ASR 的词级时间有近似误差；使用独立录音匹配区间校验时段，不因 ASR 与队列开始时间的小差异单独判定同步失败。\",\n    \"语义相等的比较不等于整部媒体通过；已确认的 A2 语义反转足以判定 fail。\",\n    \"显示覆盖依赖受控静态场景验证和逐条截图，不推广为任意动态视频的完整可读性证明；没有使用固定秒数、字数或阅读速度作为 WCAG 合格线。\",\n    \"仅评估指定范围的 WCAG 2.2 成功标准 1.2.2，未作全站符合性认证或其他成功标准判定。\"\n  ]\n}\n```"
+}

@@ -1,0 +1,29 @@
+{
+  "model": "Claude Opus5.5",
+  "effort": "High",
+  "control_surface": "Claude Desktop Code via Computer Use",
+  "permission_mode_observed": "manual; no security protection changed",
+  "sessions": [
+    {
+      "repeat": 1,
+      "url": "claude.ai/epitaxy/local_760c5830-51f7-4195-8ecb-29b7f2fcda6f"
+    },
+    {
+      "repeat": 2,
+      "url": "claude.ai/epitaxy/local_c62e0a22-a9cf-4187-9c89-868b366e2b91"
+    },
+    {
+      "repeat": 3,
+      "url": "claude.ai/epitaxy/local_5acb5ba8-c337-461b-aaff-8e7b59a82248"
+    }
+  ],
+  "identity_basis": "Actual model and effort popup AX text observed immediately before and after starting each native session. Server model identifier unavailable from Desktop; no claim of returned API model identity.",
+  "context": "Fresh session per repeat; shared context across16inputs within each batch. No final reference answers or other model outputs supplied.",
+  "completed_ui_observation": {
+    "observed_at": "2026-10-09T05:55:27.983278+00:00",
+    "all_three_session_sidebar_statuses": "idle or unread response; no running indicator",
+    "r3_final_response": "16 inputs, 34 actual PNGs read, outputs and immutable hashes confirmed",
+    "r3_model_popup": "Opus5.5",
+    "r3_effort_popup": "High"
+  }
+}

@@ -1,0 +1,59 @@
+# C13 평가 결과 (WCAG 2.2 SC 1.2.2, 수준 A)
+
+판정: **inconclusive**(실행: error). DELIVERY-C13에 따르면 video src unavailable.mp4 요청이 HTTP 404로 실패했고 MediaError code 4, readyState 0 상태여서 원본 음성·영상·길이와 자막 표시를 전혀 확인할 수 없으며, 원본 전사·소리·화면 기록과 PNG도 제공되지 않았습니다. 페이지 문구가 대화와 경고음을 설명하지만 실제 원본 관찰이 아니므로 적용 여부와 자막 충분성을 판단하지 않았고, 수집 오류를 fail이나 not_applicable로 바꾸지 않았습니다. 로드 가능한 원본과 그 전사·화면 기록이 필요합니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C13 — 기사 본문과 교육용 동영상 1개(M1) 범위, 하단 내비게이션 제외. video src unavailable.mp4가 HTTP 404, MediaError code 4, readyState 0.",
+    "inventory_complete_within_scope": true,
+    "execution": "error",
+    "decision": "inconclusive",
+    "reason": "매체 파일 요청이 404로 실패해 원본 음성·영상·길이·해시와 자막 표시 상태를 전혀 확인하지 못했습니다. 페이지 문구가 대화와 경고음을 언급하지만 이는 원본 관찰이 아니므로 적용 여부와 자막 충분성을 판단할 수 없습니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": ["MEDIA-C13", "PAGE-C13", "DELIVERY-C13"],
+    "derived_processing_and_limits": [
+      "DELIVERY-C13은 수집 실패 기록이며 currentSrc 응답 404, error 4(MEDIA_ERR_SRC_NOT_SUPPORTED), readyState 0을 보여 줍니다.",
+      "original·audio_processing·visual_processing이 null이고 제공된 PNG가 없습니다.",
+      "PAGE-C13의 track 배열은 비어 있으나, 원본을 확인하지 못해 개방 자막 여부도 알 수 없습니다."
+    ]
+  },
+  "media": [{
+    "media_id": "M1",
+    "classification": "미확인(원본 접근 불가). 페이지 문구상 대화·경고음이 있는 영상으로 설명되지만 실제 관찰 없음",
+    "classification_evidence_ids": ["MEDIA-C13", "PAGE-C13", "DELIVERY-C13"],
+    "execution": "error",
+    "decision": "inconclusive",
+    "reason": "원본 파일 404로 녹화 여부·음성 존재·내용·개방 자막 여부를 확인할 수 없습니다. 실행 오류를 fail이나 not_applicable로 바꾸지 않았습니다.",
+    "exception": {"claimed": false, "no_extra_information": null, "clearly_labeled": null, "verified": false, "evidence_ids": []},
+    "caption_delivery": {"kind": "unknown", "actually_observed": false, "evidence_ids": ["PAGE-C13", "DELIVERY-C13"]},
+    "coverage": {
+      "complete": false,
+      "processed_ranges": [],
+      "unreviewed_ranges": [{"start_seconds": 0, "end_seconds": null, "reason": "매체 로드 실패(404)로 길이를 포함한 전체 구간을 확인하지 못함."}]
+    },
+    "comparisons": [
+      {"original_start_seconds": null, "original_end_seconds": null, "original_content": "원본 미확인", "caption_location": "track 없음, 화면 관찰 없음", "caption_start_seconds": null, "caption_end_seconds": null, "relation": "unknown", "evidence_ids": ["DELIVERY-C13", "PAGE-C13"], "user_impact": "원본을 확인할 수 없어 자막 대응의 이용자 영향을 판단할 수 없습니다. 다만 현재 상태에서는 모든 이용자가 영상을 재생할 수 없습니다."}
+    ],
+    "missing_evidence": [
+      "실제로 로드 가능한 매체 URL 또는 원본 파일과 그 SHA-256·길이",
+      "원본 음성의 독립 전사와 중요한 소리 측정",
+      "영상 화면 기록(개방 자막 여부 포함)과 자막 트랙 로드·표시 기록"
+    ],
+    "recommendations": [{"change": "매체 파일 경로 또는 서버 배포를 수정해 영상이 로드되도록 합니다. 이후 원본에 음성이 있으면 동기화 자막을 제공합니다.", "retest": "매체 로드 성공(readyState≥1, HTTP 200)을 확인한 뒤 원본 전사·소리·화면 증거와 자막 표시를 수집해 1.2.2를 다시 평가합니다."}]
+  }],
+  "errors": [
+    {"evidence_ids": ["DELIVERY-C13"], "stage": "매체 수집(원본 로드)", "error": "unavailable.mp4 요청 HTTP 404, MediaError code 4, readyState 0", "effect_on_decision": "원본과 표시 상태를 확인할 수 없어 inconclusive. 실패나 적용 제외로 바꾸지 않음."}
+  ],
+  "limits": [
+    "평가자는 제공된 페이지 텍스트와 수집 실패 기록만 읽었고, 매체를 직접 처리하거나 재시도할 도구가 없었습니다.",
+    "매체가 재생되지 않는 상태 자체는 1.2.2 자막 판정과 별개의 문제로 기록했습니다."
+  ]
+}
+```

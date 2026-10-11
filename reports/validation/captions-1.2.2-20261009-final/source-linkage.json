@@ -1,0 +1,50 @@
+{
+  "evidence_id": "ENCODE-LINK",
+  "method": "Actual full PCM decode/normalized correlation at24kHz; same timing. Parse shipped source composition static scene timing; inspect timeline onlyanimates progress width; decode every video frame.",
+  "source_sha256": "60e0e354b807c7cbfff847b5e557c8d5d57310fc39cae1dd051916ac526fdda1",
+  "caption_candidate_sha256": "a8f6d95c774c580dce652cb8f1cbbd804b0ae9469bde3a1efe5035b27d03f4a3",
+  "full_audio_correlation": 0.9996263980865479,
+  "source_audio_duration": 31.189333333333334,
+  "candidate_audio_duration": 31.189333333333334,
+  "unmatched_tail_peak": 0,
+  "source_composition_sha256": "f3aaf4bd45f6e5156d44212699061cee3659133bdeb9392c77ccc5d8ff251205",
+  "static_screens": [
+    {
+      "id": "scene0",
+      "start": 0.0,
+      "end": 3.75
+    },
+    {
+      "id": "scene1",
+      "start": 3.75,
+      "end": 7.35
+    },
+    {
+      "id": "scene2",
+      "start": 7.35,
+      "end": 11.95
+    },
+    {
+      "id": "scene3",
+      "start": 11.95,
+      "end": 16.17
+    },
+    {
+      "id": "scene4",
+      "start": 16.17,
+      "end": 19.81
+    },
+    {
+      "id": "scene5",
+      "start": 19.81,
+      "end": 27.05
+    },
+    {
+      "id": "scene6",
+      "start": 27.05,
+      "end": 31.18
+    }
+  ],
+  "decoded_frames": 749,
+  "caption_screen_method": "Browser actual cue text and display PNG for every cue, including long dialogue and held sound caption. Display layout is fixed within each controlled cue; no moving captions/instruction elements."
+}

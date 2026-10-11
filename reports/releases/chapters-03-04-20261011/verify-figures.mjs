@@ -1,0 +1,6 @@
+import {chromium} from 'playwright';import fs from 'node:fs/promises';
+const browser=await chromium.launch(),report=[];
+for(const lang of ['ko','en','ja','zh'])for(const name of await fs.readdir(`static/images/accessibility/captions-prerecorded/${lang}`)){
+ const raw=await fs.readFile(`static/images/accessibility/captions-prerecorded/${lang}/${name}`,'utf8'),page=await browser.newPage({viewport:{width:1280,height:920}});await page.setContent('<style>body{margin:0}svg{width:1200px}</style>'+raw);await page.evaluate(()=>document.fonts.ready);const result=await page.locator('svg').evaluate(svg=>{const box=svg.viewBox.baseVal;return [...svg.querySelectorAll('text')].map(t=>{const b=t.getBBox();return {text:t.textContent,x:b.x,y:b.y,width:b.width,height:b.height,outside:b.x<0||b.x+b.width>box.width||b.y+b.height>box.height};});});report.push({lang,file:name,outside:result.filter(x=>x.outside),labels:result});await page.screenshot({path:`reports/releases/chapters-03-04-20261011/diagram-${lang}-${name.slice(0,6)}.png`});await page.close();
+}
+await browser.close();await fs.writeFile('reports/releases/chapters-03-04-20261011/diagram-layout.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report.map(x=>({lang:x.lang,file:x.file,outside:x.outside}))));if(report.some(x=>x.outside.length))process.exit(1);

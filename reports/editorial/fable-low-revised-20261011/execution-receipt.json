@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-11",
+  "requested_scope": "Korean chapter 03/04 revision and Fable Low reevaluation",
+  "reviewer_UI_model": "Fable 5.1",
+  "reviewer_UI_effort": "Low",
+  "server_model_ID": "not independently exposed in Desktop",
+  "sessions": [
+    {
+      "chapter": 3,
+      "id": "local_d05da23a-6dfe-4c1a-acfa-45fd85cc95b8",
+      "reevaluation_rounds": 2,
+      "final_decision": "공개 권고",
+      "remaining_body_mandatory_findings": 0,
+      "final_verbatim": "최종 본문 판정: 공개 권고. 남는 본문 필수 문제 없음."
+    },
+    {
+      "chapter": 4,
+      "id": "local_9dd162f5-631c-47ca-bd39-c8f949f31f7e",
+      "reevaluation_rounds": 2,
+      "final_decision": "공개 권고",
+      "remaining_body_mandatory_findings": 0,
+      "final_verbatim": "공개 권고 유지. 남는 필수 문제 없음."
+    }
+  ],
+  "canonical_checks": [
+    {
+      "chapter": 3,
+      "slug": "audio-only-and-video-only-prerecorded",
+      "sourceHash": "98783a900df62ea766dcdf0326c38d9b28b4e77710e745dba56b6f4f6716a488",
+      "updatedAt": "2026-10-11",
+      "firstPublishedAt_unchanged": true,
+      "prompt_unchanged": true,
+      "old_approval_preserved": true,
+      "reviewer_article_current": true,
+      "post_sha256": "7447368eda3642d1c690415f47c4368a0999d75e280f96ac10053477670d92c9",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440"
+    },
+    {
+      "chapter": 4,
+      "slug": "captions-prerecorded",
+      "sourceHash": "662d20fac2fc5151649dad43b7c2a9615d65fe6da76dfdf9a7ff59f7389cfc3a",
+      "updatedAt": "2026-10-11",
+      "firstPublishedAt_unchanged": true,
+      "prompt_unchanged": true,
+      "old_approval_preserved": true,
+      "reviewer_article_current": true,
+      "post_sha256": "a45cf668f72b35f097f75d6314a7e58f92f4461851cc49ba46e365b61d09ba22",
+      "prompt_sha256": "4be49379539ed08887a37ee44b87c5227fefb6ea04ff0fd01f55c4022028b90e"
+    }
+  ],
+  "typecheck": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "content_validation": {
+    "passed": false,
+    "reason": "Chapter03 edited published source has an old approval and stale translations; intentionally pending publication approval and translation review. Source-link set changed to canonical absolute internal URLs."
+  },
+  "tests": {
+    "passed": 18,
+    "failed": 5,
+    "total": 23,
+    "reason": "All five failures assert the previous count of 3 approved posts; changed chapter03 is excluded so there are 2 approved posts. No bypass or changed test expectations."
+  },
+  "chapter04_html_validation": {
+    "checks": [
+      {
+        "width": 1440,
+        "overflow": false,
+        "figures": [
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          }
+        ],
+        "checklist": 12
+      },
+      {
+        "width": 390,
+        "overflow": false,
+        "figures": [
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          }
+        ],
+        "checklist": 12
+      },
+      {
+        "width": 320,
+        "overflow": false,
+        "figures": [
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          },
+          {
+            "loaded": true,
+            "alt": true
+          }
+        ],
+        "checklist": 12
+      }
+    ]
+  },
+  "new_prompt_execution": false,
+  "translation": false,
+  "deployment": false,
+  "commit": false,
+  "push": false,
+  "telegram": false,
+  "PDF_regenerated": false,
+  "approvals_changed": false
+}

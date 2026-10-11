@@ -1,0 +1,70 @@
+{
+  "runs": 84,
+  "models": {
+    "sol": {
+      "completed": 42,
+      "fully_passed": 39
+    },
+    "claude": {
+      "completed": 42,
+      "fully_passed": 36
+    }
+  },
+  "failed_checks": [
+    {
+      "run": "claude-C01-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "reference decision",
+      "pass": false
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "media decision",
+      "pass": false
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "execution failure separate",
+      "pass": false
+    }
+  ]
+}

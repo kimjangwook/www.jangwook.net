@@ -1,0 +1,1329 @@
+{
+  "criterion_runs": [
+    {
+      "run": "claude-C01-r1",
+      "model": "claude",
+      "case": "C01",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "model": "claude",
+      "case": "C01",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "model": "claude",
+      "case": "C01",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "model": "claude",
+      "case": "C02",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "reversed_condition_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "model": "claude",
+      "case": "C02",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "reversed_condition_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "model": "claude",
+      "case": "C02",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "reversed_condition_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "model": "claude",
+      "case": "C03",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "important_sound_missing_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "model": "claude",
+      "case": "C03",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "important_sound_missing_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "model": "claude",
+      "case": "C03",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "important_sound_missing_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "model": "claude",
+      "case": "C04",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "speaker_changes_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "model": "claude",
+      "case": "C04",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "speaker_changes_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "model": "claude",
+      "case": "C04",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "speaker_changes_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "model": "claude",
+      "case": "C05",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "five_second_delay_and_end_loss": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "model": "claude",
+      "case": "C05",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "five_second_delay_and_end_loss": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "model": "claude",
+      "case": "C05",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "five_second_delay_and_end_loss": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "model": "claude",
+      "case": "C06",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "model": "claude",
+      "case": "C06",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "model": "claude",
+      "case": "C06",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "model": "claude",
+      "case": "C07",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "open_captions_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "model": "claude",
+      "case": "C07",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "open_captions_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "model": "claude",
+      "case": "C07",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "open_captions_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "model": "claude",
+      "case": "C08",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "equivalent_condensation_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "model": "claude",
+      "case": "C08",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "equivalent_condensation_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "model": "claude",
+      "case": "C08",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "equivalent_condensation_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "model": "claude",
+      "case": "C09",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "both_exception_conditions": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "model": "claude",
+      "case": "C09",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "both_exception_conditions": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "model": "claude",
+      "case": "C09",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "both_exception_conditions": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "model": "claude",
+      "case": "C10",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "model": "claude",
+      "case": "C10",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "model": "claude",
+      "case": "C10",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "model": "claude",
+      "case": "C11",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true,
+        "extra_audio_invalidates_exception": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "model": "claude",
+      "case": "C11",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true,
+        "extra_audio_invalidates_exception": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "model": "claude",
+      "case": "C11",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true,
+        "extra_audio_invalidates_exception": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "model": "claude",
+      "case": "C12",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "incomplete_source_not_extended": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "model": "claude",
+      "case": "C12",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "incomplete_source_not_extended": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "model": "claude",
+      "case": "C12",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "incomplete_source_not_extended": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "model": "claude",
+      "case": "C13",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "actual_source_failure_separate": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "model": "claude",
+      "case": "C13",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "actual_source_failure_separate": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "model": "claude",
+      "case": "C13",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "actual_source_failure_separate": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "model": "claude",
+      "case": "C14",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_media_no_invented_media": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "model": "claude",
+      "case": "C14",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_media_no_invented_media": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "model": "claude",
+      "case": "C14",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_media_no_invented_media": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "model": "sol",
+      "case": "C01",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "model": "sol",
+      "case": "C01",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "model": "sol",
+      "case": "C01",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "model": "sol",
+      "case": "C02",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": false,
+        "direct_processing_not_claimed": true,
+        "reversed_condition_localized": true
+      },
+      "all_semantic_checks_passed": false
+    },
+    {
+      "run": "sol-C02-r2",
+      "model": "sol",
+      "case": "C02",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "reversed_condition_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "model": "sol",
+      "case": "C02",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "reversed_condition_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "model": "sol",
+      "case": "C03",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "important_sound_missing_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "model": "sol",
+      "case": "C03",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "important_sound_missing_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "model": "sol",
+      "case": "C03",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "important_sound_missing_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "model": "sol",
+      "case": "C04",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "speaker_changes_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "model": "sol",
+      "case": "C04",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "speaker_changes_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "model": "sol",
+      "case": "C04",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "speaker_changes_localized": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "model": "sol",
+      "case": "C05",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "five_second_delay_and_end_loss": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "model": "sol",
+      "case": "C05",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": false,
+        "direct_processing_not_claimed": true,
+        "five_second_delay_and_end_loss": true
+      },
+      "all_semantic_checks_passed": false
+    },
+    {
+      "run": "sol-C05-r3",
+      "model": "sol",
+      "case": "C05",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "five_second_delay_and_end_loss": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "model": "sol",
+      "case": "C06",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": false,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": false
+    },
+    {
+      "run": "sol-C06-r2",
+      "model": "sol",
+      "case": "C06",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "model": "sol",
+      "case": "C06",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "model": "sol",
+      "case": "C07",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "open_captions_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "model": "sol",
+      "case": "C07",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "open_captions_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "model": "sol",
+      "case": "C07",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": false,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "open_captions_supported": true
+      },
+      "all_semantic_checks_passed": false
+    },
+    {
+      "run": "sol-C08-r1",
+      "model": "sol",
+      "case": "C08",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "equivalent_condensation_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "model": "sol",
+      "case": "C08",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "equivalent_condensation_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "model": "sol",
+      "case": "C08",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "equivalent_condensation_supported": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "model": "sol",
+      "case": "C09",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "both_exception_conditions": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "model": "sol",
+      "case": "C09",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "both_exception_conditions": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "model": "sol",
+      "case": "C09",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "both_exception_conditions": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "model": "sol",
+      "case": "C10",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "model": "sol",
+      "case": "C10",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "model": "sol",
+      "case": "C10",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "model": "sol",
+      "case": "C11",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true,
+        "extra_audio_invalidates_exception": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "model": "sol",
+      "case": "C11",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true,
+        "extra_audio_invalidates_exception": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "model": "sol",
+      "case": "C11",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_captions_not_excused": true,
+        "extra_audio_invalidates_exception": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "model": "sol",
+      "case": "C12",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "incomplete_source_not_extended": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "model": "sol",
+      "case": "C12",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "incomplete_source_not_extended": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "model": "sol",
+      "case": "C12",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "incomplete_source_not_extended": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "model": "sol",
+      "case": "C13",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "actual_source_failure_separate": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "model": "sol",
+      "case": "C13",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "actual_source_failure_separate": false
+      },
+      "all_semantic_checks_passed": false
+    },
+    {
+      "run": "sol-C13-r3",
+      "model": "sol",
+      "case": "C13",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "actual_source_failure_separate": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "model": "sol",
+      "case": "C14",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_media_no_invented_media": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "model": "sol",
+      "case": "C14",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_media_no_invented_media": true
+      },
+      "all_semantic_checks_passed": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "model": "sol",
+      "case": "C14",
+      "checks": {
+        "raw_json_unchanged": true,
+        "reference_decision": true,
+        "korean_explanation": true,
+        "direct_processing_not_claimed": true,
+        "no_media_no_invented_media": true
+      },
+      "all_semantic_checks_passed": true
+    }
+  ],
+  "overview_runs": [
+    {
+      "run": "claude-P-LAB-r1",
+      "model": "claude",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "claude-P-LAB-r2",
+      "model": "claude",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "claude-P-LAB-r3",
+      "model": "claude",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "claude-P-NONE-r1",
+      "model": "claude",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "claude-P-NONE-r2",
+      "model": "claude",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "claude-P-NONE-r3",
+      "model": "claude",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "sol-P-LAB-r1",
+      "model": "sol",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "sol-P-LAB-r2",
+      "model": "sol",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "sol-P-LAB-r3",
+      "model": "sol",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "sol-P-NONE-r1",
+      "model": "sol",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": false,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": false,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "sol-P-NONE-r2",
+      "model": "sol",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": true,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": true,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    },
+    {
+      "run": "sol-P-NONE-r3",
+      "model": "sol",
+      "checks": {
+        "nonempty_actual_output": true,
+        "six_requested_sections": true,
+        "target_22_A": true,
+        "deleted_411_excluded": true,
+        "plans_not_results": true,
+        "execution_limits_stated": true,
+        "case_specific": false,
+        "evidence_and_retest": true
+      },
+      "all_checks_passed": false,
+      "manual_review": "Sections A-F, limits, conditional criteria and evidence-specific planning reviewed against frozen inputs; no unsupported evaluation treated as an executed result."
+    }
+  ],
+  "selected_model": "claude",
+  "selection_reason": "All 42 frozen-reference decisions repeated consistently with Korean explanations and case-localized evidence; overview 6/6 records remained plans. Sol has language-instruction departures and a conservative C07 inconclusive decision despite supplied controlled coverage proof. This is a bounded execution-path choice, not a universal model ranking.",
+  "mechanical_coverage_warnings": [
+    {
+      "run": "claude-C01-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "complete provided scope",
+      "pass": false
+    }
+  ],
+  "coverage_warning_review": "Six pass runs explicitly record only the roughly 19 ms container tail beyond decoded audio. This is an ambiguity in the complete boolean and must remain in raw results. No final content unit is hidden in that tail: full decoded audio ends at 31.189333, unmatched tail peak=0, seven static scenes and 749 decoded frames establish the controlled final state. Do not claim every JSON field or coverage representation was flawless; do not erase the warning or change reference answers.",
+  "input_limit_review": "C14 parent scope retains a generic teaching-video phrase, while actual article DOM inventory is empty. Overview plans flag this conflict; criterion results use the explicit article inventory, with limits retained. P-LAB contains screenshot IDs but no image attachments: overview outputs request them rather than claiming image inspection.",
+  "native_media_processing": "Not measured: models evaluated independent actual-MP4-derived ASR/source linkage, browser cue records and PNGs. Controlled speaker attribution and SFX detection are not general recognition benchmarks.",
+  "reviewer": "Codex coordinator; no independent human expert review claimed",
+  "reference_sha256": "27e0a838a553eb33c115cf396089e6e1c2a5ac0a35822f66264c03d600c61e36"
+}

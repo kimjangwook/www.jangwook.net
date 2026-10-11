@@ -1,0 +1,8 @@
+{
+  "figure": "fig-02",
+  "old": "No target verified",
+  "new": "Absence confirmed",
+  "reason": "The left branch confirms absence; it must not be read as missing verification.",
+  "oldAsset": "/images/accessibility/captions-prerecorded/en/fig-02-5363bec8d24a.svg",
+  "newAsset": "/images/accessibility/captions-prerecorded/en/fig-02-8a65a3b047ba.svg"
+}

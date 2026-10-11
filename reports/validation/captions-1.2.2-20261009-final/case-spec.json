@@ -1,0 +1,86 @@
+[
+  {
+    "id": "C01",
+    "slug": "complete",
+    "track": "complete.vtt",
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C02",
+    "slug": "negation",
+    "track": "negation.vtt",
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C03",
+    "slug": "sound-omitted",
+    "track": "sound-omitted.vtt",
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C04",
+    "slug": "speaker-omitted",
+    "track": "speaker-omitted.vtt",
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C05",
+    "slug": "shifted",
+    "track": "shifted.vtt",
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C06",
+    "slug": "transcript-only",
+    "track": null,
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C07",
+    "slug": "open",
+    "track": null,
+    "video": "open.mp4"
+  },
+  {
+    "id": "C08",
+    "slug": "condensed",
+    "track": "condensed.vtt",
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C09",
+    "slug": "text-alternative",
+    "track": null,
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C10",
+    "slug": "unlabeled-text-alternative",
+    "track": null,
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C11",
+    "slug": "extra-information",
+    "track": null,
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C12",
+    "slug": "partial",
+    "track": "complete.vtt",
+    "video": "compatible.mp4"
+  },
+  {
+    "id": "C13",
+    "slug": "unavailable-source",
+    "track": "complete.vtt",
+    "video": "unavailable.mp4"
+  },
+  {
+    "id": "C14",
+    "slug": "no-target",
+    "track": null,
+    "video": null
+  }
+]

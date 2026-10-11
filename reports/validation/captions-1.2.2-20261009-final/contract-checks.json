@@ -1,0 +1,8827 @@
+{
+  "reference_sha256": "27e0a838a553eb33c115cf396089e6e1c2a5ac0a35822f66264c03d600c61e36",
+  "frozen_reference_intact": true,
+  "inputs_immutable": [
+    {
+      "id": "C01",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C02",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C03",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C04",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C05",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C06",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C07",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C08",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C09",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C10",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C11",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C12",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C13",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "C14",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "P-LAB",
+      "input": true,
+      "images": true
+    },
+    {
+      "id": "P-NONE",
+      "input": true,
+      "images": true
+    }
+  ],
+  "runs": [
+    {
+      "run": "claude-C01-r1",
+      "model": "claude",
+      "case_id": "C01",
+      "round": "r1",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 17,
+      "total": 18,
+      "all_checks_passed": false
+    },
+    {
+      "run": "claude-C01-r2",
+      "model": "claude",
+      "case_id": "C01",
+      "round": "r2",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 17,
+      "total": 18,
+      "all_checks_passed": false
+    },
+    {
+      "run": "claude-C01-r3",
+      "model": "claude",
+      "case_id": "C01",
+      "round": "r3",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 18,
+      "total": 18,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "model": "claude",
+      "case_id": "C02",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "model": "claude",
+      "case_id": "C02",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "model": "claude",
+      "case_id": "C02",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "model": "claude",
+      "case_id": "C03",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "model": "claude",
+      "case_id": "C03",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "model": "claude",
+      "case_id": "C03",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "model": "claude",
+      "case_id": "C04",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "model": "claude",
+      "case_id": "C04",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "model": "claude",
+      "case_id": "C04",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "model": "claude",
+      "case_id": "C05",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "model": "claude",
+      "case_id": "C05",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "model": "claude",
+      "case_id": "C05",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "model": "claude",
+      "case_id": "C06",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "model": "claude",
+      "case_id": "C06",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "model": "claude",
+      "case_id": "C06",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "model": "claude",
+      "case_id": "C07",
+      "round": "r1",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 17,
+      "total": 18,
+      "all_checks_passed": false
+    },
+    {
+      "run": "claude-C07-r2",
+      "model": "claude",
+      "case_id": "C07",
+      "round": "r2",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 17,
+      "total": 18,
+      "all_checks_passed": false
+    },
+    {
+      "run": "claude-C07-r3",
+      "model": "claude",
+      "case_id": "C07",
+      "round": "r3",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 18,
+      "total": 18,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "model": "claude",
+      "case_id": "C08",
+      "round": "r1",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 17,
+      "total": 18,
+      "all_checks_passed": false
+    },
+    {
+      "run": "claude-C08-r2",
+      "model": "claude",
+      "case_id": "C08",
+      "round": "r2",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 17,
+      "total": 18,
+      "all_checks_passed": false
+    },
+    {
+      "run": "claude-C08-r3",
+      "model": "claude",
+      "case_id": "C08",
+      "round": "r3",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 18,
+      "total": 18,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "model": "claude",
+      "case_id": "C09",
+      "round": "r1",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 18,
+      "total": 18,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "model": "claude",
+      "case_id": "C09",
+      "round": "r2",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "model": "claude",
+      "case_id": "C09",
+      "round": "r3",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "model": "claude",
+      "case_id": "C10",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "model": "claude",
+      "case_id": "C10",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "model": "claude",
+      "case_id": "C10",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 19,
+      "total": 19,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "model": "claude",
+      "case_id": "C11",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "model": "claude",
+      "case_id": "C11",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 20,
+      "total": 20,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "model": "claude",
+      "case_id": "C11",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "model": "claude",
+      "case_id": "C12",
+      "round": "r1",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 15,
+      "total": 15,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "model": "claude",
+      "case_id": "C12",
+      "round": "r2",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 15,
+      "total": 15,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "model": "claude",
+      "case_id": "C12",
+      "round": "r3",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 15,
+      "total": 15,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "model": "claude",
+      "case_id": "C13",
+      "round": "r1",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 12,
+      "total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "model": "claude",
+      "case_id": "C13",
+      "round": "r2",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 11,
+      "total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "model": "claude",
+      "case_id": "C13",
+      "round": "r3",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 11,
+      "total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "model": "claude",
+      "case_id": "C14",
+      "round": "r1",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 7,
+      "total": 7,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "model": "claude",
+      "case_id": "C14",
+      "round": "r2",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 7,
+      "total": 7,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "model": "claude",
+      "case_id": "C14",
+      "round": "r3",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 7,
+      "total": 7,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "model": "sol",
+      "case_id": "C01",
+      "round": "r1",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "model": "sol",
+      "case_id": "C01",
+      "round": "r2",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "model": "sol",
+      "case_id": "C01",
+      "round": "r3",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "model": "sol",
+      "case_id": "C02",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "model": "sol",
+      "case_id": "C02",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "model": "sol",
+      "case_id": "C02",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "model": "sol",
+      "case_id": "C03",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "model": "sol",
+      "case_id": "C03",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "model": "sol",
+      "case_id": "C03",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "model": "sol",
+      "case_id": "C04",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 24,
+      "total": 24,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "model": "sol",
+      "case_id": "C04",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 25,
+      "total": 25,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "model": "sol",
+      "case_id": "C04",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "model": "sol",
+      "case_id": "C05",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "model": "sol",
+      "case_id": "C05",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "model": "sol",
+      "case_id": "C05",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "model": "sol",
+      "case_id": "C06",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "model": "sol",
+      "case_id": "C06",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "model": "sol",
+      "case_id": "C06",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 23,
+      "total": 23,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "model": "sol",
+      "case_id": "C07",
+      "round": "r1",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "model": "sol",
+      "case_id": "C07",
+      "round": "r2",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "model": "sol",
+      "case_id": "C07",
+      "round": "r3",
+      "decision": "inconclusive",
+      "expected": "pass",
+      "pass_count": 18,
+      "total": 21,
+      "all_checks_passed": false
+    },
+    {
+      "run": "sol-C08-r1",
+      "model": "sol",
+      "case_id": "C08",
+      "round": "r1",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "model": "sol",
+      "case_id": "C08",
+      "round": "r2",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "model": "sol",
+      "case_id": "C08",
+      "round": "r3",
+      "decision": "pass",
+      "expected": "pass",
+      "pass_count": 20,
+      "total": 21,
+      "all_checks_passed": false
+    },
+    {
+      "run": "sol-C09-r1",
+      "model": "sol",
+      "case_id": "C09",
+      "round": "r1",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 13,
+      "total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "model": "sol",
+      "case_id": "C09",
+      "round": "r2",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "model": "sol",
+      "case_id": "C09",
+      "round": "r3",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "model": "sol",
+      "case_id": "C10",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "model": "sol",
+      "case_id": "C10",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 23,
+      "total": 23,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "model": "sol",
+      "case_id": "C10",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 22,
+      "total": 22,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "model": "sol",
+      "case_id": "C11",
+      "round": "r1",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 23,
+      "total": 23,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "model": "sol",
+      "case_id": "C11",
+      "round": "r2",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 23,
+      "total": 23,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "model": "sol",
+      "case_id": "C11",
+      "round": "r3",
+      "decision": "fail",
+      "expected": "fail",
+      "pass_count": 23,
+      "total": 23,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "model": "sol",
+      "case_id": "C12",
+      "round": "r1",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "model": "sol",
+      "case_id": "C12",
+      "round": "r2",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 17,
+      "total": 17,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "model": "sol",
+      "case_id": "C12",
+      "round": "r3",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 21,
+      "total": 21,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "model": "sol",
+      "case_id": "C13",
+      "round": "r1",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 13,
+      "total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "model": "sol",
+      "case_id": "C13",
+      "round": "r2",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 12,
+      "total": 13,
+      "all_checks_passed": false
+    },
+    {
+      "run": "sol-C13-r3",
+      "model": "sol",
+      "case_id": "C13",
+      "round": "r3",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "pass_count": 13,
+      "total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "model": "sol",
+      "case_id": "C14",
+      "round": "r1",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 9,
+      "total": 9,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "model": "sol",
+      "case_id": "C14",
+      "round": "r2",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 9,
+      "total": 9,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "model": "sol",
+      "case_id": "C14",
+      "round": "r3",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "pass_count": 9,
+      "total": 9,
+      "all_checks_passed": true
+    }
+  ],
+  "checks": [
+    {
+      "run": "claude-C01-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C01-r3",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C02-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C03-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C04-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C05-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C06-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C07-r3",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C08-r3",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r1",
+      "check": "both exception conditions verified",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r2",
+      "check": "both exception conditions verified",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C09-r3",
+      "check": "both exception conditions verified",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C10-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "extra info exception rejected",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "extra info exception rejected",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "extra info exception rejected",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "claude-C11-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "incomplete original preserved",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r1",
+      "check": "no invented original beyond8seconds",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "incomplete original preserved",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r2",
+      "check": "no invented original beyond8seconds",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "incomplete original preserved",
+      "pass": true
+    },
+    {
+      "run": "claude-C12-r3",
+      "check": "no invented original beyond8seconds",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r1",
+      "check": "execution failure separate",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r2",
+      "check": "execution failure separate",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "claude-C13-r3",
+      "check": "execution failure separate",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "claude-C14-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C01-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C02-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C03-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C04-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C05-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C06-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "reference decision",
+      "pass": false
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "media decision",
+      "pass": false
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C07-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "complete provided scope",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C08-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "both exception conditions verified",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "both exception conditions verified",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "both exception conditions verified",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C09-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C10-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "extra info exception rejected",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "extra info exception rejected",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "extra info exception rejected",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "localized failure evidence",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "change and retest",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C11-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "incomplete original preserved",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "no invented original beyond8seconds",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "incomplete original preserved",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "no invented original beyond8seconds",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "comparison schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "incomplete original preserved",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "no invented original beyond8seconds",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C12-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "execution failure separate",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "execution failure separate",
+      "pass": false
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "media schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "media decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "nonempty reason",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "execution failure separate",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C13-r3",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r1",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r2",
+      "check": "frozen input",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "schema top keys",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "criterion/version",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "scope schema",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "reference decision",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "native processing not fabricated",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "media inventory",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "existing evidence IDs",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "actual exact model",
+      "pass": true
+    },
+    {
+      "run": "sol-C14-r3",
+      "check": "frozen input",
+      "pass": true
+    }
+  ],
+  "semantic_review": "completed; see semantic-quality-review.json and validation-summary.json",
+  "overview_review": "completed; see same files",
+  "execution_context": "Sol stateless request per input; Claude fresh session per repeat, shared batch context within each repeat. No other model outputs or reference answers supplied."
+}

@@ -1,0 +1,689 @@
+{
+  "run_id": "captions-final-20261009 / r1",
+  "executed_at": "2026-10-09 (로컬 시각 기준, 세션 시작 14:32)",
+  "evaluator": {
+    "model": "Claude Opus 5.5 (claude-opus-5-5), Claude Code 데스크톱 앱 단일 세션",
+    "effort": "사용자 지정 High. 모델 내부에서 노력 설정값을 독립적으로 확인할 수는 없음",
+    "session_note": "16개 입력을 한 세션에서 manifest 순서대로 처리했으며 배치 내부는 같은 세션 문맥을 공유함. 16개 독립 세션이나 별도 모델 호출이 아님. 다른 모델·API·CLI·subagent·병렬 에이전트·정답·이전 결과를 사용하지 않음."
+  },
+  "allowed_inputs_root": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009",
+  "files_read": {
+    "manifest": {
+      "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/manifest.json",
+      "sha256": "755aa7639a71a44438b3b913348fc3c88dd85d4aeca740798cee0333eb402663",
+      "read_method": "Read 도구로 전체 읽기"
+    },
+    "inputs": [
+      {
+        "id": "C01",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C01.txt",
+        "manifest_sha256": "218b1f2644e7744caae94d4c5ec0aa2cd37271b0243d483ade2607e99a87e78f",
+        "actual_sha256": "218b1f2644e7744caae94d4c5ec0aa2cd37271b0243d483ade2607e99a87e78f",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C02",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C02.txt",
+        "manifest_sha256": "ded157669f011a1e7e066b8ddc58fc0e930c8cc2ebd1539e919a0536b9d519cb",
+        "actual_sha256": "ded157669f011a1e7e066b8ddc58fc0e930c8cc2ebd1539e919a0536b9d519cb",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기 (1~98행, 99행~끝 두 번에 나눠 전체 읽음)"
+      },
+      {
+        "id": "C03",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C03.txt",
+        "manifest_sha256": "ec60c1fba127c1529aa026954353fc0379357a5562ce93dbd7cc39db91c32c3d",
+        "actual_sha256": "ec60c1fba127c1529aa026954353fc0379357a5562ce93dbd7cc39db91c32c3d",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C04",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C04.txt",
+        "manifest_sha256": "15262d0795d19904ba81ac85e6cf2520860f395ed000231b1395c9de5b64e091",
+        "actual_sha256": "15262d0795d19904ba81ac85e6cf2520860f395ed000231b1395c9de5b64e091",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C05",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C05.txt",
+        "manifest_sha256": "6e851b7003c3200224c8c3927b29071a82723e227ee3571b54b9ea1e908348ac",
+        "actual_sha256": "6e851b7003c3200224c8c3927b29071a82723e227ee3571b54b9ea1e908348ac",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C06",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C06.txt",
+        "manifest_sha256": "9979680d7c98069904de91a954e79ffeb4d5721d619bda4d4e0294ba30b48c48",
+        "actual_sha256": "9979680d7c98069904de91a954e79ffeb4d5721d619bda4d4e0294ba30b48c48",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C07",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C07.txt",
+        "manifest_sha256": "3b86a67c068e0d1ff188098f9bbb2f3818165c3b9552205073673986db3bb6f9",
+        "actual_sha256": "3b86a67c068e0d1ff188098f9bbb2f3818165c3b9552205073673986db3bb6f9",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C08",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C08.txt",
+        "manifest_sha256": "ecce41309bbe8ad9151a9a01b3802fe5fdf03aa7742fbe7fb5b27bdfb370d074",
+        "actual_sha256": "ecce41309bbe8ad9151a9a01b3802fe5fdf03aa7742fbe7fb5b27bdfb370d074",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C09",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C09.txt",
+        "manifest_sha256": "c31f7684edb9296a6277c036738099c59a5e7b4b6c301797ba0b3a524660e375",
+        "actual_sha256": "c31f7684edb9296a6277c036738099c59a5e7b4b6c301797ba0b3a524660e375",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C10",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C10.txt",
+        "manifest_sha256": "ae9f7a7865b157bd90424476c823aad8c1313e209b651645edc5531036ffb969",
+        "actual_sha256": "ae9f7a7865b157bd90424476c823aad8c1313e209b651645edc5531036ffb969",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C11",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C11.txt",
+        "manifest_sha256": "5aa47481816ed6feb3fce878fa6ae17567193048005c20dba597c5ac6f41c80f",
+        "actual_sha256": "5aa47481816ed6feb3fce878fa6ae17567193048005c20dba597c5ac6f41c80f",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C12",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C12.txt",
+        "manifest_sha256": "47e3a364ad06ca30c63ae150a306e8061ad77c1c1cd03ff3dd53faf6ddc5b6fa",
+        "actual_sha256": "47e3a364ad06ca30c63ae150a306e8061ad77c1c1cd03ff3dd53faf6ddc5b6fa",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C13",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C13.txt",
+        "manifest_sha256": "9b1e107949466f6c67136a95c910508dfe0329e051917dd7d2989d780bb5f3f6",
+        "actual_sha256": "9b1e107949466f6c67136a95c910508dfe0329e051917dd7d2989d780bb5f3f6",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "C14",
+        "kind": "criterion",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/C14.txt",
+        "manifest_sha256": "db56c8125136f36df9eff0ac5bb894edaf80a5cf03396737b1907ac310426fdc",
+        "actual_sha256": "db56c8125136f36df9eff0ac5bb894edaf80a5cf03396737b1907ac310426fdc",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "P-LAB",
+        "kind": "overview",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/P-LAB.txt",
+        "manifest_sha256": "1c7a33ea6a350de9c93554c2cea2a2b94bccfd3cb2711bb64b8473c7b4e3be15",
+        "actual_sha256": "1c7a33ea6a350de9c93554c2cea2a2b94bccfd3cb2711bb64b8473c7b4e3be15",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      },
+      {
+        "id": "P-NONE",
+        "kind": "overview",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/inputs/P-NONE.txt",
+        "manifest_sha256": "19bffc811ea90d90c255b8a05f886af852c88eee1472f4e7080ea19c9c6d89e0",
+        "actual_sha256": "19bffc811ea90d90c255b8a05f886af852c88eee1472f4e7080ea19c9c6d89e0",
+        "match": true,
+        "read_method": "Read 도구로 전체 줄 읽기"
+      }
+    ],
+    "images": [
+      {
+        "id": "DISPLAY-C01-1",
+        "case": "C01",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C01-contact-1.png",
+        "manifest_sha256": "60d1d1215fdb5294a704508a4c6be707a2d7a1491cd7b350fa2697301057e110",
+        "actual_sha256": "60d1d1215fdb5294a704508a4c6be707a2d7a1491cd7b350fa2697301057e110",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C01-2",
+        "case": "C01",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C01-contact-2.png",
+        "manifest_sha256": "2447d1ebd4aecc2dadb2d99b30bbb7c9c81127b26c4f2ee4e56e6fd9d69d6acd",
+        "actual_sha256": "2447d1ebd4aecc2dadb2d99b30bbb7c9c81127b26c4f2ee4e56e6fd9d69d6acd",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C01-3",
+        "case": "C01",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C01-contact-3.png",
+        "manifest_sha256": "00b2e01e9e09f4bf5d28a21bb1253761b2fe818df8151fc1e617b079e5a9ca4f",
+        "actual_sha256": "00b2e01e9e09f4bf5d28a21bb1253761b2fe818df8151fc1e617b079e5a9ca4f",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C02-1",
+        "case": "C02",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C02-contact-1.png",
+        "manifest_sha256": "3d80e96fedf0d2135a6abf3bfedb1975d706dff2a1adff539b77c854545cfba3",
+        "actual_sha256": "3d80e96fedf0d2135a6abf3bfedb1975d706dff2a1adff539b77c854545cfba3",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C02-2",
+        "case": "C02",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C02-contact-2.png",
+        "manifest_sha256": "62aa6bb7f766ebc10aea1ba4e1d6f73a61aad181ebccf4e3f50e2d48cf5ec469",
+        "actual_sha256": "62aa6bb7f766ebc10aea1ba4e1d6f73a61aad181ebccf4e3f50e2d48cf5ec469",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C02-3",
+        "case": "C02",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C02-contact-3.png",
+        "manifest_sha256": "ee9be3e96dcf9291753b5c0438d7938c198377b5cc278dd6484ea6c248da6356",
+        "actual_sha256": "ee9be3e96dcf9291753b5c0438d7938c198377b5cc278dd6484ea6c248da6356",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C03-1",
+        "case": "C03",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C03-contact-1.png",
+        "manifest_sha256": "53d92011b49fe978ac26004c386ceff01850e69e086aafd63f64a94b2e225dd7",
+        "actual_sha256": "53d92011b49fe978ac26004c386ceff01850e69e086aafd63f64a94b2e225dd7",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C03-2",
+        "case": "C03",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C03-contact-2.png",
+        "manifest_sha256": "518912b7abf8f9abeed89d6edec5667d348bba67bda95799c90a37869b7fd1bc",
+        "actual_sha256": "518912b7abf8f9abeed89d6edec5667d348bba67bda95799c90a37869b7fd1bc",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C03-3",
+        "case": "C03",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C03-contact-3.png",
+        "manifest_sha256": "4439bb89c7ba206343eb9e4cdf951287cd5ed7c29c5625757e0e19d0315144d8",
+        "actual_sha256": "4439bb89c7ba206343eb9e4cdf951287cd5ed7c29c5625757e0e19d0315144d8",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C04-1",
+        "case": "C04",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C04-contact-1.png",
+        "manifest_sha256": "fb8ac24ab66f39e7104ed600478503f4b18cbca3e7d3a5bd1bf34fcf3caeb4c5",
+        "actual_sha256": "fb8ac24ab66f39e7104ed600478503f4b18cbca3e7d3a5bd1bf34fcf3caeb4c5",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C04-2",
+        "case": "C04",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C04-contact-2.png",
+        "manifest_sha256": "a1ef1fa073cac6a3f77255a23d2ee1abed13ca6ed7d653c41dc7cd886ebde7f1",
+        "actual_sha256": "a1ef1fa073cac6a3f77255a23d2ee1abed13ca6ed7d653c41dc7cd886ebde7f1",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C04-3",
+        "case": "C04",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C04-contact-3.png",
+        "manifest_sha256": "eb487be46d95830d512243ac16e4967907071e754bf028d301bfd74621acfd6a",
+        "actual_sha256": "eb487be46d95830d512243ac16e4967907071e754bf028d301bfd74621acfd6a",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C05-1",
+        "case": "C05",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C05-contact-1.png",
+        "manifest_sha256": "22a3a3852d3a4812043c417f8e347cfca0544c2714288ec0327deab752c86ed8",
+        "actual_sha256": "22a3a3852d3a4812043c417f8e347cfca0544c2714288ec0327deab752c86ed8",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C05-2",
+        "case": "C05",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C05-contact-2.png",
+        "manifest_sha256": "74b52040cc9f95338bbd3a922b61a46a2194201d81a5a49beabbe0589ce051eb",
+        "actual_sha256": "74b52040cc9f95338bbd3a922b61a46a2194201d81a5a49beabbe0589ce051eb",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C05-3",
+        "case": "C05",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C05-contact-3.png",
+        "manifest_sha256": "3de012878dc566e56bea0b0f5f6181fd035fc746f62cd7cb7a00d4533df3a294",
+        "actual_sha256": "3de012878dc566e56bea0b0f5f6181fd035fc746f62cd7cb7a00d4533df3a294",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C06-1",
+        "case": "C06",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C06-contact-1.png",
+        "manifest_sha256": "110c962003e40acbf46621b01d190cbecd882602edfc0307b19961340e2bb486",
+        "actual_sha256": "110c962003e40acbf46621b01d190cbecd882602edfc0307b19961340e2bb486",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C06-2",
+        "case": "C06",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C06-contact-2.png",
+        "manifest_sha256": "afd73831474fbf0daccde70212b63968746faabb5bc92967b6762d3aa08d79d3",
+        "actual_sha256": "afd73831474fbf0daccde70212b63968746faabb5bc92967b6762d3aa08d79d3",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C06-3",
+        "case": "C06",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C06-contact-3.png",
+        "manifest_sha256": "3223b9d439936c4b23e5c63b8201ffbcd34ff7bd5df07177e7fa70bd38af5e9d",
+        "actual_sha256": "3223b9d439936c4b23e5c63b8201ffbcd34ff7bd5df07177e7fa70bd38af5e9d",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C07-1",
+        "case": "C07",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C07-contact-1.png",
+        "manifest_sha256": "4fd6b04b6f051e66bb2f95253bb3b9b3fac85466e814c2667b83bad62c1d954f",
+        "actual_sha256": "4fd6b04b6f051e66bb2f95253bb3b9b3fac85466e814c2667b83bad62c1d954f",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C07-2",
+        "case": "C07",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C07-contact-2.png",
+        "manifest_sha256": "ae484f48793caddf6c6e927a308df954df17a78ca2b671a12545557955fb19fe",
+        "actual_sha256": "ae484f48793caddf6c6e927a308df954df17a78ca2b671a12545557955fb19fe",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C07-3",
+        "case": "C07",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C07-contact-3.png",
+        "manifest_sha256": "b38522d560c621227a011c23a110e5cb5c688eeff96457b6af793d454eb1dbe1",
+        "actual_sha256": "b38522d560c621227a011c23a110e5cb5c688eeff96457b6af793d454eb1dbe1",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C08-1",
+        "case": "C08",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C08-contact-1.png",
+        "manifest_sha256": "9b6818ae6cdccad96eb829fe65469c24a30ca0d1f70f88ede819f0cd864d4279",
+        "actual_sha256": "9b6818ae6cdccad96eb829fe65469c24a30ca0d1f70f88ede819f0cd864d4279",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C08-2",
+        "case": "C08",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C08-contact-2.png",
+        "manifest_sha256": "7f363c264d8b3e6cb6806dfaa9f82173fc1089c0c8f3224bf6e893a7a1a2c85a",
+        "actual_sha256": "7f363c264d8b3e6cb6806dfaa9f82173fc1089c0c8f3224bf6e893a7a1a2c85a",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C08-3",
+        "case": "C08",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C08-contact-3.png",
+        "manifest_sha256": "6df251f6f4f94bc9cfd1941fb088467afe50543dfa5383a59863f2a499092bbc",
+        "actual_sha256": "6df251f6f4f94bc9cfd1941fb088467afe50543dfa5383a59863f2a499092bbc",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C09-1",
+        "case": "C09",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C09-contact-1.png",
+        "manifest_sha256": "a341a1bf6ed56953a127e9f18bd7b47b8bce962216f3accdc304012f99dd0082",
+        "actual_sha256": "a341a1bf6ed56953a127e9f18bd7b47b8bce962216f3accdc304012f99dd0082",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C09-2",
+        "case": "C09",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C09-contact-2.png",
+        "manifest_sha256": "631d3b01d69f2b7c5316c39e2da67353b853d8ae7df8087d1b75cd587119f32e",
+        "actual_sha256": "631d3b01d69f2b7c5316c39e2da67353b853d8ae7df8087d1b75cd587119f32e",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C09-3",
+        "case": "C09",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C09-contact-3.png",
+        "manifest_sha256": "72994c526daa36a693dda3bdb762e0b1bff85cb754bed10e763eac63a81edd6c",
+        "actual_sha256": "72994c526daa36a693dda3bdb762e0b1bff85cb754bed10e763eac63a81edd6c",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C10-1",
+        "case": "C10",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C10-contact-1.png",
+        "manifest_sha256": "77173b19d5ad1a4eeed5c0824b7bdc3a96cbf3abd9a6f442eb03f7327994aefa",
+        "actual_sha256": "77173b19d5ad1a4eeed5c0824b7bdc3a96cbf3abd9a6f442eb03f7327994aefa",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C10-2",
+        "case": "C10",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C10-contact-2.png",
+        "manifest_sha256": "5c1cc52f51801948e60fd73bc04dc893949908db775d095c03c099c63fa4057f",
+        "actual_sha256": "5c1cc52f51801948e60fd73bc04dc893949908db775d095c03c099c63fa4057f",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C10-3",
+        "case": "C10",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C10-contact-3.png",
+        "manifest_sha256": "65442c67e671292654efcbd0f95f7c3d5ceff3ab502ba721943d48feaa821bcf",
+        "actual_sha256": "65442c67e671292654efcbd0f95f7c3d5ceff3ab502ba721943d48feaa821bcf",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C11-1",
+        "case": "C11",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C11-contact-1.png",
+        "manifest_sha256": "54cee4d572c34446430dab23b7d184f2fe5d57ecc2f19542ccd341225ce81682",
+        "actual_sha256": "54cee4d572c34446430dab23b7d184f2fe5d57ecc2f19542ccd341225ce81682",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C11-2",
+        "case": "C11",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C11-contact-2.png",
+        "manifest_sha256": "7ae5bb8f2a406603eb66df7a89e92ae74b419414f73ef5ba5a0c01ed6b902348",
+        "actual_sha256": "7ae5bb8f2a406603eb66df7a89e92ae74b419414f73ef5ba5a0c01ed6b902348",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C11-3",
+        "case": "C11",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C11-contact-3.png",
+        "manifest_sha256": "95c31cb4d708b2319fa41ba994c50ef6d4e48e0daf30c5af15d1bbc9f2e3e5d8",
+        "actual_sha256": "95c31cb4d708b2319fa41ba994c50ef6d4e48e0daf30c5af15d1bbc9f2e3e5d8",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      },
+      {
+        "id": "DISPLAY-C12-1",
+        "case": "C12",
+        "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/captions-final-20261009/images/C12-contact-1.png",
+        "manifest_sha256": "11896e6ea79465838b8a2a0590c2b2d330a7f4f4a297a155b5062f19baad8274",
+        "actual_sha256": "11896e6ea79465838b8a2a0590c2b2d330a7f4f4a297a155b5062f19baad8274",
+        "match": true,
+        "read_method": "Read 도구로 이미지 직접 열람"
+      }
+    ],
+    "png_count": 34,
+    "all_hashes_match_manifest": true
+  },
+  "tools_used": [
+    "Read: manifest, 입력 텍스트 16개 전체, PNG 34개",
+    "Bash: ls(허용 폴더 목록), shasum -a 256(입력·이미지 해시), mkdir -p outputs/r1, diff(C06과 C10 입력 비교, ID 치환 후 차이 없음), sed(C06 결과를 C10용으로 ID 치환), python3 -I(JSON 키 검증·raw.md 조립·영수증 생성)",
+    "Write: 결과 JSON·raw.md·영수증, 그리고 세션 scratchpad의 임시 파일(아래 deviations 참조)"
+  ],
+  "not_used": "인터넷, 다른 폴더, 제작 스크립트, reference, 기존 outputs, 원본 음성·영상 직접 처리, 브라우저 재생, 화면 낭독기, 다른 모델·subagent",
+  "results": {
+    "C01": {
+      "scope.execution": "run",
+      "scope.decision": "pass"
+    },
+    "C02": {
+      "scope.execution": "run",
+      "scope.decision": "fail"
+    },
+    "C03": {
+      "scope.execution": "run",
+      "scope.decision": "fail"
+    },
+    "C04": {
+      "scope.execution": "run",
+      "scope.decision": "fail"
+    },
+    "C05": {
+      "scope.execution": "run",
+      "scope.decision": "fail"
+    },
+    "C06": {
+      "scope.execution": "run",
+      "scope.decision": "fail"
+    },
+    "C07": {
+      "scope.execution": "run",
+      "scope.decision": "pass"
+    },
+    "C08": {
+      "scope.execution": "run",
+      "scope.decision": "pass"
+    },
+    "C09": {
+      "scope.execution": "run",
+      "scope.decision": "not_applicable"
+    },
+    "C10": {
+      "scope.execution": "run",
+      "scope.decision": "fail"
+    },
+    "C11": {
+      "scope.execution": "run",
+      "scope.decision": "fail"
+    },
+    "C12": {
+      "scope.execution": "run",
+      "scope.decision": "inconclusive"
+    },
+    "C13": {
+      "scope.execution": "error",
+      "scope.decision": "inconclusive"
+    },
+    "C14": {
+      "scope.execution": "run",
+      "scope.decision": "not_applicable"
+    },
+    "P-LAB": {
+      "scope.execution": "run",
+      "scope.decision": null,
+      "note": "계획 작성 과제로 판정 없음"
+    },
+    "P-NONE": {
+      "scope.execution": "run",
+      "scope.decision": null,
+      "note": "계획 작성 과제로 판정 없음"
+    }
+  },
+  "outputs": [
+    {
+      "file": "C01-raw.md",
+      "sha256": "86df20e68e370f57c5ab8d79235c861729e3b417ba3783657853356dda4a2403"
+    },
+    {
+      "file": "C01-result.json",
+      "sha256": "467a5c7115e7c6d846149f930709a6fcb9271d1f639cea07d7dac1b19c4732ab"
+    },
+    {
+      "file": "C02-raw.md",
+      "sha256": "e20956fcfb225bcb9133a85ef6e207b89941b0b3b2893047880da8c93f262804"
+    },
+    {
+      "file": "C02-result.json",
+      "sha256": "e17105ef5cb9e4f278094ef3565ddedd5a47277f2696c305c6f1c2a8b8856168"
+    },
+    {
+      "file": "C03-raw.md",
+      "sha256": "685b722d7f988274a8e6bb9fd4b92b8d5cc4ebb057c334c1d47102f7332afc4e"
+    },
+    {
+      "file": "C03-result.json",
+      "sha256": "5bf4a70035199249af1537acef866e6fae32ef1c6a8fa5ae62ca7fc22b315736"
+    },
+    {
+      "file": "C04-raw.md",
+      "sha256": "9bfddf9b7790114bd428c6815f95e114dcbf3d7539b1779e52c9994194c5feb3"
+    },
+    {
+      "file": "C04-result.json",
+      "sha256": "4e3ab9e87f68fbb6be0042deb83e5723213cc32f4867f0e566cf0e295cdf36c5"
+    },
+    {
+      "file": "C05-raw.md",
+      "sha256": "96f4d0606dd731ca78916c2e07a629d091c0996d6d34a7e524d1aab97a927764"
+    },
+    {
+      "file": "C05-result.json",
+      "sha256": "5092fdfede325e3154125364acd2edf356d7a588cc948b3cd31c8de0791d8cd8"
+    },
+    {
+      "file": "C06-raw.md",
+      "sha256": "d69d1ca9bcd556709259e0fc088b5480cc77131c7ded05260370c4bc03db9e5f"
+    },
+    {
+      "file": "C06-result.json",
+      "sha256": "5ee1025561f4f89eb756faa52a21b4f94d1dfe2f3f4248e7c4f194c345cee768"
+    },
+    {
+      "file": "C07-raw.md",
+      "sha256": "3469cec1b7233485d2c6e0ae50228d0105515553ef8bb07df323732cf055fb5f"
+    },
+    {
+      "file": "C07-result.json",
+      "sha256": "a98ca5de9ba4a04c7d5bd1bf84508babf03a58fd7a5ae1a25a9d67a357460d30"
+    },
+    {
+      "file": "C08-raw.md",
+      "sha256": "bf95a2f828ff02c16e3af94e4f08681f229a2b31b780938db8fc014798fbba9d"
+    },
+    {
+      "file": "C08-result.json",
+      "sha256": "b7879d16b239583b553abfe3c78f0ebba600af57a49abefc5be72464d22589ad"
+    },
+    {
+      "file": "C09-raw.md",
+      "sha256": "759e8a8bde26b645abf94db9f02cb5b879302761350099bd022ddfbd877cb1ee"
+    },
+    {
+      "file": "C09-result.json",
+      "sha256": "626a32a1644b3b9d91c4fbe5523f678c566c7d568b61dc70c3baf1d488f421ce"
+    },
+    {
+      "file": "C10-raw.md",
+      "sha256": "6b7fb9d28d68572c53dc12941ddcdee0a70a982f54f99f80905f912c1c3a9e6f"
+    },
+    {
+      "file": "C10-result.json",
+      "sha256": "48e75fa37c2f22de3a7844eaf29c022352984630e66a416c6669374a1431db0b"
+    },
+    {
+      "file": "C11-raw.md",
+      "sha256": "c460a398b94cc5afce2efa4ad7f656d3ed195f4166928c94504a90d73d3547d2"
+    },
+    {
+      "file": "C11-result.json",
+      "sha256": "fdd8fd3dec6067c6407e9d329bf65ae4111b2173250bbae6bd1b889b2a568844"
+    },
+    {
+      "file": "C12-raw.md",
+      "sha256": "42a41b52c52b7cb319c8d147245a2cbb3630529d60817f60ceb718ebde81b62e"
+    },
+    {
+      "file": "C12-result.json",
+      "sha256": "9ca6010e37dfcd06f5f2d5e5b369d273fc55c899edf08dbc6243400b98f399e4"
+    },
+    {
+      "file": "C13-raw.md",
+      "sha256": "6f1569f7b0a416fb2b0f35ab73342708352c056394eb36a9fc67a633a8a73dbc"
+    },
+    {
+      "file": "C13-result.json",
+      "sha256": "8fa165319c385bd38a550cde0200fc8cef3b3f2056535fb05dd41b8795d86f93"
+    },
+    {
+      "file": "C14-raw.md",
+      "sha256": "7741e575ab75b188c730c45dfd40da713a2cd04fe4bbdf8c3b56b28ddf95d87e"
+    },
+    {
+      "file": "C14-result.json",
+      "sha256": "dd03bb7c0cd613f3cc4ed09a103025bed439ff5df0f52b7a8bab5864fc85cea3"
+    },
+    {
+      "file": "P-LAB-raw.md",
+      "sha256": "837c946b5c0234036e481e65e9d20b8127d4b744eadfa4fc31679223dcf15b4a"
+    },
+    {
+      "file": "P-NONE-raw.md",
+      "sha256": "7086ed7b9eda7ae939069bb2f487d2409b964272a9c6fd38ebd1ffdccb51fa0e"
+    }
+  ],
+  "limits": [
+    "모든 criterion 평가는 제공된 파생 기록(독립 ASR, 분리 녹음 상관, FFT 펄스, 프레임 디코드 기록, 브라우저 큐 기록)과 PNG 검토에 근거하며 직접 청취·연속 재생은 하지 않음.",
+    "전체 범위 주장(C01~C11)은 7개 정적 장면으로 통제된 자료라는 ENCODE-LINK·SOURCE-VISUAL 기록에 의존함.",
+    "C04(화자 표기 없음)는 문맥으로 화자를 추론할 수 있다는 반론이 가능한 해석 사례이며, 평가자는 화면 밖 화자 변경 정보 누락으로 fail 판정함.",
+    "C07 개방 자막의 시작·종료 시각은 측정 기록이 없어 구간 내 표본 화면에 근거해 pass 판정함.",
+    "C10 입력은 C06과 사례 ID를 제외하고 동일함을 diff로 확인했고, C10 PNG 3장을 별도로 Read해 같은 관찰(자막 없음)을 확인한 뒤 C06 결과의 ID만 치환해 저장함.",
+    "P-LAB은 DISPLAY-C01 PNG ID를 언급하지만 해당 조건에 이미지가 첨부되지 않아 관찰 자료로 쓰지 않음. 같은 세션에서 C01 PNG를 앞서 본 문맥은 공유되어 있음.",
+    "C14의 케이스 scope 문구('this one teaching video')와 실제 매체 목록(빈 배열)이 불일치하여 한계로 기록함."
+  ],
+  "errors": [
+    {
+      "case": "C13",
+      "stage": "평가 입력 자체의 수집 실패 기록",
+      "error": "unavailable.mp4 HTTP 404, MediaError 4",
+      "effect": "execution=error, decision=inconclusive"
+    }
+  ],
+  "deviations": [
+    "쓰기 범위 이탈: outputs/r1/ 외에 세션 scratchpad(/private/tmp/claude-501/-private-tmp-jangwook-a11y-claude-validation-20261003/4cb52dde-168f-4170-b20f-ebe3ef27b0cd/scratchpad/)에 임시 파일을 씀: C01~C14-desc.md(설명 초안), assemble.py, receipt.py. 입력·이미지·다른 폴더는 수정하지 않음. 삭제 여부는 사용자 확인 대기."
+  ]
+}

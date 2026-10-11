@@ -1,0 +1,6 @@
+{
+  "field": "prompt",
+  "old": "実際に読み取る、または処理した資料",
+  "new": "実際に読み取った、または処理した資料",
+  "reason": "Preserve completed evidence-processing tense; leave authorized localization notice intact."
+}

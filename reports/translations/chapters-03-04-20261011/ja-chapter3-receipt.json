@@ -1,0 +1,8 @@
+{
+  "model": "gpt-6.1-sol",
+  "provider": "codex",
+  "effort": "high",
+  "finish_reason": "stop",
+  "seconds": 17.82,
+  "input_sha256": "136187072feda75f8439e2199102ffd88e21ec842dccd71a92e12beeb9fbfb5c"
+}

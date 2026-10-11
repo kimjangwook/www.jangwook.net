@@ -1,0 +1,13 @@
+{
+  "approved": false,
+  "issues": [
+    "The evidence-method description translates “원본의 상관 기록” (correlation records linking to the original media) as generic records related to the original media, losing the specific evidence type used to link speaker roles."
+  ],
+  "corrections": [
+    {
+      "path": "body",
+      "old": "说话者角色关联到单独录制的区间、与原始媒体的相关记录及角色说明。",
+      "new": "说话者角色关联到单独录制的区间、与原始媒体的相关性记录及角色说明。"
+    }
+  ]
+}

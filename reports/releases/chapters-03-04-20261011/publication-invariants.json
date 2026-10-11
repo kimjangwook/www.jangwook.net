@@ -1,0 +1,121 @@
+{
+  "priorArticles": [
+    {
+      "lang": "ko",
+      "slug": "overview",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": true
+    },
+    {
+      "lang": "ko",
+      "slug": "non-text-content",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": true
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": false
+    },
+    {
+      "lang": "en",
+      "slug": "overview",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": true
+    },
+    {
+      "lang": "en",
+      "slug": "non-text-content",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": true
+    },
+    {
+      "lang": "en",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": false
+    },
+    {
+      "lang": "ja",
+      "slug": "overview",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": true
+    },
+    {
+      "lang": "ja",
+      "slug": "non-text-content",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": true
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": false
+    },
+    {
+      "lang": "zh",
+      "slug": "overview",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": true
+    },
+    {
+      "lang": "zh",
+      "slug": "non-text-content",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": true
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtPreserved": true,
+      "unchangedContent": false
+    }
+  ],
+  "frozenKoreanPromptsUnchanged": true,
+  "allChapter03LocalePromptsUnchanged": true,
+  "translationClosure": [
+    {
+      "language": "en",
+      "chapter": 3,
+      "reviewApproved": true,
+      "mandatoryIssues": []
+    },
+    {
+      "language": "en",
+      "chapter": 4,
+      "reviewApproved": true,
+      "mandatoryIssues": []
+    },
+    {
+      "language": "ja",
+      "chapter": 3,
+      "reviewApproved": true,
+      "mandatoryIssues": []
+    },
+    {
+      "language": "ja",
+      "chapter": 4,
+      "reviewApproved": true,
+      "mandatoryIssues": []
+    },
+    {
+      "language": "zh",
+      "chapter": 3,
+      "reviewApproved": true,
+      "mandatoryIssues": []
+    },
+    {
+      "language": "zh",
+      "chapter": 4,
+      "reviewApproved": true,
+      "mandatoryIssues": []
+    }
+  ],
+  "postReviewTechnicalAdditions": [
+    "four-language index links for all 14 practice conditions",
+    "English diagram label states confirmed absence clearly"
+  ],
+  "unrelatedDirtyCheckoutPreserved": true
+}

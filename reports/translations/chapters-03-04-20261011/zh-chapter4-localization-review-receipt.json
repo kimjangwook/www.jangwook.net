@@ -1,0 +1,9 @@
+{
+  "model": "gpt-6.1-sol",
+  "provider": "codex",
+  "effort": "high",
+  "finish_reason": "stop",
+  "seconds": 31.2,
+  "authorized_adaptation": "target-language output instruction and teaching-view source notice",
+  "translation_sha256": "0c171e396d45e3373c6f604b72b67b75987055248ba542d1dc2edb8e1c7b778a"
+}

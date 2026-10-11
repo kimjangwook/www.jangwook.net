@@ -1,0 +1,61 @@
+# C08 — WCAG 2.2 SC 1.2.2 평가 (prompt 0.1.0)
+
+판정: **pass**. 매체 M1의 7개 정보 단위 중 6개는 C01과 같은 문구·시간으로 표시되고, 20.06–26.7초 큐 A4만 "새 코드를 안전하게 저장하세요. 새 코드 발급 후 이전 코드는 사용할 수 없습니다."로 원본("새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.")을 다듬어 표현했습니다. 저장 지시, 발급이라는 조건, 이전 코드 사용 불가라는 경고가 모두 그대로 남아 있어 의미를 유지하는 축약으로 판단했고, 제가 Read한 PNG(DISPLAY-C08-2의 22·25초)에서 이 큐가 지시 문구를 가리지 않고 표시됨을 확인했습니다. 직접 청취·연속 재생은 하지 않았습니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C08 — 기사 본문과 교육 영상 1개(M1), 페이지 하단 내비게이션 제외. Chromium, 한국어 captions 트랙 mode=showing 처리 기록 기준.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "pass",
+    "reason": "모든 대사·경고음이 원본 구간에 맞춰 표시되며, A4의 문구 차이는 지시·조건·경고 의미를 유지하는 축약임."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": ["MEDIA-C08", "PAGE-C08", "SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C08", "DISPLAY-C08-1", "DISPLAY-C08-2", "DISPLAY-C08-3"],
+    "derived_processing_and_limits": [
+      "SOURCE-ASR: 20.0–26.02s 원본 '새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.'(단어 확률 ≥0.998). 직접 청취 아님.",
+      "SOURCE-AUDIO: VOICE-A4 20.06–26.7s 안내자, 상관 0.99925.",
+      "DELIVERY-C08: 큐 A4 20.06–26.7s 문구 차이 외 나머지 큐는 원본과 동일.",
+      "DISPLAY-C08-1~3: 평가 모델이 Read로 9개 시점 표시 확인."
+    ]
+  },
+  "media": [{
+    "media_id": "M1",
+    "classification": "사전 녹화된 동기화 매체(영상+대사+정보성 경고음), 음소거 원본 아님",
+    "classification_evidence_ids": ["MEDIA-C08", "SOURCE-ASR", "SOURCE-SOUND", "PAGE-C08"],
+    "execution": "run",
+    "decision": "pass",
+    "reason": "모든 정보 단위 equivalent. A4는 의미 보존 축약.",
+    "exception": {"claimed": false, "no_extra_information": null, "clearly_labeled": null, "verified": false, "evidence_ids": ["PAGE-C08"]},
+    "caption_delivery": {"kind": "closed", "actually_observed": true, "evidence_ids": ["DELIVERY-C08", "DISPLAY-C08-1", "DISPLAY-C08-2", "DISPLAY-C08-3"]},
+    "coverage": {
+      "complete": true,
+      "processed_ranges": [{"start_seconds": 0, "end_seconds": 31.19, "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C08", "DISPLAY-C08-1", "DISPLAY-C08-2", "DISPLAY-C08-3"], "reason": "원본 음성 전체, 전체 큐 목록, 전 프레임 디코드 구조, 각 큐 활성 시점 PNG의 교집합."}],
+      "unreviewed_ranges": []
+    },
+    "comparisons": [
+      {"original_start_seconds": 1.0, "original_end_seconds": 3.4, "original_content": "안내자: 설정에서 보안을 선택합니다.", "caption_location": "track cue A1, line 76", "caption_start_seconds": 1, "caption_end_seconds": 3.4, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C08", "DISPLAY-C08-1"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 4.0, "original_end_seconds": 7.0, "original_content": "사용자: 이전 코드를 지금 버려도 되나요?", "caption_location": "track cue B1, line 76", "caption_start_seconds": 4, "caption_end_seconds": 7, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C08", "DISPLAY-C08-1"], "user_impact": "화자 변경 표기됨."},
+      {"original_start_seconds": 7.6, "original_end_seconds": 11.6, "original_content": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.", "caption_location": "track cue A2, line 76", "caption_start_seconds": 7.6, "caption_end_seconds": 11.6, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C08", "DISPLAY-C08-1"], "user_impact": "부정·조건 보존."},
+      {"original_start_seconds": 12.2, "original_end_seconds": 12.82, "original_content": "경고음 2회(보안 확인 실패)", "caption_location": "track cue SFX, line 76", "caption_start_seconds": 12.2, "caption_end_seconds": 15.82, "relation": "equivalent", "evidence_ids": ["SOURCE-SOUND", "PAGE-C08", "DELIVERY-C08", "DISPLAY-C08-1", "DISPLAY-C08-2"], "user_impact": "소리 의미 전달."},
+      {"original_start_seconds": 16.42, "original_end_seconds": 19.46, "original_content": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.", "caption_location": "track cue A3, line 76", "caption_start_seconds": 16.42, "caption_end_seconds": 19.46, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C08", "DISPLAY-C08-2"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 20.06, "original_end_seconds": 26.7, "original_content": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.", "caption_location": "track cue A4, line 76 ('안내자: 새 코드를 안전하게 저장하세요. 새 코드 발급 후 이전 코드는 사용할 수 없습니다.')", "caption_start_seconds": 20.06, "caption_end_seconds": 26.7, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C08", "DISPLAY-C08-2"], "user_impact": "표현만 다르고 저장 지시·발급 조건·이전 코드 무효화 경고가 동일하게 전달됨."},
+      {"original_start_seconds": 27.3, "original_end_seconds": 29.58, "original_content": "안내자: 발급 완료 화면을 확인합니다.", "caption_location": "track cue A5, line 76", "caption_start_seconds": 27.3, "caption_end_seconds": 29.58, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C08", "DISPLAY-C08-3"], "user_impact": "영향 없음."}
+    ],
+    "missing_evidence": [],
+    "recommendations": [{"change": "변경 불필요. 원하면 A4를 원문에 더 가깝게('새로 발급하면 … 더 이상') 맞출 수 있음.", "retest": "자막 수정 시 원본 전사와 부정·조건·경고 표현을 재대조하고 활성 큐 화면을 재확인."}]
+  }],
+  "errors": [],
+  "limits": [
+    "A4의 동등성 판단은 한국어 의미 비교에 대한 평가자 판단을 포함함.",
+    "평가 모델은 직접 청취·연속 재생을 하지 않았고 파생 기록과 PNG 3장(9개 시점)만 검토함. 전체 구간 판단은 통제된 정적 화면 구조 검증에 의존.",
+    "PNG의 원호(로딩 표시로 추정)는 자막·지시 문구를 가리지 않음."
+  ]
+}
+```

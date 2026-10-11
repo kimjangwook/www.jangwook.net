@@ -1,0 +1,37 @@
+# C14 평가 원문 출력
+
+판정: **not_applicable**. 페이지 수집 기록(PAGE-C14)은 HTTP 200에서 기사 DOM 전체를 읽었고 기사 안에 audio·video·embed·object·iframe이 없으며 실제 매체 목록이 비어 있다고 밝히므로, 범위 안에 1.2.2가 적용될 사전 녹화 동기화 매체가 없습니다. 상위 scope 문구에는 'this one teaching video'가 남아 있어 실제 목록과 어긋나지만, 수집 기록이 매체 부재를 명시하므로 이를 한계로 기록했습니다. 평가자는 URL을 직접 방문하지 않고 제공된 기록만 검토했습니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "https://jangwook.net/series/accessibility/overview — 기사 본문만(광고·무관한 내비게이션·외부 임베드 제외). HTTP 200, Chromium으로 기사 DOM 전체 읽음.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "not_applicable",
+    "reason": "기사 DOM 전체를 읽은 기록에서 audio·video·embed·object·iframe이 하나도 없고 매체 목록이 비어 있어, 범위 안에 사전 녹화 동기화 매체가 없습니다. 상위 범위 문구의 'this one teaching video'와 실제 목록이 어긋나지만, 페이지 수집 기록이 매체 부재를 명시하므로 적용 대상 없음으로 판단했습니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "PAGE-C14"
+    ],
+    "derived_processing_and_limits": [
+      "PAGE-C14: status 200, 'Complete article DOM read by Chromium; no audio/video/embed/object/iframe in article.', actual_media_inventory=[]. 평가자는 이 수집 기록만 읽었고 페이지를 직접 방문하지 않았습니다.",
+      "original·audio_processing·visual_processing·caption_delivery는 null이며 PNG는 제공되지 않았습니다(매체가 없으므로 예상되는 상태).",
+      "PAGE-C14 scope는 외부 임베드를 제외한다고 적지만, 수집 기록은 기사 안에 embed·iframe 자체가 없다고 밝힙니다."
+    ]
+  },
+  "media": [],
+  "errors": [],
+  "limits": [
+    "평가 모델은 제공된 페이지 수집 기록만 읽었으며 URL을 방문하거나 DOM을 직접 확인하지 않았습니다.",
+    "입력의 상위 scope 문구('Article content and this one teaching video only')와 PAGE-C14 scope('Article content only') 및 빈 매체 목록이 서로 다릅니다. 템플릿 문구로 보이나(추정), 실제로 영상이 있어야 하는 페이지라면 목록 누락 여부를 다시 확인해야 합니다.",
+    "광고·외부 임베드 등 범위 밖 요소의 매체는 평가하지 않았습니다."
+  ]
+}
+```

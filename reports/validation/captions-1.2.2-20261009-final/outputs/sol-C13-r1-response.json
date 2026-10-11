@@ -1,0 +1,59 @@
+{
+  "terminal": {
+    "id": "resp_018dc58b728b369e016ac87dc50e3c8191859c8f05960422fa",
+    "model": "gpt-6.1-sol",
+    "status": "completed",
+    "usage": {
+      "input_tokens": 2997,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "output_tokens": 1748,
+      "output_tokens_details": {
+        "reasoning_tokens": 278
+      },
+      "total_tokens": 4745,
+      "attribution": {
+        "items": {
+          "msg_018dc58b728b369e016ac87dc50ef08191815a1d3341585058": {
+            "input_tokens": 2995,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "content": [
+              {
+                "input_tokens": 2995,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              }
+            ]
+          },
+          "msg_018dc58b728b369e016ac87dd1f158819197cdce7807d428dc": {
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 1470,
+            "content": [
+              {
+                "input_tokens": 0,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 1470
+              }
+            ]
+          },
+          "rs_018dc58b728b369e016ac87dc669f88191950a480e696a7903": {
+            "input_tokens": 2,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 278
+          }
+        }
+      }
+    },
+    "incomplete_details": null
+  },
+  "output_text": "**판정은 inconclusive(판정 불가)**입니다. 제공된 수집 기록에서 원본 요청의 HTTP 404와 플레이어 오류가 확인되어, 매체의 적용 여부와 음성·중요한 소리, 실제 자막 표시를 확인할 수 없습니다. 페이지의 설명과 `track` 부재만으로 자막 누락을 확정할 수 없으며, 이번 검토는 제공된 텍스트 기록에 한정됩니다.\n\n```json\n{\n  \"criterion\": \"1.2.2\",\n  \"level\": \"A\",\n  \"prompt_version\": \"0.1.0\",\n  \"scope\": {\n    \"url_and_state\": \"http://127.0.0.1:8944/cases/C13 — 기사 본문과 교육 영상 M1만 포함, 페이지 하단 탐색 제외. 제공된 페이지 상태와 수집 기록만 검토.\",\n    \"inventory_complete_within_scope\": true,\n    \"execution\": \"run\",\n    \"decision\": \"inconclusive\",\n    \"reason\": \"범위 내 목록은 입력에서 완전하다고 제공되었으나, 유일한 매체 M1의 원본 수집이 실패했다. 적용 조건과 실제 자막의 의미·시간·표시를 확인할 수 없어 충분성이나 위반을 확정하지 못했다.\"\n  },\n  \"evidence_use\": {\n    \"direct_audio_review\": false,\n    \"direct_continuous_video_review\": false,\n    \"used_evidence_ids\": [\n      \"MEDIA-C13\",\n      \"PAGE-C13\",\n      \"DELIVERY-C13\"\n    ],\n    \"derived_processing_and_limits\": [\n      \"제공된 페이지 텍스트, 매체 목록, 실패한 수집 기록을 검토했다. 추가 방문·재생·음성 처리·화면 관찰은 수행하지 않았다.\",\n      \"페이지에 화면 밖 대화와 경고음 설명이 있으나, 이를 원본의 전사나 실제 소리 관찰로 사용하지 않았다.\",\n      \"HTML track 목록이 비어 있다는 사실은 확인했으나, 개방 자막 또는 다른 방식의 자막 제공 여부를 판단하는 근거로 확대하지 않았다.\"\n    ]\n  },\n  \"media\": [\n    {\n      \"media_id\": \"M1\",\n      \"classification\": \"미확인 — 원본 접근 실패로 녹화 여부, 음성·영상 구성 및 중요한 소리의 존재를 확정할 수 없음.\",\n      \"classification_evidence_ids\": [\n        \"MEDIA-C13\",\n        \"DELIVERY-C13\"\n      ],\n      \"execution\": \"error\",\n      \"decision\": \"inconclusive\",\n      \"reason\": \"제공된 매체 수집 기록에 HTTP 404, 플레이어 error 4, readyState 0이 있다. 원본과 자막 표시를 확인하지 못했으며, 수집 실패 자체를 1.2.2 위반으로 판정하지 않는다.\",\n      \"exception\": {\n        \"claimed\": false,\n        \"no_extra_information\": null,\n        \"clearly_labeled\": null,\n        \"verified\": false,\n        \"evidence_ids\": []\n      },\n      \"caption_delivery\": {\n        \"kind\": \"unknown\",\n        \"actually_observed\": false,\n        \"evidence_ids\": [\n          \"PAGE-C13\",\n          \"DELIVERY-C13\"\n        ]\n      },\n      \"coverage\": {\n        \"complete\": false,\n        \"processed_ranges\": [],\n        \"unreviewed_ranges\": [\n          {\n            \"start_seconds\": null,\n            \"end_seconds\": null,\n            \"reason\": \"원본 전체 미확인. 길이가 제공되지 않아 미검토 구간의 종료 시간을 특정할 수 없음.\"\n          }\n        ]\n      },\n      \"comparisons\": [],\n      \"missing_evidence\": [\n        \"접근 가능한 M1 원본과 원본 연결 정보, 길이 및 녹화/실시간 여부.\",\n        \"원본 전체의 음성·중요한 소리 및 영상 관찰 자료. 독립 전사를 제공한다면 출처·처리 방법·시간 범위·인식 한계.\",\n        \"폐쇄 자막의 실제 로드·선택·표시·활성 큐 기록 또는 원본에 포함된 개방 자막의 전체 표시 관찰.\",\n        \"원본 정보 단위와 자막을 대조할 수 있는 시간별 큐, 읽기 지속 시간 및 중요한 시각 정보 가림에 관한 관찰.\"\n      ],\n      \"recommendations\": [\n        {\n          \"change\": \"원본 경로 unavailable.mp4의 404 원인을 확인하고, 평가 페이지에서 접근 가능한 원본을 제공한다.\",\n          \"retest\": \"원본 로드와 실제 재생을 확인한 뒤 길이, 녹화 여부, 음성·영상 및 중요한 소리를 관찰하여 1.2.2 적용 여부를 다시 판단한다.\"\n        },\n        {\n          \"change\": \"원본과 독립적으로 식별되는 자막 후보 및 실제 플레이어 표시 자료를 제공한다. 자막이 없다면 적용 조건 확인 후 동기화 자막을 마련한다.\",\n          \"retest\": \"적용 대상이면 전체 원본의 대사·화자·중요한 소리를 실제 자막 큐 및 화면 표시와 대조하고, 의미·동기화·읽기 시간·가림을 확인한다.\"\n        }\n      ]\n    }\n  ],\n  \"errors\": [\n    {\n      \"evidence_ids\": [\n        \"DELIVERY-C13\"\n      ],\n      \"stage\": \"제공된 기록의 원본 매체 수집\",\n      \"error\": \"원본 URL 요청이 HTTP 404를 반환했고 플레이어 상태는 error 4, readyState 0으로 기록되었다.\",\n      \"effect_on_decision\": \"원본 분류와 자막 제공·대응 확인을 막는다. 자막 위반의 증거로 간주하지 않고 판정 불가로 남긴다.\"\n    }\n  ],\n  \"limits\": [\n    \"scope.execution의 run은 제공된 텍스트 자료 검토를 뜻한다. M1의 error는 제공된 수집 기록의 오류이며, 평가자가 새로 매체 실행을 시도했다는 뜻이 아니다.\",\n    \"범위 내 목록 완전성은 제공된 입력에 근거하며, 별도의 페이지 탐색으로 검증하지 않았다.\",\n    \"브라우저·음성·영상 도구와 첨부 화면이 없어 직접 청취, 연속 영상 재생, 자막 선택·표시 확인을 수행하지 않았다.\",\n    \"원본이 없어 본문 설명의 정확성 및 본문 대안 예외의 성립 여부를 확인하지 않았다.\",\n    \"WCAG 2.2 성공 기준 1.2.2 수준 A만 검토하며, 사이트 전체 적합성이나 다른 성공 기준을 판정하지 않는다.\"\n  ]\n}\n```"
+}

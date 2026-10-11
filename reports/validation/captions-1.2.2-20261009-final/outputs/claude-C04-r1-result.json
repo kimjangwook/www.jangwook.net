@@ -1,0 +1,54 @@
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C04 — 기사 본문과 교육용 동영상 1개(M1) 범위, 하단 내비게이션 제외. Chromium에서 한국어 captions 트랙 mode=showing 상태.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "fail",
+    "reason": "M1은 화면 밖 두 화자(안내자·사용자)의 대화인데 자막 7개 큐 어디에도 화자 표시나 화자 전환 표시가 없어, 3.8~6.56초 사용자 질문과 7.71초 이후 안내자 답변의 화자 변경이 자막으로 전달되지 않습니다. 대사 문구와 경고음 큐는 원본과 동등합니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": ["MEDIA-C04", "PAGE-C04", "SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C04", "DISPLAY-C04-1", "DISPLAY-C04-2", "DISPLAY-C04-3"],
+    "derived_processing_and_limits": [
+      "원본 음성 문구는 SOURCE-ASR(독립 전사, 0~31.19초 전체)로 확인했으며 평가자는 직접 청취하지 않았습니다.",
+      "화자 역할(VOICE-B1=사용자, 나머지=안내자)은 SOURCE-AUDIO의 분리 녹음 상관 기록에 근거하며 일반 화자 분리 성능이 아닙니다.",
+      "경고음은 SOURCE-SOUND 펄스 2개와 PAGE-C04 문구로 확인했습니다.",
+      "DISPLAY-C04-1~3의 9개 시점 PNG를 실제로 Read했습니다. 모든 화면은 안내 카드만 보이고 인물·화자 표시가 없으며, 자막에도 화자 표기가 없음을 확인했습니다."
+    ]
+  },
+  "media": [{
+    "media_id": "M1",
+    "classification": "사전 녹화 동기화 매체(영상+화면 밖 두 화자 대화+정보성 경고음), 음소거 원본 아님",
+    "classification_evidence_ids": ["MEDIA-C04", "SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "PAGE-C04"],
+    "execution": "run",
+    "decision": "fail",
+    "reason": "화자가 화면에 보이지 않고 자막에 화자 표기가 없어 질문자와 답변자가 다르다는 사실을 자막만으로 확정할 수 없습니다. 페이지 문구는 두 사람이 대화한다고만 알릴 뿐 어느 대사가 누구의 것인지 알려 주지 않으며, 한 안내자가 스스로 묻고 답하는 형식과도 구별되지 않습니다.",
+    "exception": {"claimed": false, "no_extra_information": null, "clearly_labeled": null, "verified": false, "evidence_ids": []},
+    "caption_delivery": {"kind": "closed", "actually_observed": true, "evidence_ids": ["DELIVERY-C04", "DISPLAY-C04-1", "DISPLAY-C04-2", "DISPLAY-C04-3"]},
+    "coverage": {
+      "complete": true,
+      "processed_ranges": [{"start_seconds": 0, "end_seconds": 31.189, "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C04", "DISPLAY-C04-1", "DISPLAY-C04-2", "DISPLAY-C04-3"], "reason": "원본 음성 전체 전사·화자 상관·전체 프레임 디코드 기록, 큐 목록 전체, 9개 시점 PNG의 교집합. 평가자의 직접 관찰은 PNG 시점에 한정."}],
+      "unreviewed_ranges": [{"start_seconds": 31.189, "end_seconds": 31.208, "reason": "메타데이터 길이와 디코드 음성 길이의 차이 0.02초. 별도 관찰 없음."}]
+    },
+    "comparisons": [
+      {"original_start_seconds": 0.94, "original_end_seconds": 3.04, "original_content": "안내자(화면 밖): 설정에서 보안을 선택합니다.", "caption_location": "큐 A1, line 76, 화자 표기 없음", "caption_start_seconds": 1, "caption_end_seconds": 3.4, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C04", "DISPLAY-C04-1"], "user_impact": "첫 대사 자체는 화자 표기 없이도 안내 내용이 전달됨."},
+      {"original_start_seconds": 3.8, "original_end_seconds": 6.56, "original_content": "화자 변경 → 사용자(화면 밖): 이전 코드를 지금 버려도 되나요?", "caption_location": "큐 B1, line 76, 화자 표기 없음", "caption_start_seconds": 4, "caption_end_seconds": 7, "relation": "missing", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "PAGE-C04", "DELIVERY-C04", "DISPLAY-C04-1"], "user_impact": "문구는 일치하지만 안내자에서 사용자로 바뀐 화자 변경 정보가 빠져 자막 이용자는 누가 질문했는지 알 수 없습니다."},
+      {"original_start_seconds": 7.71, "original_end_seconds": 11.18, "original_content": "화자 변경 → 안내자(화면 밖): 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.", "caption_location": "큐 A2, line 76, 화자 표기 없음", "caption_start_seconds": 7.6, "caption_end_seconds": 11.6, "relation": "missing", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C04", "DISPLAY-C04-1"], "user_impact": "부정·조건 문구는 유지되나 답변자가 안내자로 돌아왔다는 화자 변경이 표시되지 않습니다. 지시 내용 자체의 오해 위험은 낮습니다."},
+      {"original_start_seconds": 12.2, "original_end_seconds": 12.82, "original_content": "경고음 두 번(보안 확인 실패 의미, 페이지 문구 근거)", "caption_location": "큐 SFX, line 76", "caption_start_seconds": 12.2, "caption_end_seconds": 15.82, "relation": "equivalent", "evidence_ids": ["SOURCE-SOUND", "PAGE-C04", "DELIVERY-C04", "DISPLAY-C04-1", "DISPLAY-C04-2"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 16.47, "original_end_seconds": 19.0, "original_content": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.", "caption_location": "큐 A3, line 76", "caption_start_seconds": 16.42, "caption_end_seconds": 19.46, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C04", "DISPLAY-C04-2"], "user_impact": "같은 화자가 이어지므로 추가 영향 없음."},
+      {"original_start_seconds": 20.0, "original_end_seconds": 26.02, "original_content": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.", "caption_location": "큐 A4, line 76", "caption_start_seconds": 20.06, "caption_end_seconds": 26.7, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C04", "DISPLAY-C04-2"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 27.45, "original_end_seconds": 29.08, "original_content": "안내자: 발급 완료 화면을 확인합니다.", "caption_location": "큐 A5, line 76", "caption_start_seconds": 27.3, "caption_end_seconds": 29.58, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C04", "DISPLAY-C04-3"], "user_impact": "영향 없음."}
+    ],
+    "missing_evidence": ["평가자의 직접 청취·연속 재생 관찰은 없습니다.", "화자 역할은 통제된 분리 녹음 상관 기록에 의존합니다."],
+    "recommendations": [{"change": "화자가 바뀌는 큐에 최소한 화자 표기를 추가합니다. 예: B1 앞에 '사용자:', A2 앞에 '안내자:'(A1에도 처음 화자 표기). 같은 화자가 이어지는 A3~A5는 반복 표기를 생략해도 됩니다.", "retest": "수정된 트랙을 로드해 4~7초, 7.6~11.6초 활성 큐에 화자 표기가 표시되는지 화면으로 확인하고 SOURCE-AUDIO 역할 구간과 대조합니다."}]
+  }],
+  "errors": [],
+  "limits": [
+    "직접 청취나 연속 재생 없이 독립 ASR·화자 상관·프레임 디코드 기록과 PNG 9장을 검토한 결과입니다.",
+    "화자 미표기의 이용자 영향은 질문-답변 문맥으로 일부 추론 가능하다는 반론이 있을 수 있으나, 화면 밖 화자 변경을 식별할 근거가 자막·화면 어디에도 없어 위반으로 판단했습니다. 이 판단은 문맥 추론 가능성에 대한 평가자 해석을 포함합니다."
+  ]
+}

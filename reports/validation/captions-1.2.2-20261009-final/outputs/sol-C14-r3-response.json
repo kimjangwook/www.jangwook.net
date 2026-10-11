@@ -1,0 +1,59 @@
+{
+  "terminal": {
+    "id": "resp_029e7c0de4e7851b016ac88228082481919c3e4498cf406744",
+    "model": "gpt-6.1-sol",
+    "status": "completed",
+    "usage": {
+      "input_tokens": 2781,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "output_tokens": 792,
+      "output_tokens_details": {
+        "reasoning_tokens": 245
+      },
+      "total_tokens": 3573,
+      "attribution": {
+        "items": {
+          "msg_029e7c0de4e7851b016ac8822809048191bae25163d8f704f3": {
+            "input_tokens": 2779,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "content": [
+              {
+                "input_tokens": 2779,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              }
+            ]
+          },
+          "msg_029e7c0de4e7851b016ac88235748c81919918d64464bb6792": {
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 547,
+            "content": [
+              {
+                "input_tokens": 0,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 547
+              }
+            ]
+          },
+          "rs_029e7c0de4e7851b016ac88229d9408191ad185cded17c2ae6": {
+            "input_tokens": 2,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 245
+          }
+        }
+      }
+    },
+    "incomplete_details": null
+  },
+  "output_text": "제공된 `PAGE-C14`의 전체 본문 DOM 수집 기록과 범위 내 매체 목록에는 음성·영상 매체가 없으므로, WCAG 2.2 성공 기준 1.2.2는 이 평가 범위에서 **not_applicable**입니다. 이는 본문의 매체 대안 예외를 인정한 결과가 아니라, 적용 대상 매체가 없다는 제공 기록에 따른 판정입니다. 제공된 텍스트 자료만 검토했으며, URL 방문이나 직접 청취·영상 재생은 수행하지 않았습니다.\n\n```json\n{\n  \"criterion\": \"1.2.2\",\n  \"level\": \"A\",\n  \"prompt_version\": \"0.1.0\",\n  \"scope\": {\n    \"url_and_state\": \"https://jangwook.net/series/accessibility/overview — 제공된 기록상 HTTP 200의 게시된 접근성 개요 본문. 평가 범위는 본문과 그 안의 교육 영상이며, 페이지 하단 탐색은 제외됨.\",\n    \"inventory_complete_within_scope\": true,\n    \"execution\": \"run\",\n    \"decision\": \"not_applicable\",\n    \"reason\": \"완전한 범위 내 목록이 비어 있고, PAGE-C14는 전체 본문 DOM에서 audio/video/embed/object/iframe이 없음을 기록한다. 적용 대상인 사전 녹화 동기화 매체가 확인되지 않았다.\"\n  },\n  \"evidence_use\": {\n    \"direct_audio_review\": false,\n    \"direct_continuous_video_review\": false,\n    \"used_evidence_ids\": [\n      \"PAGE-C14\"\n    ],\n    \"derived_processing_and_limits\": [\n      \"제공된 페이지 수집 기록과 빈 매체 목록을 텍스트로 검토했다.\",\n      \"Chromium의 전체 본문 DOM 수집은 제공된 기록의 처리 방법이며, 평가자가 브라우저를 직접 실행한 것은 아니다.\",\n      \"HTTP 200만으로 적용 대상 부재를 판단하지 않고, 전체 본문 DOM 수집 결과와 목록 완전성을 함께 근거로 사용했다.\"\n    ]\n  },\n  \"media\": [],\n  \"errors\": [],\n  \"limits\": [\n    \"추가 브라우저·음성·영상 처리 도구가 없어 제공된 수집 기록을 독립적으로 재확인하지 않았다.\",\n    \"판정은 지정된 본문 범위에 한정되며, 제외된 광고·탐색·외부 삽입물이나 사이트 전체의 적합성을 의미하지 않는다.\"\n  ]\n}\n```"
+}

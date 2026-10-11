@@ -1,0 +1,164 @@
+# C12 평가 원문 출력
+
+판정: **inconclusive**. 원본 전사·화자 대응·화면 처리(SOURCE-ASR, SOURCE-AUDIO, SOURCE-VISUAL)가 처음 8초로 제한되어, 그 안의 A1·B1 큐만 원본과 같은 의미·시간으로 표시됨을 2초·5초 PNG(DISPLAY-C12-1)로 확인했습니다. 7.6초 이후 약 23.6초는 원본 음성·소리·화면과 표시 관찰이 모두 없어, 큐 A2·SFX·A3·A4·A5가 기록되어 있어도 후보 자막을 원본 증거로 쓸 수 없으므로 정확성과 동기화를 판단하지 못했습니다. 확인된 위반은 없으며, 판정하려면 전체 구간의 독립 전사·소리 측정·표시 캡처가 필요합니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C12 — 본문과 교육용 동영상 M1 1개(페이지 하단 내비게이션 제외). Chromium에서 track mode=showing, readyState=2, 큐 7개 기록.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "inconclusive",
+    "reason": "원본 음성·영상 처리가 처음 8초로 제한되어, 그 안의 A1·B1 두 큐만 원본과 동등함을 확인했습니다. 8초 이후 약 23초(본문이 존재를 밝힌 경고음 포함)는 원본 전사·소리 측정·화면 관찰이 없어, 자막 큐가 있더라도 정확성과 동기화를 판단할 수 없습니다. 확인된 위반은 없습니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "MEDIA-C12",
+      "PAGE-C12",
+      "SOURCE-ASR",
+      "SOURCE-AUDIO",
+      "SOURCE-SOUND",
+      "SOURCE-VISUAL",
+      "DELIVERY-C12",
+      "DISPLAY-C12-1"
+    ],
+    "derived_processing_and_limits": [
+      "SOURCE-ASR: processed_ranges 0–8초. 0.94–3.04초, 3.8–6.56초 두 구간만 전사. 나머지는 의도적으로 제공되지 않았다고 명시되어 있습니다.",
+      "SOURCE-AUDIO: VOICE-A1(1.0–3.4초, 안내자), VOICE-B1(4.0–7.0초, 사용자)만 제공.",
+      "SOURCE-SOUND: pulses 빈 배열, 8초 이후 전체가 미측정입니다. 소리가 없다는 뜻이 아닙니다.",
+      "SOURCE-VISUAL: 처음 8초만 처리, 전체 구성·범위 증거 없음.",
+      "DISPLAY-C12-1: 2초·5초 PNG를 Read로 검토해 A1·B1 표시를 확인했습니다. 7.6초 이후 큐(A2·SFX·A3·A4·A5)는 표시 관찰이 없습니다."
+    ]
+  },
+  "media": [
+    {
+      "media_id": "M1",
+      "classification": "사전 녹화 동기화 매체(영상+음성), 화면 밖 두 화자 대화 포함. 본문은 경고음 2회의 존재를 밝히지만 원본 측정은 0–8초만 있음",
+      "classification_evidence_ids": [
+        "MEDIA-C12",
+        "SOURCE-ASR",
+        "SOURCE-AUDIO",
+        "PAGE-C12"
+      ],
+      "execution": "run",
+      "decision": "inconclusive",
+      "reason": "처리된 0–7.6초에서는 위반이 없지만 7.6–31.21초가 원본·표시 양쪽에서 미검토라 충분성을 판단할 수 없습니다.",
+      "exception": {
+        "claimed": false,
+        "no_extra_information": null,
+        "clearly_labeled": null,
+        "verified": false,
+        "evidence_ids": []
+      },
+      "caption_delivery": {
+        "kind": "closed",
+        "actually_observed": true,
+        "evidence_ids": [
+          "DELIVERY-C12",
+          "DISPLAY-C12-1"
+        ]
+      },
+      "coverage": {
+        "complete": false,
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 7.6,
+            "evidence_ids": [
+              "SOURCE-ASR",
+              "SOURCE-AUDIO",
+              "SOURCE-VISUAL",
+              "DELIVERY-C12",
+              "DISPLAY-C12-1"
+            ],
+            "reason": "원본 전사·화자 대응·화면 처리(0–8초)와 큐 A1·B1 및 2초·5초 표시 PNG가 모두 있는 범위. 7.6초부터는 A2 큐가 시작되지만 대응 원본 발화가 전사·상관 기록에 없어 제외했습니다."
+          }
+        ],
+        "unreviewed_ranges": [
+          {
+            "start_seconds": 7.6,
+            "end_seconds": 8,
+            "reason": "원본은 처리 범위 안이나 해당 발화(A2 시작부)의 전사·화자 기록과 표시 관찰이 없습니다."
+          },
+          {
+            "start_seconds": 8,
+            "end_seconds": 31.208,
+            "reason": "원본 음성·소리·화면 처리와 표시 관찰이 모두 없습니다. 본문이 밝힌 경고음도 이 구간에 있을 것으로 보이나 확인되지 않았습니다."
+          }
+        ]
+      },
+      "comparisons": [
+        {
+          "original_start_seconds": 1.0,
+          "original_end_seconds": 3.4,
+          "original_content": "안내자: 설정에서 보안을 선택합니다.",
+          "caption_location": "A1, line 76",
+          "caption_start_seconds": 1,
+          "caption_end_seconds": 3.4,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C12",
+            "DISPLAY-C12-1"
+          ],
+          "user_impact": "지시를 같은 시점에 알 수 있습니다."
+        },
+        {
+          "original_start_seconds": 4.0,
+          "original_end_seconds": 7.0,
+          "original_content": "사용자(화면 밖 화자 변경): 이전 코드를 지금 버려도 되나요?",
+          "caption_location": "B1, line 76",
+          "caption_start_seconds": 4,
+          "caption_end_seconds": 7,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C12",
+            "DISPLAY-C12-1"
+          ],
+          "user_impact": "화자 변경과 질문을 알 수 있습니다."
+        },
+        {
+          "original_start_seconds": null,
+          "original_end_seconds": null,
+          "original_content": "7.6초 이후 원본 음성·경고음·화면(미처리)",
+          "caption_location": "A2, SFX, A3, A4, A5 큐(7.6–29.58초, 텍스트만 기록됨)",
+          "caption_start_seconds": 7.6,
+          "caption_end_seconds": 29.58,
+          "relation": "unknown",
+          "evidence_ids": [
+            "DELIVERY-C12",
+            "PAGE-C12"
+          ],
+          "user_impact": "원본과 대조하지 못해 부정·조건·경고음 설명이 정확한지, 동기화되는지 알 수 없습니다. 자막 후보 텍스트를 원본 증거로 쓰지 않았습니다."
+        }
+      ],
+      "missing_evidence": [
+        "8–31.21초 원본 음성의 독립 전사와 화자 대응(SOURCE-ASR·SOURCE-AUDIO 확장).",
+        "전체 구간 소리 측정, 특히 본문이 밝힌 경고음 2회의 시간(SOURCE-SOUND).",
+        "전체 프레임 디코드 또는 구성 기록과, 큐 A2·SFX·A3·A4·A5 활성 시점의 실제 표시 PNG.",
+        "7.6–8초 구간 원본 발화 기록."
+      ],
+      "recommendations": [
+        {
+          "change": "판정 전 추가 증거 수집이 필요합니다. 현재 자료로는 자막 수정 사항을 특정할 수 없습니다.",
+          "retest": "원본 전체(0–31.21초)를 디코드해 독립 전사·소리 측정·화면 처리를 하고, 각 큐 활성 시점의 표시 화면을 캡처해 다시 평가합니다."
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "평가 모델은 원본을 직접 듣거나 연속 재생하지 않았고, 0–8초 파생 기록과 PNG 2장만 검토했습니다.",
+    "8초 이후 자막 큐 텍스트는 후보 자막이므로 원본 정확성의 증거로 재사용하지 않았습니다.",
+    "SOURCE-SOUND의 빈 pulses는 미측정 상태이며 소리 부재를 뜻하지 않습니다."
+  ]
+}
+```

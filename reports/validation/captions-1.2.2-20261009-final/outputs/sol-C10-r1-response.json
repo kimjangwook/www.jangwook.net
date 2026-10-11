@@ -1,0 +1,101 @@
+{
+  "terminal": {
+    "id": "resp_06ab74f7d8943ca7016ac87d554d7c8191b001d633bcb5baa5",
+    "model": "gpt-6.1-sol",
+    "status": "completed",
+    "usage": {
+      "input_tokens": 11630,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "output_tokens": 4239,
+      "output_tokens_details": {
+        "reasoning_tokens": 854
+      },
+      "total_tokens": 15869,
+      "attribution": {
+        "items": {
+          "msg_06ab74f7d8943ca7016ac87d554e4081919f11ccc9af99c7a6": {
+            "input_tokens": 11628,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "content": [
+              {
+                "input_tokens": 7562,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 10,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 1345,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 10,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 1345,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 10,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              },
+              {
+                "input_tokens": 1346,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 0
+              }
+            ]
+          },
+          "msg_06ab74f7d8943ca7016ac87d79451481918d08c02ba8a20379": {
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 3385,
+            "content": [
+              {
+                "input_tokens": 0,
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "output_tokens": 3385
+              }
+            ]
+          },
+          "rs_06ab74f7d8943ca7016ac87d576e308191bdbaa01734bd300e": {
+            "input_tokens": 2,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 516
+          },
+          "rs_06ab74f7d8943ca7016ac87d6c1a748191894449f60df54719": {
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 338
+          }
+        }
+      }
+    },
+    "incomplete_details": null
+  },
+  "output_text": "**판정은 fail입니다.** 제공된 원본 처리 기록과 실제 표시 PNG를 대조하면, 사용자 질문·보안 확인 실패 경고음·이전 코드 사용 불가 정보가 동기화된 화면 텍스트로 제공되지 않습니다. 본문의 전체 설명에는 해당 정보가 있지만, 영상을 본문의 대안이라고 명확히 표시한 안내가 없어 예외를 인정할 수 없습니다. 이번 실행은 제공된 기록과 PNG 검토이며, 평가자가 직접 청취하거나 연속 재생한 것은 아닙니다.\n\n```json\n{\n  \"criterion\": \"1.2.2\",\n  \"level\": \"A\",\n  \"prompt_version\": \"0.1.0\",\n  \"scope\": {\n    \"url_and_state\": \"http://127.0.0.1:8944/cases/C10 — 제공된 Chromium 페이지 상태의 본문과 교육 영상 M1만 평가; 푸터 내비게이션 제외\",\n    \"inventory_complete_within_scope\": true,\n    \"execution\": \"run\",\n    \"decision\": \"fail\",\n    \"reason\": \"범위 내 녹화 영상 M1에서 중요한 대사와 경고음의 동기화 자막 누락을 확인했다. 본문 대안이라는 명확한 표시가 없어 예외가 성립하지 않는다.\"\n  },\n  \"evidence_use\": {\n    \"direct_audio_review\": false,\n    \"direct_continuous_video_review\": false,\n    \"used_evidence_ids\": [\n      \"MEDIA-C10\",\n      \"PAGE-C10\",\n      \"SOURCE-ASR\",\n      \"SOURCE-AUDIO\",\n      \"SOURCE-SOUND\",\n      \"SOURCE-VISUAL\",\n      \"ENCODE-LINK\",\n      \"DELIVERY-C10\",\n      \"DISPLAY-C10-1\",\n      \"DISPLAY-C10-2\",\n      \"DISPLAY-C10-3\"\n    ],\n    \"derived_processing_and_limits\": [\n      \"원본 해시가 연결된 독립 ASR 기록을 검토했다. 후보 자막을 원본 전사로 사용하지 않았으며, ASR의 부정·조건 표현은 실제 본문 기록과도 대조했다. 단어 시각은 근사값이다.\",\n      \"SOURCE-AUDIO의 원본 녹음 상관분석으로 화자와 전체 발화 클립 구간을 확인했다. 이는 제공된 통제 제작 자료의 분석 기록이며 평가자의 직접 청취가 아니다.\",\n      \"두 경고음의 시간은 SOURCE-SOUND 측정 기록에, 보안 확인 실패라는 의미는 PAGE-C10에 근거한다.\",\n      \"749프레임 디코딩 및 정적 7화면 구조 기록과 첨부 PNG를 함께 검토했다. 연속 영상 재생을 직접 수행하지 않았다.\",\n      \"SOURCE-VISUAL의 '각 자막 큐 검토'라는 일반 서술은 이 사례의 빈 트랙·빈 활성 큐 기록과 맞지 않아 자막 제공의 증거로 사용하지 않았다.\",\n      \"네이티브 재생·탐색 성공은 DELIVERY-C10에 기록된 외부 실행 결과이며, 평가자가 수행한 조작이 아니다.\"\n    ]\n  },\n  \"media\": [\n    {\n      \"media_id\": \"M1\",\n      \"classification\": \"대사와 정보성 이중 경고음이 포함된 사전 녹화 동기화 매체\",\n      \"classification_evidence_ids\": [\n        \"MEDIA-C10\",\n        \"SOURCE-ASR\",\n        \"SOURCE-AUDIO\",\n        \"SOURCE-SOUND\",\n        \"SOURCE-VISUAL\"\n      ],\n      \"execution\": \"run\",\n      \"decision\": \"fail\",\n      \"reason\": \"실제 표시 화면에는 일부 음성과 대응하는 안내 문구가 있지만, 사용자 질문·경고음의 의미·이전 코드 사용 불가 정보가 누락된다. 빈 HTML 트랙만이 아니라 원본 내용과 실제 화면의 비교에 근거한 판정이다.\",\n      \"exception\": {\n        \"claimed\": false,\n        \"no_extra_information\": true,\n        \"clearly_labeled\": false,\n        \"verified\": false,\n        \"evidence_ids\": [\n          \"PAGE-C10\",\n          \"SOURCE-ASR\",\n          \"SOURCE-AUDIO\",\n          \"SOURCE-SOUND\",\n          \"SOURCE-VISUAL\",\n          \"DISPLAY-C10-1\",\n          \"DISPLAY-C10-2\",\n          \"DISPLAY-C10-3\"\n        ]\n      },\n      \"caption_delivery\": {\n        \"kind\": \"none\",\n        \"actually_observed\": true,\n        \"evidence_ids\": [\n          \"PAGE-C10\",\n          \"DELIVERY-C10\",\n          \"DISPLAY-C10-1\",\n          \"DISPLAY-C10-2\",\n          \"DISPLAY-C10-3\"\n        ]\n      },\n      \"coverage\": {\n        \"complete\": false,\n        \"processed_ranges\": [\n          {\n            \"start_seconds\": 0,\n            \"end_seconds\": 31.18,\n            \"evidence_ids\": [\n              \"SOURCE-ASR\",\n              \"SOURCE-AUDIO\",\n              \"SOURCE-VISUAL\",\n              \"ENCODE-LINK\",\n              \"DELIVERY-C10\",\n              \"DISPLAY-C10-1\",\n              \"DISPLAY-C10-2\",\n              \"DISPLAY-C10-3\"\n            ],\n            \"reason\": \"원본 음성 처리 범위와 검증된 정적 7화면 구간의 교집합이다. 제공된 전체 디코딩·구조 기록과 각 화면 PNG를 근거로 하며, 평가자의 직접 연속 재생 범위가 아니다.\"\n          }\n        ],\n        \"unreviewed_ranges\": [\n          {\n            \"start_seconds\": 31.18,\n            \"end_seconds\": 31.208333,\n            \"reason\": \"제공된 정적 화면 타임라인의 종료 이후 꼬리 구간은 원본·표시 대응을 충분히 확인하지 못했다.\"\n          }\n        ]\n      },\n      \"comparisons\": [\n        {\n          \"original_start_seconds\": 1,\n          \"original_end_seconds\": 3.4,\n          \"original_content\": \"안내자: 설정에서 보안을 선택합니다.\",\n          \"caption_location\": \"자막 큐 없음. scene0 화면 안내: '설정에서 보안을 선택하세요.'\",\n          \"caption_start_seconds\": 0,\n          \"caption_end_seconds\": 3.75,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"ENCODE-LINK\",\n            \"DISPLAY-C10-1\"\n          ],\n          \"user_impact\": \"이 동작 지시는 발화 중 화면 안내로 전달된다. 이것만으로 전체 자막 충족을 뜻하지 않는다.\"\n        },\n        {\n          \"original_start_seconds\": 4,\n          \"original_end_seconds\": 7,\n          \"original_content\": \"화면 밖 사용자: 이전 코드를 지금 버려도 되나요?\",\n          \"caption_location\": \"자막 큐 없음. 5초 화면에는 '이전 코드에 관한 질문', '질문과 답변을 듣고 다음 단계로 이동하세요.'만 표시\",\n          \"caption_start_seconds\": null,\n          \"caption_end_seconds\": null,\n          \"relation\": \"missing\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"PAGE-C10\",\n            \"DELIVERY-C10\",\n            \"DISPLAY-C10-1\"\n          ],\n          \"user_impact\": \"소리를 듣지 못하면 질문의 내용과 사용자 발화임을 알 수 없어 이후 답변의 맥락을 놓친다.\"\n        },\n        {\n          \"original_start_seconds\": 7.6,\n          \"original_end_seconds\": 11.6,\n          \"original_content\": \"안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.\",\n          \"caption_location\": \"자막 큐 없음. 9.4초 화면에는 '코드를 버리기 전에', '새 코드의 저장 상태를 먼저 확인하세요.' 표시\",\n          \"caption_start_seconds\": null,\n          \"caption_end_seconds\": null,\n          \"relation\": \"missing\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"PAGE-C10\",\n            \"DELIVERY-C10\",\n            \"DISPLAY-C10-1\"\n          ],\n          \"user_impact\": \"저장 확인 조건은 일부 전달되지만, 질문에 대한 부정 응답과 안내자로의 화자 전환이 동기화되어 표시되지 않는다.\"\n        },\n        {\n          \"original_start_seconds\": 12.2,\n          \"original_end_seconds\": 12.82,\n          \"original_content\": \"12.2–12.4초와 12.62–12.82초의 경고음 두 번: 보안 확인 실패를 알림\",\n          \"caption_location\": \"자막 큐 없음. 12.5초 및 15초 화면에는 '보안 확인 결과', '결과를 확인하고 다음 단계로 이동하세요.'만 표시\",\n          \"caption_start_seconds\": null,\n          \"caption_end_seconds\": null,\n          \"relation\": \"missing\",\n          \"evidence_ids\": [\n            \"SOURCE-SOUND\",\n            \"SOURCE-AUDIO\",\n            \"PAGE-C10\",\n            \"DELIVERY-C10\",\n            \"DISPLAY-C10-1\",\n            \"DISPLAY-C10-2\"\n          ],\n          \"user_impact\": \"보안 확인이 실패했다는 결과와 두 번의 경고음 정보를 해당 시점에 알 수 없다.\"\n        },\n        {\n          \"original_start_seconds\": 16.42,\n          \"original_end_seconds\": 19.46,\n          \"original_content\": \"안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.\",\n          \"caption_location\": \"자막 큐 없음. scene4 화면 안내: '보안 확인 다시 하기', '보안 확인을 완료하고 발급을 확인하세요.'\",\n          \"caption_start_seconds\": 16.17,\n          \"caption_end_seconds\": 19.81,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"ENCODE-LINK\",\n            \"DISPLAY-C10-2\"\n          ],\n          \"user_impact\": \"보안 확인을 다시 완료한 후 발급을 확인하는 동작은 화면에서 전달된다.\"\n        },\n        {\n          \"original_start_seconds\": 20,\n          \"original_end_seconds\": 22.14,\n          \"original_content\": \"새 코드를 안전한 곳에 저장합니다.\",\n          \"caption_location\": \"자막 큐 없음. scene5 화면 안내: '새 코드 저장', '코드를 안전한 곳에 보관하세요.'\",\n          \"caption_start_seconds\": 19.81,\n          \"caption_end_seconds\": 27.05,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"ENCODE-LINK\",\n            \"DISPLAY-C10-2\"\n          ],\n          \"user_impact\": \"새 코드를 안전하게 보관하라는 지시는 발화 중 화면에서 전달된다.\"\n        },\n        {\n          \"original_start_seconds\": 22.76,\n          \"original_end_seconds\": 26.02,\n          \"original_content\": \"새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.\",\n          \"caption_location\": \"자막 큐 없음. 25초 화면에는 새 코드 저장 안내만 표시\",\n          \"caption_start_seconds\": null,\n          \"caption_end_seconds\": null,\n          \"relation\": \"missing\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"PAGE-C10\",\n            \"DELIVERY-C10\",\n            \"DISPLAY-C10-2\"\n          ],\n          \"user_impact\": \"재발급 후 이전 코드가 무효화된다는 중요한 조건과 부정 정보를 놓친다.\"\n        },\n        {\n          \"original_start_seconds\": 27.3,\n          \"original_end_seconds\": 29.58,\n          \"original_content\": \"안내자: 발급 완료 화면을 확인합니다.\",\n          \"caption_location\": \"자막 큐 없음. scene6 화면 안내: '발급 완료 화면을 확인하세요.'\",\n          \"caption_start_seconds\": 27.05,\n          \"caption_end_seconds\": 31.18,\n          \"relation\": \"equivalent\",\n          \"evidence_ids\": [\n            \"SOURCE-ASR\",\n            \"SOURCE-AUDIO\",\n            \"ENCODE-LINK\",\n            \"DISPLAY-C10-3\"\n          ],\n          \"user_impact\": \"발급 완료 화면을 확인하는 지시는 발화 중 화면에서 전달된다.\"\n        }\n      ],\n      \"missing_evidence\": [\n        \"31.18–31.208333초 꼬리 구간의 원본·표시 대응 확인 자료\",\n        \"수정 후 전체 자막 큐와 실제 로드·표시·시간 대응 기록\"\n      ],\n      \"recommendations\": [\n        {\n          \"change\": \"M1에 폐쇄 또는 개방 자막을 제공한다. 사용자 질문과 안내자의 부정·저장 조건, 필요한 화면 밖 화자 식별, '[보안 확인 실패 경고음 두 번]', 재발급 후 이전 코드 사용 불가 정보를 포함한다.\",\n          \"retest\": \"원본과 수정 자막을 독립적으로 대조한다. 질문 4–7초, 답변 7.6–11.6초, 경고음 12.2–12.82초, 사용 불가 안내 약 22.76–26.02초를 포함해 전체 큐의 의미·순서·동기화를 확인한다.\"\n        },\n        {\n          \"change\": \"자막이 충분히 읽히도록 표시 시간을 확보하고, 안내 문구와 플레이어 조작부에 가려지지 않게 배치한다.\",\n          \"retest\": \"실제 플레이어에서 자막 로드·선택·표시를 확인하고, 각 큐의 읽기 가능 시간과 중요 화면 정보 가림을 점검한다. 꼬리 구간까지 범위를 기록한다.\"\n        },\n        {\n          \"change\": \"본문의 매체 대안 예외를 사용하려면 영상이 해당 본문의 대안임을 실제 페이지에 명확히 표시하고, 본문에 없는 정보를 추가하지 않는 상태를 유지한다.\",\n          \"retest\": \"표시 문구와 연결된 본문 전체를 원본 전체의 대사·중요한 소리·화면 정보와 다시 비교한다. 현재 '전체 설명' 제목만으로는 예외를 인정하지 않는다.\"\n        }\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"limits\": [\n    \"평가는 제공된 텍스트 기록과 실제 첨부 PNG에 한정된다. URL 방문, 직접 청취, 연속 재생 또는 사이트 변경을 수행하지 않았다.\",\n    \"본문과 제공된 원본 처리 기록의 비교에서는 추가 정보가 발견되지 않았지만, 본문의 대안이라는 명확한 표시가 없어 예외는 검증되지 않았다.\",\n    \"전체 디코딩·정적 화면 구조 기록은 이 통제 제작 영상에 한정된다. 표본 PNG만으로 임의 영상의 전체 자막 충분성을 인정하지 않는다.\",\n    \"SOURCE-VISUAL의 일반적인 자막 큐 검토 서술과 실제 빈 큐 기록의 불일치는 보존했다. 확인된 누락 판정은 실제 PNG, DELIVERY-C10 및 독립 원본 기록에 근거한다.\",\n    \"미확인 꼬리 구간은 남겨 두었으며, 이미 확인된 위반에 따른 fail 판정을 바꾸지 않는다.\",\n    \"WCAG 2.2 성공 기준 1.2.2 수준 A만 평가했다. 사이트 전체 적합성이나 다른 성공 기준의 판정이 아니다.\"\n  ]\n}\n```"
+}

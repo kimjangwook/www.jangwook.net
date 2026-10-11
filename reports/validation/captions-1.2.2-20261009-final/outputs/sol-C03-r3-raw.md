@@ -1,0 +1,257 @@
+평가 범위의 판정은 **fail**입니다. M1의 대사와 화자 표시는 자막으로 제공되지만, 보안 확인 실패를 알리는 두 경고음(12.20–12.40초, 12.62–12.82초)에 대응하는 동기화 자막이 없습니다. 본문의 경고음 설명은 정적인 안내이므로 이를 대신하지 않으며, 본문 대안 예외도 성립하지 않습니다. 이 평가는 제공된 독립 음성 처리 기록·브라우저 처리 기록·첨부 PNG를 검토한 결과이며, 직접 청취하거나 영상을 연속 재생한 결과는 아닙니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C03 — 제공된 Chromium 페이지 상태의 본문과 교육용 영상 M1만 평가. 푸터 탐색 제외.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "fail",
+    "reason": "범위 내 유일한 녹화 동기화 매체 M1에서 보안 확인 실패를 알리는 두 경고음의 자막 누락을 확인했다. 정적인 본문 설명은 동기화 자막을 대체하지 않는다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "MEDIA-C03",
+      "PAGE-C03",
+      "SOURCE-ASR",
+      "SOURCE-AUDIO",
+      "SOURCE-SOUND",
+      "SOURCE-VISUAL",
+      "ENCODE-LINK",
+      "DELIVERY-C03",
+      "DISPLAY-C03-1",
+      "DISPLAY-C03-2",
+      "DISPLAY-C03-3"
+    ],
+    "derived_processing_and_limits": [
+      "실행 가능한 추가 브라우저·음성·영상 도구는 없다. 제공된 텍스트 기록과 실제 첨부 PNG만 검토했다.",
+      "SOURCE-ASR은 원본 MP4를 독립적으로 디코딩한 자동 전사이며 후보 자막을 입력으로 사용하지 않았다. 인식 오류 가능성과 근사 단어 시각을 고려했다.",
+      "SOURCE-AUDIO는 원본 음성과 분리된 녹음의 상관 분석으로 화자 및 전체 녹음 구간을 연결한다. 이는 통제된 자료의 출처 증거이지 일반적인 화자 인식 성능의 증명이 아니다.",
+      "SOURCE-SOUND의 주파수 분석은 두 음의 시각을 확인한다. 보안 확인 실패라는 의미는 PAGE-C03의 실제 본문에서 확인했다.",
+      "SOURCE-VISUAL과 ENCODE-LINK는 전체 749프레임 디코딩 및 통제된 정적 화면 구성을 보고한다. 첨부 PNG에서 각 대사 자막의 표시와 경고음 전후의 자막 부재를 확인했다.",
+      "전체 자막 큐 목록과 표시 기록을 원본 전사·소리 관찰과 별도로 비교했다. 표본 PNG만으로 전체 영상의 충분성을 추정하지 않았다."
+    ]
+  },
+  "media": [
+    {
+      "media_id": "M1",
+      "classification": "대사와 정보성 경고음이 있는 사전 제작 동기화 영상. WCAG 1.2.2 적용 대상.",
+      "classification_evidence_ids": [
+        "MEDIA-C03",
+        "SOURCE-ASR",
+        "SOURCE-AUDIO",
+        "SOURCE-SOUND",
+        "SOURCE-VISUAL",
+        "PAGE-C03"
+      ],
+      "execution": "run",
+      "decision": "fail",
+      "reason": "대사 큐는 독립 전사의 의미와 대응하고 화면 밖 화자도 표시하지만, 12.20–12.82초의 이중 경고음과 그 의미에 대응하는 큐가 없다. 해당 화면에도 보안 확인 실패를 전달하는 동기화 표시가 없다.",
+      "exception": {
+        "claimed": false,
+        "no_extra_information": false,
+        "clearly_labeled": false,
+        "verified": false,
+        "evidence_ids": [
+          "PAGE-C03",
+          "SOURCE-ASR"
+        ]
+      },
+      "caption_delivery": {
+        "kind": "closed",
+        "actually_observed": true,
+        "evidence_ids": [
+          "PAGE-C03",
+          "DELIVERY-C03",
+          "DISPLAY-C03-1",
+          "DISPLAY-C03-2",
+          "DISPLAY-C03-3"
+        ]
+      },
+      "coverage": {
+        "complete": false,
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 31.1893125,
+            "evidence_ids": [
+              "SOURCE-ASR",
+              "SOURCE-AUDIO",
+              "SOURCE-SOUND",
+              "SOURCE-VISUAL",
+              "ENCODE-LINK",
+              "DELIVERY-C03",
+              "DISPLAY-C03-1",
+              "DISPLAY-C03-2",
+              "DISPLAY-C03-3"
+            ],
+            "reason": "제공된 원본 음성 처리 범위와 전체 프레임 처리 범위의 교집합. 표시 검토는 전체 큐 목록, 활성 큐 표본, 첨부 PNG 및 통제된 고정 배치 검증 기록에 근거한다."
+          }
+        ],
+        "unreviewed_ranges": [
+          {
+            "start_seconds": 31.1893125,
+            "end_seconds": 31.208333,
+            "reason": "보고된 영상 길이의 마지막 부분은 독립 전사 처리 범위 밖이다. 전체 프레임 처리와 무신호 꼬리 기록은 있으나 음성·표시 비교 범위에 포함하지 않았다."
+          }
+        ]
+      },
+      "comparisons": [
+        {
+          "original_start_seconds": 1,
+          "original_end_seconds": 3.4,
+          "original_content": "안내자: 설정에서 보안을 선택합니다.",
+          "caption_location": "폐쇄 자막 A1, line 76; 2초 PNG에서 표시 확인",
+          "caption_start_seconds": 1,
+          "caption_end_seconds": 3.4,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C03",
+            "DISPLAY-C03-1"
+          ],
+          "user_impact": "제공된 증거상 선택 안내와 화자를 전달하며, 표본 화면에서 주요 안내를 가리지 않는다."
+        },
+        {
+          "original_start_seconds": 4,
+          "original_end_seconds": 7,
+          "original_content": "사용자: 이전 코드를 지금 버려도 되나요?",
+          "caption_location": "폐쇄 자막 B1, line 76; 5초 PNG에서 표시 확인",
+          "caption_start_seconds": 4,
+          "caption_end_seconds": 7,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C03",
+            "DISPLAY-C03-1"
+          ],
+          "user_impact": "질문 내용과 화면 밖 화자 변경을 전달한다."
+        },
+        {
+          "original_start_seconds": 7.6,
+          "original_end_seconds": 11.6,
+          "original_content": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+          "caption_location": "폐쇄 자막 A2, line 76; 9.4초 PNG에서 표시 확인",
+          "caption_start_seconds": 7.6,
+          "caption_end_seconds": 11.6,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C03",
+            "DISPLAY-C03-1"
+          ],
+          "user_impact": "중요한 부정과 저장 전 폐기 금지 조건을 보존한다. 표본에서 문장 전체가 표시된다."
+        },
+        {
+          "original_start_seconds": 12.2,
+          "original_end_seconds": 12.82,
+          "original_content": "12.20–12.40초와 12.62–12.82초에 두 경고음. 실제 본문에 따르면 보안 확인 실패를 알린다.",
+          "caption_location": "A2 종료 후 A3 시작 전 대응 큐 없음. 12.5초와 15초 활성 큐가 비어 있고 PNG에도 소리 자막이나 실패 표시가 없음.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "missing",
+          "evidence_ids": [
+            "SOURCE-SOUND",
+            "SOURCE-AUDIO",
+            "PAGE-C03",
+            "DELIVERY-C03",
+            "DISPLAY-C03-1",
+            "DISPLAY-C03-2"
+          ],
+          "user_impact": "소리를 듣지 못하는 이용자는 이 시점에 보안 확인이 실패했다는 정보와 재확인이 필요한 이유를 동기화된 자막으로 알 수 없다."
+        },
+        {
+          "original_start_seconds": 16.42,
+          "original_end_seconds": 19.46,
+          "original_content": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+          "caption_location": "폐쇄 자막 A3, line 76; 17.8초 PNG에서 표시 확인",
+          "caption_start_seconds": 16.42,
+          "caption_end_seconds": 19.46,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C03",
+            "DISPLAY-C03-2"
+          ],
+          "user_impact": "보안 확인 완료 후 발급 확인이라는 순서를 전달한다. 앞선 경고음의 누락을 대신하지는 않는다."
+        },
+        {
+          "original_start_seconds": 20.06,
+          "original_end_seconds": 22.14,
+          "original_content": "안내자: 새 코드를 안전한 곳에 저장합니다. 발화 끝 시각은 자동 전사의 근삿값.",
+          "caption_location": "폐쇄 자막 A4 앞 문장, line 76; 22초 PNG에서 표시 확인",
+          "caption_start_seconds": 20.06,
+          "caption_end_seconds": 26.7,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C03",
+            "DISPLAY-C03-2"
+          ],
+          "user_impact": "안전한 저장 안내를 전달한다. 다음 문장과 함께 표시되며 표본에서 잘림이나 주요 안내 가림은 보이지 않는다."
+        },
+        {
+          "original_start_seconds": 22.76,
+          "original_end_seconds": 26.02,
+          "original_content": "안내자: 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 시각은 자동 전사의 근삿값.",
+          "caption_location": "폐쇄 자막 A4 뒤 문장, line 76; 22초와 25초 PNG에서 표시 확인",
+          "caption_start_seconds": 20.06,
+          "caption_end_seconds": 26.7,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C03",
+            "DISPLAY-C03-2"
+          ],
+          "user_impact": "재발급 조건과 이전 코드의 사용 불가를 보존한다. 두 문장 전체가 6.64초 동안 제공되는 기록이며, 고정 읽기 속도 기준으로 합격을 단정하지 않았다."
+        },
+        {
+          "original_start_seconds": 27.3,
+          "original_end_seconds": 29.58,
+          "original_content": "안내자: 발급 완료 화면을 확인합니다.",
+          "caption_location": "폐쇄 자막 A5, line 76; 28.3초 PNG에서 표시 확인",
+          "caption_start_seconds": 27.3,
+          "caption_end_seconds": 29.58,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C03",
+            "DISPLAY-C03-3"
+          ],
+          "user_impact": "발급 완료 확인 안내를 해당 화면과 함께 전달한다."
+        }
+      ],
+      "missing_evidence": [
+        "31.1893125–31.208333초에 대한 원본 음성·자막 표시의 교집합 검토 기록. 이 누락은 이미 확인한 경고음 자막 위반의 판정을 바꾸지 않는다."
+      ],
+      "recommendations": [
+        {
+          "change": "M1의 두 경고음 발생 구간에 맞춰 '[경고음 두 번 — 보안 확인 실패]'처럼 소리와 의미를 전달하는 자막 큐를 추가한다. 본문 설명만 추가하는 것으로 대체하지 않는다.",
+          "retest": "12.20초 이전부터 경고음 이후까지 원본 소리와 실제 플레이어 자막을 비교한다. 두 음과 실패 의미가 필요한 시점에 표시되는지, 충분히 읽을 수 있도록 유지되는지, 다음 대사 및 주요 화면 정보를 가리지 않는지 확인하고 큐 시간·활성 기록·표시 증거를 남긴다."
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "URL에 직접 접속하거나 원본 파일을 직접 청취·연속 재생하지 않았다. execution의 run은 제공 자료 검토를 뜻한다.",
+    "자동 전사의 의미와 시각에는 오류 가능성이 있다. 주요 부정·조건은 독립 전사와 자막에서 일치하며, 화자·전체 녹음 구간은 별도 출처 연결 기록으로 확인했다.",
+    "SOURCE-VISUAL 및 ENCODE-LINK에 포함된 'held sound caption'이라는 방법 설명은 이 사례의 실제 큐 목록·활성 큐·PNG와 맞지 않는다. 그 문구를 소리 자막 제공의 증거로 사용하지 않았다.",
+    "전체 프레임 디코딩과 정적 구성 검증 기록은 이 통제된 자료에 한정된다. 다른 영상의 전체 표시 상태를 표본 화면만으로 판단하는 근거로 일반화할 수 없다.",
+    "임의의 지연 시간·글자 수·읽기 속도를 WCAG의 고정 합격선으로 사용하지 않았다.",
+    "판정은 명시된 페이지 범위의 WCAG 2.2 성공 기준 1.2.2 수준 A에만 해당하며, 다른 기준이나 사이트 전체의 적합성 인증을 의미하지 않는다."
+  ]
+}
+```

@@ -1,0 +1,231 @@
+**판정은 inconclusive(판정 불가)**입니다. 제공된 독립 전사·화자 분석과 2초·5초 화면 표본에서는 첫 두 대사의 내용과 화자 표기가 자막에 대응하며, 확인된 위반은 없습니다. 그러나 8초 이후의 원본 대사·중요한 소리와 전체 구간의 자막 표시·읽기 가능성을 검증할 자료가 없어 pass로 판정할 수 없습니다. 이번 실행은 제공된 기록과 첨부 PNG 검토이며, 직접 청취하거나 동영상을 연속 재생한 것은 아닙니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C12 — 제공된 Chromium 페이지 상태의 본문과 교육 영상 M1만 평가. 푸터 탐색 제외.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "inconclusive",
+    "reason": "입력에서 범위 내 목록 완전성이 제공되었다. 첫 두 대사의 대응과 표본 자막 표시는 확인되지만, 나머지 원본 및 연속 표시 근거가 부족하여 전체 충분성을 판단할 수 없다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "MEDIA-C12",
+      "PAGE-C12",
+      "SOURCE-ASR",
+      "SOURCE-AUDIO",
+      "SOURCE-SOUND",
+      "SOURCE-VISUAL",
+      "DELIVERY-C12",
+      "DISPLAY-C12-1"
+    ],
+    "derived_processing_and_limits": [
+      "SOURCE-ASR은 해당 원본 해시에 연결된 독립 자동 전사이며 처리 범위는 0~8초이다. 후보 자막을 원본 전사로 사용하지 않았다.",
+      "SOURCE-AUDIO의 독립 녹음 상관 분석은 첫 두 대사의 화자와 클립 구간을 뒷받침한다. 상관 분석 자체는 대사 내용의 정확성을 입증하지 않는다.",
+      "ASR 단어 시간은 근사값이다. 첫 두 대사의 구간은 검증된 원본 클립 구간을 사용했으며, ASR 시간과의 차이를 자막 지연 위반으로 단정하지 않았다.",
+      "DELIVERY-C12의 로드 상태와 활성 큐 기록, DISPLAY-C12-1의 2초·5초 화면을 검토했다. 기록된 재생·탐색은 제공자가 수행한 것으로, 평가자가 직접 실행한 것이 아니다.",
+      "SOURCE-VISUAL에는 전체 구성 검증을 언급하는 문구도 있으나, 처리 방법과 이번 입력의 범위는 첫 8초 및 두 화면 표본으로 제한된다. 이 문구로 전체 영상의 표시 검증을 인정하지 않았다."
+    ]
+  },
+  "media": [
+    {
+      "media_id": "M1",
+      "classification": "음성 대사가 포함된 사전 녹화 동기화 매체로 1.2.2 적용 대상. 뒤쪽 경고음의 실제 내용·시간은 미확인.",
+      "classification_evidence_ids": [
+        "MEDIA-C12",
+        "SOURCE-ASR",
+        "SOURCE-AUDIO",
+        "DISPLAY-C12-1"
+      ],
+      "execution": "run",
+      "decision": "inconclusive",
+      "reason": "첫 두 대사의 의미와 화자 표기는 대응하고 두 표본에서 자막이 보인다. 이후 원본 정보와 전체 자막의 시간·지속·가림을 확인하지 못했으며, 실제 위반은 확인되지 않았다.",
+      "exception": {
+        "claimed": false,
+        "no_extra_information": null,
+        "clearly_labeled": null,
+        "verified": false,
+        "evidence_ids": []
+      },
+      "caption_delivery": {
+        "kind": "closed",
+        "actually_observed": true,
+        "evidence_ids": [
+          "PAGE-C12",
+          "DELIVERY-C12",
+          "DISPLAY-C12-1"
+        ]
+      },
+      "coverage": {
+        "complete": false,
+        "processed_ranges": [
+          {
+            "start_seconds": 2,
+            "end_seconds": 2,
+            "evidence_ids": [
+              "SOURCE-ASR",
+              "SOURCE-AUDIO",
+              "DELIVERY-C12",
+              "DISPLAY-C12-1"
+            ],
+            "reason": "첫 대사의 원본 기록과 활성 큐 및 실제 표시를 대조한 단일 시점이다. 큐 전체의 연속 표시를 검증한 구간은 아니다."
+          },
+          {
+            "start_seconds": 5,
+            "end_seconds": 5,
+            "evidence_ids": [
+              "SOURCE-ASR",
+              "SOURCE-AUDIO",
+              "DELIVERY-C12",
+              "DISPLAY-C12-1"
+            ],
+            "reason": "둘째 대사의 원본 기록과 활성 큐 및 실제 표시를 대조한 단일 시점이다. 큐 전체의 연속 표시를 검증한 구간은 아니다."
+          }
+        ],
+        "unreviewed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 8,
+            "reason": "독립 음성 처리 기록은 있으나 원본·자막·표시의 연속 대응은 미검토이다. 표시 확인은 2초·5초 표본에 한정되고, 7.6초에 시작하는 A2의 원본 내용도 입증되지 않았다."
+          },
+          {
+            "start_seconds": 8,
+            "end_seconds": 31.208333,
+            "reason": "원본 대사·중요한 소리의 독립 관찰과 실제 자막 표시 근거가 없다. 큐 목록과 탐색 기록만으로 이 구간을 검증할 수 없다."
+          }
+        ]
+      },
+      "comparisons": [
+        {
+          "original_start_seconds": 1,
+          "original_end_seconds": 3.4,
+          "original_content": "안내자: 설정에서 보안을 선택합니다. 독립 전사의 의미와 검증된 화자 클립 구간에 근거한다.",
+          "caption_location": "폐쇄 자막 A1, line 76; 2초 활성 큐와 화면 표본",
+          "caption_start_seconds": 1,
+          "caption_end_seconds": 3.4,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C12",
+            "DISPLAY-C12-1"
+          ],
+          "user_impact": "표본에서 지시 내용과 화자를 읽을 수 있고 중요한 화면 내용의 가림은 보이지 않는다. 전체 표시 지속과 읽기 가능성은 미검증이다."
+        },
+        {
+          "original_start_seconds": 4,
+          "original_end_seconds": 7,
+          "original_content": "사용자: 이전 코드를 지금 버려도 되나요? 독립 전사의 의미와 검증된 화자 클립 구간에 근거한다.",
+          "caption_location": "폐쇄 자막 B1, line 76; 5초 활성 큐와 화면 표본",
+          "caption_start_seconds": 4,
+          "caption_end_seconds": 7,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C12",
+            "DISPLAY-C12-1"
+          ],
+          "user_impact": "표본에서 질문 내용과 화자 변경을 읽을 수 있고 중요한 화면 내용의 가림은 보이지 않는다. 전체 표시 지속과 읽기 가능성은 미검증이다."
+        },
+        {
+          "original_start_seconds": null,
+          "original_end_seconds": null,
+          "original_content": "A2에 대응하는 원본 대사의 내용과 정확한 구간은 미확인.",
+          "caption_location": "폐쇄 자막 A2, line 76: 새 복구 코드를 저장하기 전에는 이전 코드를 버리지 말라는 내용",
+          "caption_start_seconds": 7.6,
+          "caption_end_seconds": 11.6,
+          "relation": "unknown",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "DELIVERY-C12"
+          ],
+          "user_impact": "중요한 부정·조건이 원본과 일치하는지, 필요한 때 읽을 수 있는지 판단할 수 없다."
+        },
+        {
+          "original_start_seconds": null,
+          "original_end_seconds": null,
+          "original_content": "보안 확인 실패를 알리는 두 번의 경고음이 있다고 제공되었으나 실제 소리와 발생 구간은 미측정.",
+          "caption_location": "폐쇄 자막 SFX, line 76: [보안 확인 실패를 알리는 경고음 두 번]",
+          "caption_start_seconds": 12.2,
+          "caption_end_seconds": 15.82,
+          "relation": "unknown",
+          "evidence_ids": [
+            "MEDIA-C12",
+            "PAGE-C12",
+            "SOURCE-SOUND",
+            "DELIVERY-C12"
+          ],
+          "user_impact": "경고음의 횟수·의미·발생 시점이 자막으로 정확히 전달되는지 확인할 수 없다."
+        },
+        {
+          "original_start_seconds": null,
+          "original_end_seconds": null,
+          "original_content": "A3에 대응하는 원본 대사의 내용과 구간은 미확인.",
+          "caption_location": "폐쇄 자막 A3, line 76: 보안 확인을 다시 끝낸 뒤 발급을 확인한다는 내용",
+          "caption_start_seconds": 16.42,
+          "caption_end_seconds": 19.46,
+          "relation": "unknown",
+          "evidence_ids": [
+            "DELIVERY-C12"
+          ],
+          "user_impact": "절차의 순서와 조건이 원본에 맞게 전달되는지 판단할 수 없다."
+        },
+        {
+          "original_start_seconds": null,
+          "original_end_seconds": null,
+          "original_content": "A4에 대응하는 원본 대사의 내용과 구간은 미확인.",
+          "caption_location": "폐쇄 자막 A4, line 76: 새 코드 저장과 재발급 후 이전 코드 사용 불가에 관한 내용",
+          "caption_start_seconds": 20.06,
+          "caption_end_seconds": 26.7,
+          "relation": "unknown",
+          "evidence_ids": [
+            "DELIVERY-C12"
+          ],
+          "user_impact": "중요한 사용 불가 조건의 정확성과 긴 자막의 읽기 가능성·가림을 판단할 수 없다."
+        },
+        {
+          "original_start_seconds": null,
+          "original_end_seconds": null,
+          "original_content": "A5에 대응하는 원본 대사의 내용과 구간은 미확인.",
+          "caption_location": "폐쇄 자막 A5, line 76: 발급 완료 화면을 확인한다는 내용",
+          "caption_start_seconds": 27.3,
+          "caption_end_seconds": 29.58,
+          "relation": "unknown",
+          "evidence_ids": [
+            "DELIVERY-C12"
+          ],
+          "user_impact": "마지막 안내의 정확성과 화면에 맞춘 자막 표시를 판단할 수 없다."
+        }
+      ],
+      "missing_evidence": [
+        "8~31.208333초의 원본 음성 및 중요한 소리를 독립적으로 확인할 자료. 특히 경고음의 횟수·의미·시간과 부정·조건을 포함한 대사.",
+        "7.6초부터 시작하는 A2의 원본 대사를 확인할 증거.",
+        "0~31.208333초 전체의 원본 화면과 자막 표시 대응 기록. 큐 시작·끝, 지속 시간, 화자 변경, 조작부 및 중요한 시각 정보와의 가림을 확인할 수 있어야 한다.",
+        "전체 원본에서 후보 큐에 대응하지 않는 추가 대사나 중요한 소리가 없는지 확인할 근거."
+      ],
+      "recommendations": [
+        {
+          "change": "현재 확인된 자막 수정 사항은 없다. 먼저 누락된 원본·소리·표시 증거를 확보한다.",
+          "retest": "동일 원본 해시의 전체 매체를 독립적으로 검토하고 모든 대사·중요한 소리를 실제 자막 표시와 대조한다. 특히 부정·조건, 경고음 두 번, A4의 읽기 가능성과 가림을 확인한다."
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "사용 가능한 입력은 제공된 텍스트와 첨부 PNG뿐이다. 평가자가 URL 방문, 직접 청취, 연속 재생 또는 자막 조작을 수행하지 않았다.",
+    "범위 내 목록 완전성은 제공된 입력에 근거하며 평가자가 페이지를 새로 조사한 결과가 아니다.",
+    "자막 큐가 로드되고 표본에서 표시된다는 사실은 전체 자막의 의미·시간·읽기 충분성을 입증하지 않는다.",
+    "2초·5초 화면 표본은 해당 시점만 입증한다. processed_ranges의 시작과 끝이 같은 값인 것은 이 단일 시점 검토를 나타낸다.",
+    "뒤쪽 원본은 의도적으로 제공되지 않았다. 이는 실행 오류나 확인된 접근성 위반이 아니라 판정에 필요한 증거의 한계이다.",
+    "이 결과는 지정된 범위의 WCAG 2.2 성공 기준 1.2.2 수준 A에만 해당하며, 사이트 전체 적합성이나 다른 성공 기준을 판정하지 않는다."
+  ]
+}
+```

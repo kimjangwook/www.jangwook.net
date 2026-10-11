@@ -1,0 +1,406 @@
+{
+  "base": "http://127.0.0.1:8811",
+  "articles": [
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "98783a900df62ea766dcdf0326c38d9b28b4e77710e745dba56b6f4f6716a488",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "slug": "captions-prerecorded",
+      "path": "/series/accessibility/captions-prerecorded",
+      "sourceHash": "3edfb5e1875d2eab4db27f65d58e882bfdc64b45266836b1df86bea10249e3bc",
+      "firstPublishedAt": "2026-10-11T12:05:01.239Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/en/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "f5c69a5a061d86111b85d44b238a680ba3231691fcc37dafc5822f16092003d1",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "slug": "captions-prerecorded",
+      "path": "/en/series/accessibility/captions-prerecorded",
+      "sourceHash": "49ec08ce5f13b6d0e830cd4d7902f6c0d77213407c19fb0179445ca861400189",
+      "firstPublishedAt": "2026-10-11T12:05:01.239Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/ja/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "2f7c475ad602eca3984dbdc69b51daeef71f97cceb9d5c741ba136c0e414891d",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "slug": "captions-prerecorded",
+      "path": "/ja/series/accessibility/captions-prerecorded",
+      "sourceHash": "99a6253f83a0612074e8275b51458e8009713a1c1f0a2aa9a8fea5ae9451f1d0",
+      "firstPublishedAt": "2026-10-11T12:05:01.239Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/zh/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "458390ef4fe7fa3c9d8afa2af68900b0ec128679df762849e5329b19562a9da8",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "slug": "captions-prerecorded",
+      "path": "/zh/series/accessibility/captions-prerecorded",
+      "sourceHash": "23f430cc1bd995f2776323d010fa7e01d2928bc0030aa7d8c3069df927bba8df",
+      "firstPublishedAt": "2026-10-11T12:05:01.239Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true
+    }
+  ],
+  "responsive": [
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "width": 1440,
+      "overflow": false,
+      "figures": 4,
+      "axeViolations": 0
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "width": 390,
+      "overflow": false,
+      "figures": 4,
+      "axeViolations": 0
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "width": 320,
+      "overflow": false,
+      "figures": 4,
+      "axeViolations": 0
+    }
+  ],
+  "nativePlayback": [
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "98783a900df62ea766dcdf0326c38d9b28b4e77710e745dba56b6f4f6716a488",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "updatedAt": "2026-10-11",
+      "SSR": true,
+      "paused": false,
+      "time": 1.22781,
+      "duration": 19.916667,
+      "error": null,
+      "seek": true
+    }
+  ],
+  "practice": [
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/complete.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/sound-omitted.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/negation.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/shifted.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/open.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/transcript-only.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/speaker-omitted.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/condensed.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/text-alternative.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/unlabeled-text-alternative.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/extra-information.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/partial.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/unavailable-source.html",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/captions/ko/no-target.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/complete.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/sound-omitted.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/negation.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/shifted.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/open.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/transcript-only.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/speaker-omitted.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/condensed.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/text-alternative.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/unlabeled-text-alternative.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/extra-information.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/partial.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/unavailable-source.html",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/captions/en/no-target.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/complete.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/sound-omitted.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/negation.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/shifted.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/open.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/transcript-only.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/speaker-omitted.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/condensed.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/text-alternative.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/unlabeled-text-alternative.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/extra-information.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/partial.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/unavailable-source.html",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/captions/ja/no-target.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/complete.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/sound-omitted.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/negation.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/shifted.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/open.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/transcript-only.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/speaker-omitted.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/condensed.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/text-alternative.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/unlabeled-text-alternative.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/extra-information.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/partial.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/unavailable-source.html",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/captions/zh/no-target.html",
+      "status": 200
+    }
+  ],
+  "noJS": [],
+  "errors": [
+    "Error: native playback chromium /series/accessibility/captions-prerecorded\n    at ensure (file:///private/tmp/jangwook-publish-20261011/reports/releases/chapters-03-04-20261011/verify.mjs:5:34)\n    at file:///private/tmp/jangwook-publish-20261011/reports/releases/chapters-03-04-20261011/verify.mjs:29:160"
+  ]
+}

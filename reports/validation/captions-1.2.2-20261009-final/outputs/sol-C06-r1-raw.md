@@ -1,0 +1,276 @@
+本次限定范围判定为 **fail**：已提供的原始音频处理记录、独立转写与实际显示截图共同证明，视频未同步呈现用户的提问、表示安全确认失败的两次警告音，以及“重新发放后旧代码不可再使用”的重要信息。页面虽然提供完整说明，但没有明确标示视频是该正文的媒体替代，因此不能适用例外；部分画面指令与语音意思一致，也不足以弥补上述遗漏。本次仅审阅提供的记录和 PNG，未访问页面、直接听取音频或连续播放视频。
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C06；提供的 Chromium 页面状态；范围为文章内容及唯一教学视频，不含页脚导航。",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "fail",
+    "reason": "范围内唯一录制视频包含对话和重要警告音；实际显示未提供全部必要的同步文字信息。正文未明确标示视频是其媒体替代，例外不成立。"
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "MEDIA-C06",
+      "PAGE-C06",
+      "SOURCE-ASR",
+      "SOURCE-AUDIO",
+      "SOURCE-SOUND",
+      "SOURCE-VISUAL",
+      "ENCODE-LINK",
+      "DELIVERY-C06",
+      "DISPLAY-C06-1",
+      "DISPLAY-C06-2",
+      "DISPLAY-C06-3"
+    ],
+    "derived_processing_and_limits": [
+      "审阅提供的独立 faster-whisper 转写；原始音频解码覆盖至 31.1893125 秒。词级时间近似，识别结果不保证完全准确。",
+      "SOURCE-AUDIO 通过原始音频与独立录音的相关性确定六个录音片段及角色，不把候选字幕作为原文证据。",
+      "SOURCE-SOUND 检出 12.20–12.40 和 12.62–12.82 秒两个音调；其安全确认失败含义来自实际页面说明，而非频谱检测推断。",
+      "审阅三张实际 PNG，包含九个显示时间点；结合全帧解码及七个静态教学场景的结构记录，核对各场景内的文字。",
+      "SOURCE-VISUAL 中关于候选字幕及逐条活动字幕抽样的通用陈述，没有对应 C06 的具体字幕文本；不用于证明字幕存在或完整。实际 DELIVERY-C06 记录无轨道、样本无活动字幕。",
+      "run 表示完成提供资料的审阅，不表示本评估者执行了浏览器操作、音频解码或视频播放。"
+    ]
+  },
+  "media": [
+    {
+      "media_id": "M1",
+      "classification": "预先录制的同步音视频，包含两位画外说话者及传达安全确认失败的重要警告音；适用 1.2.2。",
+      "classification_evidence_ids": [
+        "MEDIA-C06",
+        "SOURCE-ASR",
+        "SOURCE-AUDIO",
+        "SOURCE-SOUND",
+        "SOURCE-VISUAL"
+      ],
+      "execution": "run",
+      "decision": "fail",
+      "reason": "独立原始音频证据与实际显示对照确认：用户提问、失败警告音和旧代码失效条件未以同步文字提供。没有 HTML track 不是单独的失败依据；已同时检查画面中的文字信息。",
+      "exception": {
+        "claimed": false,
+        "no_extra_information": true,
+        "clearly_labeled": false,
+        "verified": false,
+        "evidence_ids": [
+          "PAGE-C06",
+          "SOURCE-ASR",
+          "SOURCE-AUDIO",
+          "SOURCE-SOUND",
+          "SOURCE-VISUAL",
+          "DISPLAY-C06-1",
+          "DISPLAY-C06-2",
+          "DISPLAY-C06-3"
+        ]
+      },
+      "caption_delivery": {
+        "kind": "none",
+        "actually_observed": true,
+        "evidence_ids": [
+          "PAGE-C06",
+          "DELIVERY-C06",
+          "DISPLAY-C06-1",
+          "DISPLAY-C06-2",
+          "DISPLAY-C06-3"
+        ]
+      },
+      "coverage": {
+        "complete": false,
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 31.1893125,
+            "evidence_ids": [
+              "SOURCE-ASR",
+              "SOURCE-AUDIO",
+              "SOURCE-SOUND",
+              "SOURCE-VISUAL",
+              "ENCODE-LINK",
+              "DELIVERY-C06",
+              "DISPLAY-C06-1",
+              "DISPLAY-C06-2",
+              "DISPLAY-C06-3"
+            ],
+            "reason": "提供的完整音频处理区间与全帧解码、七个静态场景结构及各场景实际显示样本相交。此覆盖依据限于该受控静态教学素材，不是连续视听审阅；未使用泛化的候选字幕覆盖声明。"
+          }
+        ],
+        "unreviewed_ranges": [
+          {
+            "start_seconds": 31.1893125,
+            "end_seconds": 31.208333,
+            "reason": "视频标示时长略长于独立音频转写的处理范围；不以视频时长补齐音频处理覆盖。此尾段不影响已确认的失败。"
+          }
+        ]
+      },
+      "comparisons": [
+        {
+          "original_start_seconds": 0.94,
+          "original_end_seconds": 3.04,
+          "original_content": " 안내자：设置中选择安全选项。独立转写原文为「설정에서 보안을 선택합니다.」。",
+          "caption_location": "scene0 主说明：「설정에서 보안을 선택하세요.」；2 秒截图。无活动字幕队列。",
+          "caption_start_seconds": 0,
+          "caption_end_seconds": 3.75,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "ENCODE-LINK",
+            "DISPLAY-C06-1"
+          ],
+          "user_impact": "画面指令在对应语音期间表达相同操作；本项不因措辞差异判为遗漏。"
+        },
+        {
+          "original_start_seconds": 3.8,
+          "original_end_seconds": 6.56,
+          "original_content": "사용자：「이전 코드를 지금 버려도 되나요?」；角色录音区间为 4.0–7.0 秒。",
+          "caption_location": "scene1 仅显示「이전 코드에 관한 질문」「질문과 답변을 듣고 다음 단계로 이동하세요.」「답변 듣기」；5 秒截图没有问题内容或用户标识。",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "missing",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C06",
+            "DISPLAY-C06-1"
+          ],
+          "user_impact": "无法听取语音的使用者不知道用户具体询问是否可立即丢弃旧代码，也无法从同步文字辨识提问者。"
+        },
+        {
+          "original_start_seconds": 7.71,
+          "original_end_seconds": 11.18,
+          "original_content": "안내자：「아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.」",
+          "caption_location": "scene2 标题「코드를 버리기 전에」，说明「새 코드의 저장 상태를 먼저 확인하세요.」；9.4 秒截图。",
+          "caption_start_seconds": 7.35,
+          "caption_end_seconds": 11.95,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "ENCODE-LINK",
+            "DISPLAY-C06-1"
+          ],
+          "user_impact": "画面保留了丢弃旧代码前先确认新代码已保存的核心条件；但不能弥补上一段问题和对话角色的缺失。"
+        },
+        {
+          "original_start_seconds": 12.2,
+          "original_end_seconds": 12.82,
+          "original_content": "12.20–12.40、12.62–12.82 秒两次警告音，表示安全确认失败。",
+          "caption_location": "scene3 仅显示「보안 확인 결과」「결과를 확인하고 다음 단계로 이동하세요.」；12.5 和 15 秒截图未表示警告音或失败结果。",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "missing",
+          "evidence_ids": [
+            "SOURCE-SOUND",
+            "SOURCE-AUDIO",
+            "PAGE-C06",
+            "DELIVERY-C06",
+            "DISPLAY-C06-1",
+            "DISPLAY-C06-2"
+          ],
+          "user_impact": "不能听到声音的使用者无法在该结果场景获知安全确认失败，以及为何随后需要重新确认。"
+        },
+        {
+          "original_start_seconds": 16.47,
+          "original_end_seconds": 19,
+          "original_content": "안내자：「보안 확인을 다시 끝낸 뒤 발급을 확인합니다.」",
+          "caption_location": "scene4 标题「보안 확인 다시 하기」，说明「보안 확인을 완료하고 발급을 확인하세요.」；17.8 秒截图。",
+          "caption_start_seconds": 16.17,
+          "caption_end_seconds": 19.81,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "ENCODE-LINK",
+            "DISPLAY-C06-2"
+          ],
+          "user_impact": "标题与说明合起来保留了重新完成安全确认后再确认发放的操作顺序。"
+        },
+        {
+          "original_start_seconds": 20,
+          "original_end_seconds": 22.14,
+          "original_content": "안내자：「새 코드를 안전한 곳에 저장합니다.」",
+          "caption_location": "scene5 标题「새 코드 저장」，说明「코드를 안전한 곳에 보관하세요.」；22 秒截图。",
+          "caption_start_seconds": 19.81,
+          "caption_end_seconds": 27.05,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "ENCODE-LINK",
+            "DISPLAY-C06-2"
+          ],
+          "user_impact": "画面保留了安全保存新代码的要求。"
+        },
+        {
+          "original_start_seconds": 22.76,
+          "original_end_seconds": 26.02,
+          "original_content": "안내자：「새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.」",
+          "caption_location": "scene5 持续显示新代码保存指令；25 秒截图没有重新发放导致旧代码不可用的说明。",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "missing",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "ENCODE-LINK",
+            "DELIVERY-C06",
+            "DISPLAY-C06-2"
+          ],
+          "user_impact": "无法听取语音的使用者会遗漏旧代码失效的条件和后果，可能误以为旧代码仍可使用。"
+        },
+        {
+          "original_start_seconds": 27.45,
+          "original_end_seconds": 29.08,
+          "original_content": "안내자：「발급 완료 화면을 확인합니다.」",
+          "caption_location": "scene6 说明「발급 완료 화면을 확인하세요.」；28.3 秒截图。",
+          "caption_start_seconds": 27.05,
+          "caption_end_seconds": 31.18,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "ENCODE-LINK",
+            "DISPLAY-C06-3"
+          ],
+          "user_impact": "画面与语音提供相同的完成确认指令。"
+        }
+      ],
+      "missing_evidence": [
+        "完整覆盖最后约 0.019 秒的原始音频处理结果；仅用于补齐覆盖记录。",
+        "修正后的完整字幕文件及各字幕在实际播放器中的加载、显示、时间和布局记录；用于修正后复检。"
+      ],
+      "recommendations": [
+        {
+          "change": "为 M1 添加完整同步字幕，可采用实际可显示的关闭式字幕或嵌入视频的开放式字幕。补齐 3.8–6.56 秒的用户问题，并在对话切换时标明画外用户及 안내자。",
+          "retest": "实际加载或选择字幕，核对问题、回答及角色标识在对应录音期间可读且顺序正确；确认不是仅显示「听取回答」的操作提示。"
+        },
+        {
+          "change": "在 12.20–12.82 秒警告事件附近提供如「[보안 확인 실패 경고음 두 번]」的同步字幕，明确次数及失败含义。",
+          "retest": "对照两个音调与实际字幕显示，确认使用者能在结果场景理解安全确认失败；检查持续时间和布局，而不只比较时间戳。"
+        },
+        {
+          "change": "补上 22.76–26.02 秒「새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.」的同步字幕，保留条件和否定含义。",
+          "retest": "与独立原始音频证据对照，确认「重新发放」条件及「旧代码不可再使用」完整呈现；检查显示期间是否可读且不遮挡重要画面。"
+        },
+        {
+          "change": "保留正文作为辅助说明，不把正文转写当作同步字幕；如选择媒体替代例外路线，须明确标示该视频是完整正文的替代且重新核对无额外信息。",
+          "retest": "常规字幕路线检查整个视频的语义、重要声音及显示时间；例外路线检查实际显示标示、完整正文和完整原始媒体，两项条件都满足后才能采用例外。"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "本判定仅针对指定文章及 M1 的 WCAG 2.2 成功标准 1.2.2，不是网站适合性认证。",
+    "正文与已处理原始内容相符，支持无额外信息条件；但没有明确的媒体替代标示，故例外不成立。",
+    "实际截图中的教学文字可与部分语音意义等价；本判定不因其不是传统字幕样式而一律否定，而依据确认遗漏的重要信息判定失败。",
+    "提供记录的候选字幕通用描述与 C06 无轨道、无活动字幕的具体记录不一致；已保留该限制，未把通用描述作为字幕充分性的证据。",
+    "独立转写仍可能存在识别误差；关键遗漏同时由角色及音调处理、正文语义和实际显示支持，未以候选字幕证明自身准确。",
+    "覆盖完成度保守记为 false；未处理尾段及资料限制不抵消已经确认的要求违反。"
+  ]
+}
+```

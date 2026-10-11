@@ -1,0 +1,28 @@
+{
+  "replacements": [
+    {
+      "old": "[article on text alternatives](/en/series/accessibility/non-text-content)",
+      "new": "[article on text alternatives](https://jangwook.net/series/accessibility/non-text-content)"
+    },
+    {
+      "old": "For media whose content branches according to user choices, define the scope to include branches and interactions; one playback path cannot be used to evaluate the whole. Distinguish ordinary play and pause buttons from branching within the content itself.",
+      "new": "If the content itself branches according to user choices or includes interaction, it does not meet this criterion's definitions of audio-only or video-only content. Both definitions require that only audio or video be provided, with no interaction. Classify such media as a separate type and review the applicable accessibility criteria and each user path. Distinguish ordinary play and pause buttons from branching within the content itself."
+    },
+    {
+      "old": "This is a fictional teaching example, not measured model output.",
+      "new": "The earlier three-screen diagram and four-step description are separate fictional examples used to explain the concept. This five-screen diagram is also not measured model output; the practice results later in the article can be verified through the published test video and execution records."
+    },
+    {
+      "old": "Each repetition forked from prior context that contained no results for this criterion, and the cases were processed sequentially within each fork.",
+      "new": "Each repetition forked from an existing conversation in which other criteria had been evaluated; that context contained no execution results for this criterion. These were not independent, empty sessions, and the cases were processed sequentially within each fork."
+    },
+    {
+      "old": "[series overview](/en/series/accessibility/overview)",
+      "new": "[series overview](https://jangwook.net/series/accessibility/overview)"
+    },
+    {
+      "old": "[overview planning prompt](/en/series/accessibility/overview#evaluation-prompt)",
+      "new": "[overview planning prompt](https://jangwook.net/series/accessibility/overview#evaluation-prompt)"
+    }
+  ]
+}

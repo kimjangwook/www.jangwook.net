@@ -1,0 +1,72 @@
+{
+  "evidence_id": "SOURCE-AUDIO",
+  "source_sha256": "60e0e354b807c7cbfff847b5e557c8d5d57310fc39cae1dd051916ac526fdda1",
+  "roles": [
+    {
+      "id": "VOICE-A1",
+      "source_clip_sha256": "0569c8bf1fd4745903ddf031026fbb0a3130ddb0400da7ec1f036141b4b2a707",
+      "start": 1.0,
+      "end": 3.4,
+      "correlation": 0.99976,
+      "role": "안내자"
+    },
+    {
+      "id": "VOICE-B1",
+      "source_clip_sha256": "dabdbbef3850291fbad0b76bd8b7bebea5bb53ca8b893e981d9ba665d72e16b9",
+      "start": 4.0,
+      "end": 7.0,
+      "correlation": 0.99964,
+      "role": "사용자"
+    },
+    {
+      "id": "VOICE-A2",
+      "source_clip_sha256": "972ab56f9abb066aec32e25763618b384ea4329963fbd7b6b2d0f8d5b065f772",
+      "start": 7.6,
+      "end": 11.6,
+      "correlation": 0.9989,
+      "role": "안내자"
+    },
+    {
+      "id": "VOICE-A3",
+      "source_clip_sha256": "24f8111dd2d167c159363a1d3d68d2d86eb77e2dd56fddabb700e5363147c14a",
+      "start": 16.42,
+      "end": 19.46,
+      "correlation": 0.99969,
+      "role": "안내자"
+    },
+    {
+      "id": "VOICE-A4",
+      "source_clip_sha256": "3dde3d331eea2b2b99f35a6469ade2b994cdc49f0faf734af713dd885f8d80b2",
+      "start": 20.06,
+      "end": 26.7,
+      "correlation": 0.99925,
+      "role": "안내자"
+    },
+    {
+      "id": "VOICE-A5",
+      "source_clip_sha256": "3fe74feb6e6cae045fd2c5f18dbcd93759fa23f67b5ad762f479365a25f5057b",
+      "start": 27.3,
+      "end": 29.58,
+      "correlation": 0.99959,
+      "role": "안내자"
+    }
+  ],
+  "role_method": "Normalized correlation of actual decoded MP4 audio with six distinct isolated source recordings; role metadata from the controlled two-voice recording. No source speech text or candidate captions used. This is controlled provenance, not general speaker diarization performance.",
+  "sound_measurement": {
+    "id": "SOURCE-SOUND",
+    "tool": "FFT20ms dominant800-950Hz + actual page legend",
+    "pulses": [
+      {
+        "start": 12.2,
+        "end": 12.4
+      },
+      {
+        "start": 12.62,
+        "end": 12.82
+      }
+    ],
+    "semantic_source": "Actual page states that two warning tones signal security-check failure. Detector alone does not infer meaning.",
+    "unmeasured": "arbitrary sound classification, music, ambient noise"
+  },
+  "decoded_duration": 31.189333333333334
+}

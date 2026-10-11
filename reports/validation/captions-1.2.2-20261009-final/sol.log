@@ -1,0 +1,96 @@
+START sol-C01-r1
+START sol-C02-r1
+START sol-C03-r1
+DONE sol-C01-r1 completed gpt-6.1-sol pass 94.31
+START sol-C04-r1
+DONE sol-C03-r1 completed gpt-6.1-sol fail 98.46
+START sol-C05-r1
+DONE sol-C02-r1 completed gpt-6.1-sol fail 105.87
+START sol-C06-r1
+DONE sol-C04-r1 completed gpt-6.1-sol fail 92.56
+START sol-C07-r1
+DONE sol-C06-r1 completed gpt-6.1-sol fail 98.61
+START sol-C08-r1
+DONE sol-C05-r1 completed gpt-6.1-sol fail 117.4
+START sol-C09-r1
+DONE sol-C07-r1 completed gpt-6.1-sol pass 106.6
+START sol-C10-r1
+DONE sol-C08-r1 completed gpt-6.1-sol pass 96.22
+START sol-C11-r1
+DONE sol-C09-r1 completed gpt-6.1-sol not_applicable 97.3
+START sol-C12-r1
+DONE sol-C10-r1 completed gpt-6.1-sol fail 112.07
+START sol-C13-r1
+DONE sol-C12-r1 completed gpt-6.1-sol inconclusive 92.41
+START sol-C14-r1
+DONE sol-C11-r1 completed gpt-6.1-sol fail 118.63
+START sol-P-LAB-r1
+DONE sol-C14-r1 completed gpt-6.1-sol not_applicable 27.62
+START sol-P-NONE-r1
+DONE sol-C13-r1 completed gpt-6.1-sol inconclusive 51.41
+START sol-C01-r2
+DONE sol-C01-r2 completed gpt-6.1-sol pass 106.49
+START sol-C02-r2
+DONE sol-P-NONE-r1 completed gpt-6.1-sol None 164.18
+START sol-C03-r2
+DONE sol-P-LAB-r1 completed gpt-6.1-sol None 179.0
+START sol-C04-r2
+DONE sol-C02-r2 completed gpt-6.1-sol fail 94.44
+START sol-C05-r2
+DONE sol-C03-r2 completed gpt-6.1-sol fail 104.76
+START sol-C06-r2
+DONE sol-C04-r2 completed gpt-6.1-sol fail 126.5
+START sol-C07-r2
+DONE sol-C05-r2 completed gpt-6.1-sol fail 120.9
+START sol-C08-r2
+DONE sol-C06-r2 completed gpt-6.1-sol fail 115.87
+START sol-C09-r2
+DONE sol-C07-r2 completed gpt-6.1-sol pass 116.85
+START sol-C10-r2
+DONE sol-C08-r2 completed gpt-6.1-sol pass 84.02
+START sol-C11-r2
+DONE sol-C09-r2 completed gpt-6.1-sol not_applicable 99.08
+START sol-C12-r2
+DONE sol-C11-r2 completed gpt-6.1-sol fail 102.26
+START sol-C13-r2
+DONE sol-C10-r2 completed gpt-6.1-sol fail 124.61
+START sol-C14-r2
+DONE sol-C14-r2 completed gpt-6.1-sol not_applicable 23.18
+START sol-P-LAB-r2
+DONE sol-C12-r2 completed gpt-6.1-sol inconclusive 88.18
+START sol-P-NONE-r2
+DONE sol-C13-r2 completed gpt-6.1-sol inconclusive 47.5
+START sol-C01-r3
+DONE sol-C01-r3 completed gpt-6.1-sol pass 85.33
+START sol-C02-r3
+DONE sol-P-NONE-r2 completed gpt-6.1-sol None 134.01
+START sol-C03-r3
+DONE sol-P-LAB-r2 completed gpt-6.1-sol None 170.94
+START sol-C04-r3
+DONE sol-C02-r3 completed gpt-6.1-sol fail 90.01
+START sol-C05-r3
+DONE sol-C03-r3 completed gpt-6.1-sol fail 97.83
+START sol-C06-r3
+DONE sol-C04-r3 completed gpt-6.1-sol fail 106.23
+START sol-C07-r3
+DONE sol-C05-r3 completed gpt-6.1-sol fail 109.46
+START sol-C08-r3
+DONE sol-C06-r3 completed gpt-6.1-sol fail 125.1
+START sol-C09-r3
+DONE sol-C08-r3 completed gpt-6.1-sol pass 93.41
+START sol-C10-r3
+DONE sol-C07-r3 completed gpt-6.1-sol inconclusive 131.54
+START sol-C11-r3
+DONE sol-C09-r3 completed gpt-6.1-sol not_applicable 86.54
+START sol-C12-r3
+DONE sol-C11-r3 completed gpt-6.1-sol fail 110.9
+START sol-C13-r3
+DONE sol-C10-r3 completed gpt-6.1-sol fail 137.86
+START sol-C14-r3
+DONE sol-C12-r3 completed gpt-6.1-sol inconclusive 99.77
+START sol-P-LAB-r3
+DONE sol-C13-r3 completed gpt-6.1-sol inconclusive 42.48
+START sol-P-NONE-r3
+DONE sol-C14-r3 completed gpt-6.1-sol not_applicable 27.67
+DONE sol-P-NONE-r3 completed gpt-6.1-sol None 159.53
+DONE sol-P-LAB-r3 completed gpt-6.1-sol None 187.45

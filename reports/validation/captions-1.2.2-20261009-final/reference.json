@@ -1,0 +1,41 @@
+{
+  "frozen_before_model_execution": true,
+  "criterion": "1.2.2",
+  "expected": {
+    "C01": "pass",
+    "C02": "fail",
+    "C03": "fail",
+    "C04": "fail",
+    "C05": "fail",
+    "C06": "fail",
+    "C07": "pass",
+    "C08": "pass",
+    "C09": "not_applicable",
+    "C10": "fail",
+    "C11": "fail",
+    "C12": "inconclusive",
+    "C13": "inconclusive",
+    "C14": "not_applicable"
+  },
+  "reasons": {
+    "C01": "All dialogue, offscreen roles, important double warning and temporal relation supplied.",
+    "C02": "A2 negation reversed; instruction becomes unsafe opposite.",
+    "C03": "Meaningful security-failure sound omitted; page legend is not synchronized caption.",
+    "C04": "Offscreen question/answer roles not otherwise visible or distinguishable.",
+    "C05": "Five-second delay separates warning/answer from relevant scenes; no invented universal numeric limit.",
+    "C06": "Static full transcript is not synchronized captions and lacks explicit text-alternative label.",
+    "C07": "Actual burned-in captions acceptable; absent HTML track alone does not fail.",
+    "C08": "Equivalent condensed A4 preserves saving and invalidation information.",
+    "C09": "Explicitly labeled media alternative for full text with no extra information.",
+    "C10": "Identical full text does not alone satisfy clearly-labeled exception.",
+    "C11": "Extra warning speech invalidates claimed text-alternative exception.",
+    "C12": "Only first eight seconds independently observed; later original content unknown.",
+    "C13": "Original media retrieval/decode failed; avoid compliance decision from track metadata.",
+    "C14": "Complete inventory shows no media within scope."
+  },
+  "limits": [
+    "Controlled synthetic 31.18s, two stable offscreen roles, single important designed sound; no arbitrary diarization/music/noisy-video benchmark.",
+    "Models receive source-derived ASR, decoded PNGs, actual browser track observations and declared role legend. Native audio/video evaluation unmeasured.",
+    "References are authored before execution; original speech script and expected decisions never included in tested model inputs."
+  ]
+}

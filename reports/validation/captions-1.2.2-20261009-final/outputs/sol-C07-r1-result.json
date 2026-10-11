@@ -1,0 +1,237 @@
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C07 — 제공된 Chromium 페이지 상태의 본문과 교육 영상 M1만 평가. 페이지 하단 탐색 제외.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "pass",
+    "reason": "범위 내 유일한 녹화 영상에 개방 자막이 제공된다. 독립 원본 분석, 전체 처리·구조 확인 기록, 모든 자막 상태의 표시 표본을 종합하면 대사·화자·중요한 경고음의 의미와 시간 대응이 유지된다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "MEDIA-C07",
+      "PAGE-C07",
+      "SOURCE-ASR",
+      "SOURCE-AUDIO",
+      "SOURCE-SOUND",
+      "SOURCE-VISUAL",
+      "ENCODE-LINK",
+      "DELIVERY-C07",
+      "DISPLAY-C07-1",
+      "DISPLAY-C07-2",
+      "DISPLAY-C07-3"
+    ],
+    "derived_processing_and_limits": [
+      "제공된 faster-whisper 독립 전사를 검토했다. 후보 자막을 원본 전사로 재사용하지 않았으며, ASR의 단어 시각과 인식 결과에는 오차 가능성이 있다.",
+      "SOURCE-AUDIO의 독립 원본 녹음 상관 분석으로 안내자·사용자 역할과 녹음 구간을 확인했다. 이는 통제형 녹음의 출처 확인이지 일반적인 화자 분리 성능의 증명이 아니다.",
+      "SOURCE-SOUND의 측정된 두 펄스와 PAGE-C07의 설명을 결합해 경고음의 의미를 확인했다. FFT 검출만으로 의미를 추론하지 않았다.",
+      "ENCODE-LINK는 독립 원본과 개방 자막 영상의 서로 다른 해시를 연결한다. 전체 PCM 상관값 0.9996263980865479와 동일한 오디오 길이·시간 배치는 원본 분석을 대상 영상에 연결하는 근거다.",
+      "SOURCE-VISUAL의 749개 프레임 처리, 일곱 고정 화면의 구성 확인, 모든 자막 상태의 표시 검토 기록을 첨부 PNG와 함께 사용했다. 표본 PNG만으로 전체 범위를 확인했다고 판단하지 않았다.",
+      "정확한 개방 자막 시작·종료 시각의 수치 목록은 입력에 없다. 해당 값은 null로 남기며, 화면 구성 구간을 자막 큐 경계로 바꾸어 기록하지 않았다."
+    ]
+  },
+  "media": [
+    {
+      "media_id": "M1",
+      "classification": "대화와 정보성 경고음이 포함된 사전 제작 동기화 영상",
+      "classification_evidence_ids": [
+        "MEDIA-C07",
+        "SOURCE-ASR",
+        "SOURCE-AUDIO",
+        "SOURCE-SOUND",
+        "SOURCE-VISUAL"
+      ],
+      "execution": "run",
+      "decision": "pass",
+      "reason": "영상에 포함된 개방 자막이 독립적으로 확인된 대사, 부정·조건, 화면 밖 화자와 경고음의 의미를 전달한다. 전체 처리와 고정 구성 확인 기록을 바탕으로 표시 표본을 해석했으며, 의미 누락·역전이나 이용을 방해하는 시간·가림 문제는 확인되지 않았다.",
+      "exception": {
+        "claimed": false,
+        "no_extra_information": false,
+        "clearly_labeled": false,
+        "verified": false,
+        "evidence_ids": [
+          "PAGE-C07",
+          "SOURCE-ASR"
+        ]
+      },
+      "caption_delivery": {
+        "kind": "open",
+        "actually_observed": true,
+        "evidence_ids": [
+          "SOURCE-VISUAL",
+          "ENCODE-LINK",
+          "DELIVERY-C07",
+          "DISPLAY-C07-1",
+          "DISPLAY-C07-2",
+          "DISPLAY-C07-3"
+        ]
+      },
+      "coverage": {
+        "complete": true,
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 31.1893125,
+            "evidence_ids": [
+              "SOURCE-ASR",
+              "SOURCE-AUDIO",
+              "SOURCE-VISUAL",
+              "ENCODE-LINK",
+              "DISPLAY-C07-1",
+              "DISPLAY-C07-2",
+              "DISPLAY-C07-3"
+            ],
+            "reason": "독립 원본 음성 처리와 제공된 전체 시각 처리·표시 확인 범위의 교집합. 모든 대사와 중요한 소리가 포함된다. 영상 끝 31.208333초까지의 짧은 잔여 말미는 오디오 길이 및 unmatched_tail_peak=0 연결 기록상 추가 음성정보가 없다."
+          }
+        ],
+        "unreviewed_ranges": []
+      },
+      "comparisons": [
+        {
+          "original_start_seconds": 0.94,
+          "original_end_seconds": 3.04,
+          "original_content": "안내자: 설정에서 보안을 선택합니다.",
+          "caption_location": "영상 하단 검은 자막 영역. 2초 표본에 '안내자: 설정에서 보안을 선택합니다.' 표시.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "SOURCE-VISUAL",
+            "DISPLAY-C07-1"
+          ],
+          "user_impact": "설정 절차와 발화자를 소리 없이 파악할 수 있다."
+        },
+        {
+          "original_start_seconds": 3.8,
+          "original_end_seconds": 6.56,
+          "original_content": "사용자: 이전 코드를 지금 버려도 되나요?",
+          "caption_location": "영상 하단 검은 자막 영역. 5초 표본에 '사용자: 이전 코드를 지금 버려도 되나요?' 표시.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "SOURCE-VISUAL",
+            "DISPLAY-C07-1"
+          ],
+          "user_impact": "질문의 내용과 화면 밖 화자 변경을 구분할 수 있다."
+        },
+        {
+          "original_start_seconds": 7.71,
+          "original_end_seconds": 11.18,
+          "original_content": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+          "caption_location": "영상 하단 검은 자막 영역. 9.4초 표본에 부정과 저장 전 폐기 금지 조건을 포함한 동일한 대사 표시.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "SOURCE-VISUAL",
+            "DISPLAY-C07-1"
+          ],
+          "user_impact": "기존 코드를 버리면 안 되는 조건을 정확히 이해할 수 있다. 표본에서 문장이나 핵심 화면 정보의 가림은 없다."
+        },
+        {
+          "original_start_seconds": 12.2,
+          "original_end_seconds": 12.82,
+          "original_content": "12.2–12.4초와 12.62–12.82초의 두 경고음. 페이지 설명상 보안 확인 실패를 알림.",
+          "caption_location": "영상 하단에 '[보안 확인 실패를 알리는 경고음 두 번]' 표시. 12.5초와 15초 표본에서 확인.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-SOUND",
+            "PAGE-C07",
+            "SOURCE-VISUAL",
+            "DISPLAY-C07-1",
+            "DISPLAY-C07-2"
+          ],
+          "user_impact": "음의 횟수와 실패 신호의 의미를 알 수 있다. 고정 표시 기록과 두 표본은 경고음 설명이 순간적으로만 표시되지 않았음을 뒷받침한다."
+        },
+        {
+          "original_start_seconds": 16.47,
+          "original_end_seconds": 19,
+          "original_content": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+          "caption_location": "영상 하단 검은 자막 영역. 17.8초 표본에 동일한 대사와 안내자 표시.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "SOURCE-VISUAL",
+            "DISPLAY-C07-2"
+          ],
+          "user_impact": "보안 확인 재완료 후 발급 확인이라는 절차와 순서를 파악할 수 있다."
+        },
+        {
+          "original_start_seconds": 20,
+          "original_end_seconds": 22.14,
+          "original_content": "안내자: 새 코드를 안전한 곳에 저장합니다.",
+          "caption_location": "영상 하단 두 줄 자막의 첫 문장. 22초·25초 표본에서 다음 경고 문장과 함께 표시.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "SOURCE-VISUAL",
+            "DISPLAY-C07-2"
+          ],
+          "user_impact": "새 코드의 안전한 저장 지시를 읽을 수 있다. 두 줄 모두 조작부 위에 표시되어 내용 가림은 관찰되지 않는다."
+        },
+        {
+          "original_start_seconds": 22.76,
+          "original_end_seconds": 26.02,
+          "original_content": "안내자: 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+          "caption_location": "영상 하단 두 줄 자막의 두 번째 문장. 22초·25초 표본에서 앞선 저장 지시 다음에 표시.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "SOURCE-VISUAL",
+            "DISPLAY-C07-2"
+          ],
+          "user_impact": "재발급 조건과 기존 코드 사용 불가라는 중요한 부정을 정확히 알 수 있다. 고정 표시 기록과 두 표본상 긴 자막이 매우 짧게만 노출되는 문제는 없다."
+        },
+        {
+          "original_start_seconds": 27.45,
+          "original_end_seconds": 29.08,
+          "original_content": "안내자: 발급 완료 화면을 확인합니다.",
+          "caption_location": "영상 하단 검은 자막 영역. 28.3초 표본에 동일한 대사와 안내자 표시.",
+          "caption_start_seconds": null,
+          "caption_end_seconds": null,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "SOURCE-VISUAL",
+            "DISPLAY-C07-3"
+          ],
+          "user_impact": "발급 완료 확인 절차를 해당 화면과 함께 이해할 수 있다."
+        }
+      ],
+      "missing_evidence": [],
+      "recommendations": []
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "실행 run은 제공된 텍스트 기록과 첨부 PNG를 검토했다는 뜻이다. 추가 브라우저·음성·영상 도구를 실행하지 않았다.",
+    "본문에는 영상의 상세 절차와 경고가 모두 들어 있지 않고 본문의 매체 대안이라는 명확한 표시도 없다. 따라서 본문 대안 예외가 아닌 일반 자막 요구로 평가했다.",
+    "HTML track과 활성 큐가 비어 있어도 실패 근거가 아니다. 실제 영상 화면에서 개방 자막을 확인했다.",
+    "정확한 자막 경계 수치는 미제공이다. 시간·지속성 판단은 제공된 전체 확인 기록, 통제형 고정 구성 및 발화 중 표시 표본에 근거하며 임의의 WCAG 지연·읽기 속도 합격선을 적용하지 않았다.",
+    "전체 범위 판단은 제공된 통제형 일곱 고정 화면 매체의 구조·연결 확인 기록에 한정된다. 일반 동영상에 같은 표본 방식만 적용해 충분성을 선언할 수 없다.",
+    "이 결과는 지정된 범위의 성공 기준 1.2.2 평가이며 사이트 전체 적합성 인증이나 다른 성공 기준의 판정이 아니다."
+  ]
+}

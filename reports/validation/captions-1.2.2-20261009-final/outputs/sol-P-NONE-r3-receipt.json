@@ -1,0 +1,24 @@
+{
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "case_id": "P-NONE",
+  "kind": "overview",
+  "repeat": 3,
+  "input_sha256": "19bffc811ea90d90c255b8a05f886af852c88eee1472f4e7080ea19c9c6d89e0",
+  "prompt_sha256": "ee86f412ab54a8f6cdaa3afd54057e3cabc1f7ef603a47b17f1f9499ba91eb8c",
+  "reference_sha256": "27e0a838a553eb33c115cf396089e6e1c2a5ac0a35822f66264c03d600c61e36",
+  "image_hashes": {},
+  "started_at": "2026-10-09T05:57:18Z",
+  "status": "completed",
+  "context": "Fresh stateless Responses request; no other outputs or reference answers supplied.",
+  "model_returned": "gpt-6.1-sol",
+  "finish_reason": "stop",
+  "usage": {
+    "input_tokens": 1403,
+    "output_tokens": 4957,
+    "cached_input_tokens": 0,
+    "images": 0,
+    "search_calls": 0
+  },
+  "elapsed_seconds": 159.53
+}

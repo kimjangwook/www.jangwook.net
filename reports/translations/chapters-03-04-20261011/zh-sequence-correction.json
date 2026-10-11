@@ -1,0 +1,13 @@
+{
+  "approved": false,
+  "issues": [
+    "The sequencing example adds 再 to “保存后再丢弃”. Removing 后 then leaves “保存再丢弃”, which still conveys saving before discarding. This undermines the Korean source’s example of losing the sequencing information by omitting 뒤. Remove the redundant 再."
+  ],
+  "corrections": [
+    {
+      "path": "body",
+      "old": "即使只从“保存后再丢弃”中漏掉“后”，也会改变操作顺序。",
+      "new": "即使只从“保存后丢弃”中漏掉“后”，也会改变操作顺序。"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "https://jangwook.net/series/accessibility/overview — 게시된 접근성 개요 글 본문. 하단 탐색은 제외. 제공된 수집 기록의 응답 상태는 200.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "not_applicable",
+    "reason": "제공된 완전한 본문 DOM 수집 기록에 audio/video/embed/object/iframe이 없고 실제 매체 목록도 비어 있다. 해당 범위에서 1.2.2 적용 대상 매체가 확인되지 않았다. 본문 대안 예외에 따른 판정은 아니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "PAGE-C14"
+    ],
+    "derived_processing_and_limits": [
+      "제공된 텍스트의 매체 목록과 PAGE-C14 수집 기록을 검토했다.",
+      "Chromium의 본문 전체 DOM 수집은 제공 자료에 기록된 처리이며, 평가자가 직접 실행하거나 원시 DOM을 독립적으로 재검증한 것은 아니다.",
+      "HTTP 200만으로 판정하지 않았으며, 본문 전체 수집 기록과 빈 매체 목록을 근거로 삼았다."
+    ]
+  },
+  "media": [],
+  "errors": [],
+  "limits": [
+    "추가 브라우저·음성·영상 처리 도구가 없어 직접 방문, 청취, 연속 재생 또는 자막 조작을 수행하지 않았다.",
+    "범위 문구의 'teaching video'에 대응하는 실제 매체 항목이나 원본은 제공되지 않았다. 별도로 존재하는 영상을 뜻한다면 해당 매체와 제공 위치를 추가하여 재평가해야 한다.",
+    "판정은 제공된 본문 수집 범위에 한정되며, 제외된 탐색 영역·광고·외부 임베드 또는 사이트 전체의 적합성을 뜻하지 않는다."
+  ]
+}

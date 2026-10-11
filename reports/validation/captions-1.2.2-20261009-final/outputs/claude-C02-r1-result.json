@@ -1,0 +1,55 @@
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C02 — 기사 본문과 교육용 동영상 1개(M1) 범위, 하단 내비게이션 제외. Chromium에서 한국어 captions 트랙 mode=showing 상태.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "fail",
+    "reason": "M1의 7.71~11.18초 안내자 대사 '아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.'가 큐 A2에서 '네. 새 복구 코드를 저장하기 전에 버리세요.'로 표시되어 부정과 지시가 반대로 바뀌었습니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": ["MEDIA-C02", "PAGE-C02", "SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C02", "DISPLAY-C02-1", "DISPLAY-C02-2", "DISPLAY-C02-3"],
+    "derived_processing_and_limits": [
+      "원본 음성은 SOURCE-ASR(faster-whisper 독립 전사, 0~31.19초 전체)로만 확인했습니다. A2 구간의 '아니요.'(p=0.996), '전에는'(p=0.9998), '버리지'(p=0.9999), '마세요.'(p=0.9999)는 확률이 높습니다. 평가자는 직접 청취하지 않았습니다.",
+      "화자 역할은 SOURCE-AUDIO의 분리 녹음 상관 기록에 근거합니다.",
+      "경고음은 SOURCE-SOUND의 FFT 펄스 2개로 확인했고 의미는 PAGE-C02 문구에 근거합니다.",
+      "DISPLAY-C02-1~3의 9개 시점 PNG를 실제로 Read했습니다. 다수 화면 중앙에 원형 로딩 표시가 보이지만 자막 표시와 안내 텍스트를 가리지 않았습니다."
+    ]
+  },
+  "media": [{
+    "media_id": "M1",
+    "classification": "사전 녹화 동기화 매체(영상+대화 음성+정보성 경고음), 음소거 원본 아님",
+    "classification_evidence_ids": ["MEDIA-C02", "SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND"],
+    "execution": "run",
+    "decision": "fail",
+    "reason": "큐 A2가 원본의 부정 응답과 금지 지시를 긍정 응답과 폐기 지시로 바꾸어 표시합니다(DISPLAY-C02-1 9.4초 화면에서 실제 표시 확인). 나머지 6개 단위는 동등합니다.",
+    "exception": {"claimed": false, "no_extra_information": null, "clearly_labeled": null, "verified": false, "evidence_ids": []},
+    "caption_delivery": {"kind": "closed", "actually_observed": true, "evidence_ids": ["DELIVERY-C02", "DISPLAY-C02-1", "DISPLAY-C02-2", "DISPLAY-C02-3"]},
+    "coverage": {
+      "complete": true,
+      "processed_ranges": [{"start_seconds": 0, "end_seconds": 31.189, "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C02", "DISPLAY-C02-1", "DISPLAY-C02-2", "DISPLAY-C02-3"], "reason": "원본 음성 전체 전사·전체 프레임 디코드 기록, 큐 목록 전체, 각 큐 활성 시점 PNG의 교집합. 평가자의 직접 관찰은 PNG 9개 시점에 한정."}],
+      "unreviewed_ranges": [{"start_seconds": 31.189, "end_seconds": 31.208, "reason": "메타데이터 길이와 디코드 음성 길이의 차이 0.02초. 별도 관찰 없음."}]
+    },
+    "comparisons": [
+      {"original_start_seconds": 0.94, "original_end_seconds": 3.04, "original_content": "안내자: 설정에서 보안을 선택합니다.", "caption_location": "큐 A1, line 76", "caption_start_seconds": 1, "caption_end_seconds": 3.4, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C02", "DISPLAY-C02-1"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 3.8, "original_end_seconds": 6.56, "original_content": "사용자(화면 밖): 이전 코드를 지금 버려도 되나요?", "caption_location": "큐 B1, line 76", "caption_start_seconds": 4, "caption_end_seconds": 7, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C02", "DISPLAY-C02-1"], "user_impact": "화자 전환 식별됨."},
+      {"original_start_seconds": 7.71, "original_end_seconds": 11.18, "original_content": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.", "caption_location": "큐 A2, line 76", "caption_start_seconds": 7.6, "caption_end_seconds": 11.6, "relation": "inaccurate", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C02", "DISPLAY-C02-1"], "user_impact": "자막에 의존하는 이용자는 새 코드를 저장하기 전에 이전 복구 코드를 버리라는 반대 지시를 받아 계정 복구 수단을 잃을 수 있습니다."},
+      {"original_start_seconds": 12.2, "original_end_seconds": 12.82, "original_content": "경고음 두 번(보안 확인 실패 의미, 페이지 문구 근거)", "caption_location": "큐 SFX, line 76", "caption_start_seconds": 12.2, "caption_end_seconds": 15.82, "relation": "equivalent", "evidence_ids": ["SOURCE-SOUND", "PAGE-C02", "DELIVERY-C02", "DISPLAY-C02-1", "DISPLAY-C02-2"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 16.47, "original_end_seconds": 19.0, "original_content": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.", "caption_location": "큐 A3, line 76", "caption_start_seconds": 16.42, "caption_end_seconds": 19.46, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C02", "DISPLAY-C02-2"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 20.0, "original_end_seconds": 26.02, "original_content": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.", "caption_location": "큐 A4, line 76", "caption_start_seconds": 20.06, "caption_end_seconds": 26.7, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C02", "DISPLAY-C02-2"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 27.45, "original_end_seconds": 29.08, "original_content": "안내자: 발급 완료 화면을 확인합니다.", "caption_location": "큐 A5, line 76", "caption_start_seconds": 27.3, "caption_end_seconds": 29.58, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DELIVERY-C02", "DISPLAY-C02-3"], "user_impact": "영향 없음."}
+    ],
+    "missing_evidence": ["평가자의 직접 청취·연속 재생 관찰은 없습니다.", "임의 소리·음악 분류는 측정되지 않았습니다."],
+    "recommendations": [{"change": "큐 A2 텍스트를 '안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.'로 수정합니다.", "retest": "수정된 트랙을 로드해 7.6~11.6초 활성 큐 텍스트와 화면 표시를 확인하고, 원본 음성 전사와 부정·조건을 다시 대조합니다."}]
+  }],
+  "errors": [],
+  "limits": [
+    "직접 청취나 연속 재생 없이 독립 ASR·음향 측정·프레임 디코드 기록과 PNG 9장을 검토한 결과입니다.",
+    "ASR은 정답 보장이 아니지만 A2 구간의 핵심 단어 확률이 높고 분리 녹음 상관 0.9989로 해당 구간이 확인되어 충돌을 해소하지 못한 상태는 아닙니다.",
+    "PNG의 원형 로딩 표시는 캡처 시점 플레이어 상태로 보이며 자막 판정에는 반영하지 않았습니다."
+  ]
+}

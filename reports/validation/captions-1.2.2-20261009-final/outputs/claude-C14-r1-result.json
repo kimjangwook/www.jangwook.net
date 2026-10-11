@@ -1,0 +1,29 @@
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "https://jangwook.net/series/accessibility/overview — 기사 본문 범위(광고·무관한 내비게이션·외부 임베드 제외), HTTP 200, Chromium으로 기사 DOM 전체를 읽은 기록.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "not_applicable",
+    "reason": "범위 전체 기사 DOM을 읽은 수집 기록에서 audio·video·embed·object·iframe이 하나도 없어 매체 목록이 비어 있으므로 1.2.2를 적용할 동기화 매체가 없습니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": ["PAGE-C14"],
+    "derived_processing_and_limits": [
+      "평가자는 PAGE-C14의 수집 기록(status 200, actual_media_inventory 빈 배열, 'Complete article DOM read by Chromium; no audio/video/embed/object/iframe in article.')만 읽었고 페이지에 직접 접속하지 않았습니다.",
+      "PAGE-C14의 content는 한 줄 요약뿐이라 기사 본문 전문을 평가자가 직접 확인하지는 못했습니다.",
+      "케이스 scope 문구에는 'this one teaching video'가 있으나 PAGE-C14의 범위 정의와 매체 목록에는 영상이 없습니다. 실제 수집 기록을 우선했습니다."
+    ]
+  },
+  "media": [],
+  "errors": [],
+  "limits": [
+    "적용 제외 판정은 제공된 DOM 수집 기록이 완전하다는 진술(inventory_complete_within_scope=true)에 의존합니다.",
+    "외부 임베드는 범위에서 제외되었으므로 범위 밖 매체가 있다면 별도로 평가해야 합니다.",
+    "케이스 scope 문구와 실제 매체 목록 사이의 불일치는 템플릿 문구로 보이지만, 영상이 실제로 있어야 하는 페이지라면 매체 목록 재수집이 필요합니다."
+  ]
+}

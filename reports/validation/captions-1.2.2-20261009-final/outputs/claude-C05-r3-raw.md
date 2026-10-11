@@ -1,0 +1,61 @@
+# C05 — WCAG 2.2 SC 1.2.2 평가 (prompt 0.1.0)
+
+판정: **fail**. 매체 M1의 모든 자막 큐가 원본 발화·소리보다 정확히 5.0초 늦게 시작합니다(예: 안내자 첫 발화 원본 1.0–3.4초 → 큐 A1 6.0–8.4초, 경고음 12.2초 → 큐 SFX 17.2초). 제가 Read한 PNG에서도 2초·5초 화면에는 자막이 없고, 12.5초 화면(경고음 직후)에도 자막이 없으며, 28.3초 발급 완료 화면(7/7)에는 이전 장면의 A4 경고 문구가 표시됩니다. 마지막 큐 A5(32.3–34.58초)는 매체 길이 31.21초 이후에 시작해 실제로는 표시될 수 없고, A4도 31.7초 종료로 끝부분이 잘립니다. 문구는 원본과 같지만 동기화가 깨져 소리와 화면을 이해해야 할 때 읽을 수 없습니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C05 — 기사 본문과 교육 영상 1개(M1), 페이지 하단 내비게이션 제외. Chromium, 한국어 captions 트랙 mode=showing 처리 기록 기준.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "fail",
+    "reason": "모든 큐가 원본보다 5초 늦게 표시되어 대사·경고음과 화면 장면이 어긋나며, 마지막 대사 A5는 매체 종료 후 시작해 표시되지 않음."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": ["MEDIA-C05", "PAGE-C05", "SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C05", "DISPLAY-C05-1", "DISPLAY-C05-2", "DISPLAY-C05-3"],
+    "derived_processing_and_limits": [
+      "SOURCE-AUDIO/SOURCE-ASR: 원본 발화 구간(1.0–3.4, 4.0–7.0, 7.6–11.6, 16.42–19.46, 20.06–26.7, 27.3–29.58s)과 문구. 직접 청취 아님.",
+      "SOURCE-SOUND: 경고음 12.2–12.82s.",
+      "DELIVERY-C05: 큐 시작이 모두 +5.0s(6, 9, 12.6, 17.2, 21.42, 25.06, 32.3). 메타데이터 duration 31.208333s. 2s·5s·12.5s·25s 샘플 활성 큐 없음.",
+      "DISPLAY-C05-1~3: 평가 모델이 Read로 9개 시점의 실제 표시와 장면(n/7) 불일치를 확인. 31.21s 이후 상태는 PNG 없음(매체 길이상 도달 불가로 판단)."
+    ]
+  },
+  "media": [{
+    "media_id": "M1",
+    "classification": "사전 녹화된 동기화 매체(영상+대사+정보성 경고음), 음소거 원본 아님",
+    "classification_evidence_ids": ["MEDIA-C05", "SOURCE-ASR", "SOURCE-SOUND", "PAGE-C05"],
+    "execution": "run",
+    "decision": "fail",
+    "reason": "전 큐 5초 지연(timing_mismatch), A5는 매체 종료 이후 시작이라 표시 불가(missing).",
+    "exception": {"claimed": false, "no_extra_information": null, "clearly_labeled": null, "verified": false, "evidence_ids": ["PAGE-C05"]},
+    "caption_delivery": {"kind": "closed", "actually_observed": true, "evidence_ids": ["DELIVERY-C05", "DISPLAY-C05-1", "DISPLAY-C05-2", "DISPLAY-C05-3"]},
+    "coverage": {
+      "complete": true,
+      "processed_ranges": [{"start_seconds": 0, "end_seconds": 31.19, "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C05", "DISPLAY-C05-1", "DISPLAY-C05-2", "DISPLAY-C05-3"], "reason": "원본 음성 전체, 전체 큐 목록, 전 프레임 디코드 구조, 9개 시점 PNG의 교집합. 큐 시간이 매체 길이를 넘는 부분은 재생 범위 밖."}],
+      "unreviewed_ranges": []
+    },
+    "comparisons": [
+      {"original_start_seconds": 1.0, "original_end_seconds": 3.4, "original_content": "안내자: 설정에서 보안을 선택합니다.", "caption_location": "track cue A1, line 76", "caption_start_seconds": 6, "caption_end_seconds": 8.4, "relation": "timing_mismatch", "evidence_ids": ["SOURCE-AUDIO", "SOURCE-ASR", "DELIVERY-C05", "DISPLAY-C05-1"], "user_impact": "발화 중(2s)에는 자막이 없고, 사용자 질문이 들리는 6–7s와 다음 장면(3/7, 7.35s~)에 첫 안내가 뜸."},
+      {"original_start_seconds": 4.0, "original_end_seconds": 7.0, "original_content": "사용자: 이전 코드를 지금 버려도 되나요?", "caption_location": "track cue B1, line 76", "caption_start_seconds": 9, "caption_end_seconds": 12, "relation": "timing_mismatch", "evidence_ids": ["SOURCE-AUDIO", "SOURCE-ASR", "DELIVERY-C05", "DISPLAY-C05-1"], "user_impact": "질문이 안내자의 '아니요' 답변이 들리는 동안(9.4s) 표시되어 문답 순서가 어긋남."},
+      {"original_start_seconds": 7.6, "original_end_seconds": 11.6, "original_content": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.", "caption_location": "track cue A2, line 76", "caption_start_seconds": 12.6, "caption_end_seconds": 16.6, "relation": "timing_mismatch", "evidence_ids": ["SOURCE-AUDIO", "SOURCE-ASR", "DELIVERY-C05", "DISPLAY-C05-2"], "user_impact": "핵심 경고가 원래 장면(3/7 '코드를 버리기 전에')이 아닌 4/7·5/7 장면에 표시되고 경고음 시점과 겹쳐 맥락이 깨짐."},
+      {"original_start_seconds": 12.2, "original_end_seconds": 12.82, "original_content": "경고음 2회(보안 확인 실패)", "caption_location": "track cue SFX, line 76", "caption_start_seconds": 17.2, "caption_end_seconds": 20.82, "relation": "timing_mismatch", "evidence_ids": ["SOURCE-SOUND", "PAGE-C05", "DELIVERY-C05", "DISPLAY-C05-1", "DISPLAY-C05-2"], "user_impact": "실패 알림이 5초 늦게, '보안 확인 다시 하기' 장면과 재시도 안내 발화 중에 나와 실패 시점을 알 수 없음. 12.5s 화면에는 자막 없음."},
+      {"original_start_seconds": 16.42, "original_end_seconds": 19.46, "original_content": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.", "caption_location": "track cue A3, line 76", "caption_start_seconds": 21.42, "caption_end_seconds": 24.46, "relation": "timing_mismatch", "evidence_ids": ["SOURCE-AUDIO", "SOURCE-ASR", "DELIVERY-C05", "DISPLAY-C05-2"], "user_impact": "6/7 '새 코드 저장' 장면에서 재확인 안내가 나와 화면과 불일치."},
+      {"original_start_seconds": 20.06, "original_end_seconds": 26.7, "original_content": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.", "caption_location": "track cue A4, line 76", "caption_start_seconds": 25.06, "caption_end_seconds": 31.7, "relation": "timing_mismatch", "evidence_ids": ["SOURCE-AUDIO", "SOURCE-ASR", "DELIVERY-C05", "DISPLAY-C05-2", "DISPLAY-C05-3"], "user_impact": "25s 화면에는 자막 없음, 28.3s 발급 완료 화면(7/7)에 이전 코드 무효화 경고가 표시. 매체 종료(31.21s) 전 약 6초만 표시됨."},
+      {"original_start_seconds": 27.3, "original_end_seconds": 29.58, "original_content": "안내자: 발급 완료 화면을 확인합니다.", "caption_location": "track cue A5, line 76 (32.3s 시작, 매체 길이 31.21s 초과)", "caption_start_seconds": 32.3, "caption_end_seconds": 34.58, "relation": "missing", "evidence_ids": ["SOURCE-AUDIO", "SOURCE-ASR", "DELIVERY-C05", "DISPLAY-C05-3"], "user_impact": "매체 재생 중 표시될 수 없어 마지막 안내를 자막으로 받지 못함."}
+    ],
+    "missing_evidence": [],
+    "recommendations": [{"change": "모든 큐 시작·종료 시간을 5.0초 앞당겨 원본 발화·소리 구간에 맞춤(A1 1.0–3.4 … A5 27.3–29.58).", "retest": "수정 트랙으로 2, 5, 9.4, 12.5, 15, 17.8, 22, 25, 28.3s 활성 큐와 장면을 다시 확인하고, 모든 큐가 매체 길이 안에 있는지 점검."}]
+  }],
+  "errors": [],
+  "limits": [
+    "평가 모델은 직접 청취·연속 재생을 하지 않았고 파생 기록과 PNG 3장(9개 시점)만 검토함.",
+    "31.21s 이후 큐는 메타데이터 duration과 큐 시간을 비교한 판단이며 해당 상태의 화면 관찰은 없음.",
+    "PNG의 원호(로딩 표시로 추정)는 자막·지시를 가리지 않음."
+  ]
+}
+```

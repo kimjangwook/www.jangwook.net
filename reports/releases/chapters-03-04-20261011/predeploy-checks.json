@@ -1,0 +1,52 @@
+{
+  "typecheck": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "tests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "content": {
+    "posts": 88,
+    "criterionPosts": 86,
+    "prompts": 88,
+    "levels": {
+      "A": 31,
+      "AA": 24,
+      "AAA": 31
+    },
+    "published": 4,
+    "drafts": 84,
+    "bodyCharacters": 277857,
+    "promptCharacters": 149914,
+    "translationCounts": {
+      "en": {
+        "metadata": 88,
+        "complete": 4
+      },
+      "ja": {
+        "metadata": 88,
+        "complete": 4
+      },
+      "zh": {
+        "metadata": 88,
+        "complete": 4
+      }
+    },
+    "errors": []
+  },
+  "local": {
+    "articles": 8,
+    "practice": 56,
+    "nativePlayback": 24,
+    "responsive": 24,
+    "noJS": 8,
+    "errors": []
+  },
+  "rollbackWorkerVersion": "eb2af18c-b9de-4440-9461-de9663bc1499",
+  "baselineMainCommit": "d02247d8598101b284f045af84db21e70f4e05d2",
+  "productionDatabaseMigration": false,
+  "mailMode": "disabled",
+  "cronUnchanged": true
+}

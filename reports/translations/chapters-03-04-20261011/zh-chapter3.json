@@ -1,0 +1,28 @@
+{
+  "replacements": [
+    {
+      "old": "[替代文本文章](/zh/series/accessibility/non-text-content)",
+      "new": "[替代文本文章](https://jangwook.net/series/accessibility/non-text-content)"
+    },
+    {
+      "old": "对于内容会随用户选择而分支的媒体，需要将分支和交互也纳入范围，不能凭一次播放的路径评估全部内容。应区分普通的播放、暂停按钮与内容本身的分支。",
+      "new": "如果内容本身会随用户选择而分支，或包含交互，则不符合本条目中纯音频、纯视频的定义。因为这两个定义都要求只提供声音或视频，且不包含交互。此类媒体应归为其他类型，并检查相应的无障碍标准和各条使用路径。普通的播放、暂停按钮应与内容本身的分支区分开来。"
+    },
+    {
+      "old": "这是虚构的教学示例，并非实际模型的测量结果。",
+      "new": "前面的三个画面示意图和四步说明，是用于解释概念的另一组虚构示例。这个五个画面的示意图也并非实际模型的测量结果，后面的练习结果可通过公开的测试视频和运行记录确认。"
+    },
+    {
+      "old": "每轮重复均从尚无本条目结果的先前上下文处分支，各案例在每个分支内依次处理。",
+      "new": "每轮重复均从曾评估其他条目的已有对话处分支，该上下文中没有本条目的运行结果。这些并非独立的空白会话，各案例在每个分支内依次处理。"
+    },
+    {
+      "old": "[系列概览](/zh/series/accessibility/overview)",
+      "new": "[系列概览](https://jangwook.net/series/accessibility/overview)"
+    },
+    {
+      "old": "[概览评估计划提示词](/zh/series/accessibility/overview#evaluation-prompt)",
+      "new": "[概览评估计划提示词](https://jangwook.net/series/accessibility/overview#evaluation-prompt)"
+    }
+  ]
+}

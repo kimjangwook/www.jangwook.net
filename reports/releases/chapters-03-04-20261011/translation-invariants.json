@@ -1,0 +1,32 @@
+[
+  {
+    "language": "en",
+    "checklist": 12,
+    "figures": 4,
+    "inlinePractice": 1,
+    "criticalNumbersPreserved": true,
+    "promptSchemaKeysPreserved": true,
+    "cueTimingPreserved": true,
+    "bodySHA256": "4b2940c013c245b8da2ce661d7a27282ab3f729114f41a84d4433b308f9a7aac"
+  },
+  {
+    "language": "ja",
+    "checklist": 12,
+    "figures": 4,
+    "inlinePractice": 1,
+    "criticalNumbersPreserved": true,
+    "promptSchemaKeysPreserved": true,
+    "cueTimingPreserved": true,
+    "bodySHA256": "222cbdd591b09bbcfc902eb9f121aa60b6cdd4eeb63353587023ffc22f5fb343"
+  },
+  {
+    "language": "zh",
+    "checklist": 12,
+    "figures": 4,
+    "inlinePractice": 1,
+    "criticalNumbersPreserved": true,
+    "promptSchemaKeysPreserved": true,
+    "cueTimingPreserved": true,
+    "bodySHA256": "b25ca75d52e805a818a8843461a0e84ed1bb601b5aed5f8b6b379d02309d4214"
+  }
+]

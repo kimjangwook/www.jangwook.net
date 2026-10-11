@@ -1,0 +1,13 @@
+{
+  "approved": false,
+  "issues": [
+    "The evaluation prompt changes the explicit response-language instruction from Korean to English. A direct translation must preserve the language specified by the source instruction."
+  ],
+  "corrections": [
+    {
+      "path": "translation.prompt",
+      "old": "Distinguish actual evidence from assumptions throughout, and answer in English.",
+      "new": "Distinguish actual evidence from assumptions throughout, and answer in Korean."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 // Small, first-party teaching fixtures only. Keep the original asset bytes intact.
 export function isMediaAsset(path: string): boolean {
-  return /^\/lab-fixtures\/media-1\.2\.1\/(?:teaching\/(?:ko|en|ja|zh)\.mp4|playback\/silent-guide\.mp4|original\/assets\/[a-z0-9-]+\.(?:mp4|wav))$/.test(path);
+  return /^\/lab-fixtures\/media-1\.2\.1\/(?:teaching\/(?:ko|en|ja|zh)\.mp4|playback\/silent-guide\.mp4|original\/assets\/[a-z0-9-]+\.(?:mp4|wav))$/.test(path) || /^\/labs\/accessibility\/captions\/ko\/(?:compatible|open)\.mp4$/.test(path);
 }
 
 export async function serveMedia(request: Request, assets: {fetch(request: Request): Promise<Response>}): Promise<Response> {

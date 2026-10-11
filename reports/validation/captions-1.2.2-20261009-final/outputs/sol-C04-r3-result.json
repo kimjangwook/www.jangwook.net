@@ -1,0 +1,232 @@
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C04 — 제공된 Chromium 페이지 상태의 본문과 교육 영상 M1만 평가; 푸터 탐색 제외.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "fail",
+    "reason": "범위 내 유일한 녹화 영상에서 화면 밖 사용자와 안내자의 화자 전환이 자막 및 화면으로 명확하게 식별되지 않는다. 확인된 위반으로 범위를 fail로 집계한다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "MEDIA-C04",
+      "PAGE-C04",
+      "SOURCE-ASR",
+      "SOURCE-AUDIO",
+      "SOURCE-SOUND",
+      "SOURCE-VISUAL",
+      "ENCODE-LINK",
+      "DELIVERY-C04",
+      "DISPLAY-C04-1",
+      "DISPLAY-C04-2",
+      "DISPLAY-C04-3"
+    ],
+    "derived_processing_and_limits": [
+      "SOURCE-ASR는 원본 해시에 연결된 독립 음성 전사이다. 후보 자막이나 제작 대본을 인식 입력으로 사용하지 않았지만 인식 오류 가능성이 있고 단어 시간은 근사값이다.",
+      "SOURCE-AUDIO는 실제 디코딩 음성과 분리된 녹음의 상관 분석 및 통제된 녹음의 역할 메타데이터로 화자와 클립 구간을 연결한다. 일반적인 화자 분리 성능을 입증하지 않는다.",
+      "SOURCE-SOUND는 두 음의 시간 구간을 측정한다. 보안 확인 실패라는 의미는 PAGE-C04의 실제 안내 문구에서 확인한다.",
+      "SOURCE-VISUAL과 ENCODE-LINK는 전체 749프레임 디코딩 및 정적 화면 구성을 기록한다. 첨부 PNG에서 각 활성 자막의 표시를 검토했으며, 구간 내 고정 배치에 관한 제공 기록을 함께 사용했다.",
+      "DELIVERY-C04의 실제 로드·활성 큐·재생 및 탐색 결과를 검토했다. 평가자가 브라우저를 실행하거나 자막을 조작한 것은 아니다."
+    ]
+  },
+  "media": [
+    {
+      "media_id": "M1",
+      "classification": "대사와 이해에 필요한 두 번의 경고음이 포함된 사전 제작 동기화 영상.",
+      "classification_evidence_ids": [
+        "MEDIA-C04",
+        "SOURCE-ASR",
+        "SOURCE-AUDIO",
+        "SOURCE-SOUND",
+        "SOURCE-VISUAL"
+      ],
+      "execution": "run",
+      "decision": "fail",
+      "reason": "독립 원본 처리 기록으로 확인되는 사용자·안내자의 화자 전환이 B1과 A2의 실제 표시 자막에 누락되어 있다. 대사 내용과 중요한 경고음의 의미는 보존되어 있으나 화자 정보까지 충분히 제공되지는 않는다.",
+      "exception": {
+        "claimed": false,
+        "no_extra_information": null,
+        "clearly_labeled": null,
+        "verified": false,
+        "evidence_ids": []
+      },
+      "caption_delivery": {
+        "kind": "closed",
+        "actually_observed": true,
+        "evidence_ids": [
+          "PAGE-C04",
+          "DELIVERY-C04",
+          "DISPLAY-C04-1",
+          "DISPLAY-C04-2",
+          "DISPLAY-C04-3"
+        ]
+      },
+      "coverage": {
+        "complete": false,
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 31.1893125,
+            "evidence_ids": [
+              "SOURCE-ASR",
+              "SOURCE-AUDIO",
+              "SOURCE-VISUAL",
+              "ENCODE-LINK",
+              "DELIVERY-C04",
+              "DISPLAY-C04-1",
+              "DISPLAY-C04-2",
+              "DISPLAY-C04-3"
+            ],
+            "reason": "원본 음성 처리, 전체 화면 구성 검증, 전체 큐 목록 및 각 큐의 실제 표시 표본을 연결한 범위의 교집합이다. 연속 영상 직접 관찰 범위가 아니다."
+          }
+        ],
+        "unreviewed_ranges": [
+          {
+            "start_seconds": 31.1893125,
+            "end_seconds": 31.208333,
+            "reason": "음성 전사 처리 끝과 매체 길이 사이의 약 0.019초는 원본·자막·표시 대응 범위에 포함하지 않았다. ENCODE-LINK의 잔여 구간 피크 0 기록은 있으나 전사 처리 범위를 확대하지 않았다."
+          }
+        ]
+      },
+      "comparisons": [
+        {
+          "original_start_seconds": 1,
+          "original_end_seconds": 3.4,
+          "original_content": "안내자: 설정에서 보안을 선택합니다.",
+          "caption_location": "A1, line 76; DISPLAY-C04-1의 2초 화면",
+          "caption_start_seconds": 1,
+          "caption_end_seconds": 3.4,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C04",
+            "DISPLAY-C04-1"
+          ],
+          "user_impact": "초기 설정 지시의 의미가 보존된다. 표시 구간과 화면 배치에서 이 지시의 읽기를 방해하는 문제는 확인되지 않았다."
+        },
+        {
+          "original_start_seconds": 4,
+          "original_end_seconds": 7,
+          "original_content": "사용자로 화자 전환: 이전 코드를 지금 버려도 되나요?",
+          "caption_location": "B1, line 76; DISPLAY-C04-1의 5초 화면. 질문만 표시되고 사용자 식별은 없음.",
+          "caption_start_seconds": 4,
+          "caption_end_seconds": 7,
+          "relation": "missing",
+          "evidence_ids": [
+            "SOURCE-AUDIO",
+            "SOURCE-ASR",
+            "PAGE-C04",
+            "DELIVERY-C04",
+            "DISPLAY-C04-1"
+          ],
+          "user_impact": "질문 내용은 읽을 수 있지만, 안내자에서 사용자로 바뀐 사실과 질문의 발화자를 자막으로 명확히 식별할 수 없다. 화면에는 인물이나 해당 발화와 연결된 역할 표지가 없다."
+        },
+        {
+          "original_start_seconds": 7.6,
+          "original_end_seconds": 11.6,
+          "original_content": "안내자로 화자 전환: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+          "caption_location": "A2, line 76; DISPLAY-C04-1의 9.4초 화면. 경고 대사는 표시되지만 안내자 식별은 없음.",
+          "caption_start_seconds": 7.6,
+          "caption_end_seconds": 11.6,
+          "relation": "missing",
+          "evidence_ids": [
+            "SOURCE-AUDIO",
+            "SOURCE-ASR",
+            "PAGE-C04",
+            "DELIVERY-C04",
+            "DISPLAY-C04-1"
+          ],
+          "user_impact": "부정과 저장 전 폐기 금지 조건은 정확히 전달되지만, 사용자의 질문에 안내자가 답하는 화자 전환 정보는 빠져 있다. 질문·응답 형식만으로 실제 두 역할과 각 발화를 명확하게 연결하기 어렵다."
+        },
+        {
+          "original_start_seconds": 12.2,
+          "original_end_seconds": 12.82,
+          "original_content": "12.2~12.4초와 12.62~12.82초의 경고음 두 번. 페이지 안내에 따르면 보안 확인 실패를 의미한다.",
+          "caption_location": "SFX, line 76; DISPLAY-C04-1의 12.5초 및 DISPLAY-C04-2의 15초 화면",
+          "caption_start_seconds": 12.2,
+          "caption_end_seconds": 15.82,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-SOUND",
+            "PAGE-C04",
+            "DELIVERY-C04",
+            "DISPLAY-C04-1",
+            "DISPLAY-C04-2"
+          ],
+          "user_impact": "경고음의 횟수와 보안 확인 실패라는 의미가 전달된다. 소리 종료 후에도 같은 결과 화면에서 자막을 유지하며 다음 안내 전에 끝난다."
+        },
+        {
+          "original_start_seconds": 16.42,
+          "original_end_seconds": 19.46,
+          "original_content": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+          "caption_location": "A3, line 76; DISPLAY-C04-2의 17.8초 화면",
+          "caption_start_seconds": 16.42,
+          "caption_end_seconds": 19.46,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C04",
+            "DISPLAY-C04-2"
+          ],
+          "user_impact": "보안 확인을 먼저 완료해야 한다는 순서·조건이 보존된다. 앞서 누락된 화자 식별 문제와 별개로 대사 내용의 추가 오류는 확인되지 않았다."
+        },
+        {
+          "original_start_seconds": 20.06,
+          "original_end_seconds": 26.7,
+          "original_content": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+          "caption_location": "A4, line 76; DISPLAY-C04-2의 22초 및 25초 화면",
+          "caption_start_seconds": 20.06,
+          "caption_end_seconds": 26.7,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "SOURCE-VISUAL",
+            "DELIVERY-C04",
+            "DISPLAY-C04-2"
+          ],
+          "user_impact": "저장 지시와 재발급 시 이전 코드가 무효가 된다는 조건·부정이 보존된다. 긴 자막은 6.64초 동안 유지되며 첨부 화면에서 잘림이나 중요한 안내·버튼의 가림은 확인되지 않았다."
+        },
+        {
+          "original_start_seconds": 27.3,
+          "original_end_seconds": 29.58,
+          "original_content": "안내자: 발급 완료 화면을 확인합니다.",
+          "caption_location": "A5, line 76; DISPLAY-C04-3의 28.3초 화면",
+          "caption_start_seconds": 27.3,
+          "caption_end_seconds": 29.58,
+          "relation": "equivalent",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C04",
+            "DISPLAY-C04-3"
+          ],
+          "user_impact": "완료 확인 지시가 대응하는 화면에서 읽을 수 있게 제공된다."
+        }
+      ],
+      "missing_evidence": [
+        "전체 시간 범위의 재판정에는 31.1893125~31.208333초의 원본·표시 대응 범위를 명시한 추가 기록이 필요하다."
+      ],
+      "recommendations": [
+        {
+          "change": "화자 전환을 식별하도록 B1에 '[사용자]', A2에 '[안내자]'를 추가한다. 최초 안내자 발화에도 역할을 소개하면 이후 동일 화자의 지시마다 이름을 반복하지 않고 관계를 명확히 유지할 수 있다.",
+          "retest": "SOURCE-AUDIO의 역할 구간과 수정 큐를 대조하고, 4~7초 및 7.6~11.6초에 실제 표시되는 역할 표지를 확인한다. 추가된 글자 때문에 자막이 잘리거나 읽기 어렵거나 중요한 화면을 가리지 않는지도 재확인한다."
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "사용 가능한 입력은 제공된 텍스트와 첨부 PNG뿐이다. URL 방문, 직접 청취, 연속 재생, 추가 자막 조작 또는 사이트 변경을 수행하지 않았다.",
+    "원본 독립 전사와 후보 자막을 별도 자료로 유지했다. 전사의 높은 인식 확률만으로 원본 정확성을 보증하지 않았다.",
+    "표본 PNG만으로 임의 영상의 전체 표시 충분성을 판단한 것이 아니다. 이 통제된 정적 화면 영상의 전체 디코딩·구성 검증 기록을 함께 사용했다.",
+    "화자 누락 판정은 화면 밖의 두 역할이 실제로 전환되며 화면과 자막에 발화자 연결 표지가 없다는 근거에 따른다. 모든 대사에 화자 이름을 반복하도록 요구하는 판정은 아니다.",
+    "이 결과는 명시된 범위의 WCAG 2.2 성공 기준 1.2.2 수준 A에 한정되며, 다른 성공 기준이나 사이트 전체의 적합성을 인증하지 않는다."
+  ]
+}

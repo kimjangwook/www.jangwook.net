@@ -13,7 +13,8 @@
       "/lab-fixtures/media-1.2.1/teaching/*.mp4",
       "/lab-fixtures/media-1.2.1/playback/*.mp4",
       "/lab-fixtures/media-1.2.1/original/assets/*.mp4",
-      "/lab-fixtures/media-1.2.1/original/assets/*.wav"
+      "/lab-fixtures/media-1.2.1/original/assets/*.wav",
+      "/labs/accessibility/captions/ko/*.mp4"
     ]
   },
   "vars": {

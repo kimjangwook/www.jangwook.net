@@ -1,0 +1,99 @@
+# C13 평가 원문 출력
+
+판정: **inconclusive**(실행: error). 원본 매체 unavailable.mp4 요청이 HTTP 404, MediaError 4, readyState 0으로 실패해(DELIVERY-C13) 원본 음성·영상·길이·해시와 자막 표시를 하나도 확인하지 못했고, 전사·소리·화면 처리와 PNG도 제공되지 않았습니다. 본문(PAGE-C13)의 대화·경고음 설명은 매체를 관찰한 증거가 아니므로 적용 대상 여부도 확정할 수 없습니다. 수집 오류를 fail이나 not_applicable로 바꾸지 않았으며, 매체 접근 복구 후 전체 증거를 다시 수집해야 합니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C13 — 본문과 교육용 동영상 M1 1개(페이지 하단 내비게이션 제외). video_src unavailable.mp4가 HTTP 404, 미디어 error 4, readyState 0으로 수집 실패.",
+    "inventory_complete_within_scope": true,
+    "execution": "error",
+    "decision": "inconclusive",
+    "reason": "원본 매체 요청이 404로 실패해 원본 음성·영상·길이·해시·자막 표시를 하나도 확인하지 못했습니다. 본문은 대화와 경고음이 있다고 설명하지만 매체 자체를 관찰하지 못했으므로 적용 대상인지, 자막이 충분한지 판단할 수 없습니다. 수집 오류를 fail이나 not_applicable로 바꾸지 않았습니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "MEDIA-C13",
+      "PAGE-C13",
+      "DELIVERY-C13"
+    ],
+    "derived_processing_and_limits": [
+      "DELIVERY-C13: 'Failed collection'. currentSrc http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable.mp4 응답 status 404, media error 4, readyState 0.",
+      "MEDIA-C13: source_sha256·duration null, 분류·내용 미확립.",
+      "PAGE-C13: track 0개. 본문은 '화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.'라고 설명하지만 이는 매체 관찰이 아닙니다.",
+      "original·audio_processing·visual_processing은 null이고 PNG는 제공되지 않았습니다."
+    ]
+  },
+  "media": [
+    {
+      "media_id": "M1",
+      "classification": "미확인(원본 접근 실패). 본문 설명상 대화·경고음이 있는 녹화 영상으로 추정되나 관찰되지 않음",
+      "classification_evidence_ids": [
+        "MEDIA-C13",
+        "PAGE-C13",
+        "DELIVERY-C13"
+      ],
+      "execution": "error",
+      "decision": "inconclusive",
+      "reason": "매체 파일 404로 원본과 표시 상태를 확인하지 못했습니다.",
+      "exception": {
+        "claimed": false,
+        "no_extra_information": null,
+        "clearly_labeled": null,
+        "verified": false,
+        "evidence_ids": []
+      },
+      "caption_delivery": {
+        "kind": "unknown",
+        "actually_observed": false,
+        "evidence_ids": [
+          "DELIVERY-C13"
+        ]
+      },
+      "coverage": {
+        "complete": false,
+        "processed_ranges": [],
+        "unreviewed_ranges": [
+          {
+            "start_seconds": null,
+            "end_seconds": null,
+            "reason": "매체 길이를 알 수 없고 전체가 미처리입니다(404)."
+          }
+        ]
+      },
+      "comparisons": [],
+      "missing_evidence": [
+        "접근 가능한 원본 매체 파일과 SHA256·길이·트랙 정보.",
+        "원본 음성의 독립 전사, 화자 대응, 중요한 소리 측정.",
+        "영상 화면 처리와 자막(폐쇄·개방) 실제 표시 관찰 PNG.",
+        "404가 평가 환경의 수집 문제인지 실제 서비스 상태인지 구분할 정보."
+      ],
+      "recommendations": [
+        {
+          "change": "매체 URL(unavailable.mp4)이 정상 제공되도록 복구하거나 올바른 원본 경로를 확인합니다. 실제 서비스에서도 404라면 매체가 재생되지 않는 별도 문제로 다룹니다.",
+          "retest": "매체 로드 성공(readyState≥1, error 없음)을 확인한 뒤 원본 전체 전사·소리 측정·자막 표시 캡처를 수집해 1.2.2를 다시 평가합니다."
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "evidence_ids": [
+        "DELIVERY-C13"
+      ],
+      "stage": "원본 매체 수집(브라우저 로드)",
+      "error": "unavailable.mp4 HTTP 404, MediaError code 4, readyState 0",
+      "effect_on_decision": "원본·표시 증거가 전혀 없어 판정 불가(inconclusive). 위반이나 비적용으로 처리하지 않았습니다."
+    }
+  ],
+  "limits": [
+    "평가 모델은 제공된 텍스트만 읽었으며 매체를 재생·청취·재요청하지 않았습니다.",
+    "본문 설명은 매체 내용의 독립 증거가 아니므로 분류 근거로 쓰지 않았습니다."
+  ]
+}
+```

@@ -1,0 +1,78 @@
+{
+  "criterion": "1.2.2",
+  "wcag": "2.2",
+  "prompt_version": "0.1.0",
+  "language": "ko",
+  "completed_at": "2026-10-09T06:01:26.443758+00:00",
+  "selected_path": "Claude Opus5.5 High via Claude Desktop",
+  "model_runs": {
+    "sol": {
+      "criterion": 42,
+      "reference_decision_matches": 41,
+      "strict_contract_pass_runs": 39,
+      "semantic_checks_pass_runs": 37,
+      "overview": 6
+    },
+    "claude": {
+      "criterion": 42,
+      "reference_decision_matches": 42,
+      "strict_contract_pass_runs": 36,
+      "semantic_checks_pass_runs": 42,
+      "overview": 6
+    }
+  },
+  "selected_reference_matches": "42/42",
+  "selected_overview_plans": "6/6",
+  "all_results_unchanged": true,
+  "mechanical_warnings_preserved": [
+    {
+      "run": "claude-C01-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C01-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C07-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C07-r2",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C08-r1",
+      "check": "complete provided scope",
+      "pass": false
+    },
+    {
+      "run": "claude-C08-r2",
+      "check": "complete provided scope",
+      "pass": false
+    }
+  ],
+  "selection_reason": "All 42 frozen-reference decisions repeated consistently with Korean explanations and case-localized evidence; overview 6/6 records remained plans. Sol has language-instruction departures and a conservative C07 inconclusive decision despite supplied controlled coverage proof. This is a bounded execution-path choice, not a universal model ranking.",
+  "coverage_interpretation": "Six pass runs explicitly record only the roughly 19 ms container tail beyond decoded audio. This is an ambiguity in the complete boolean and must remain in raw results. No final content unit is hidden in that tail: full decoded audio ends at 31.189333, unmatched tail peak=0, seven static scenes and 749 decoded frames establish the controlled final state. Do not claim every JSON field or coverage representation was flawless; do not erase the warning or change reference answers.",
+  "input_limit_review": "C14 parent scope retains a generic teaching-video phrase, while actual article DOM inventory is empty. Overview plans flag this conflict; criterion results use the explicit article inventory, with limits retained. P-LAB contains screenshot IDs but no image attachments: overview outputs request them rather than claiming image inspection.",
+  "semantic_review": "completed; case-specific relations, timings, missing evidence, recommendations and retest inspected. Six roughly19ms container-tail warnings retained, not represented as perfect schemas.",
+  "overview_review": "completed for selected six actual outputs; sources, plans vs observed results, A-F sections, missing PNGs, scope ambiguity, WCAG2.2 A and deleted4.1.1 handled.",
+  "repeat_context": "Sol stateless request per input; Claude fresh session per repeat, shared batch context within each repeat. No other model outputs or reference answers supplied.",
+  "model_identity": "Sol exact returned gpt-6.1-sol in completed responses; Claude model/High observed Desktop UI, server identifier not independently available.",
+  "native_llm_audio_video_processing": "not measured",
+  "source_sha256": "60e0e354b807c7cbfff847b5e557c8d5d57310fc39cae1dd051916ac526fdda1",
+  "review_video_sha256": "a8f6d95c774c580dce652cb8f1cbbd804b0ae9469bde3a1efe5035b27d03f4a3",
+  "overview_prompt_sha256": "ee86f412ab54a8f6cdaa3afd54057e3cabc1f7ef603a47b17f1f9499ba91eb8c",
+  "criterion_prompt_sha256": "4be49379539ed08887a37ee44b87c5227fefb6ea04ff0fd01f55c4022028b90e",
+  "frozen_reference_sha256": "27e0a838a553eb33c115cf396089e6e1c2a5ac0a35822f66264c03d600c61e36",
+  "reference_unchanged": true,
+  "input_and_images_immutable": true,
+  "browser_records": 28,
+  "publication": false,
+  "limits": "Not measured: models evaluated independent actual-MP4-derived ASR/source linkage, browser cue records and PNGs. Controlled speaker attribution and SFX detection are not general recognition benchmarks.",
+  "article_claims": "Only selected bounded criterion decisions and evidence are in the article. No universal accuracy/certification, no claim that all output fields are flawless, no drafting history."
+}

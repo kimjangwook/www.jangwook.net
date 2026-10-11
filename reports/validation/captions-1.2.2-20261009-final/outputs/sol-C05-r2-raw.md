@@ -1,0 +1,274 @@
+**判定：fail（不適合）**。提供された独立音声処理記録・実際のブラウザー表示記録・添付PNGを照合すると、M1の字幕は対応する音声より約5秒遅く、別の説明画面で表示されています。また、最後の案内の字幕A5は動画終了後に開始する設定であり、再生中に提供されません。今回実行したのは提供資料の評価であり、URLへの訪問、直接の聴取、動画の連続再生は行っていません。
+
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C05 — 記事本文と教育動画M1のみ。フッターナビゲーションは除外。提供されたChromiumのページ・表示状態を評価。",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "fail",
+    "reason": "範囲内の唯一の動画M1について、音声と字幕の約5秒のずれ、および動画終了後に設定された最終字幕の欠落を確認した。"
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": [
+      "MEDIA-C05",
+      "PAGE-C05",
+      "SOURCE-ASR",
+      "SOURCE-AUDIO",
+      "SOURCE-SOUND",
+      "SOURCE-VISUAL",
+      "ENCODE-LINK",
+      "DELIVERY-C05",
+      "DISPLAY-C05-1",
+      "DISPLAY-C05-2",
+      "DISPLAY-C05-3"
+    ],
+    "derived_processing_and_limits": [
+      "実行した処理は、提供されたテキスト記録と添付PNGの検討。ブラウザーや音声・動画処理ツールは利用できない。",
+      "SOURCE-ASRは原本MP4の独立自動転写。字幕候補は認識に使用されていないが、認識内容と単語時刻は確定的な正解ではない。",
+      "SOURCE-AUDIOの原本と分離録音の相関記録で、話者と録音区間を確認した。転写の語句時刻と録音区間の小さな差は、字幕の約5秒のずれとは区別した。",
+      "警告音の実測区間はSOURCE-SOUND、意味はPAGE-C05の実際の説明による。周波数検出だけで音の意味を推定していない。",
+      "749フレームの復号、固定説明画面の構造、原本と候補の同一音声時系列は提供されたSOURCE-VISUALとENCODE-LINKの記録に基づく。評価モデル自身の全フレーム観察ではない。",
+      "DELIVERY-C05のキューと実際のアクティブ状態を添付PNGと照合した。「各キューをアクティブ中に採取した」という包括的記述は、提示されたサンプルでは完全には裏づけられず、特にA5は動画終了後のキューである。"
+    ]
+  },
+  "media": [
+    {
+      "media_id": "M1",
+      "classification": "台詞と理解に必要な保安確認失敗の警告音を含む、事前制作された同期メディア。1.2.2の適用対象。",
+      "classification_evidence_ids": [
+        "MEDIA-C05",
+        "SOURCE-ASR",
+        "SOURCE-AUDIO",
+        "SOURCE-SOUND",
+        "PAGE-C05",
+        "SOURCE-VISUAL"
+      ],
+      "execution": "run",
+      "decision": "fail",
+      "reason": "字幕の文言には台詞・話者・警告音の意味が含まれるが、約5秒遅れて別の手順画面に表示される。最終案内A5は31.208333秒の動画終了後、32.3秒に開始するため、再生中の字幕として提供されない。",
+      "exception": {
+        "claimed": false,
+        "no_extra_information": false,
+        "clearly_labeled": false,
+        "verified": false,
+        "evidence_ids": [
+          "PAGE-C05",
+          "SOURCE-ASR"
+        ]
+      },
+      "caption_delivery": {
+        "kind": "closed",
+        "actually_observed": true,
+        "evidence_ids": [
+          "PAGE-C05",
+          "DELIVERY-C05",
+          "DISPLAY-C05-1",
+          "DISPLAY-C05-2",
+          "DISPLAY-C05-3"
+        ]
+      },
+      "coverage": {
+        "complete": false,
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 31.1893125,
+            "evidence_ids": [
+              "SOURCE-ASR",
+              "SOURCE-AUDIO",
+              "SOURCE-VISUAL",
+              "ENCODE-LINK",
+              "DELIVERY-C05",
+              "DISPLAY-C05-1",
+              "DISPLAY-C05-2",
+              "DISPLAY-C05-3"
+            ],
+            "reason": "提供された原本音声処理、全フレーム復号・固定画面構造、字幕一覧・アクティブ状態・PNGの記録を照合した区間。表示の継続性はこの制御された固定配置の記録に依存し、直接連続再生した区間ではない。"
+          }
+        ],
+        "unreviewed_ranges": [
+          {
+            "start_seconds": 31.1893125,
+            "end_seconds": 31.208333,
+            "reason": "提供された独立転写の処理区間外であり、原本・字幕・必要な表示観察すべての共通処理区間に含めていない。"
+          }
+        ]
+      },
+      "comparisons": [
+        {
+          "original_start_seconds": 1,
+          "original_end_seconds": 3.4,
+          "original_content": "案内者：設定でセキュリティを選ぶ。原文「설정에서 보안을 선택합니다.」",
+          "caption_location": "韓国語字幕A1、line 76。原文「안내자: 설정에서 보안을 선택합니다.」",
+          "caption_start_seconds": 6,
+          "caption_end_seconds": 8.4,
+          "relation": "timing_mismatch",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C05",
+            "ENCODE-LINK",
+            "DISPLAY-C05-1"
+          ],
+          "user_impact": "録音開始より5秒遅い。2秒時点のセキュリティ設定画面では字幕がなく、対応する画面が終了した後に案内が表示されるため、指示と画面を対応づけにくい。"
+        },
+        {
+          "original_start_seconds": 4,
+          "original_end_seconds": 7,
+          "original_content": "使用者：以前のコードを今捨ててもよいか。原文「이전 코드를 지금 버려도 되나요?」",
+          "caption_location": "韓国語字幕B1、line 76。原文「사용자: 이전 코드를 지금 버려도 되나요?」",
+          "caption_start_seconds": 9,
+          "caption_end_seconds": 12,
+          "relation": "timing_mismatch",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C05",
+            "ENCODE-LINK",
+            "DISPLAY-C05-1"
+          ],
+          "user_impact": "録音開始より5秒遅い。5秒時点の質問画面には字幕がなく、9.4秒の保存確認画面で質問が表示され、質問と回答・画面の関係がずれる。"
+        },
+        {
+          "original_start_seconds": 7.6,
+          "original_end_seconds": 11.6,
+          "original_content": "案内者：いいえ。新しい復旧コードを保存する前に捨ててはいけない。原文「아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.」",
+          "caption_location": "韓国語字幕A2、line 76。同じ否定・条件を含む文言。",
+          "caption_start_seconds": 12.6,
+          "caption_end_seconds": 16.6,
+          "relation": "timing_mismatch",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C05",
+            "ENCODE-LINK",
+            "DISPLAY-C05-1",
+            "DISPLAY-C05-2"
+          ],
+          "user_impact": "録音開始より5秒遅い。保存前にコードを捨てないという重要な条件が、対応する手順画面ではなく保安確認結果画面の15秒時点で表示される。9.4秒には逆に直前の質問字幕が表示されている。"
+        },
+        {
+          "original_start_seconds": 12.2,
+          "original_end_seconds": 12.82,
+          "original_content": "保安確認失敗を知らせる警告音2回。実測パルスは12.2–12.4秒と12.62–12.82秒。",
+          "caption_location": "韓国語字幕SFX、line 76。「[보안 확인 실패를 알리는 경고음 두 번]」",
+          "caption_start_seconds": 17.2,
+          "caption_end_seconds": 20.82,
+          "relation": "timing_mismatch",
+          "evidence_ids": [
+            "SOURCE-SOUND",
+            "SOURCE-AUDIO",
+            "PAGE-C05",
+            "DELIVERY-C05",
+            "ENCODE-LINK",
+            "DISPLAY-C05-1",
+            "DISPLAY-C05-2"
+          ],
+          "user_impact": "最初の警告音より5秒遅く開始する。12.5秒の保安確認結果画面には字幕がなく、17.8秒の再確認画面で失敗の警告が表示されるため、警告を別の処理段階の結果として受け取るおそれがある。"
+        },
+        {
+          "original_start_seconds": 16.42,
+          "original_end_seconds": 19.46,
+          "original_content": "案内者：保安確認を再度終えた後に発行を確認する。原文「보안 확인을 다시 끝낸 뒤 발급을 확인합니다.」",
+          "caption_location": "韓国語字幕A3、line 76。同じ手順・順序を含む文言。",
+          "caption_start_seconds": 21.42,
+          "caption_end_seconds": 24.46,
+          "relation": "timing_mismatch",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C05",
+            "ENCODE-LINK",
+            "DISPLAY-C05-2"
+          ],
+          "user_impact": "録音開始より5秒遅い。17.8秒には警告音字幕が表示され、再確認の説明は22秒の新コード保存画面で表示されるため、実施順序を追いにくい。"
+        },
+        {
+          "original_start_seconds": 20,
+          "original_end_seconds": 22.14,
+          "original_content": "案内者：新しいコードを安全な場所に保存する。原文「새 코드를 안전한 곳에 저장합니다.」。時刻は独立転写の概算。",
+          "caption_location": "韓国語字幕A4の第1文、line 76。次のコード無効化説明と1つのキューに結合。",
+          "caption_start_seconds": 25.06,
+          "caption_end_seconds": 31.7,
+          "relation": "timing_mismatch",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C05",
+            "ENCODE-LINK",
+            "DISPLAY-C05-2",
+            "DISPLAY-C05-3"
+          ],
+          "user_impact": "A4の原本録音は20.06秒に始まるが、字幕は5秒遅れて始まる。22秒には前の再確認字幕が表示され、保存の説明は発行完了画面まで残る。"
+        },
+        {
+          "original_start_seconds": 22.76,
+          "original_end_seconds": 26.02,
+          "original_content": "案内者：新しく発行すると以前のコードは使用できなくなる。原文「새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.」。時刻は独立転写の概算。",
+          "caption_location": "韓国語字幕A4の第2文、line 76。保存説明と同時表示。",
+          "caption_start_seconds": 25.06,
+          "caption_end_seconds": 31.7,
+          "relation": "timing_mismatch",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C05",
+            "ENCODE-LINK",
+            "DISPLAY-C05-2",
+            "DISPLAY-C05-3"
+          ],
+          "user_impact": "以前のコードが無効になるという条件・結果を含む字幕は25.06秒まで開始せず、25秒のサンプルには字幕がない。28.3秒の発行完了画面には前の説明が残り、画面との対応が崩れている。設定上の終了31.7秒は動画終了を越える。"
+        },
+        {
+          "original_start_seconds": 27.3,
+          "original_end_seconds": 29.58,
+          "original_content": "案内者：発行完了画面を確認する。原文「발급 완료 화면을 확인합니다.」",
+          "caption_location": "韓国語字幕A5、line 76。「안내자: 발급 완료 화면을 확인합니다.」。開始時刻が動画全長31.208333秒より後。",
+          "caption_start_seconds": 32.3,
+          "caption_end_seconds": 34.58,
+          "relation": "missing",
+          "evidence_ids": [
+            "SOURCE-ASR",
+            "SOURCE-AUDIO",
+            "DELIVERY-C05",
+            "ENCODE-LINK",
+            "DISPLAY-C05-3"
+          ],
+          "user_impact": "対応する文字列はキュー一覧に存在するが、動画の再生可能時間内に表示されない。28.3秒にはA4が表示されており、字幕を利用する人に最終確認の案内が提供されない。"
+        }
+      ],
+      "missing_evidence": [
+        "31.1893125–31.208333秒の原本音声・表示対応の共通処理記録。",
+        "A1をアクティブ中に表示した個別PNG・サンプル。包括的な全キュー採取記述だけでは補っていない。"
+      ],
+      "recommendations": [
+        {
+          "change": "各キューの一律約5秒の遅れを修正する。原本録音区間に基づく再調整案はA1 1–3.4秒、B1 4–7秒、A2 7.6–11.6秒、A3 16.42–19.46秒、A4 20.06–26.7秒。これらを固定の合格値とはせず、実際の発話・画面・読み取り可能性を確認して確定する。",
+          "retest": "修正版を実際のプレーヤーで再生し、発話開始・終了、画面切替、字幕の表示内容・持続時間を対応づける。質問、否定と保存前条件、再確認の順序、旧コード無効化の意味が適切な段階で読めることを確認する。"
+        },
+        {
+          "change": "SFX字幕を実際の警告音が始まる12.2秒付近に合わせ、2回の警告音と保安確認失敗の意味を維持する。読み取れる持続時間を設けつつ、後の再確認説明と誤って対応しないようにする。",
+          "retest": "12.2–12.82秒の警告音と保安確認結果画面で実際に字幕が表示されること、次の手順で誤解を招く表示にならないことを確認する。"
+        },
+        {
+          "change": "A5を原本の27.3–29.58秒付近に再配置し、動画終了前に表示する。A4の終了時刻も再調整し、必要に応じて2つの文を別キューに分ける。",
+          "retest": "27.3秒から動画終了まで実再生し、A5が発行完了画面で読めることを確認する。長いA4とA5の表示時間、順序、プレーヤー操作部や重要な画面情報との重なりも再確認する。"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "提供されたテキストと3枚の添付PNGのみを使用した。直接の聴取、連続動画再生、URL訪問、サイト変更は行っていない。",
+    "画面上の説明文と記事本文の存在は同期字幕の代替にならない。記事本文には動画の具体的な保存条件・コード無効化情報がなく、本文の代替であることを明示する表示もないため、例外を認めていない。",
+    "約5秒をWCAGの固定許容値と比較したのではなく、実際の別画面へのずれ、質問と回答の取り違え、最終案内の未提供を違反の根拠とした。",
+    "自動転写の概算時刻、実測録音区間、字幕の設定時刻を区別した。原本・候補の同一音声時系列を示す相関記録も照合している。",
+    "添付PNGでは表示された字幕の文言と位置を確認できるが、すべてのキューの継続表示や読み取りやすさを直接確認したとはしていない。包括的な全キュー採取記述とA5の実際の設定の不整合は未解消。",
+    "残る処理区間・表示観察の不足は保存したが、すでに確認された違反によるfail判定を取り消すものではない。評価対象は指定範囲のWCAG 2.2成功基準1.2.2のみ。"
+  ]
+}

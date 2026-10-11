@@ -1,0 +1,61 @@
+# C07 평가 결과 (WCAG 2.2 SC 1.2.2, 수준 A)
+
+판정: **pass**. HTML track은 없지만 ENCODE-LINK가 개방 자막 MP4의 음성이 원본과 동일함을 기록하고, 실제 Read한 PNG 9개 시점(DISPLAY-C07-1~3)에서 각 대사·경고음 구간마다 화자 표기를 포함한 개방 자막이 원본(SOURCE-ASR·SOURCE-SOUND)과 같은 의미로 표시되었습니다. 자막 띠는 안내 카드의 제목·본문·버튼을 가리지 않았고, 22·25초 긴 자막의 '없습니/다.' 줄바꿈은 가독성만 약간 떨어뜨립니다. 다만 개방 자막의 정확한 시작·종료 시각은 측정 기록이 없어 시간 대응은 구간 내 표본 화면과 통제된 장면 기록에 근거합니다.
+
+```json
+{
+  "criterion": "1.2.2",
+  "level": "A",
+  "prompt_version": "0.1.0",
+  "scope": {
+    "url_and_state": "http://127.0.0.1:8944/cases/C07 — 기사 본문과 교육용 동영상 1개(M1, open.mp4) 범위, 하단 내비게이션 제외. HTML track 없음, 영상에 개방 자막 포함.",
+    "inventory_complete_within_scope": true,
+    "execution": "run",
+    "decision": "pass",
+    "reason": "HTML track은 없지만 영상에 새겨진 개방 자막이 9개 시점 PNG 모두에서 해당 대사·경고음 구간에 화자 표기와 함께 원본과 같은 의미로 표시되었고, 안내 카드의 제목·본문·버튼을 가리지 않았습니다."
+  },
+  "evidence_use": {
+    "direct_audio_review": false,
+    "direct_continuous_video_review": false,
+    "used_evidence_ids": ["MEDIA-C07", "PAGE-C07", "SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "SOURCE-VISUAL", "ENCODE-LINK", "DELIVERY-C07", "DISPLAY-C07-1", "DISPLAY-C07-2", "DISPLAY-C07-3"],
+    "derived_processing_and_limits": [
+      "원본 음성은 SOURCE-ASR·SOURCE-AUDIO로 확인했으며, ENCODE-LINK가 개방 자막 MP4(sha a8f6…)의 전체 음성이 원본(sha 60e0…)과 상관 0.9996, 동일 길이임을 기록합니다. 평가자는 직접 청취하지 않았습니다.",
+      "DELIVERY-C07의 track 배열과 active_cues가 비어 있는 것은 개방 자막 방식이기 때문이며 실패 근거로 쓰지 않았습니다.",
+      "개방 자막의 실제 문구는 DISPLAY-C07-1~3의 9개 시점 PNG를 Read해 확인했습니다. 개방 자막의 정확한 시작·종료 시간은 측정 기록이 없어 null로 두었습니다.",
+      "각 표본 시점은 해당 대사·경고음 구간 안 또는 직후에 있으며, 표본 사이 구간은 ENCODE-LINK의 정적 장면·프레임 디코드 기록에 의존합니다."
+    ]
+  },
+  "media": [{
+    "media_id": "M1",
+    "classification": "사전 녹화 동기화 매체(영상+대화 음성+정보성 경고음), 개방 자막 렌더 버전",
+    "classification_evidence_ids": ["MEDIA-C07", "SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "ENCODE-LINK"],
+    "execution": "run",
+    "decision": "pass",
+    "reason": "대사 6개(부정·조건·경고 유지, 화자 표기 포함)와 경고음 1개가 모두 개방 자막으로 해당 장면에서 표시되었습니다. 22·25초의 긴 자막은 두 줄로 줄바꿈되어 '없습니/다.'로 나뉘지만 의미는 유지되고 읽을 수 있습니다.",
+    "exception": {"claimed": false, "no_extra_information": null, "clearly_labeled": null, "verified": false, "evidence_ids": []},
+    "caption_delivery": {"kind": "open", "actually_observed": true, "evidence_ids": ["DISPLAY-C07-1", "DISPLAY-C07-2", "DISPLAY-C07-3", "ENCODE-LINK"]},
+    "coverage": {
+      "complete": true,
+      "processed_ranges": [{"start_seconds": 0, "end_seconds": 31.189, "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "SOURCE-SOUND", "SOURCE-VISUAL", "ENCODE-LINK", "DISPLAY-C07-1", "DISPLAY-C07-2", "DISPLAY-C07-3"], "reason": "원본 음성 전체 전사, 개방 자막 MP4 음성·프레임 디코드 연결 기록, 모든 대사·소리 단위의 활성 시점 PNG의 교집합. 평가자의 직접 관찰은 PNG 9개 시점에 한정되고 개방 자막 시작·종료 시각은 측정되지 않았습니다."}],
+      "unreviewed_ranges": [{"start_seconds": 31.189, "end_seconds": 31.208, "reason": "메타데이터 길이와 디코드 음성 길이의 차이 0.02초. 별도 관찰 없음."}]
+    },
+    "comparisons": [
+      {"original_start_seconds": 0.94, "original_end_seconds": 3.04, "original_content": "안내자: 설정에서 보안을 선택합니다.", "caption_location": "개방 자막, 영상 하단 검은 띠(2초 화면)", "caption_start_seconds": null, "caption_end_seconds": null, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DISPLAY-C07-1"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 3.8, "original_end_seconds": 6.56, "original_content": "사용자(화면 밖): 이전 코드를 지금 버려도 되나요?", "caption_location": "개방 자막(5초 화면)", "caption_start_seconds": null, "caption_end_seconds": null, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DISPLAY-C07-1"], "user_impact": "'사용자:' 표기로 화자 변경 식별."},
+      {"original_start_seconds": 7.71, "original_end_seconds": 11.18, "original_content": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.", "caption_location": "개방 자막(9.4초 화면)", "caption_start_seconds": null, "caption_end_seconds": null, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DISPLAY-C07-1"], "user_impact": "부정·조건 유지."},
+      {"original_start_seconds": 12.2, "original_end_seconds": 12.82, "original_content": "경고음 두 번(보안 확인 실패 의미, 페이지 문구 근거)", "caption_location": "개방 자막(12.5초·15초 화면)", "caption_start_seconds": null, "caption_end_seconds": null, "relation": "equivalent", "evidence_ids": ["SOURCE-SOUND", "PAGE-C07", "DISPLAY-C07-1", "DISPLAY-C07-2"], "user_impact": "경고음 발생과 의미가 결과 화면에서 전달됨."},
+      {"original_start_seconds": 16.47, "original_end_seconds": 19.0, "original_content": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.", "caption_location": "개방 자막(17.8초 화면)", "caption_start_seconds": null, "caption_end_seconds": null, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DISPLAY-C07-2"], "user_impact": "영향 없음."},
+      {"original_start_seconds": 20.0, "original_end_seconds": 26.02, "original_content": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.", "caption_location": "개방 자막 두 줄(22초·25초 화면)", "caption_start_seconds": null, "caption_end_seconds": null, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DISPLAY-C07-2"], "user_impact": "단어 중간 줄바꿈('없습니/다.')은 가독성을 약간 떨어뜨리나 의미와 경고는 유지됨."},
+      {"original_start_seconds": 27.45, "original_end_seconds": 29.08, "original_content": "안내자: 발급 완료 화면을 확인합니다.", "caption_location": "개방 자막(28.3초 화면)", "caption_start_seconds": null, "caption_end_seconds": null, "relation": "equivalent", "evidence_ids": ["SOURCE-ASR", "SOURCE-AUDIO", "DISPLAY-C07-3"], "user_impact": "영향 없음."}
+    ],
+    "missing_evidence": ["개방 자막의 정확한 표시 시작·종료 시각 측정 기록이 없습니다.", "평가자의 직접 청취·연속 재생 관찰은 없습니다."],
+    "recommendations": [{"change": "수정 필수 사항 없음. 선택적으로 긴 자막의 줄바꿈을 어절 단위로 조정해 '없습니/다.' 분리를 피합니다.", "retest": "영상 재렌더 시 각 대사 시작·종료 프레임에서 개방 자막 표시 시각을 측정하고, 플레이어 조작부 표시 상태에서 자막 띠가 가려지지 않는지 확인합니다."}]
+  }],
+  "errors": [],
+  "limits": [
+    "직접 청취나 연속 재생 없이 독립 ASR·음향 측정·프레임 디코드 연결 기록과 PNG 9장을 검토한 결과입니다.",
+    "개방 자막의 시간 대응은 각 단위 구간 안의 표본 화면과 통제된 정적 장면 기록에 근거하며, 시작·종료 시각을 직접 측정하지 않았습니다.",
+    "개방 자막 띠가 영상 내 진행 막대를 덮지만 이 막대는 장면 진행 표시로 내용 이해에 필요한 정보로 보지 않았습니다."
+  ]
+}
+```

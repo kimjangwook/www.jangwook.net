@@ -1,0 +1,4436 @@
+[
+  {
+    "case_id": "C01",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"complete.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "native_controls": {
+      "method": "Actual built-in play control click; fallback center play click if present; native timeline click at55%. Programmatic pause only isolates the seek from playback drift.",
+      "after_play": {
+        "time": 0.332018,
+        "paused": false,
+        "readyState": 4
+      },
+      "before_seek": 0.33653,
+      "after_native_seek": {
+        "time": 17.253397,
+        "paused": true
+      },
+      "play_progress": true,
+      "seek_progress": true
+    },
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-2.png",
+        "sha256": "45cd6717c9acb4b8ff281536071d6c465e99b49b97c88cb06f8da21ae8c55a50"
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-5.png",
+        "sha256": "b86ace46cf301c567c00d39c6de199017ebe7c9e95607776b8d3881ba12c9b48"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-9.4.png",
+        "sha256": "df103331121f9804d4deaa54275d965f75bcbfcad4de4119f3a89fa95539be39"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-12.5.png",
+        "sha256": "aaeddeb5fb7a5e3b781afcb0cc729535862180cb8c080311f9d9b5f636071edb"
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-15.png",
+        "sha256": "2f34b65532db1c87a85e1375fc9940fdefeff07cf019cf34af94ed7d3fa5efd8"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-17.8.png",
+        "sha256": "2c8928a534e30a7d057601a1baf0352fce8c354235450fd4bdd397794a9311ff"
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-22.png",
+        "sha256": "bdae878e46923941531db87ae6f616bba7ec93b557014784a1a46cf06c5864e2"
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-25.png",
+        "sha256": "2da42865291e79196ff5f98a36134fa86f8c75dae52a3098d39fe33d7ef32524"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C01-28.3.png",
+        "sha256": "813e6fa770180f9618200621c4538383433104154cc224fb030f2b5077cc3354"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.vtt",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C02",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/negation.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"negation.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 네. 새 복구 코드를 저장하기 전에 버리세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-2.png",
+        "sha256": "3cde20aa45509c1e80d28f9cb0a5224530c6f9c4b727f4d39ee1c1f7e901854c"
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-5.png",
+        "sha256": "c4207668570ccf8633806c1532cefe658dcba99e4bcf5482f8cbd67a47368718"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 네. 새 복구 코드를 저장하기 전에 버리세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-9.4.png",
+        "sha256": "fe3dfaefa6c1a3ffb8bbc5bb12a2607b99aba1b5021dd2cb28d9527c3f0c3e11"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-12.5.png",
+        "sha256": "4377803cb3ef31e187ab67608d512f585ac29fcda053dfea062b562192418088"
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-15.png",
+        "sha256": "1a29fd3b2e315a02773c013f69f6b2aa23942f559c14e26900b7a07a1ae1dd8b"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-17.8.png",
+        "sha256": "56f72bb3e5102cab5417e2afa3268ce7e08cdee38006ae24bd5af5568a670dc7"
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-22.png",
+        "sha256": "73d977170dde5f21c22cfa3f8c8fdf3838bfc9b320062509d9168f5ab2df5aad"
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-25.png",
+        "sha256": "e7c080344a6f537784e27b21bddc1384ca779609a930f397810f3a5b4c8ae7f0"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C02-28.3.png",
+        "sha256": "d851f8930d86fc8a1d6745c4bf64128b887a5d07bf0fd818a97b09fa05e6ec62"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/negation.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/negation.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C03",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/sound-omitted.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"sound-omitted.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-2.png",
+        "sha256": "5d7d0c97d79ec262287efa058aeb449b97ca3bc52fe8922ff63aadc022d40c01"
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-5.png",
+        "sha256": "7e9cc69ad07084f1bf20726a9326c9e076dfc87f0f0212bffed320e3ed873386"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-9.4.png",
+        "sha256": "6eb4aaaf2fa2a03f730d458362d73f64c7848c2648e5d2bf7f08630cd8e345d1"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-12.5.png",
+        "sha256": "bff8cc91bbb339dd3668c1846ed0229a9c4dd7745bb558a8e8acf13f2b2f63c8"
+      },
+      {
+        "time": 15,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-15.png",
+        "sha256": "1f4d025210efe13373c5c346c7d07fdbc673355b2514cd380a0846486d09aae7"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-17.8.png",
+        "sha256": "b21c25ee920a9ba8a38a0fa90b55a78cb0209d744bff1ae8989f72f20022a4a8"
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-22.png",
+        "sha256": "b460133ff5b2022b434c26f46abaace21168795b15411c7dd230b26a1727e93e"
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-25.png",
+        "sha256": "6c1482148992a42588a326048333bcd9ec51fb9bbc64dae2601bb1e9e90ee879"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C03-28.3.png",
+        "sha256": "d851f8930d86fc8a1d6745c4bf64128b887a5d07bf0fd818a97b09fa05e6ec62"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/sound-omitted.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/sound-omitted.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C04",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/speaker-omitted.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"speaker-omitted.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-2.png",
+        "sha256": "6188997bbb0e2e35b4c45f6efcec3f2a42bb657a89725b412e5712066187eb87"
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-5.png",
+        "sha256": "a334121f4997c1e758c66e5cca9c8017061a8948f982865dfcd6b94ff23d2c7a"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-9.4.png",
+        "sha256": "fbb8dea6fee7c78d3d15151956986d636ca5f83e99ab553fb58dec80b884e988"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-12.5.png",
+        "sha256": "d14e133a891d60a7650e4c3f6e0d638499be811d83986c432b61ddba5480a12c"
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-15.png",
+        "sha256": "1924e5d42c0adbee61cd986a3332a5840b34afa629d4d377fb0f191604737181"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-17.8.png",
+        "sha256": "d40208306dca4370e9d9444cc522b511fe00786e2d69640a92a8b0947b985fe4"
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-22.png",
+        "sha256": "e01425ec43d0e6b759328679eb88227bf49c7b92bbcdf51d0a4e32683232f958"
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-25.png",
+        "sha256": "9bff8a88b620ba9503fa69704f3f1f9a709b4e350f985c2901539226b03eb079"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C04-28.3.png",
+        "sha256": "42a8b1f403346b4e06ba4ed4caef6528125d4a3568143d44489a2af766aba062"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/speaker-omitted.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/speaker-omitted.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C05",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/shifted.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"shifted.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 6,
+              "end": 8.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 9,
+              "end": 12,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 12.6,
+              "end": 16.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 17.2,
+              "end": 20.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 21.42,
+              "end": 24.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 25.06,
+              "end": 31.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 32.3,
+              "end": 34.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-2.png",
+        "sha256": "90e3a3525c5a7871611e91bb32f5f06ca551bbcd62eb7ae1b35a18eb19e42d2b"
+      },
+      {
+        "time": 5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-5.png",
+        "sha256": "e04792b64130928096005027786db8f0b40d76c5eac00875aa5505e1eecd71f3"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 9,
+            "end": 12
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-9.4.png",
+        "sha256": "c057ce1807bad44258cdfd4f4193a3080b7a1eb098f4923d331758a6d3f5a37d"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-12.5.png",
+        "sha256": "7f1542d727e61ee1228d6ecf99a17d150f0a06a8120fcbab5767627897a06b97"
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 12.6,
+            "end": 16.6
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-15.png",
+        "sha256": "428bb750636e6a211e1bba66254146deb7335d1320acd3aaabaf758984c73fc7"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 17.2,
+            "end": 20.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-17.8.png",
+        "sha256": "c723e8abee17c4f3e23d9cc30c515fd71e528c3c5da49e085a3a68b2c3b4a571"
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 21.42,
+            "end": 24.46
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-22.png",
+        "sha256": "98b757067539ea002357acdd0d7030306faf0ac34f6aa6c5503e019dfb7507c4"
+      },
+      {
+        "time": 25,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-25.png",
+        "sha256": "ed492f13f5cc7bc07e0f218951efc58b7e7adeb1b33f46a0149a1c55c7ec46ee"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 25.06,
+            "end": 31.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C05-28.3.png",
+        "sha256": "28b0b8310f2accf7adbc46d59252fb8e7aabb621302edc3acc701acb30dfd4f1"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/shifted.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/shifted.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C06",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/transcript-only.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 설명\n\n안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"></video><h2>전체 설명</h2><p id=\"transcript\">안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-2.png",
+        "sha256": "ed9c74e5d513110bee5a181b8b8519f4d601cd828ccfce0f5eff01f2105b2604"
+      },
+      {
+        "time": 5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-5.png",
+        "sha256": "041e6ef3cec7139d08f3a432fbe499593fd99a43e1448a5b65fc19bc1f311a5f"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-9.4.png",
+        "sha256": "4de02c54daea612f44d18e0d3fb9a7811b6180c49bf6bca3c7d64402c8a2131b"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-12.5.png",
+        "sha256": "8ff7cc2579f0682fe4a188a7ed7ad35dc0060561b029d01a562a5e547e86b11f"
+      },
+      {
+        "time": 15,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-15.png",
+        "sha256": "6987613fd9fa4c2fdfc0f1f3bac3095e169a960f95f1f7c200102ce47866b6ef"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-17.8.png",
+        "sha256": "73094549bc5fcd2a7d7cb598d7030bb58553df766629e52cc29d444e82ef146e"
+      },
+      {
+        "time": 22,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-22.png",
+        "sha256": "713c6937146cadbfa79d25fb07b4226fb2eb3927e25f4da792f81cbb272f16cb"
+      },
+      {
+        "time": 25,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-25.png",
+        "sha256": "cbeee4df0a6f6accdb33c342863a8f9260340a3f06cad2521b86496958efde73"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C06-28.3.png",
+        "sha256": "a5434dca7dc9ea192075be354edccaa0505165ab306dc130adfcdba45165aacd"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/transcript-only.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C07",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/open.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"open.mp4\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-2.png",
+        "sha256": "a569821abe585f4cc7342ceed83d1408be9788a036e1d2c1fe923d19e1a727ad"
+      },
+      {
+        "time": 5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-5.png",
+        "sha256": "41f1103c51288b0fa928c84f178e8bb912fa7622271fb9875b75ee85b69592e6"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-9.4.png",
+        "sha256": "0c2e2a3445e2cf9ba39e64ca8d9dfdbfce7559c34dc0b7725658dee1cb131bc2"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-12.5.png",
+        "sha256": "92d4888de0dae700514f0a93dbf04ab4965b34095ffe280a2001ffab706d6249"
+      },
+      {
+        "time": 15,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-15.png",
+        "sha256": "e3f57b84d031824045f4a8093a3b77cd7d4a29a1e71212ed79e2977767060a37"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-17.8.png",
+        "sha256": "7f21189fb4715635d9c20c66ad8c68a90089098a044a8d14fa851c5fb0a026b8"
+      },
+      {
+        "time": 22,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-22.png",
+        "sha256": "2bb8ed874dfe1a6feac35ff650b5653f413eef80869a34c0c426b91861a3a306"
+      },
+      {
+        "time": 25,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-25.png",
+        "sha256": "03fe3fcc538eb58b488526e2b26a5c47cef16cdf50b275359ad00d90855356f1"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C07-28.3.png",
+        "sha256": "6b1434b892e9c3057b479246e270f97a8253bc08038b793eac3e31947f4eb74d"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/open.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/open.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/open.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C08",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/condensed.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"condensed.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전하게 저장하세요. 새 코드 발급 후 이전 코드는 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-2.png",
+        "sha256": "c75fd55f3a12eb15ad06e1681fada5c4fa47a4fe66d2041b749ad65be44521f2"
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-5.png",
+        "sha256": "290ab8924cace8f0dae228ae3b8eb0fa5a709932446cc605aedf2a6d52b6fbec"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-9.4.png",
+        "sha256": "ac6f2a3898b68bc6939d1de0fc8654194ce69103ba2874552899b15635201685"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-12.5.png",
+        "sha256": "d3393862a18ada532a4ba587507a796ca709d9ba337420f20fb90db19f604271"
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-15.png",
+        "sha256": "5a828d857bbe1511533592834c46b529d2a727ecd50702f7fe733798c125872c"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-17.8.png",
+        "sha256": "7be9747aabe5377eea48bd5dd10871429d1bdc4469fcc7205d9a86870c1dba2f"
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전하게 저장하세요. 새 코드 발급 후 이전 코드는 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-22.png",
+        "sha256": "637ed1291f2989c9a0586ca1ef1cc89d5ea51f60f5bf1095abbd5c5bccf9c1e9"
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전하게 저장하세요. 새 코드 발급 후 이전 코드는 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-25.png",
+        "sha256": "447600123bb35f7970a03285c52e02eafb8dfe33ea972ccbda51d631fc3d2cc3"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C08-28.3.png",
+        "sha256": "d851f8930d86fc8a1d6745c4bf64128b887a5d07bf0fd818a97b09fa05e6ec62"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/condensed.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/condensed.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C09",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/text-alternative.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n이 영상은 아래 설명의 매체 대안입니다. 본문에 없는 추가 정보는 제공하지 않습니다.\n\n전체 설명\n\n안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p>이 영상은 아래 설명의 매체 대안입니다. 본문에 없는 추가 정보는 제공하지 않습니다.</p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"></video><h2>전체 설명</h2><p id=\"transcript\">안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-2.png",
+        "sha256": "d29bdf09b344a86f52c828f2e96039538661e80a93733fc143adea966b13d615"
+      },
+      {
+        "time": 5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-5.png",
+        "sha256": "d0d7fb9c4896c2cd4eb95082181e8d4d79a35f4a324a12a89166fed1417311f0"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-9.4.png",
+        "sha256": "b1225a4b7bdc7bb09db30f46a2831fe52d4a93e8c107f3014bc822124c6ac835"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-12.5.png",
+        "sha256": "ca43a08b107f5df5067c732f4482f2a06921c35dbc8ad6ad63ab6bdad60e3b9b"
+      },
+      {
+        "time": 15,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-15.png",
+        "sha256": "df8369beee87d8ed40d56e9805c82a34f63e5988de76cf3327da34295fe643b7"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-17.8.png",
+        "sha256": "fa50ab8e129caa10b9f30a63fbe46db54453158bfb8cdf5a38eca25ca66e2afb"
+      },
+      {
+        "time": 22,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-22.png",
+        "sha256": "bcb43b34c9fbc3cb3af6e0d928426c7df317d60c413a911daee51cb2a9cfcb8c"
+      },
+      {
+        "time": 25,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-25.png",
+        "sha256": "b53f7794c788232b44c780bfac6cb07ceee9d412466900b784a1ca01ea4d2300"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C09-28.3.png",
+        "sha256": "b5ff985c85c1c2c2cb3fd21031383613ea772e36587d30d69e0b9cc4c8fe3af1"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/text-alternative.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C10",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unlabeled-text-alternative.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 설명\n\n안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"></video><h2>전체 설명</h2><p id=\"transcript\">안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-2.png",
+        "sha256": "f0f34b573e6632c693f12f1346ad3e0e0cebcffe09b5931850d1bc24f6f61ad1"
+      },
+      {
+        "time": 5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-5.png",
+        "sha256": "0e31017e6e234501ddcc77102bf6c43980f0b359de974571f8311ade2b3c821e"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-9.4.png",
+        "sha256": "92636f4c721e8e6fe0afee613279d851d911bed7e55d6301154ce2f1804aef61"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-12.5.png",
+        "sha256": "59255f72bdf39c8ff527c8c3eb3bfd81ab689b9c7c27b1dac41d70183cd60e96"
+      },
+      {
+        "time": 15,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-15.png",
+        "sha256": "e0180eb4927332a10347ac1303a0293b7d317079810da2a5ccab456c1a19b5b5"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-17.8.png",
+        "sha256": "7294c7bc464939c7a495c07fafabd8499ca27dc0b3baaf2724f837df634feb61"
+      },
+      {
+        "time": 22,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-22.png",
+        "sha256": "cd8b945782dc0bbc59bb162f5b4bfaadbddfafbff23ffb32c55364591f8ea77e"
+      },
+      {
+        "time": 25,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-25.png",
+        "sha256": "5393d796df291e2aa97b5044a2e3a5aba4e45d9424b7fee4a070c8fbdeb5ab4a"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C10-28.3.png",
+        "sha256": "a5434dca7dc9ea192075be354edccaa0505165ab306dc130adfcdba45165aacd"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unlabeled-text-alternative.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C11",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/extra-information.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n이 영상은 아래 설명의 매체 대안입니다. 본문에 없는 추가 정보는 제공하지 않습니다.\n\n전체 설명\n\n안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p>이 영상은 아래 설명의 매체 대안입니다. 본문에 없는 추가 정보는 제공하지 않습니다.</p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"></video><h2>전체 설명</h2><p id=\"transcript\">안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-2.png",
+        "sha256": "923d6a7cf878d48a37b099f35a2793675e6c64f20dd1ce16368215bd780b7c14"
+      },
+      {
+        "time": 5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-5.png",
+        "sha256": "75e078e1f50257543ab5e0dbd7b572a3160a9055ec2acf7f8be62207bce6acc0"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-9.4.png",
+        "sha256": "e79ad8b1d2321b561ae7ff9837991619de8ec5f6fd3c7e84bc059c963914e887"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-12.5.png",
+        "sha256": "00c544c726f8502f258f3f47830949ea4f47f788eb4b4b9ec4b930ac6a946f10"
+      },
+      {
+        "time": 15,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-15.png",
+        "sha256": "1d8f0241e3a150b4068746e6e503c3b653b72382a14fbded60479aef09e8ee01"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-17.8.png",
+        "sha256": "cb1d9ff0c5713e91ced5dde9f684ed016aff2db8bdfcfeec2819bc2aab2870b2"
+      },
+      {
+        "time": 22,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-22.png",
+        "sha256": "bcb43b34c9fbc3cb3af6e0d928426c7df317d60c413a911daee51cb2a9cfcb8c"
+      },
+      {
+        "time": 25,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-25.png",
+        "sha256": "b53f7794c788232b44c780bfac6cb07ceee9d412466900b784a1ca01ea4d2300"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C11-28.3.png",
+        "sha256": "b5ff985c85c1c2c2cb3fd21031383613ea772e36587d30d69e0b9cc4c8fe3af1"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/extra-information.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C12",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/partial.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"complete.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.208333,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": null,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-2.png",
+        "sha256": "02104a18a97fc6db3dfd85d6fbf01dda556457381127cddd6ca950b2a62c54df"
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-5.png",
+        "sha256": "cf90f49159fad60639ed2d2ba91fcfafc77b15b0b4d56783c69763f452f54742"
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-9.4.png",
+        "sha256": "05f143f1e86c048db56b57b659feafc6e3ceeb14c2fa7d02d846685743774fd2"
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-12.5.png",
+        "sha256": "6148dcd5f7afc2cfe6af5097d80b543d2250fe183cd62050e339979148593852"
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-15.png",
+        "sha256": "4df2dfa174108954150e05dd39cc9ddd1161b631ea4cc104bb540f1e5109b2e6"
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-17.8.png",
+        "sha256": "4a8dfee9adb44833390ab5dd3e2448bd94abfc970bd36af58a981b3a11d1ef06"
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-22.png",
+        "sha256": "e5c7f052b7e5f8d66f4bfb31c64b142a9a769bc5b2144a915d655af452e596e0"
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-25.png",
+        "sha256": "2ee338a3891e046b54038c337bf9a19e45a1fa923d673253d2769f29f49d56ad"
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ],
+        "image": "/tmp/jangwook-captions-review-20261009/reports/validation/captions-1.2.2-20261009-final/images/C12-28.3.png",
+        "sha256": "d851f8930d86fc8a1d6745c4bf64128b887a5d07bf0fd818a97b09fa05e6ec62"
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/partial.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      }
+    ]
+  },
+  {
+    "case_id": "C13",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable-source.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"unavailable.mp4\"><track kind=\"captions\" src=\"complete.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "source_error": {
+      "error": 4,
+      "readyState": 0,
+      "currentSrc": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable.mp4"
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable-source.html",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable.mp4",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "case_id": "C14",
+    "browser": "Chromium",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/no-target.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n설정에서 보안을 선택해 복구 코드를 발급합니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><p>설정에서 보안을 선택해 복구 코드를 발급합니다.</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/no-target.html",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C01",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"complete.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "native_controls": {
+      "method": "Actual built-in play control click; fallback center play click if present; native timeline click at55%. Programmatic pause only isolates the seek from playback drift.",
+      "after_play": {
+        "time": 0.4979790840025034,
+        "paused": false,
+        "readyState": 4
+      },
+      "before_seek": 0.5030365420556707,
+      "after_native_seek": {
+        "time": 17.820338999999997,
+        "paused": true
+      },
+      "play_progress": true,
+      "seek_progress": true
+    },
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ]
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ]
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ]
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ]
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ]
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9e57de7e-d69a-42ee-a57b-546fbcf2d233",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/473922c6-237a-4838-9b1a-a77e101f59e0",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/a0fb1e9d-f65a-42ce-97e7-3ac52ee79d22",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/d4ca97b1-c535-4d52-98d5-857fce69f9ad",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/34e0fb80-e2f1-429a-8ee4-fc03d2acfdeb",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/3fb68b04-f6c5-448c-b982-d25fceba4659",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9d15d1b4-184f-4baa-9f94-9e49b9d82ed3",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/21e17c2d-a273-4ef3-a4cd-a4b9575f2df1",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/1ff0eee6-3d00-4600-96bb-7b3779b5c5ab",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/eec4735e-90af-4884-86e4-4afc34a97493",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/86dfb34e-7a03-4981-bb32-9a599145ddc4",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/62d4e3b5-deb9-481b-86ac-b98497fbb32e",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/5def1516-e1f2-4f9d-a09e-e8d0ca53e6db",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/f1639f90-3dd3-4223-b82f-7fcda2e6933f",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/2a945a18-35a8-4fb6-8a02-4f0da129e101",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C02",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/negation.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"negation.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 네. 새 복구 코드를 저장하기 전에 버리세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ]
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ]
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 네. 새 복구 코드를 저장하기 전에 버리세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ]
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ]
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ]
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/negation.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/26c897b3-db7a-4fc6-b712-3cfa70caae99",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/32a80c41-80b4-41ce-a052-6ceb7b4f61d4",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/4d552758-67cf-43ac-82da-e519fb2c3a6e",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/66286d16-db69-4664-800a-e3157c7de3c2",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/1ebad884-2253-4423-8bc1-264efdf4f965",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/09122851-6059-4d34-882f-a488ad45b32e",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/3f5a6b63-417d-4c1e-b0f0-dd1557388304",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/3baa0f55-624c-45cd-a7be-eef448a7020e",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/adc6b31c-c0a4-48ef-b476-fe75b150a75f",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/90a82a84-dbe1-4d7b-abc9-36792719c9a2",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6db01fe6-32c1-4353-916b-5abe92bf999a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/794d06f4-1b40-41e6-866a-95023b1be4c2",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/98e26b64-f4ab-4986-8658-c4714d46b94a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/dc7b2857-1434-466a-9e5b-6621ee4c5e81",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/negation.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/fb4b525a-5ac1-4878-a60f-1b10ef32938a",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C03",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/sound-omitted.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"sound-omitted.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ]
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ]
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ]
+      },
+      {
+        "time": 12.5,
+        "active_cues": []
+      },
+      {
+        "time": 15,
+        "active_cues": []
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ]
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ]
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/sound-omitted.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/565b819d-9178-4bca-8e50-0a4e165893a7",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/ec20ce95-ed19-482a-9900-d62981db0489",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/53c79f11-0ad4-42d1-b3f6-08a1b636ac39",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/06d4cc5a-eed4-4df7-b7b2-8d528a03c61c",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/06a86341-4a0f-4d8d-9db6-bec3f1cdbfe5",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/a919c39f-ae32-4c36-8678-cb1ac72a30ce",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/0126928e-fe22-4ac1-9392-6b791ec55da4",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/d5f12657-a0ba-4991-84e9-5ad96cf34d6f",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6dab08f5-71a8-4a6a-aa98-51d7f7ef068d",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/73470f91-f241-4f76-ae9c-948125943b06",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/b5e7b3bc-c739-4ec1-866c-aa417b0f2a9a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/59a4fa85-749e-4f4e-b4a2-a7d43f476c82",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/db088ad9-5018-4b20-b9f4-989997ba96ab",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/b7b5168b-5b93-4665-9698-62714b29479f",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/sound-omitted.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/015032bf-920c-48a5-9473-287fd37d72cd",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C04",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/speaker-omitted.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"speaker-omitted.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ]
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ]
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ]
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ]
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ]
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/speaker-omitted.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9ea17f4f-4503-4cd9-8ada-aa93e0d38904",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/970c96df-48e3-40ad-b516-75248a33372f",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/b36b1fa6-b16b-4148-95c0-24bf173ea923",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/2a19c84d-7f93-4e24-ad61-7f0b5265f5e1",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/f28be533-427a-459e-b0e3-76674da35d8a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/89dc311f-8c3c-4f05-b021-6ec4f2d9e6fc",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6a2c206a-1381-4bff-aeeb-31147fea2461",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/37a4db5f-0978-433a-ac83-0fdf255d0ebe",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/3de68a6d-9fd4-46e1-85c0-5942b927fe84",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/96dea14e-de91-4453-8b73-56ac6bde8429",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/8d37dcc4-cecf-4889-a714-7b28ee7a44e3",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/a7cc2c08-15dd-4d19-941a-6fd0dc3ef011",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/31f474b7-33b8-4c1a-a41a-c64559416e7c",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/aee2377a-766f-463b-90fa-50b577cf0676",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/speaker-omitted.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/e39b7233-b34f-4e3c-83a4-1cb73bda4848",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C05",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/shifted.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"shifted.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 6,
+              "end": 8.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 9,
+              "end": 12,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 12.6,
+              "end": 16.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 17.2,
+              "end": 20.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 21.42,
+              "end": 24.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 25.06,
+              "end": 31.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 32.3,
+              "end": 34.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": []
+      },
+      {
+        "time": 5,
+        "active_cues": []
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 9,
+            "end": 12
+          }
+        ]
+      },
+      {
+        "time": 12.5,
+        "active_cues": []
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 12.6,
+            "end": 16.6
+          }
+        ]
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 17.2,
+            "end": 20.82
+          }
+        ]
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 21.42,
+            "end": 24.46
+          }
+        ]
+      },
+      {
+        "time": 25,
+        "active_cues": []
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 25.06,
+            "end": 31.7
+          }
+        ]
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/shifted.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/7f041b04-93c8-413d-8190-5daff39c2ad1",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/eeddce4f-6db2-4ef4-9605-f579ddaec5cb",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/045a05db-6fdf-42c9-8ca4-683f39237bbe",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/d4075d38-0b26-4e44-b1db-f2ff79d98d40",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/d648e1fa-bd89-4eba-903f-a4e96f14dab7",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/2e7813ff-89df-4799-8ff8-7ca29480e7ad",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6d28a79c-164c-4fa4-8d80-65247cea135c",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/821589c6-1fca-432e-b49b-09b358b6cc09",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/432da78a-e65d-4752-9013-fb2327d6f743",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/4308cd93-eeb0-403e-b4a7-2381d2e5150d",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/ea3eb017-d874-4f6d-9d3e-1121b53eb6cd",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/680070b1-f574-463b-8eee-7bb6a5c378c2",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/26266762-3fa1-48c9-b0a4-e9db21846a06",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/38b50d5b-46b7-47f9-8dfe-0094674ac534",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/shifted.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/90aa463e-b2e0-467d-bbda-ded28ead5144",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C06",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/transcript-only.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 설명\n\n안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"></video><h2>전체 설명</h2><p id=\"transcript\">안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": []
+      },
+      {
+        "time": 5,
+        "active_cues": []
+      },
+      {
+        "time": 9.4,
+        "active_cues": []
+      },
+      {
+        "time": 12.5,
+        "active_cues": []
+      },
+      {
+        "time": 15,
+        "active_cues": []
+      },
+      {
+        "time": 17.8,
+        "active_cues": []
+      },
+      {
+        "time": 22,
+        "active_cues": []
+      },
+      {
+        "time": 25,
+        "active_cues": []
+      },
+      {
+        "time": 28.3,
+        "active_cues": []
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/transcript-only.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/541d3965-cb3e-4623-95b1-1edfadb7000b",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/81a27ae7-651b-4cde-8703-90a8d9bc123a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/a60fdfa2-6600-4dc5-9bc5-904ecf98ce8b",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/aeaf8ac4-d75d-4a98-88a2-71550a44ed1d",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/667465b2-41ae-4e77-b5a5-7eb5ef9cc21e",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/43c0b966-fe9f-4b92-91a6-c6437892f912",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/11eabcc7-49ea-411d-9bd5-7fd9e3df7d30",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/e25045d5-1855-4f49-bbd5-304f27d82e43",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/47f9ae1c-0876-41fc-93d3-fb6985652503",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/709f69b5-b09d-40f1-9b11-5f30129808bc",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/73f325fa-61c1-4a3a-b456-c4aa15f5b83a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/54404e50-bd6a-41e9-a170-ecc64166ded5",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/24f2a5b4-e8f4-4ab4-ae60-91a54f4a3d62",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/c2890887-2571-4a17-be8e-d8ef687a8821",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/0ec1ac1c-343f-4bf9-a5b8-be9a648f21e4",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C07",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/open.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"open.mp4\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": []
+      },
+      {
+        "time": 5,
+        "active_cues": []
+      },
+      {
+        "time": 9.4,
+        "active_cues": []
+      },
+      {
+        "time": 12.5,
+        "active_cues": []
+      },
+      {
+        "time": 15,
+        "active_cues": []
+      },
+      {
+        "time": 17.8,
+        "active_cues": []
+      },
+      {
+        "time": 22,
+        "active_cues": []
+      },
+      {
+        "time": 25,
+        "active_cues": []
+      },
+      {
+        "time": 28.3,
+        "active_cues": []
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/open.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/69498e4e-8f06-4f69-bdcd-40e1d919a6a4",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/bc1600bf-55bc-4906-a1fd-1a319d40932f",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/861b66b5-bb10-400c-ab3d-c524be48e5fc",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6ea49aba-cf59-449b-b256-f891af644631",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/d0c7aaf1-d738-412a-8e3f-e425848e7bd0",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/e007f552-6eaa-4d20-9c05-2ba9cbf54def",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/b390fce2-8246-48de-a552-a5795b04d2bb",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/ae0899a0-827f-4e7d-b950-9f8f54faf537",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/404e6a5d-01b5-45ff-bb60-af2bfe208ff5",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/543670a5-7622-42b0-8960-9035c59d1df5",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/8246332e-e99a-4e3d-bff7-db8a797d309b",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/c0d00a10-be92-41a2-a84d-97816429f282",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/f65fd721-b014-4b3f-9009-895bef62c7be",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/b6a257ba-cfeb-4f46-aa2b-d976e49b5c4a",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/open.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/open.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9d42677b-8e51-4d0d-b4a9-4b870fe19202",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C08",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/condensed.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"condensed.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전하게 저장하세요. 새 코드 발급 후 이전 코드는 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ]
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ]
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ]
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ]
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전하게 저장하세요. 새 코드 발급 후 이전 코드는 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전하게 저장하세요. 새 코드 발급 후 이전 코드는 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ]
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/condensed.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/b40af735-1f76-46b0-820c-d469742c2aac",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/e42716d7-38ed-450c-bc1c-d6dc88ec4b9a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/90f9d905-b29a-4f4a-81a4-623776c1e3c4",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/357814af-85e0-493c-9674-0add37d32f4d",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/2b178b85-2fed-4b31-934b-54064396ede2",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/2b77714d-c253-4d49-aea7-a5cf625e0dad",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/e6a7d860-205f-45a4-94d7-005d7979c481",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/d9c7165c-9124-4496-a461-5005eb0b88be",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/0dd66d4a-16c0-4fe3-9b4d-01e464af4ccf",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/b3c13396-0b83-4c05-b423-65e167c1b5bd",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/16613013-8a14-4c06-aedf-17331ae00039",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/4f8719bc-3de4-4f13-bd76-3543da5a00d4",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/bf062ad2-4b3a-4c5e-aef6-743454221bdd",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/572e8400-2642-4b8f-afbc-ecfce96c4511",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/condensed.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/53e5e164-e3bb-4a55-b7a4-49e2b9aaa99f",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C09",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/text-alternative.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n이 영상은 아래 설명의 매체 대안입니다. 본문에 없는 추가 정보는 제공하지 않습니다.\n\n\n전체 설명\n\n안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p>이 영상은 아래 설명의 매체 대안입니다. 본문에 없는 추가 정보는 제공하지 않습니다.</p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"></video><h2>전체 설명</h2><p id=\"transcript\">안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": []
+      },
+      {
+        "time": 5,
+        "active_cues": []
+      },
+      {
+        "time": 9.4,
+        "active_cues": []
+      },
+      {
+        "time": 12.5,
+        "active_cues": []
+      },
+      {
+        "time": 15,
+        "active_cues": []
+      },
+      {
+        "time": 17.8,
+        "active_cues": []
+      },
+      {
+        "time": 22,
+        "active_cues": []
+      },
+      {
+        "time": 25,
+        "active_cues": []
+      },
+      {
+        "time": 28.3,
+        "active_cues": []
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/text-alternative.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/7afd0ad9-3f8f-4645-a77e-1c69cff087e0",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/89395f86-25bf-4ef9-8c86-72eea0bd1516",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9e6c4478-4382-4b6e-996d-3a303b9ea417",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/7678e45d-b831-4cb9-85a2-b3c9a730511e",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/77edc3ee-cbaf-4349-b9f9-38fa2b62af56",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/93d68ffb-9953-42dd-8054-3df373d073b2",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/daee3640-1865-43e2-9c68-9ad2a753d096",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/f82f6d1d-76c2-455b-aa7e-bb25e4bb714d",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/28890d10-74ab-479d-aca3-a4f1efe547e3",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/dbff11ea-cac9-4b4c-a418-32fbf526fde1",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9a2faa10-3a76-454d-958f-a1bd4e8d514a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/71cf5a90-4dc7-4aed-9391-704fa96329a6",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/5fe56d03-9c24-4431-8d1f-28dedb4e7469",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/85f2c9da-4c94-43e9-83a9-8d09251a5648",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/4315c550-628d-4247-a805-17fd1858ab7d",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C10",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unlabeled-text-alternative.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 설명\n\n안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"></video><h2>전체 설명</h2><p id=\"transcript\">안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": []
+      },
+      {
+        "time": 5,
+        "active_cues": []
+      },
+      {
+        "time": 9.4,
+        "active_cues": []
+      },
+      {
+        "time": 12.5,
+        "active_cues": []
+      },
+      {
+        "time": 15,
+        "active_cues": []
+      },
+      {
+        "time": 17.8,
+        "active_cues": []
+      },
+      {
+        "time": 22,
+        "active_cues": []
+      },
+      {
+        "time": 25,
+        "active_cues": []
+      },
+      {
+        "time": 28.3,
+        "active_cues": []
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unlabeled-text-alternative.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/a63112d8-f390-4a1f-b39d-e82d31500d32",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/30b47606-6a51-4115-b251-f745540fa0f2",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9af23af7-a347-4e7c-bd74-26717b2e798c",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/f7b0f67e-9904-4179-b138-7053d28c05b4",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/349f984b-4a25-4cf6-9e72-be94458e2042",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/af8c488e-7240-4f94-9fc7-f5b9bf3c0599",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/153a2cca-e2d5-403b-86e4-7addaa0f8fd9",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9b87f32d-94ce-49fa-a79d-dc074ec41362",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/ad148125-0758-4f82-a529-4898ffc002a3",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/a24ee060-8dcd-4d27-b22e-dff97370baf8",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6835bfdd-663a-4789-a48a-afe433c936c7",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/45add2d1-1f9a-4378-a510-c6384994c60a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/21e5fe04-5660-4359-9535-ee4f943e8821",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6dffecf2-e2ff-408c-a5f3-29d07a6f5218",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/564c1fc9-0b5c-4f70-8468-da7eb9050a87",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C11",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/extra-information.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n이 영상은 아래 설명의 매체 대안입니다. 본문에 없는 추가 정보는 제공하지 않습니다.\n\n\n전체 설명\n\n안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p>이 영상은 아래 설명의 매체 대안입니다. 본문에 없는 추가 정보는 제공하지 않습니다.</p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"></video><h2>전체 설명</h2><p id=\"transcript\">안내자: 설정에서 보안을 선택합니다. 사용자: 이전 코드를 지금 버려도 되나요? 안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요. [보안 확인 실패를 알리는 경고음 두 번] 안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다. 안내자: 새 코드를 안전한 곳에 저장합니다. 안내자: 발급 완료 화면을 확인합니다. 화면 안내는 다음 일곱 단계입니다. 보안 설정 설정에서 보안을 선택하세요. 보안 열기 이전 코드에 관한 질문 질문과 답변을 듣고 다음 단계로 이동하세요. 답변 듣기 코드를 버리기 전에 새 코드의 저장 상태를 먼저 확인하세요. 저장 상태 확인 보안 확인 결과 결과를 확인하고 다음 단계로 이동하세요. 결과 확인 보안 확인 다시 하기 보안 확인을 완료하고 발급을 확인하세요. 보안 확인 새 코드 저장 코드를 안전한 곳에 보관하세요. 저장 완료 발급 완료 발급 완료 화면을 확인하세요. 설정으로 돌아가기</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": []
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": []
+      },
+      {
+        "time": 5,
+        "active_cues": []
+      },
+      {
+        "time": 9.4,
+        "active_cues": []
+      },
+      {
+        "time": 12.5,
+        "active_cues": []
+      },
+      {
+        "time": 15,
+        "active_cues": []
+      },
+      {
+        "time": 17.8,
+        "active_cues": []
+      },
+      {
+        "time": 22,
+        "active_cues": []
+      },
+      {
+        "time": 25,
+        "active_cues": []
+      },
+      {
+        "time": 28.3,
+        "active_cues": []
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/extra-information.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/d06f2d97-3d3f-49d3-99f2-88b7333cc6cd",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/c72a879d-3fbd-409d-a3a1-511dfeb64ec6",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/c8df9fc1-2b84-4c91-b713-55b327d0e700",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/5e28f9ee-8630-4faf-8b88-d19711c041ca",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/5a120234-9273-47f0-8c04-91cd47d9e282",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/f3ee32e2-c950-490a-9802-8c67bb34af08",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/c088173f-ed87-45eb-824f-61159004ec25",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/f395eb5b-3908-45ca-b6ec-b81bdb362721",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/9427af42-7627-4f95-9393-d5af9c5772f9",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/f9ddde43-0cbb-40df-9518-ba2c2799ab68",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/c5ba5059-b203-4614-b040-e6a81965899f",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/e2f6d48e-aafa-4179-a883-f25757bde674",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/30a39a11-aa36-43a8-9645-68b94becfae6",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/16837b81-c6ab-43d5-9b00-065b6d71194c",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/a99c9017-89c4-4a74-878f-982797ea849e",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C12",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/partial.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"compatible.mp4\"><track kind=\"captions\" src=\"complete.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "metadata": {
+      "duration": 31.209,
+      "width": 1280,
+      "height": 800,
+      "audioTracks": 1,
+      "tracks": [
+        {
+          "kind": "captions",
+          "label": "한국어 자막",
+          "srclang": "ko",
+          "readyState": 2,
+          "mode": "showing",
+          "cues": [
+            {
+              "id": "A1",
+              "start": 1,
+              "end": 3.4,
+              "text": "안내자: 설정에서 보안을 선택합니다.",
+              "line": 76
+            },
+            {
+              "id": "B1",
+              "start": 4,
+              "end": 7,
+              "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+              "line": 76
+            },
+            {
+              "id": "A2",
+              "start": 7.6,
+              "end": 11.6,
+              "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+              "line": 76
+            },
+            {
+              "id": "SFX",
+              "start": 12.2,
+              "end": 15.82,
+              "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+              "line": 76
+            },
+            {
+              "id": "A3",
+              "start": 16.42,
+              "end": 19.46,
+              "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+              "line": 76
+            },
+            {
+              "id": "A4",
+              "start": 20.06,
+              "end": 26.7,
+              "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+              "line": 76
+            },
+            {
+              "id": "A5",
+              "start": 27.3,
+              "end": 29.58,
+              "text": "안내자: 발급 완료 화면을 확인합니다.",
+              "line": 76
+            }
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "time": 2,
+        "active_cues": [
+          {
+            "id": "A1",
+            "text": "안내자: 설정에서 보안을 선택합니다.",
+            "start": 1,
+            "end": 3.4
+          }
+        ]
+      },
+      {
+        "time": 5,
+        "active_cues": [
+          {
+            "id": "B1",
+            "text": "사용자: 이전 코드를 지금 버려도 되나요?",
+            "start": 4,
+            "end": 7
+          }
+        ]
+      },
+      {
+        "time": 9.4,
+        "active_cues": [
+          {
+            "id": "A2",
+            "text": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+            "start": 7.6,
+            "end": 11.6
+          }
+        ]
+      },
+      {
+        "time": 12.5,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 15,
+        "active_cues": [
+          {
+            "id": "SFX",
+            "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+            "start": 12.2,
+            "end": 15.82
+          }
+        ]
+      },
+      {
+        "time": 17.8,
+        "active_cues": [
+          {
+            "id": "A3",
+            "text": "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+            "start": 16.42,
+            "end": 19.46
+          }
+        ]
+      },
+      {
+        "time": 22,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 25,
+        "active_cues": [
+          {
+            "id": "A4",
+            "text": "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+            "start": 20.06,
+            "end": 26.7
+          }
+        ]
+      },
+      {
+        "time": 28.3,
+        "active_cues": [
+          {
+            "id": "A5",
+            "text": "안내자: 발급 완료 화면을 확인합니다.",
+            "start": 27.3,
+            "end": 29.58
+          }
+        ]
+      }
+    ],
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/partial.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/602038de-815c-4d8b-a6b6-e5cbd75e85f7",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/42740d92-cba3-4b72-a987-a52c497f54cd",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/fb65f4c8-2dca-4b67-ba7e-a13b70c5c782",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6790e6f3-a896-4893-acf7-d530ad802533",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/51f334a0-f918-4810-90df-81ab56f258b7",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/4f190935-c1d9-4437-b5ae-ed6d99c096e0",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/3b6dcf64-fef8-43ba-9516-81d9ebda8aa3",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/81fecff1-6297-4636-8bcc-77e1ce29772a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/cd4d1150-0d04-4963-8002-347534c3bc3a",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/03f4b64d-98ab-433a-966b-3d93073cfa1d",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/426ba5ee-86e4-48b3-b765-92a0d4621803",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/86c7ca67-283c-425a-b0bf-cb4add842459",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/d53efa94-8600-4a0b-b358-a8253165e717",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/716b8900-f32d-4083-ac34-9c9844425676",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.vtt",
+        "status": 304
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/compatible.mp4",
+        "status": 206
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/194f5513-a7dd-45b5-92f0-72d907366a2f",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "case_id": "C13",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable-source.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><video controls=\"\" preload=\"metadata\" playsinline=\"\" aria-label=\"복구 코드 발급 안내\" src=\"unavailable.mp4\"><track kind=\"captions\" src=\"complete.vtt\" srclang=\"ko\" label=\"한국어 자막\" default=\"\"></video><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "source_error": {
+      "error": 4,
+      "readyState": 0,
+      "currentSrc": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable.mp4"
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable-source.html",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/26162939-f9cf-4158-a62a-c93284386317",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/28b63729-299c-44f1-9a2e-7a620daa0333",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/eb54325a-43ab-4f89-ad70-c8866d98c559",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/6d4791b7-4714-4204-bab2-6f7a2c4dd3b9",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/792fc04d-71b6-48fa-bc39-a3d48a62c47b",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/5fc2e304-c74b-4d85-81e2-34d8b73c20b4",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/e9a6758e-9df8-4f3d-92e3-a1c0dde155e6",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/1a4bdbd5-64ec-4337-a72e-bcd2134de3b2",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/36c902a9-e814-4b8d-a2ce-9041e09d5e90",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/17f0581f-1706-4b8d-af61-416a7bf04496",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/0611cb3a-1d05-4c7d-9303-8b21c5aa3549",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/5852148e-1532-466c-a4f5-260645d1c6f7",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/46f1f067-f3b8-4b44-9151-e6dc7fcc9c01",
+        "status": 200
+      },
+      {
+        "url": "blob:http://127.0.0.1:8944/c679e40e-ebd2-413e-a303-3ea1a24d795a",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/complete.vtt",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/unavailable.mp4",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "case_id": "C14",
+    "browser": "WebKit",
+    "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/no-target.html",
+    "page_text": "복구 코드 발급 안내\n\n교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.\n\n화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.\n\n설정에서 보안을 선택해 복구 코드를 발급합니다.\n\n전체 자막\n경고음 없는 자막\n의미가 바뀐 자막\n시간이 어긋난 자막\n영상에 포함된 자막",
+    "html": "<h1>복구 코드 발급 안내</h1><p>교육용 안내이며 실제 계정이나 코드를 입력하지 않습니다.</p><p>화면 밖의 안내자와 사용자가 대화합니다. 두 번의 경고음은 보안 확인 실패를 알립니다.</p><p></p><p>설정에서 보안을 선택해 복구 코드를 발급합니다.</p><nav><a href=\"complete.html\">전체 자막</a><a href=\"sound-omitted.html\">경고음 없는 자막</a><a href=\"negation.html\">의미가 바뀐 자막</a><a href=\"shifted.html\">시간이 어긋난 자막</a><a href=\"open.html\">영상에 포함된 자막</a></nav>",
+    "actual_browser_record": true,
+    "responses": [
+      {
+        "url": "http://127.0.0.1:8944/labs/accessibility/captions/ko/no-target.html",
+        "status": 200
+      }
+    ]
+  }
+]

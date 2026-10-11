@@ -1,0 +1,2482 @@
+[
+  {
+    "lang": "ko",
+    "file": "fig-01.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "그림 01 / 화면을 보면서 바로 읽을 수 있는가",
+        "x": 42,
+        "y": 23,
+        "width": 543.5,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "동기화 자막",
+        "x": 64,
+        "y": 110,
+        "width": 122.53125,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "코드를 버리기 전에",
+        "x": 110,
+        "y": 218,
+        "width": 198.328125,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "저장 상태를 먼저 확인하세요.",
+        "x": 110,
+        "y": 269,
+        "width": 238,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "▶  00:09 / 00:31     ━━━━━━━",
+        "x": 64,
+        "y": 417,
+        "width": 297.6587829589844,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "정적인 전체 전사문",
+        "x": 640,
+        "y": 110,
+        "width": 198.328125,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "코드를 버리기 전에",
+        "x": 686,
+        "y": 218,
+        "width": 198.328125,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "저장 상태를 먼저 확인하세요.",
+        "x": 686,
+        "y": 269,
+        "width": 238,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "▶  00:09 / 00:31     ━━━━━━━",
+        "x": 640,
+        "y": 417,
+        "width": 297.6588134765625,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "안내자: 아니요. 새 복구 코드를",
+        "x": 83,
+        "y": 478,
+        "width": 269.65625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "저장하기 전에는 버리지 마세요.",
+        "x": 83,
+        "y": 515,
+        "width": 279.671875,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "지금 들리는 답변과 함께 읽습니다.",
+        "x": 64,
+        "y": 654,
+        "width": 304.75,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "설정에서 보안을 선택합니다. 이전 코드를",
+        "x": 657,
+        "y": 477,
+        "width": 333.375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "지금 버려도 되나요? 아니요. 새 복구…",
+        "x": 657,
+        "y": 514,
+        "width": 308.859375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "전체 내용을 찾아 읽어야 합니다.",
+        "x": 640,
+        "y": 654,
+        "width": 284.859375,
+        "height": 27,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "ko",
+    "file": "fig-02.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "그림 02 / 자막 검사 전에 적용 범위를 정합니다",
+        "x": 42,
+        "y": 23,
+        "width": 575.109375,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "사전 제작 동기화 매체인가요?",
+        "x": 320,
+        "y": 117,
+        "width": 288.53125,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "대사나 이해에 필요한 소리가 있나요?",
+        "x": 320,
+        "y": 157,
+        "width": 358.9375,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "대상 확인",
+        "x": 744,
+        "y": 234,
+        "width": 77.59375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "대상 없음 확인",
+        "x": 42,
+        "y": 236,
+        "width": 113.4375,
+        "height": 23,
+        "outside": false
+      },
+      {
+        "text": "이 기준의 대상 아님",
+        "x": 64,
+        "y": 337,
+        "width": 160.125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "다른 매체 유형은",
+        "x": 64,
+        "y": 371,
+        "width": 137.03125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "관련 기준으로 분리",
+        "x": 64,
+        "y": 405,
+        "width": 155.1875,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "본문의 매체 대안인가요?",
+        "x": 360,
+        "y": 336,
+        "width": 230.171875,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "① 본문에 없는 정보를 추가하지 않음",
+        "x": 360,
+        "y": 374,
+        "width": 339.53125,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "② 그 사실을 실제로 명확하게 표시함",
+        "x": 360,
+        "y": 412,
+        "width": 339.53125,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "두 조건 모두 확인",
+        "x": 330,
+        "y": 494,
+        "width": 141.953125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "조건이 성립하지 않음",
+        "x": 778,
+        "y": 494,
+        "width": 173.359375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "검증된 예외",
+        "x": 327,
+        "y": 581,
+        "width": 104.671875,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "이 기준 적용 제외",
+        "x": 327,
+        "y": 617,
+        "width": 154.84375,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "일반 자막 요구를 평가",
+        "x": 784,
+        "y": 581,
+        "width": 194.625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "제공·내용·시간 확인",
+        "x": 784,
+        "y": 617,
+        "width": 175.265625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "어느 단계든 비교 자료가 부족하면 → 판단 유보",
+        "x": 68,
+        "y": 753,
+        "width": 415.171875,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "목록·원본·본문·표시 문구에서 무엇을 더 확인해야 하는지 기록합니다.",
+        "x": 68,
+        "y": 793,
+        "width": 610.03125,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "자료 부족을 대상 없음이나 예외로 바꾸지 않습니다.",
+        "x": 42,
+        "y": 882,
+        "width": 435.25,
+        "height": 26,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "ko",
+    "file": "fig-03.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "그림 03 / 같은 문장, 다른 표시 시간",
+        "x": 42,
+        "y": 23,
+        "width": 437.125,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "7초",
+        "x": 274.4765625,
+        "y": 90,
+        "width": 31.046875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "9초",
+        "x": 393.71875,
+        "y": 90,
+        "width": 32.5625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "11초",
+        "x": 510.7734375,
+        "y": 90,
+        "width": 38.453125,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "13초",
+        "x": 629.0625,
+        "y": 90,
+        "width": 41.875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "15초",
+        "x": 749.1484375,
+        "y": 90,
+        "width": 41.703125,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "17초",
+        "x": 869.6171875,
+        "y": 90,
+        "width": 40.765625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "19초",
+        "x": 988.8671875,
+        "y": 90,
+        "width": 42.265625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "현재 화면",
+        "x": 42,
+        "y": 151,
+        "width": 88.171875,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "코드를 버리기 전에",
+        "x": 304,
+        "y": 163,
+        "width": 162.34375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "보안 확인",
+        "x": 601,
+        "y": 152,
+        "width": 66.84375,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "결과",
+        "x": 601,
+        "y": 180,
+        "width": 31.140625,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "다시 확인하기",
+        "x": 852,
+        "y": 166,
+        "width": 103.390625,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "답변 구간",
+        "x": 42,
+        "y": 259,
+        "width": 84.78125,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "(설계 기준)",
+        "x": 42,
+        "y": 291,
+        "width": 100.296875,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "7.6–11.6초",
+        "x": 338,
+        "y": 259,
+        "width": 96.59375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "“버리지 마세요”",
+        "x": 338,
+        "y": 295,
+        "width": 136.703125,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "자막 A / 시간 일치",
+        "x": 42,
+        "y": 395,
+        "width": 169.046875,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "7.6–11.6초",
+        "x": 338,
+        "y": 383,
+        "width": 96.59375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "같은 때 읽는 답변",
+        "x": 338,
+        "y": 417,
+        "width": 148.359375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "자막 B / 5초 지연",
+        "x": 42,
+        "y": 522,
+        "width": 162.25,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "12.6–16.6초",
+        "x": 638,
+        "y": 509,
+        "width": 107.4375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "다음 화면에서 읽는 답변",
+        "x": 638,
+        "y": 543,
+        "width": 196.453125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "+5.0초",
+        "x": 416,
+        "y": 470,
+        "width": 51.578125,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "문장은 같아도, 이용자가 답변을 읽는 순간의 화면과 상황이 달라집니다.",
+        "x": 310,
+        "y": 627,
+        "width": 628.625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "5초는 이 사례의 지연입니다. WCAG의 고정 합격선이 아닙니다.",
+        "x": 310,
+        "y": 671,
+        "width": 541.15625,
+        "height": 26,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "ko",
+    "file": "fig-04.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "그림 04 / 대사가 없는 순간에도 정보가 있습니다",
+        "x": 42,
+        "y": 23,
+        "width": 597.59375,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "원본 소리 / 12.20–12.82초: 경고음 두 번 → 보안 확인 실패",
+        "x": 68,
+        "y": 110,
+        "width": 558.25,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "자막 표시 / 12.20–15.82초: 소리의 의미를 읽을 시간 확보",
+        "x": 68,
+        "y": 161,
+        "width": 538.328125,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "소리가 끝나는 시각과 자막이 사라지는 시각은 다릅니다.",
+        "x": 68,
+        "y": 205,
+        "width": 452.609375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "충분한 자막",
+        "x": 66,
+        "y": 302,
+        "width": 113.46875,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "보안 확인 결과",
+        "x": 88,
+        "y": 368,
+        "width": 151.625,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "결과를 확인하고 다음 단계로 이동하세요.",
+        "x": 88,
+        "y": 408,
+        "width": 303.53125,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "경고음을 빠뜨린 자막",
+        "x": 642,
+        "y": 302,
+        "width": 205.296875,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "보안 확인 결과",
+        "x": 664,
+        "y": 368,
+        "width": 151.625,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "결과를 확인하고 다음 단계로 이동하세요.",
+        "x": 664,
+        "y": 408,
+        "width": 303.53125,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "[보안 확인 실패를 알리는 경고음 두 번]",
+        "x": 84,
+        "y": 494,
+        "width": 330.65625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "해당 구간에 표시되는 자막이 없음",
+        "x": 660,
+        "y": 494,
+        "width": 286.625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "페이지의 소리 설명만으로는, 영상 재생 중 언제 실패했는지 알 수 없습니다.",
+        "x": 42,
+        "y": 628,
+        "width": 714.53125,
+        "height": 29,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "file": "fig-01-7d1ad7793733.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "Figure 01 / Can you read it while watching?",
+        "x": 42,
+        "y": 23,
+        "width": 622.75,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "Synchronized captions",
+        "x": 64,
+        "y": 110,
+        "width": 284.3125,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "Before discarding codes",
+        "x": 110,
+        "y": 218,
+        "width": 300.0625,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "Check that the new codes are saved.",
+        "x": 110,
+        "y": 269,
+        "width": 335.75,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "▶  00:09 / 00:31     ━━━━━━━",
+        "x": 64,
+        "y": 417,
+        "width": 297.6587829589844,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "Static full transcript",
+        "x": 640,
+        "y": 110,
+        "width": 244.8125,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "Before discarding codes",
+        "x": 686,
+        "y": 218,
+        "width": 300.0625,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "Check that the new codes are saved.",
+        "x": 686,
+        "y": 269,
+        "width": 335.75,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "▶  00:09 / 00:31     ━━━━━━━",
+        "x": 640,
+        "y": 417,
+        "width": 297.6588134765625,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "Guide: No. Do not discard them",
+        "x": 83,
+        "y": 478,
+        "width": 308.09375,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "before saving the new recovery codes.",
+        "x": 83,
+        "y": 515,
+        "width": 379.03125,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "Read it with the current answer.",
+        "x": 64,
+        "y": 654,
+        "width": 309.578125,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "Select Security in Settings. Can I",
+        "x": 657,
+        "y": 477,
+        "width": 295.0625,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "discard the old codes now? No. New…",
+        "x": 657,
+        "y": 514,
+        "width": 344.640625,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "Find it in the full transcript.",
+        "x": 640,
+        "y": 654,
+        "width": 260.296875,
+        "height": 27,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "file": "fig-02-8a65a3b047ba.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "Figure 02 / Set the scope before checking captions",
+        "x": 42,
+        "y": 23,
+        "width": 742.71875,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "Prerecorded synchronized media?",
+        "x": 320,
+        "y": 117,
+        "width": 364.734375,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "Dialogue or sounds needed to understand?",
+        "x": 320,
+        "y": 157,
+        "width": 460.890625,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "Target verified",
+        "x": 744,
+        "y": 234,
+        "width": 129.84375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "Absence confirmed",
+        "x": 42,
+        "y": 236,
+        "width": 170.953125,
+        "height": 23,
+        "outside": false
+      },
+      {
+        "text": "Outside this criterion",
+        "x": 64,
+        "y": 337,
+        "width": 189.21875,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "Other media types:",
+        "x": 64,
+        "y": 371,
+        "width": 173.828125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "use relevant criteria",
+        "x": 64,
+        "y": 405,
+        "width": 177.796875,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "A media alternative for text?",
+        "x": 360,
+        "y": 336,
+        "width": 285.59375,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "① No information beyond the text",
+        "x": 360,
+        "y": 374,
+        "width": 344.5,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "② Actually clearly labeled as such",
+        "x": 360,
+        "y": 412,
+        "width": 348.171875,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "Both verified",
+        "x": 330,
+        "y": 494,
+        "width": 115.265625,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "A condition not met",
+        "x": 778,
+        "y": 494,
+        "width": 178.171875,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "Verified exception",
+        "x": 327,
+        "y": 581,
+        "width": 177.40625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "Criterion does not apply",
+        "x": 327,
+        "y": 617,
+        "width": 235.96875,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "Evaluate captions",
+        "x": 784,
+        "y": 581,
+        "width": 174.40625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "Check delivery, content, timing",
+        "x": 784,
+        "y": 617,
+        "width": 302.15625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "Insufficient comparison evidence at any step → Inconclusive",
+        "x": 68,
+        "y": 753,
+        "width": 594.125,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "Record what more is needed: inventory, original, text, or label.",
+        "x": 68,
+        "y": 793,
+        "width": 599.078125,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "Missing evidence is not proof of no target or an exception.",
+        "x": 42,
+        "y": 882,
+        "width": 546.296875,
+        "height": 26,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "file": "fig-03-7a1cd9f570cb.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "Figure 03 / Same sentence, different timing",
+        "x": 42,
+        "y": 23,
+        "width": 629.734375,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "7 s",
+        "x": 276.1796875,
+        "y": 90,
+        "width": 27.640625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "9 s",
+        "x": 395.421875,
+        "y": 90,
+        "width": 29.15625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "11 s",
+        "x": 512.46875,
+        "y": 90,
+        "width": 35.0625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "13 s",
+        "x": 630.765625,
+        "y": 90,
+        "width": 38.46875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "15 s",
+        "x": 750.8515625,
+        "y": 90,
+        "width": 38.296875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "17 s",
+        "x": 871.3203125,
+        "y": 90,
+        "width": 37.359375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "19 s",
+        "x": 990.5625,
+        "y": 90,
+        "width": 38.875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "Current screen",
+        "x": 42,
+        "y": 151,
+        "width": 164.5,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "Before discarding codes",
+        "x": 304,
+        "y": 163,
+        "width": 229.21875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "Security check",
+        "x": 601,
+        "y": 152,
+        "width": 119.06707763671875,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "result",
+        "x": 601,
+        "y": 180,
+        "width": 44.953125,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "Recheck",
+        "x": 852,
+        "y": 166,
+        "width": 72.91143798828125,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "Answer interval",
+        "x": 42,
+        "y": 259,
+        "width": 151.953125,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "(design timing)",
+        "x": 42,
+        "y": 291,
+        "width": 148.765625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "7.6–11.6 s",
+        "x": 338,
+        "y": 259,
+        "width": 93.1875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "“Do not discard”",
+        "x": 338,
+        "y": 295,
+        "width": 155.671875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "Caption A / Aligned",
+        "x": 42,
+        "y": 395,
+        "width": 211.046875,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "7.6–11.6 s",
+        "x": 338,
+        "y": 383,
+        "width": 93.1875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "Answer read in sync",
+        "x": 338,
+        "y": 417,
+        "width": 190.109375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "Caption B / 5 s late",
+        "x": 42,
+        "y": 522,
+        "width": 204.109375,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "12.6–16.6 s",
+        "x": 638,
+        "y": 509,
+        "width": 104.375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "Answer on next screen",
+        "x": 638,
+        "y": 543,
+        "width": 206.921875,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "+5.0 s",
+        "x": 416,
+        "y": 470,
+        "width": 49.5,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "Same sentence, but a different screen and context when users read it.",
+        "x": 310,
+        "y": 627,
+        "width": 685.171875,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "5 seconds is this example's delay, not a fixed WCAG pass threshold.",
+        "x": 310,
+        "y": 671,
+        "width": 641.828125,
+        "height": 26,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "file": "fig-04-bed21910baf0.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "Figure 04 / Information exists without dialogue",
+        "x": 42,
+        "y": 23,
+        "width": 681.21875,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "Original / 12.20–12.82 s: two warning sounds → security check failed",
+        "x": 68,
+        "y": 110,
+        "width": 753.390625,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "Caption / 12.20–15.82 s: time to read the sound's meaning",
+        "x": 68,
+        "y": 161,
+        "width": 599.3125,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "The sound ends before the caption disappears.",
+        "x": 68,
+        "y": 205,
+        "width": 428.5,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "Sufficient captions",
+        "x": 66,
+        "y": 302,
+        "width": 216.953125,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "Security check result",
+        "x": 88,
+        "y": 368,
+        "width": 261.71875,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "Check the result and proceed to the next step.",
+        "x": 88,
+        "y": 408,
+        "width": 390.28125,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "Warning sounds omitted",
+        "x": 642,
+        "y": 302,
+        "width": 280.109375,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "Security check result",
+        "x": 664,
+        "y": 368,
+        "width": 261.71875,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "Check the result and proceed to the next step.",
+        "x": 664,
+        "y": 408,
+        "width": 390.28125,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "[Two warning sounds: security check failed]",
+        "x": 84,
+        "y": 494,
+        "width": 414.296875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "No caption displayed in this interval",
+        "x": 660,
+        "y": 494,
+        "width": 334.875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "The page's sound description alone does not show when failure occurs during playback.",
+        "x": 42,
+        "y": 628,
+        "width": 940.15625,
+        "height": 29,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "fig-01-04971a27ebaa.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "図01 / 画面を見ながらすぐ読めるか",
+        "x": 42,
+        "y": 23,
+        "width": 507.0625,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "同期した字幕",
+        "x": 64,
+        "y": 110,
+        "width": 162,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "コードを捨てる前に",
+        "x": 110,
+        "y": 218,
+        "width": 243,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "まず保存状態を確認してください。",
+        "x": 110,
+        "y": 269,
+        "width": 334.125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "▶  00:09 / 00:31     ━━━━━━━",
+        "x": 64,
+        "y": 417,
+        "width": 297.4375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "静的な全文の書き起こし",
+        "x": 640,
+        "y": 110,
+        "width": 297,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "コードを捨てる前に",
+        "x": 686,
+        "y": 218,
+        "width": 243,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "まず保存状態を確認してください。",
+        "x": 686,
+        "y": 269,
+        "width": 334.125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "▶  00:09 / 00:31     ━━━━━━━",
+        "x": 640,
+        "y": 417,
+        "width": 297.4375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "案内役：いいえ。新しい復旧コードを",
+        "x": 83,
+        "y": 478,
+        "width": 391,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "保存するまでは捨てないでください。",
+        "x": 83,
+        "y": 515,
+        "width": 390.09375,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "今聞こえる回答とともに読みます。",
+        "x": 64,
+        "y": 654,
+        "width": 365.015625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "設定でセキュリティを選択します。以前のコードを",
+        "x": 657,
+        "y": 477,
+        "width": 480.28125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "今捨ててもよいですか？いいえ。新しい復旧…",
+        "x": 657,
+        "y": 514,
+        "width": 433.375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "全体の内容を探して読む必要があります。",
+        "x": 640,
+        "y": 654,
+        "width": 433.328125,
+        "height": 27,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "fig-02-0383dc02c88c.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "図02 / 字幕検査の前に適用範囲を決めます",
+        "x": 42,
+        "y": 23,
+        "width": 607.953125,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "事前制作の同期したメディアですか？",
+        "x": 320,
+        "y": 117,
+        "width": 420.75,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "台詞や理解に必要な音がありますか？",
+        "x": 320,
+        "y": 157,
+        "width": 424.25,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "対象を確認",
+        "x": 744,
+        "y": 234,
+        "width": 105,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "対象なしを確認",
+        "x": 42,
+        "y": 236,
+        "width": 140,
+        "height": 23,
+        "outside": false
+      },
+      {
+        "text": "この基準の対象外",
+        "x": 64,
+        "y": 337,
+        "width": 168,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "他のメディア形式は",
+        "x": 64,
+        "y": 371,
+        "width": 186.0625,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "関連基準に分ける",
+        "x": 64,
+        "y": 405,
+        "width": 167.375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "本文のメディアによる代替ですか？",
+        "x": 360,
+        "y": 336,
+        "width": 379.203125,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "① 本文にない情報を追加しない",
+        "x": 360,
+        "y": 374,
+        "width": 339.609375,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "② その事実を実際に明確に表示",
+        "x": 360,
+        "y": 412,
+        "width": 339.609375,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "両条件を確認",
+        "x": 330,
+        "y": 494,
+        "width": 126,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "条件が成立しない",
+        "x": 778,
+        "y": 494,
+        "width": 168,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "検証済みの例外",
+        "x": 327,
+        "y": 581,
+        "width": 161,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "この基準は適用除外",
+        "x": 327,
+        "y": 617,
+        "width": 207,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "通常の字幕要求を評価",
+        "x": 784,
+        "y": 581,
+        "width": 230,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "提供・内容・時間を確認",
+        "x": 784,
+        "y": 617,
+        "width": 253,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "どの段階でも比較資料が不足する場合 → 判断保留",
+        "x": 68,
+        "y": 753,
+        "width": 513.421875,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "一覧・原本・本文・表示文で、追加確認が必要な事項を記録します。",
+        "x": 68,
+        "y": 793,
+        "width": 709.5625,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "資料不足を対象なしや例外に置き換えません。",
+        "x": 42,
+        "y": 882,
+        "width": 462,
+        "height": 26,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "fig-03-5aff64acac1f.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "図03 / 同じ文、異なる表示時間",
+        "x": 42,
+        "y": 23,
+        "width": 448.984375,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "7秒",
+        "x": 272.9921875,
+        "y": 90,
+        "width": 34.015625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "9秒",
+        "x": 392.234375,
+        "y": 90,
+        "width": 35.53125,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "11秒",
+        "x": 509.2890625,
+        "y": 90,
+        "width": 41.421875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "13秒",
+        "x": 627.578125,
+        "y": 90,
+        "width": 44.84375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "15秒",
+        "x": 747.6640625,
+        "y": 90,
+        "width": 44.671875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "17秒",
+        "x": 868.1328125,
+        "y": 90,
+        "width": 43.734375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "19秒",
+        "x": 987.375,
+        "y": 90,
+        "width": 45.25,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "現在の画面",
+        "x": 42,
+        "y": 151,
+        "width": 120,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "コードを捨てる前に",
+        "x": 304,
+        "y": 163,
+        "width": 198,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "セキュリティ確認",
+        "x": 601,
+        "y": 152,
+        "width": 143.46875,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "結果",
+        "x": 601,
+        "y": 180,
+        "width": 36,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "再確認",
+        "x": 852,
+        "y": 166,
+        "width": 57,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "回答区間",
+        "x": 42,
+        "y": 259,
+        "width": 92,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "（設計基準）",
+        "x": 42,
+        "y": 291,
+        "width": 138,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "7.6–11.6秒",
+        "x": 338,
+        "y": 259,
+        "width": 99.5625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "「捨てないでください」",
+        "x": 338,
+        "y": 295,
+        "width": 241.125,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "字幕A / 時間一致",
+        "x": 42,
+        "y": 395,
+        "width": 178.25,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "7.6–11.6秒",
+        "x": 338,
+        "y": 383,
+        "width": 99.5625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "同じ時点で読む回答",
+        "x": 338,
+        "y": 417,
+        "width": 198,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "字幕B / 5秒遅延",
+        "x": 42,
+        "y": 522,
+        "width": 168.203125,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "12.6–16.6秒",
+        "x": 638,
+        "y": 509,
+        "width": 110.265625,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "次の画面で読む回答",
+        "x": 638,
+        "y": 543,
+        "width": 189,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "+5.0秒",
+        "x": 416,
+        "y": 470,
+        "width": 54,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "文が同じでも、利用者が回答を読む瞬間の画面と状況は異なります。",
+        "x": 310,
+        "y": 627,
+        "width": 710.703125,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "5秒はこの事例の遅延です。WCAGの固定の合格基準ではありません。",
+        "x": 310,
+        "y": 671,
+        "width": 690.890625,
+        "height": 26,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "fig-04-f35fc0fd61fa.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "図04 / 台詞のない瞬間にも情報があります",
+        "x": 42,
+        "y": 23,
+        "width": 609.515625,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "原本の音 / 12.20–12.82秒：警告音2回 → セキュリティ確認失敗",
+        "x": 68,
+        "y": 110,
+        "width": 682.3125,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "字幕表示 / 12.20–15.82秒：音の意味を読む時間を確保",
+        "x": 68,
+        "y": 161,
+        "width": 579.890625,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "音が終わる時刻と字幕が消える時刻は異なります。",
+        "x": 68,
+        "y": 205,
+        "width": 480.28125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "十分な字幕",
+        "x": 66,
+        "y": 302,
+        "width": 125,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "セキュリティ確認の結果",
+        "x": 88,
+        "y": 368,
+        "width": 295.390625,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "結果を確認し、次の手順に進んでください。",
+        "x": 88,
+        "y": 408,
+        "width": 378.671875,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "警告音を省いた字幕",
+        "x": 642,
+        "y": 302,
+        "width": 225,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "セキュリティ確認の結果",
+        "x": 664,
+        "y": 368,
+        "width": 295.390625,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "結果を確認し、次の手順に進んでください。",
+        "x": 664,
+        "y": 408,
+        "width": 378.671875,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "[セキュリティ確認失敗を知らせる警告音2回]",
+        "x": 84,
+        "y": 494,
+        "width": 444.171875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "当該区間に表示される字幕なし",
+        "x": 660,
+        "y": 494,
+        "width": 308,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "ページの音の説明だけでは、映像の再生中にいつ失敗したかは分かりません。",
+        "x": 42,
+        "y": 628,
+        "width": 874.25,
+        "height": 29,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "zh",
+    "file": "fig-01-88645bc97a62.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "图 01 / 能否在观看画面时直接阅读",
+        "x": 42,
+        "y": 23,
+        "width": 482.796875,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "同步字幕",
+        "x": 64,
+        "y": 110,
+        "width": 108,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "丢弃代码之前",
+        "x": 110,
+        "y": 218,
+        "width": 162,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "请先确认保存状态。",
+        "x": 110,
+        "y": 269,
+        "width": 189,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "▶  00:09 / 00:31     ━━━━━━━",
+        "x": 64,
+        "y": 417,
+        "width": 297.4375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "静态完整转写",
+        "x": 640,
+        "y": 110,
+        "width": 162,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "丢弃代码之前",
+        "x": 686,
+        "y": 218,
+        "width": 162,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "请先确认保存状态。",
+        "x": 686,
+        "y": 269,
+        "width": 189,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "▶  00:09 / 00:31     ━━━━━━━",
+        "x": 640,
+        "y": 417,
+        "width": 297.4375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "引导员：不可以。在保存",
+        "x": 83,
+        "y": 478,
+        "width": 253,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "新的恢复码之前，请不要丢弃。",
+        "x": 83,
+        "y": 515,
+        "width": 322,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "与当前听到的回答一起阅读。",
+        "x": 64,
+        "y": 654,
+        "width": 299,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "在设置中选择安全。现在可以",
+        "x": 657,
+        "y": 477,
+        "width": 273,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "丢弃旧代码吗？不可以。新的恢复…",
+        "x": 657,
+        "y": 514,
+        "width": 329.84375,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "需要查找并阅读完整内容。",
+        "x": 640,
+        "y": 654,
+        "width": 276,
+        "height": 27,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "zh",
+    "file": "fig-02-7a436cd8d41f.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "图 02 / 检查字幕前先确定适用范围",
+        "x": 42,
+        "y": 23,
+        "width": 486.71875,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "是预录同步媒体吗？",
+        "x": 320,
+        "y": 117,
+        "width": 225,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "有台词或理解所需的声音吗？",
+        "x": 320,
+        "y": 157,
+        "width": 325,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "确认有对象",
+        "x": 744,
+        "y": 234,
+        "width": 105,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "确认无对象",
+        "x": 42,
+        "y": 236,
+        "width": 100,
+        "height": 23,
+        "outside": false
+      },
+      {
+        "text": "不属于本准则对象",
+        "x": 64,
+        "y": 337,
+        "width": 168,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "其他媒体类型",
+        "x": 64,
+        "y": 371,
+        "width": 126,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "按相关准则处理",
+        "x": 64,
+        "y": 405,
+        "width": 147,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "是正文的媒体替代形式吗？",
+        "x": 360,
+        "y": 336,
+        "width": 288,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "① 未增加正文中没有的信息",
+        "x": 360,
+        "y": 374,
+        "width": 291.609375,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "② 实际明确标明这一事实",
+        "x": 360,
+        "y": 412,
+        "width": 267.609375,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "两个条件均确认",
+        "x": 330,
+        "y": 494,
+        "width": 147,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "条件不成立",
+        "x": 778,
+        "y": 494,
+        "width": 105,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "已验证的例外",
+        "x": 327,
+        "y": 581,
+        "width": 138,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "本准则不适用",
+        "x": 327,
+        "y": 617,
+        "width": 138,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "评估一般字幕要求",
+        "x": 784,
+        "y": 581,
+        "width": 184,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "检查提供、内容、时间",
+        "x": 784,
+        "y": 617,
+        "width": 230,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "任一步骤缺少比较资料 → 暂无法判定",
+        "x": 68,
+        "y": 753,
+        "width": 376.109375,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "记录列表、原始媒体、正文、标示文字还需确认什么。",
+        "x": 68,
+        "y": 793,
+        "width": 552,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "不要把资料不足转为无对象或例外。",
+        "x": 42,
+        "y": 882,
+        "width": 352,
+        "height": 26,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "zh",
+    "file": "fig-03-ce8d3e6c3169.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "图 03 / 相同句子，不同显示时间",
+        "x": 42,
+        "y": 23,
+        "width": 455.75,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "7 秒",
+        "x": 270.46875,
+        "y": 90,
+        "width": 39.0625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "9 秒",
+        "x": 389.7109375,
+        "y": 90,
+        "width": 40.578125,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "11 秒",
+        "x": 506.7578125,
+        "y": 90,
+        "width": 46.484375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "13 秒",
+        "x": 625.0546875,
+        "y": 90,
+        "width": 49.890625,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "15 秒",
+        "x": 745.140625,
+        "y": 90,
+        "width": 49.71875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "17 秒",
+        "x": 865.609375,
+        "y": 90,
+        "width": 48.78125,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "19 秒",
+        "x": 984.8515625,
+        "y": 90,
+        "width": 50.296875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "当前画面",
+        "x": 42,
+        "y": 151,
+        "width": 96,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "丢弃代码之前",
+        "x": 304,
+        "y": 163,
+        "width": 132,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "安全验证",
+        "x": 601,
+        "y": 152,
+        "width": 72,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "结果",
+        "x": 601,
+        "y": 180,
+        "width": 36,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "重新验证",
+        "x": 852,
+        "y": 166,
+        "width": 76,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "回答区间",
+        "x": 42,
+        "y": 259,
+        "width": 92,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "（设计基准）",
+        "x": 42,
+        "y": 291,
+        "width": 138,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "7.6–11.6 秒",
+        "x": 338,
+        "y": 259,
+        "width": 104.609375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "“请不要丢弃”",
+        "x": 338,
+        "y": 295,
+        "width": 127.46875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "字幕 A / 时间一致",
+        "x": 42,
+        "y": 395,
+        "width": 183.375,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "7.6–11.6 秒",
+        "x": 338,
+        "y": 383,
+        "width": 104.609375,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "同时阅读的回答",
+        "x": 338,
+        "y": 417,
+        "width": 154,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "字幕 B / 延迟 5 秒",
+        "x": 42,
+        "y": 522,
+        "width": 183.5625,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "12.6–16.6 秒",
+        "x": 638,
+        "y": 509,
+        "width": 115.203125,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "下一画面阅读的回答",
+        "x": 638,
+        "y": 543,
+        "width": 189,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "+5.0 秒",
+        "x": 416,
+        "y": 470,
+        "width": 58.5625,
+        "height": 21,
+        "outside": false
+      },
+      {
+        "text": "即使句子相同，用户阅读回答时的画面和情境也不同。",
+        "x": 310,
+        "y": 627,
+        "width": 552,
+        "height": 27,
+        "outside": false
+      },
+      {
+        "text": "5 秒是本案例的延迟，不是 WCAG 的固定合格线。",
+        "x": 310,
+        "y": 671,
+        "width": 488.234375,
+        "height": 26,
+        "outside": false
+      }
+    ]
+  },
+  {
+    "lang": "zh",
+    "file": "fig-04-ae9c04463cec.svg",
+    "outside": [],
+    "labels": [
+      {
+        "text": "图 04 / 没有台词的时刻也有信息",
+        "x": 42,
+        "y": 23,
+        "width": 456.28125,
+        "height": 38,
+        "outside": false
+      },
+      {
+        "text": "原始声音 / 12.20–12.82 秒：两次警告音 → 安全验证失败",
+        "x": 68,
+        "y": 110,
+        "width": 602.296875,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "字幕显示 / 12.20–15.82 秒：留出阅读声音含义的时间",
+        "x": 68,
+        "y": 161,
+        "width": 561.21875,
+        "height": 28,
+        "outside": false
+      },
+      {
+        "text": "声音结束与字幕消失的时刻不同。",
+        "x": 68,
+        "y": 205,
+        "width": 315,
+        "height": 24,
+        "outside": false
+      },
+      {
+        "text": "充分的字幕",
+        "x": 66,
+        "y": 302,
+        "width": 125,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "安全验证结果",
+        "x": 88,
+        "y": 368,
+        "width": 162,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "请查看结果并进入下一步。",
+        "x": 88,
+        "y": 408,
+        "width": 228,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "遗漏警告音的字幕",
+        "x": 642,
+        "y": 302,
+        "width": 200,
+        "height": 29,
+        "outside": false
+      },
+      {
+        "text": "安全验证结果",
+        "x": 664,
+        "y": 368,
+        "width": 162,
+        "height": 32,
+        "outside": false
+      },
+      {
+        "text": "请查看结果并进入下一步。",
+        "x": 664,
+        "y": 408,
+        "width": 228,
+        "height": 22,
+        "outside": false
+      },
+      {
+        "text": "[两次表示安全验证失败的警告音]",
+        "x": 84,
+        "y": 494,
+        "width": 322.921875,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "该区间没有显示字幕",
+        "x": 660,
+        "y": 494,
+        "width": 198,
+        "height": 26,
+        "outside": false
+      },
+      {
+        "text": "仅凭页面上的声音说明，无法知道视频播放中何时发生失败。",
+        "x": 42,
+        "y": 628,
+        "width": 675,
+        "height": 29,
+        "outside": false
+      }
+    ]
+  }
+]
