@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://jangwook.net/ads.txt",
+    "status": 200,
+    "contentType": "text/plain",
+    "sha256": "626214845733f36fbdd4a1a3dd4715dc9bc68c2b4ac388c526aa70f4fbc2d11a"
+  },
+  {
+    "url": "https://www.jangwook.net/ads.txt",
+    "status": 200,
+    "contentType": "text/plain",
+    "sha256": "626214845733f36fbdd4a1a3dd4715dc9bc68c2b4ac388c526aa70f4fbc2d11a"
+  },
+  {
+    "url": "https://jangwook.net/sitemap.xml",
+    "status": 200,
+    "contentType": "application/xml; charset=utf-8",
+    "sha256": "703e380292bf7b959b1105e80f60e7c7a621eaae85bba5ef24a22eca1b8a8e35"
+  }
+]

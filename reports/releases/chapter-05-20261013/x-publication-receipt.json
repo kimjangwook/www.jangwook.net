@@ -1,0 +1,38 @@
+{
+  "account": "effloow",
+  "sourceHash": "2518118829ec8ad1dc7c53a9b39a13ac98f85674e23bbc37c50df6ab41afaf3f",
+  "verifiedAt": "2026-10-13T08:43:01.348963+00:00",
+  "publicationLabel": "2026-10-13 17:38 Asia/Tokyo",
+  "posts": [
+    {
+      "url": "https://x.com/effloow/status/2109926763405128061",
+      "text": "[1/4]\n\"Check the completion screen\" does not explain what completed. A recovery-code video can leave someone who cannot see the screen without its warning, new code, or final state.",
+      "noUrlInBody": true
+    },
+    {
+      "url": "https://x.com/effloow/status/2109926764931957065",
+      "text": "[2/4]\nWCAG 1.2.3 allows audio description or a full media alternative. Captions and dialogue-only transcripts do not automatically cover visual information. The separate AA requirement, 1.2.5, may still require audio description.",
+      "noUrlInBody": true
+    },
+    {
+      "url": "https://x.com/effloow/status/2109926766437609565",
+      "text": "[3/4]\nA frozen prompt was tested on 12 controlled cases in 3 Claude Opus 5.5 Medium sessions. All 36 decisions matched reference answers. This static-screen test used images, transcripts, and audio analysis; it did not measure direct model listening.",
+      "noUrlInBody": true
+    },
+    {
+      "url": "https://x.com/effloow/status/2109926767960174728",
+      "text": "[4/4]\nThe new article includes the practice page, results, diagrams, a checklist, and the full evaluation prompt. It shows when to withhold judgment if source evidence is missing. Korean, English, Japanese, and Simplified Chinese editions are available.",
+      "noUrlInBody": true
+    }
+  ],
+  "linkReply": {
+    "url": "https://x.com/effloow/status/2109927146387046420",
+    "parent": "https://x.com/effloow/status/2109926767960174728",
+    "submittedText": "https://jangwook.net/en/series/accessibility/audio-description-or-media-alternative-prerecorded",
+    "observedShortUrl": "https://t.co/dktnUmUz2Y",
+    "verifiedDestination": "https://jangwook.net/en/series/accessibility/audio-description-or-media-alternative-prerecorded"
+  },
+  "threadAndParentVerified": true,
+  "screenshot": "x-publication.jpg",
+  "method": "Computer Use Chrome; owned @effloow profile and conversation verified; destination followed in the browser"
+}

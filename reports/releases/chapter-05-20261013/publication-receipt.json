@@ -1,0 +1,47 @@
+{
+  "releaseCommit": "8c45aa264b69bc7c140abeeb1d3aa9b8359cf578",
+  "branch": "main",
+  "pushed": true,
+  "workerVersion": "6b4eec30-66be-4653-b3ca-1b7277a7b750",
+  "rollbackVersion": "73baf036-5ea6-44dd-b111-c35b409ffe15",
+  "productionVerifiedAt": "2026-10-13T08:39:16.299795+00:00",
+  "liveValidation": "production-validation.json",
+  "languages": [
+    "ko",
+    "en",
+    "ja",
+    "zh"
+  ],
+  "articleAndPromptHashes": [
+    {
+      "lang": "ko",
+      "sourceHash": "28bfa73ce03f1e444847e9cb899258e82d97562a1d176eb930b8a225b62374af",
+      "articleSha256": "3c7b28d9972ead2ecc4cf9baa537d4b1eca0f5cc9f310e171e10c2b6e8771077",
+      "promptSha256": "6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd",
+      "firstPublishedAt": "2026-10-13T08:29:33.011Z"
+    },
+    {
+      "lang": "en",
+      "sourceHash": "2518118829ec8ad1dc7c53a9b39a13ac98f85674e23bbc37c50df6ab41afaf3f",
+      "articleSha256": "4d9c64eb8ab96b884dca564f36f133784c726fded00e33c92307776243941751",
+      "promptSha256": "52c6413debc42efc197849793fced59dc93d91192307c03275386ec972c7c335",
+      "firstPublishedAt": "2026-10-13T08:29:33.011Z"
+    },
+    {
+      "lang": "ja",
+      "sourceHash": "6bc08f2f81bb2ebee585bc593c95fb1a69f9f1872582b98713fceb30d996cc17",
+      "articleSha256": "93e7b579e6d2fd03f67eb75fb6aaf9794d6cc7016001af5740a3e5d81dac65ce",
+      "promptSha256": "028970116ce833b83eb7e740b14785682ebd71e2e4e4cb8512c30a196d3b8744",
+      "firstPublishedAt": "2026-10-13T08:29:33.011Z"
+    },
+    {
+      "lang": "zh",
+      "sourceHash": "cfa324e909768c941a22fb328b2d060092a24068ff515e9da83f3d706af91427",
+      "articleSha256": "f77b1ef66b528d43af4a28e93e2d43dcfddc1356066bfe18102120e735d5a518",
+      "promptSha256": "0f25e91fa94ba37ba142c5f59c9c584830599c67c08202e98fee22098eb498f0",
+      "firstPublishedAt": "2026-10-13T08:29:33.011Z"
+    }
+  ],
+  "xAnnouncement": "published_verified",
+  "xReceipt": "x-publication-receipt.json"
+}
