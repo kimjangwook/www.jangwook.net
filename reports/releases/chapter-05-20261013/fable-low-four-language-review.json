@@ -1,0 +1,127 @@
+{
+  "reviewer": "Claude Fable 5.1 (Low), independent session",
+  "reviewed_at": "2026-10-13T17:40+09:00",
+  "scope": "chapter05 (WCAG 2.2 SC 1.2.3) ko/en/ja/zh 최종 공개본 원문 대조 리뷰. 다른 리뷰 보고서는 읽지 않음. 새 번역 모델 실험을 수행하거나 주장하지 않음.",
+  "verdict": "pass",
+  "mandatory_changes": [],
+  "optional_changes": [
+    {
+      "id": "O1",
+      "files": ["zh/article.md"],
+      "issue": "zh 본문은 ‘签发/恢复代码/新代码/旧代码’(예: 3행 ‘签发恢复代码’, 97행 ‘签发新代码按钮’, 101행 ‘代码 R7K2-P9M4’)를 쓰는 반면 zh 도식 4종·labs 14개·captions.vtt는 ‘生成/恢复码/新码/旧码’(예: ‘生成新码’, ‘保存恢复码’, ‘确认生成’)를 씀. 의미·순서·부정문·수치는 동일하므로 판정에 영향 없음. 독자가 본문 표와 실습·도식·자막을 대조할 때 용어가 어긋남.",
+      "suggestion": "zh/article.md 쪽을 실습·도식·자막 용어에 맞추는 편이 변경 범위가 작음. 예: 97행 ‘签发新代码按钮’→‘生成新码按钮’, 98행 ‘保留旧代码按钮’→‘保留旧码按钮’, 100행 ‘确认签发按钮’→‘确认生成按钮’, 101행 ‘保存代码按钮’→‘保存恢复码按钮’, 102행 ‘签发完成’→‘生成完成’, 표 제목·본문의 ‘签发’→‘生成’, ‘恢复代码’→‘恢复码’. 도식·labs·captions는 변경하지 않아도 됨."
+    },
+    {
+      "id": "O2",
+      "files": ["en/figures/02-decision-branches-dba9ebb0be16.svg", "en/diagram-en-02-decision-branches.png"],
+      "issue": "라벨 ‘Both conditions met → Not applicable’(x=125, 23px)이 x≈510까지 뻗어 x=500의 세로 화살표와 ‘applicable’ 끝부분이 겹침(PNG에서 확인). 읽을 수는 있으나 ko/ja/zh에는 없는 겹침.",
+      "suggestion": "문구를 ‘Both met → Not applicable’로 줄이거나 font-size를 21로 낮춤. 의미 변경 없음."
+    },
+    {
+      "id": "O3",
+      "files": ["ja/article.md:7"],
+      "issue": "‘重要なのは、…という問いです。’ — 사용자 일본어 장문 규범(k16shikano)에서 금지한 「重要なのは」 도입구. ko 원문은 ‘핵심 질문은 …입니다’.",
+      "suggestion": "‘問いの中心は、重要な画面内容を元の音声や音声解説で理解できるか、または視覚・聴覚情報と必要なインタラクションを文章で再構成できるか、という点です。’ 정도로 치환."
+    },
+    {
+      "id": "O4",
+      "files": ["en/article.md:176-177", "ja/article.md:176-177", "zh/article.md:176-177"],
+      "issue": "ko에서 제거한 중복 빈 줄이 세 번역본에는 남아 있음.",
+      "suggestion": "빈 줄 하나로 정리."
+    },
+    {
+      "id": "O5",
+      "files": ["zh/prompt.md:74"],
+      "issue": "‘仅输出一个 JSON，使用简体中文。’ — ko/en/ja 프롬프트에는 없는 출력 언어 지시가 추가됨. JSON 키·enum에는 영향 없음.",
+      "suggestion": "번역본 간 동일성을 원하면 ‘使用简体中文’ 구절 삭제. 유지해도 무방."
+    },
+    {
+      "id": "O6",
+      "files": ["en/article.md:128-132", "ja/article.md:128-132", "zh/article.md:128-132"],
+      "issue": "실습 iframe 바로 위 본문에는 영상 원음·화면 문자가 한국어라는 안내가 없음. labs 페이지 안의 source-notice가 iframe에 함께 표시되므로 필수는 아님.",
+      "suggestion": "iframe 앞 문단 끝에 한 문장 추가 가능. en 예: ‘The video's audio and on-screen text are in Korean; the page text and captions are translated.’"
+    },
+    {
+      "id": "O7",
+      "files": ["ko/article.md", "ko/figures/*.svg"],
+      "issue": "ko 본문은 해시 없는 경로(/images/.../ko/01-six-screens.svg)를, en/ja/zh는 내용 해시가 붙은 경로를 참조. editorial-guide의 ‘내용 해시 포함 경로’ 원칙과 ko만 어긋남. 빌드 파이프라인에서 치환된다면 문제 없음.",
+      "suggestion": "공개 빌드 시 ko 경로도 해시 포함 파일명으로 치환되는지 확인."
+    }
+  ],
+  "checks": {
+    "ko_vs_root": "ko/article.md == 루트 article.md (sha256 1b180533…dce02). 이전 리뷰본(f2d3dd09…9c6) 대비 변경은 171행 ‘영상 실습의 범위 설명과 소개 페이지의 수집 자료’와 176~177행 중복 빈 줄 제거 두 곳뿐임을 diff로 확인. ko/prompt.md == 루트 prompt.md (6500195185f7…). ko/figures 4종은 figures-svg.json과 문자 단위 동일. ko/labs 14개의 대안 텍스트는 V01~V12-input.md의 CAND HTML과 동일(V06 부정문 반전, V07 순서, V11 ‘코드가 있음와’ 그대로).",
+    "translation_fidelity": {
+      "criteria_and_exceptions": "en/ja/zh 모두 11~47행에서 두 선택지, 1.2.2/1.2.5/1.2.8 관계, 동기화 미디어 정의의 제외 조건, 본문 대안 예외 두 조건, 원음 충분 조건(‘all of the video information’ vs ‘all of the important information’), G203 적용·제외 조건, aria-describedby 예시를 ko와 동일하게 보존. G226은 G173과 결합 시 충분, H96 권고 기법, G69+G58 연결도 동일.",
+      "importance_and_order": "95~102행 표: 6장면 순서·관찰 구간(0.00–7.33/7.33–11.92/11.92–16.13/16.13–19.79/19.79–27.00/27.00–31.21초)·화면/원음 정보가 세 언어 모두 ko와 일치. 116~122행 오류 유형 5개 순서 동일.",
+      "negation": "118·161행 ‘버리지 마세요→버리세요’ 반전이 en ‘Do not discard it→Discard it’, ja ‘捨てないでください→捨ててください’, zh ‘不要丢弃→请丢弃’로 보존. 본문·도식·자막·labs 모두 긍정/부정 방향이 ko와 일치.",
+      "numbers": "약 31초, 6화면, 12조건, 3세션, 36판정, 3/3×12, 6회 개요 실행, HTTP 404, 코드 R7K2-P9M4, 확인일 2026-10-11 — 세 언어 모두 일치.",
+      "determinations": "140~153행 표의 12개 판정(pass/fail/not_applicable/inconclusive)과 각 언어 표기(Pass·Fail·Not applicable·Inconclusive / 達成·未達成·非該当·判定保留 / 满足·不满足·不适用·暂缓判断)가 reference-private.json과 일치. 도식 02의 라벨(Met/Deferred/Not met, 適合/判断保留/不適合, 符合/暂缓判断/不符合)도 같은 의미. ja는 본문 ‘達成/未達成’과 도식 ‘適合/不適合’이 다른 어휘이나 동일 개념.",
+      "limits": "169~175행: V12 입력 부족 조건, 개요 6회(범위 설명+수집 자료), 공개 URL 비접속·재생·청취 아님, 세션 분리와 세션 내 공유 문맥, 검증 범위 한정(정적 화면·텍스트 대안·예외·증거 부족)과 미포함 항목 5개 — 세 언어 모두 보존. 번역 모델 실험 주장 없음."
+    },
+    "prompt_json": "네 언어 prompt.md의 JSON 블록을 파싱해 키 경로와 enum 문자열을 정규화한 해시가 모두 5303716bed5d0d22로 동일. criterion, prompt_version 0.1.1, run_status, observation_mode, status 등 enum 값 영문 그대로. 본문 규칙 1~9·절차 1~7·판정 규칙·집계 규칙이 ko와 같은 순서·의미.",
+    "figures": {
+      "svg_text_vs_png": "en/ja/zh SVG 12개를 읽고 diagram-*.png 12개와 대조. 박스 밖으로 넘치는 텍스트 없음. 줄바꿈 위치와 font-size 축소(en 03의 18.9px, ja 01의 19.5/20.8px, en 04의 21.2px)로 박스 안에 수납됨. 유일한 겹침은 O2(en 02 ‘Not applicable’과 화살표).",
+      "meaning": "01: 6장면 화면/원음 분리와 반올림 구간 동일. 02: 대상→예외 두 조건→원음 충분→두 선택지→충족/유보/미충족/증거 부족 유보 흐름 동일. 03: 전사 vs 보강 대안, AD는 재전사 의무 없음, 대안은 대사 포함 동일. 04: 문단 3·5·6 연결, 검토 항목 4개, 시연 버튼≠시청자 입력 동일.",
+      "alt_caption": "각 언어 article.md의 img alt가 해당 SVG <desc>와 의미 일치(en/ja/zh는 자체 번역이라 문자 단위 동일은 아님). figcaption과 ‘원본 크게 보기’ aria-label·링크가 해시 포함 파일명과 일치. SVG에 lang/xml:lang 속성 부여됨."
+    },
+    "labs": {
+      "source_notice": "en/ja/zh labs 42개 파일 모두 <p class=\"source-notice\">로 ‘영상 음성·화면 문자는 한국어, 페이지 문서·자막은 번역’ 고지. ko labs에는 없음(원본이므로 적절).",
+      "video_and_captions": "en/ja/zh labs의 <source>는 /labs/.../ko/source.mp4(한국어 원본, sha256 acdcdc41…)를 공유하고 <track srclang>은 각 언어. captions.vtt 4종은 동일 7개 큐·타임코드, 대사 번역과 ‘[경고음 두 번]’ SFX 큐 보존.",
+      "intended_defects_preserved": "V02 대사·소리만(화면 정보 없음), V03 화면만(대사·경고음 없음), V04 대안 없음, V06 2번 경고 부정문 반전, V07 3·4번 순서 수식어, V08 alternative.html 링크, V09 missing-alternative.html(404 의도), V10/V11 본문+‘아래 영상은 위 본문의 매체 대안’ 표기, V11 코드 값 생략 — 네 언어 모두 동일 구조로 보존. 각 언어의 v01 대비 v02~v12 diff 줄 수가 ko와 동일(15/14/9/14/4/6/9/9/4/6/2).",
+      "navigation": "index.html 12개 링크, 각 조건 페이지의 ‘실습 목록’ 링크, article의 iframe src와 직접 링크가 /labs/accessibility/media-alternatives-1-2-3/{lang}/v01.html·index.html로 언어별 경로를 가리킴. 이전/다음 글 링크도 /{lang}/series/accessibility/… 로 언어별."
+    },
+    "metadata": "en/ja/zh translationSourceHash(91dd1b74…cc52)가 ko contentRevisionHash와 일치. 네 언어 모두 status draft, approvalHash null, reviewReady true, updatedAt 2026-10-13. 제목·요약은 ko와 의미 일치하며 성능·인증을 약속하지 않음."
+  },
+  "checked_files": {
+    "ko": {
+      "article.md": "1b180533442630978829b6c01b077db04c55481d4260b6835e4550dbaefdce02",
+      "prompt.md": "6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd",
+      "metadata.json": "d5046f8f0ad52ea06cc772e8946d14e45c7f20bcb138cbbfa8f28f2a61a8f0b6",
+      "labs/captions.vtt": "4886a7393fd334c10d33b41c5efe4da9dc920830818e32bec910087eae13e69b",
+      "labs/source.mp4": "acdcdc41cfbc35dee0d01d555b1125a4b9e022d447dcc266eeedae915d381bf3",
+      "figures": {"01": "b212ae39e8e7…ccb7", "02": "0a1096856461…667d", "03": "70b479dc85fa…dc36", "04": "a996156056744…5ad0"},
+      "labs_html": {"index": "d012a183…feb6", "v01": "6cc4f328…b5e0", "v02": "88963f30…1727", "v03": "9cf29190…4269", "v04": "fcd57d90…8597", "v05": "9f24241e…e23b", "v06": "a0e5ca78…276b", "v07": "04ead8a0…1816", "v08": "37ecd09d…e722", "v09": "96f38bd2…a5c0", "v10": "c3a36f26…28fa", "v11": "40612fa1…771f", "v12": "da93ba86…39c9", "alternative": "00634d5b…364f"}
+    },
+    "en": {
+      "article.md": "d3539b58cf5f0d63e4617143f9f3554c0371dcec8cf7a1a1e72ae7c9cc119fec",
+      "prompt.md": "52c6413debc42efc197849793fced59dc93d91192307c03275386ec972c7c335",
+      "metadata.json": "05d39c8e20eadc977e2e0770c8c908f7492089355ad9ce2ffb71a7ec8991d541",
+      "labs/captions.vtt": "3a5bec91c01be296196efe990f8caf7ec6a64fb31b6e3e396d1dc238f827176a",
+      "figures": {"01-six-screens-0365d0065d03.svg": "0365d0065d03…3181", "02-decision-branches-dba9ebb0be16.svg": "dba9ebb0be16…5d96", "03-coverage-matrix-1851ad5a1150.svg": "1851ad5a1150…ab8e", "04-scene-to-alternative-afde189f6f48.svg": "afde189f6f48…40c3"},
+      "diagram_png": ["diagram-en-01-six-screens.png", "diagram-en-02-decision-branches.png", "diagram-en-03-coverage-matrix.png", "diagram-en-04-scene-to-alternative.png"],
+      "labs_html": {"index": "a5d1a5cc…7587", "v01": "b2320830…f98d", "v02": "e60ef5f4…71d6", "v03": "e34eefbb…c1b1", "v04": "73dbcab3…22b8", "v05": "55461d79…1f0c", "v06": "c91c4e75…a955", "v07": "72bfa198…60f3", "v08": "4a40f3dc…941b", "v09": "cb024792…5874", "v10": "70359955…1f52", "v11": "a52b6383…4a0d", "v12": "06e06adb…1a4c", "alternative": "297956c4…8950"}
+    },
+    "ja": {
+      "article.md": "d0d664fd037f9d0bdba0392a420837b40444d300c67060fbf32adeddc73773f0",
+      "prompt.md": "028970116ce833b83eb7e740b14785682ebd71e2e4e4cb8512c30a196d3b8744",
+      "metadata.json": "e8223982c681572ff4a346470420b06960b6902f6700eac4ac8cf2716ee0a4ad",
+      "labs/captions.vtt": "13344c8f85db619992d6fb67a584a55c119235996605f00b8f9137a4197c0993",
+      "figures": {"01-six-screens-e168cb38ca41.svg": "e168cb38ca41…fb7d", "02-decision-branches-77c1fcd179e0.svg": "77c1fcd179e0…1cc7", "03-coverage-matrix-be32eb1328bb.svg": "be32eb1328bb…223a", "04-scene-to-alternative-c3ca035367e6.svg": "c3ca035367e6…de62"},
+      "diagram_png": ["diagram-ja-01-six-screens.png", "diagram-ja-02-decision-branches.png", "diagram-ja-03-coverage-matrix.png", "diagram-ja-04-scene-to-alternative.png"],
+      "labs_html": {"index": "ba2666d9…874b", "v01": "1ae25f83…5698", "v02": "33103e14…fb07", "v03": "ed540869…e383", "v04": "7ddb1ca8…8091", "v05": "38746a7d…5213", "v06": "5e764a19…2cd8", "v07": "8d118c14…cf35e", "v08": "e857269a…7531", "v09": "59dda513…6611", "v10": "4302fbf4…6799", "v11": "45da758c…ed5c3", "v12": "b9ddfa78…0a18", "alternative": "731e7150…a416"}
+    },
+    "zh": {
+      "article.md": "f63c7e40c9a1c536106285a9aa700f1e120516892a41b496c356157f4a332e28",
+      "prompt.md": "0f25e91fa94ba37ba142c5f59c9c584830599c67c08202e98fee22098eb498f0",
+      "metadata.json": "e2b03932911ce1fda99c03d5afab415b2747dc470dd9ecf66ea0c76bd0dbd394",
+      "labs/captions.vtt": "2e07f35d0c86a28921563be9f90c080757d29a374c6f654c831cdae985101ffd",
+      "figures": {"01-six-screens-0d59d943e370.svg": "0d59d943e370…cbd8", "02-decision-branches-2e137251b2f6.svg": "2e137251b2f6…d8e", "03-coverage-matrix-be8716d07d47.svg": "be8716d07d47…d34", "04-scene-to-alternative-0158bc2de74a.svg": "0158bc2de74a…718a"},
+      "diagram_png": ["diagram-zh-01-six-screens.png", "diagram-zh-02-decision-branches.png", "diagram-zh-03-coverage-matrix.png", "diagram-zh-04-scene-to-alternative.png"],
+      "labs_html": {"index": "b61d14cc…295b7a", "v01": "bbe114b8…ee2d", "v02": "66ab562a…2065", "v03": "4866b594…d9a4", "v04": "1411eb82…b3c6", "v05": "c441a17f…c579", "v06": "f1046ad1…8d8d", "v07": "633ee172…8703", "v08": "d5ea3329…2ec8", "v09": "75c62bd5…6663", "v10": "a3c0bd89…452d", "v11": "1ca5e9b5…3733", "v12": "97be31c7…4b5f", "alternative": "d79cf445…c2bd"}
+    },
+    "root_reference": {
+      "article.md": "1b180533442630978829b6c01b077db04c55481d4260b6835e4550dbaefdce02 (ko와 동일)",
+      "prompt.md": "6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd",
+      "figures-svg.json": "ko/figures 4종과 내용 동일",
+      "V01-V12-input.md, source-observations.json, observed-1~6.png": "이전 리뷰에서 test-input-freeze.json 해시 일치 확인, 이번에 변경 없음"
+    }
+  },
+  "actual_limitations": [
+    "영상(source.mp4)을 재생하거나 소리를 듣지 않았고 observed-1~6.png도 열지 않았다. 네 언어 labs가 같은 한국어 원본을 공유한다는 판단은 <source src> 경로와 ko/labs/source.mp4 해시(acdcdc41…)에 근거한다.",
+    "번역 품질은 ko 정본과의 의미·순서·수치·부정문·판정 대조로만 확인했으며, 영어·일본어·중국어 원어민 수준의 문체 평가나 외부 번역 검사는 수행하지 않았다.",
+    "도식 가독성은 제공된 diagram-*.png 12장과 SVG 좌표·font-size로 판단했다. 실제 브라우저·모바일·PDF 렌더링과 폰트 대체(SVG font-family가 Noto Sans KR 계열로 고정됨)는 확인하지 않았다.",
+    "공개 URL(jangwook.net), iframe 실제 렌더링, hreflang·JSON-LD·approvalHash 바인딩, V09의 missing-alternative.html이 운영 서버에서 실제 404를 반환하는지는 범위 밖이다.",
+    "r1/r2/r3 결과 36개와 6개 계획은 이번에 다시 읽지 않았다. ko prompt·입력·결과가 변경되지 않았다는 사용자 진술을 ko/prompt.md 해시 일치와 ko/labs 텍스트 대조로 확인했다.",
+    "W3C 원문은 이번 세션에서 재접속하지 않았으며 이전 리뷰 때 읽은 로컬 사본에 근거한다."
+  ]
+}

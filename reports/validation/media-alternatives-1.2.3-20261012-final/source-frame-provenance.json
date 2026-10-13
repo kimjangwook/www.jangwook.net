@@ -1,0 +1,50 @@
+{
+  "source_sha256": "acdcdc41cfbc35dee0d01d555b1125a4b9e022d447dcc266eeedae915d381bf3",
+  "fresh_decode_command": "ffmpeg -ss [time_s] -i source.mp4 -frames:v 1 frame.png",
+  "verified_same_static_scene_images": true,
+  "frames": [
+    {
+      "id": "SRC-PNG-1",
+      "supplied_png_sha256": "1d3f5b1830f72ec54a89d50b8f2c5955742eed9f0dd3576485d05576321d6b06",
+      "verification_time_s": 1,
+      "fresh_decoded_png_sha256": "1d3f5b1830f72ec54a89d50b8f2c5955742eed9f0dd3576485d05576321d6b06",
+      "mean_absolute_pixel_difference": 0.0
+    },
+    {
+      "id": "SRC-PNG-2",
+      "supplied_png_sha256": "69b322b75795cae22d49768ee0be9917d1b500904577607af45d9145a9f6d892",
+      "verification_time_s": 9,
+      "fresh_decoded_png_sha256": "69b322b75795cae22d49768ee0be9917d1b500904577607af45d9145a9f6d892",
+      "mean_absolute_pixel_difference": 0.0
+    },
+    {
+      "id": "SRC-PNG-3",
+      "supplied_png_sha256": "9863caf6f963d2cb1ca9ebec1e233feec898a8c5bd72dcd9ae508945b0a9dd63",
+      "verification_time_s": 13,
+      "fresh_decoded_png_sha256": "9863caf6f963d2cb1ca9ebec1e233feec898a8c5bd72dcd9ae508945b0a9dd63",
+      "mean_absolute_pixel_difference": 0.0
+    },
+    {
+      "id": "SRC-PNG-4",
+      "supplied_png_sha256": "0657e392a79cdc781fd17541078d8856895543cebe40fc9d066564315510c8fe",
+      "verification_time_s": 18,
+      "fresh_decoded_png_sha256": "0657e392a79cdc781fd17541078d8856895543cebe40fc9d066564315510c8fe",
+      "mean_absolute_pixel_difference": 0.0
+    },
+    {
+      "id": "SRC-PNG-5",
+      "supplied_png_sha256": "bc80cde1635f36b3628bdf76124f5064c4cd4b09a5efc6ecd7db2dff2dda6737",
+      "verification_time_s": 23,
+      "fresh_decoded_png_sha256": "bc80cde1635f36b3628bdf76124f5064c4cd4b09a5efc6ecd7db2dff2dda6737",
+      "mean_absolute_pixel_difference": 0.0
+    },
+    {
+      "id": "SRC-PNG-6",
+      "supplied_png_sha256": "eacb77ee376aad1ffa48cd7f5e7be301673f7562add424b16c7a84633470eb37",
+      "verification_time_s": 29,
+      "fresh_decoded_png_sha256": "eacb77ee376aad1ffa48cd7f5e7be301673f7562add424b16c7a84633470eb37",
+      "mean_absolute_pixel_difference": 0.0
+    }
+  ],
+  "limitations": "This checks relation to exact source and static-scene correspondence, not general video semantic coverage or direct audio."
+}

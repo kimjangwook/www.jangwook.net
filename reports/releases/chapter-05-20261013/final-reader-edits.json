@@ -1,0 +1,11 @@
+{
+  "changes": [
+    "Clarified original-versus-localized test scope in translated articles",
+    "Unified Chinese recovery-code UI terminology",
+    "Simplified Japanese opening question",
+    "Removed English diagram02 arrow overlap",
+    "Bound Korean diagram paths to their unchanged byte hashes"
+  ],
+  "prompt_changed": false,
+  "evaluated_materials_changed": false
+}

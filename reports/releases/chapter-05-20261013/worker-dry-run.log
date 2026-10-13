@@ -1,0 +1,14 @@
+
+ ⛅️ wrangler 4.145.0 (update available 4.149.0)
+───────────────────────────────────────────────
+✨ Read 2610 files from the assets directory /private/tmp/jangwook-publish-20261013/.svelte-kit/cloudflare
+Total Upload: 5289.70 KiB / gzip: 961.29 KiB
+Your Worker has access to the following bindings:
+Binding                                        Resource                  
+env.LEADS_DB (jangwook-leads)                  D1 Database               
+env.ASSETS                                     Assets                    
+env.MAIL_MODE ("disabled")                     Environment Variable      
+env.SITE_URL ("https://jangwook.net")          Environment Variable      
+env.FROM_EMAIL ("materials@jangwook.net")      Environment Variable      
+
+--dry-run: exiting now.

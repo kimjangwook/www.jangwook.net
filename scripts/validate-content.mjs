@@ -1,4 +1,4 @@
-import './compile-content.mjs';import fs from 'node:fs/promises';
+import './compile-content.mjs';import {contentLinkIdentity} from './content-link-identity.mjs';import fs from 'node:fs/promises';
 const posts=JSON.parse(await fs.readFile('src/lib/content/catalog.json','utf8'));const criteria=JSON.parse(await fs.readFile('docs/sources/wcag22-criteria.json','utf8')).filter(c=>c.level);const errors=[];
 if(posts.length!==88)errors.push('Expected overview + 86 criteria + conclusion.');
 for(const c of criteria){const matches=posts.filter(p=>p.criterion===c.id);if(matches.length!==1)errors.push('Criterion coverage '+c.id);else if(matches[0].level!==c.level||matches[0].slug!==c.slug)errors.push('Criterion metadata '+c.id);}
@@ -14,7 +14,7 @@ for(const lang of ['en','ja','zh']){
   if(!p.hasContent)continue;
   const original=posts.find(o=>o.slug===p.slug);
   if(!p.body?.trim()||!p.prompt?.trim()||p.translationSourceHash!==original?.sourceHash)errors.push('Incomplete or stale translation '+lang+'/'+p.slug);
-  const urls=s=>[...s.matchAll(/https?:\/\/[^\s)"<>]+/g)].map(m=>m[0]).sort();
+  const urls=s=>[...s.matchAll(/https?:\/\/[^\s)"<>]+/g)].map(m=>contentLinkIdentity(m[0])).sort();
   if(JSON.stringify(urls(p.body))!==JSON.stringify(urls(original.body)))errors.push('Translated source links differ '+lang+'/'+p.slug);
   if((p.body.match(/- \[ \]/g)??[]).length!==(original.body.match(/- \[ \]/g)??[]).length)errors.push('Translated checklist differs '+lang+'/'+p.slug);
   if((p.body.match(/<figure\b/g)??[]).length!==(original.body.match(/<figure\b/g)??[]).length)errors.push('Translated figures differ '+lang+'/'+p.slug);

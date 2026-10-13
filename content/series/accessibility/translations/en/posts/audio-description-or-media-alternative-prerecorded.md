@@ -1,15 +1,229 @@
-# Audio Description and Media Alternatives: Explaining Information Visible Only in Video
+## How can a warning shown only on screen reach someone who is only listening?
 
-In preparation
+Imagine an approximately 31-second instructional video explaining how to issue a recovery code. Six static screens play alongside prerecorded spoken guidance. The screens show a menu path, button names, a failure message, and a new code in sequence. The code `R7K2-P9M4` is a fictional training value that cannot be used with a real account.
 
-Convey visual information in prerecorded video through description or a sufficient alternative.
+In the last scene, the spoken guidance says only, “Check the issuance complete screen.” Someone who cannot see the screen may not learn what has been completed or what happened to the previous code. In the security verification failure scene, only two warning tones sound. Must audio description be added to the video to fill these gaps? Providing the same content as the video in text is also possible.
 
-This chapter is being prepared for writing and review. The full article and criterion-specific evaluation prompt will be added at this address.
+This article covers **WCAG 2.2 Success Criterion 1.2.3 Audio Description or Media Alternative (Prerecorded), Level A**. The key questions are whether important on-screen content can be understood through the original audio or audio description, or whether the visual and audio information and necessary interactions can be reconstructed in text. The video and the account and code shown on screen are fictional training examples. The evaluation procedure and record format are proposals in this article, not the standard itself.
 
-[All chapters](/en/series/accessibility)
+<figure class="learning-figure"><a href="/images/accessibility/media-alternatives-1-2-3/en/01-six-screens-0365d0065d03.svg" aria-label="View the full-size original diagram of the recovery code video's six screens and spoken guidance"><img src="/images/accessibility/media-alternatives-1-2-3/en/01-six-screens-0365d0065d03.svg" alt="A wireframe of a recovery code instructional video, with six scenes arranged in reading order in two columns and three rows. On-screen information and original audio information are shown separately for each scene. The security verification failure scene has a failure message and a Try again button, but the original audio consists only of two warning tones. The new code scene contains the fictional training code R7K2-P9M4, and the final scene shows that saving is complete and the previous code can no longer be used."/></a><figcaption>Diagram 01. Even within the same scene, the screen and audio convey different information. Actual observed intervals are shown rounded, and visual and audio information are displayed separately. <a href="/images/accessibility/media-alternatives-1-2-3/en/01-six-screens-0365d0065d03.svg">View the full-size original diagram</a></figcaption></figure>
 
-[Previous article: Prerecorded Captions: Conveying Dialogue and Important Sounds](/en/series/accessibility/captions-prerecorded)
+## 1.2.3 requires either audio description or an alternative for time-based media
 
-[Next article: Live Captions: Keeping Up with Information in Live Broadcasts](/en/series/accessibility/captions-live)
+The criterion requires **audio description or an alternative for time-based media** for the video content of prerecorded synchronized media. An exception applies when the media presents the body text in another form and that relationship is clearly labeled.
 
-[Source standard](https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded)
+Audio description conveys important visual information that cannot be understood from the original audio alone. This includes actions, characters, scene changes, and on-screen text. A common approach uses pauses in dialogue, but narration incorporating description, a separate video with description, and extended audio description that pauses the video to describe it are also possible. **Audio description does not always convey only some of the visual information.** With sufficient planning and time, it can convey all the important visual information needed.
+
+An alternative for time-based media is a document that describes visual and audio information in the same sequence as the video and, if actual time-based interaction exists, also provides a means of achieving its outcomes. It combines a dialogue transcript with on-screen context, actions, state changes, and meaningful non-speech sounds so that it can be read like a script or book. Because it is not limited to the time between lines of dialogue, it can provide more detail than audio description, but this does not mean a simple summary is sufficient.
+
+### Relationship to other criteria
+
+- **1.2.2 (A)** covers captions for prerecorded audio content in synchronized media. A text alternative for 1.2.3 does not automatically replace the caption requirement.
+- **1.2.3 (A)** allows a choice between audio description and an alternative for time-based media.
+- **1.2.5 (AA)** requires audio description for applicable content. For a video whose original audio is insufficient, a text alternative alone cannot replace this requirement. However, if the original audio already conveys all important visual information, additional description is unnecessary. For clearly labeled media alternatives for text, also check the exclusion in the definition of synchronized media.
+- **1.2.8 (AAA)** requires an alternative for time-based media for prerecorded synchronized media and prerecorded video-only media.
+
+This article evaluates only 1.2.3. Results for a few media criteria are not extended to A, AA, or AAA conformance for an entire page or site.
+
+### Applicability and the exception for media alternatives for text
+
+This example is synchronized media containing prerecorded audio and video together. Audio-only material and silent video are checked separately under the relevant criteria, such as 1.2.1, and live media under the criteria for live content.
+
+The exception for media alternatives for text requires both conditions below.
+
+1. The media conveys no more information than is already present in the body text or text alternative.
+2. It is clearly labeled as a media alternative for that text.
+
+A title such as “Instructional video” or the presence of similar help text is not enough. If a failure warning or success state appears only in the video, the information equivalence condition is not met in the first place. A statement such as “This video is an alternative for the ‘Recovery code issuance instructions’ text below” is an implementation suggestion; the standard does not prescribe particular wording or placement. Check the actual information correspondence before the labeling.
+
+### Additional audio description is unnecessary when the original audio is sufficient
+
+W3C's Understanding document explains that additional audio description is unnecessary when the video's important information is already conveyed in the original audio. This is not a separate fourth implementation technique or an exemption from review, but **a condition under which additional description is unnecessary**.
+
+“Press this button,” “Read the precautions,” and “Check the completion screen” do not convey the button name, the precautions, or the details of the completed state. Every important piece of visual information in the final video must have corresponding evidence in the original audio. W3C's definition of audio description uses the expression “all of the video information,” while the Understanding document uses “all of the important information.” Rather than turning these expressions into different quantitative thresholds, check whether the content can be understood without seeing the screen.
+
+G203 is an example of a sufficient technique that provides a static text description for a talking-head video with no important time-based visual information. It cannot be applied merely because a person is speaking on screen, and its applicability conditions do not fit this demonstration, where failure warnings and state changes are important. W3C techniques, including G203, are not mandatory implementation methods.
+
+In this limited case, basic information absent from the original audio, such as environmental context, speaker names, and opening/end credits, must be included in a static description programmatically associated with the video. For example, `aria-describedby` can associate a descriptive paragraph. Check not only that association code exists, but also the description's content and the actual reading path. If there is no important time-based visual information and these conditions have been verified, do not mark the content as failing solely because there is no full dialogue transcript. Conversely, G203 cannot be applied when multiple speakers change and their identities are provided only through on-screen text, with no distinction in the original audio.
+
+<figure class="learning-figure"><a href="/images/accessibility/media-alternatives-1-2-3/en/02-decision-branches-86be9db39da3.svg" aria-label="View the full-size original diagram of the options and decision flow for 1.2.3"><img src="/images/accessibility/media-alternatives-1-2-3/en/02-decision-branches-86be9db39da3.svg" alt="Evaluation flow for 1.2.3. After checking applicability and the exception for media alternatives for text, review whether the original audio conveys all important visual information. If additional description is needed, check audio description and alternatives for time-based media. The result is pass if one sufficient method is verified across the full scope. If only a defect in one method is confirmed and the status of another method is unclear, the result is inconclusive. A fail determination requires confirmation that no other sufficient method exists."/></a><figcaption>Diagram 02. Distinguish the criterion's two options from the condition under which additional description is unnecessary. A defect in one alternative and failure of the criterion as a whole are not the same conclusion. <a href="/images/accessibility/media-alternatives-1-2-3/en/02-decision-branches-86be9db39da3.svg">View the full-size original diagram</a></figcaption></figure>
+
+### A defect in one method alone does not establish overall failure
+
+Even if audio description omits a critical warning, **1.2.3 can be satisfied** if a separately provided complete text alternative conveys all visual and audio information and necessary interactions. In that case, retain the audio description defect, but the overall result for 1.2.3 is pass. The result for 1.2.5 is separate.
+
+Conversely, even if candidate text is fluent and detailed, it cannot be judged to pass if the source has not been sufficiently observed. Nor may the candidate alternative itself be used as evidence of the source.
+
+If an important omission is confirmed in one candidate, that candidate's defect can be established. However, if the existence or sufficiency of another audio track, separate video, or other text alternative is unverified, the overall result is **inconclusive**. Overall failure is established only after checking the complete media inventory and the alternatives for each item, ruling out the original-audio-sufficient condition and exceptions, and confirming that no other sufficient method exists. If a decisive defect has been confirmed in each method, there is no need to review every remaining scene merely to prove that defect, but this must be distinguished from the possibility of unverified alternatives.
+
+## Audio description, complete media alternatives, captions, and dialogue transcripts do different jobs
+
+The first distinction is between **rendering audio information as text and conveying visual information absent from the original audio**. Captions convey dialogue and meaningful non-speech sounds visually. A transcript that reproduces only dialogue conveys only what was said. Thus, if an on-screen failure message is absent from the original audio, accurate captions or a dialogue transcript alone do not resolve that omission.
+
+However, this does not mean captions or transcripts can never contain screen descriptions. A transcript supplemented with visual descriptions can serve as an alternative for time-based media if its content and access path are sufficient. Captions containing screen descriptions also require review of their actual content, but their mere presence does not establish that a complete document-based alternative or audio description has been provided.
+
+The second distinction concerns **the delivery format and scope of audio description and a complete text alternative**. Audio description combines with the original audio to convey important visual information through sound. A complete text alternative presents visual and audio information as text in the same sequence and provides the necessary means of interaction. The absence of a repeated dialogue transcript in audio description is not a defect. Conversely, a text alternative must also include dialogue and meaningful sounds.
+
+<figure class="learning-figure"><a href="/images/accessibility/media-alternatives-1-2-3/en/03-coverage-matrix-1851ad5a1150.svg" aria-label="View the full-size original diagram comparing a transcript and a complete alternative for the failure scene"><img src="/images/accessibility/media-alternatives-1-2-3/en/03-coverage-matrix-1851ad5a1150.svg" alt="Comparison of a transcript and a complete alternative for the failure scene. A transcript of dialogue and sounds only contains just two warning tones. An alternative supplemented with visual description contains the security verification failure message, the Try again button, and the warning tones. Audio description conveys visual information through sound alongside the original audio, while a media alternative conveys screens, dialogue, and sounds in text in the same sequence."/></a><figcaption>Diagram 03. Comparing two sentences describing the same scene immediately reveals omitted information. A transcript can become a media alternative when sufficiently supplemented with visual information. <a href="/images/accessibility/media-alternatives-1-2-3/en/03-coverage-matrix-1851ad5a1150.svg">View the full-size original diagram</a></figcaption></figure>
+
+### Check the content and actual delivery rather than the implementation method
+
+Examples of audio description include a selectable second audio track (G78), a separate video with description (G173), narration incorporating description into the soundtrack (G226), and extended audio description. W3C's technique document describes G226 as sufficient when used with G173, so do not declare sufficiency based solely on that technique number. What matters is whether the chosen method actually meets the requirements.
+
+Descriptions must be delivered at a time that allows the corresponding scene to be understood and must not obscure important dialogue or sound effects in the original audio. Synthetic speech may also be used. There is no requirement for a human voice.
+
+H96, which uses the `track` element, is classified as an advisory technique in the Understanding document. Being advisory does not mean it always fails, but the existence of an element or WebVTT file alone does not establish a pass either. Evidence is needed for the description's content, language, and timing, how it is selected, the actual speech-delivery configuration, and playback in the target environment.
+
+A text alternative must accurately reflect the final edit. A production script is only a starting point. G69 is a method for providing an alternative document, and the Understanding document presents it alongside specific techniques such as G58 that help users reach the alternative. If a document has been created but users cannot find or open it, sufficiency has not been demonstrated. Check the content and access path rather than whether its title is ‘Transcript’ or ‘Script.’
+
+## Implementation begins by creating scene-level information units and mapping them to alternatives
+
+First extract visual, audio, and interaction information from the final edited source. Then map it to candidate alternatives. Do not infer that content exists in the source by looking at sentences in a candidate alternative.
+
+### The boundary between ‘all content’ and omitting decoration
+
+An alternative for time-based media must provide the same information and story, not a summary of the video. It covers information constituting the content, including dialogue, meaningful sounds, on-screen text, actions, facial expressions, background and context, and state changes. Do not interpret G69's reference to ‘important dialogue and actions’ as permission for arbitrary summarization or omission.
+
+This does not mean every pixel, compression artifact, or meaningless border thickness must be described. Elements verified as purely decorative and conveying no content, context, or outcomes may be omitted. If color distinguishes failure from success, or the background explains the location and situation, it is information and cannot be excluded as decoration. Record the reason for exclusion, and retain an element for review if its significance is uncertain.
+
+Distinguish the player's play, pause, and seek buttons from the video content. In contrast, button names and operation results within a recorded demonstration are video content. An on-screen button is not time-based interaction if it does not accept actual viewer input.
+
+### First create visual and audio information units from the source
+
+Reading a candidate alternative first can make it easy to mistakenly believe its content was also present in the source. First organize the information units obtained from the source, then compare them with the candidate. The table below shows rounded scene boundaries observed in the actual video.
+
+| Scene and observed interval | On-screen information | Information obtained from the original audio |
+| --- | --- | --- |
+| 1 Security settings · 0.00–7.33 seconds | Settings → Security → Recovery code, Issue new code button | Guidance to select Security, a question about whether the previous code can be discarded |
+| 2 Confirmation before issuance · 7.33–11.92 seconds | Keep previous code button, warning not to discard the previous code before saving the new one | The answer “Do not discard it” |
+| 3 Security verification failed · 11.92–16.13 seconds | Failure message, request to reauthenticate, Try again button | Two warning tones with no dialogue |
+| 4 Reauthentication complete · 16.13–19.79 seconds | Security verification complete, Confirm issuance button | Guidance to confirm issuance after reauthentication |
+| 5 New recovery code · 19.79–27.00 seconds | Fictional code R7K2-P9M4, notice that it cannot be used with a real account, Save code button | Guidance to save it somewhere safe and notice that the previous code can no longer be used |
+| 6 Issuance complete · 27.00–31.21 seconds | New code saved, previous code can no longer be used, Return to settings button | “Check the issuance complete screen” |
+
+All scene transitions were checked in the approximately 31-second video consisting of six static screens, and the on-screen content was compared against the actual image of each scene.
+
+Audio was cross-checked using an independent automated transcript and analysis records of the original audio. Automated transcription alone may not accurately identify silence or non-speech sounds. The two warning tones in the failure scene were confirmed in the audio signal; the interpretation that they signify failure was based on the failure message in the same scene and the lab's sound definitions.
+
+The specific failure message, code value, and completed-state details in the table cannot be obtained from the original audio alone. Check whether the alternative conveys this information too.
+
+<figure class="learning-figure"><a href="/images/accessibility/media-alternatives-1-2-3/en/04-scene-to-alternative-afde189f6f48.svg" aria-label="View the full-size original diagram mapping visual and audio information from the failure, new code, and completion scenes to alternative paragraphs 3, 5, and 6"><img src="/images/accessibility/media-alternatives-1-2-3/en/04-scene-to-alternative-afde189f6f48.svg" alt="Maps visual and audio information from the failure, new code, and completion scenes to alternative paragraphs 3, 5, and 6. Preserves the failure message and warning tones, the fictional code value and saving guidance, and the specific outcome of completion together. The final items review meaning, negation, sequence, and access paths."/></a><figcaption>Diagram 04. First extract information units from the source, then map them to candidate paragraphs. Paragraph numbers are illustrative, not a required format. <a href="/images/accessibility/media-alternatives-1-2-3/en/04-scene-to-alternative-afde189f6f48.svg">View the full-size original diagram</a></figcaption></figure>
+
+An alternative document can begin by explaining that the screens are fictional training examples, then describe each scene's text, buttons, dialogue, sounds, and outcomes in the video's sequence. When the value itself is instructional content, as with the code in this example, preserve the exact string. Do not send real secret codes or personal information to evaluation tools.
+
+For a recorded demonstration, describing actions and outcomes is sufficient; there is no need to create an actual code-issuance function. If media branches according to viewers' choices or accepts answers, the alternative also needs a means of reaching equivalent choices and outcomes. Evaluators do not need to perform actual purchases, issuance, or transmission to review this requirement. Request records from a safe test environment or review material that does not require execution.
+
+Check the following errors unit by unit.
+
+- Negation errors that change “Do not discard it” to “Discard it”
+- Changes to codes, numbers, or button names, or omission of meaningful values
+- Reversal of the failure → reauthentication → completion sequence
+- Excessive summarization that removes warnings and states shown only on screen
+- Added descriptions that conflict with the source's meaning or create a mistaken impression of fact
+
+Not every added sentence is a defect. Distinguish supplements that do not change the source's meaning, such as a note identifying a training value or access guidance. If the edit changes, update the document to match and recheck alternative links and access permissions.
+
+## Lab pages with varied conditions for the same video
+
+The following lab pages provide twelve conditions for comparing alternatives associated with the same video. The video's visuals and audio remain fixed, while the scope, meaning, and sequence of text, alternative links, and body-text labeling vary. The final condition checks behavior when source evidence is not supplied in the evaluation input. It does not mean the video on the lab page is broken.
+
+<iframe src="/labs/accessibility/media-alternatives-1-2-3/en/v01.html" title="1.2.3 lab: Recovery code issuance instructional video and alternatives by condition" loading="lazy" style="width:100%;min-height:720px;border:1px solid #888;"></iframe>
+
+[Open the video and complete alternative in a new tab](https://jangwook.net/labs/accessibility/media-alternatives-1-2-3/en/v01.html) · [Complete list of twelve conditions](https://jangwook.net/labs/accessibility/media-alternatives-1-2-3/en/index.html)
+
+The visual and audio information extracted from the source was entered into the evaluation prompt below separately from the candidate alternatives.
+
+## Results obtained from comparison using the prompt
+
+After organizing the evaluation scope with the overview prompt, the item prompt below was used to compare the source and alternatives for twelve conditions. **Each condition was evaluated in three sessions of Claude Opus 5.5 Medium, yielding 36 results in total.** Reference answers were set before execution and were not provided to the model.
+
+| Condition | Change | Actual determination | Agreement with reference answer |
+| --- | --- | --- | --- |
+| V01 | Complete media alternative | Pass | 3/3 |
+| V02 | Transcript of dialogue and sounds only | Fail | 3/3 |
+| V03 | Material describing only the visuals | Fail | 3/3 |
+| V04 | No alternative | Fail | 3/3 |
+| V05 | Important information conveyed in the same sequence without scene numbers or timecodes | Pass | 3/3 |
+| V06 | Alternative with reversed negative meaning | Fail | 3/3 |
+| V07 | Alternative with a changed security verification sequence | Fail | 3/3 |
+| V08 | Complete alternative on a separate page | Pass | 3/3 |
+| V09 | Broken alternative link | Fail | 3/3 |
+| V10 | Clearly labeled media alternative for body text | Not applicable | 3/3 |
+| V11 | Label present, but information absent from the body text is added | Fail | 3/3 |
+| V12 | Insufficient source visual material | Inconclusive | 3/3 |
+
+All 36 determinations agreed with the reference answers. There were differences in how detailed information was divided and how importance was judged, so agreement on determinations should not be interpreted as complete agreement on all supporting reasoning.
+
+### The evidence differed according to the type of defect
+
+V02's transcript conveyed dialogue and warning tones but did not sufficiently convey the on-screen menu path, failure message, fictional code, and other information. V03 described the visuals but omitted audio information such as the guidance to “save it somewhere safe,” the question and answer, and the warning tones. Text length or fluency alone was not used to judge an alternative as complete.
+
+In V06, the warning “Do not discard it” was changed to “Discard it.” The presence of an accurate dialogue quotation elsewhere does not remove the opposite meaning in the visual description. V07 changed the order of failure and reauthentication. The model recorded meaning distortion and a sequence error, respectively, as its grounds.
+
+V05 was judged to pass because it conveyed the same information in the same sequence without paragraph numbers or timecodes. This condition confirmed that the format itself is not a mandatory requirement of the criterion. V08's separate document was compared with the source using the actual response content, while V09 was recorded as failing based on the link's **HTTP 404** record and the complete status showing no other sufficient alternative. On a real site, an error in one link alone must not be used to rule out the existence of other alternatives.
+
+V10 was judged not applicable because equivalent body text existed and the video was labeled as a media alternative for that text. V11 had the same label, but the video added a fictional code value absent from the body text, so the exception did not apply. These results independently checked labeling and information equivalence. In this test, the code value itself was treated as instructional information to compare. A contrary interpretation that assigns lower importance to a fictional value that cannot be used in practice should also be considered; in an actual evaluation, record the grounds for importance in relation to the purpose of use.
+
+### Without evidence, defer judgment even when the candidate is detailed
+
+V12 supplied only candidate text and excluded the source's visual and audio evidence from the evaluation input. All three sessions confirmed only that the candidate was readable and left equivalence with the source inconclusive. The public lab page provides both the video for viewing and the alternative, but this test concerns insufficient input material.
+
+The overview prompt was run six times in total using a description of the video lab’s scope and collected material from the introduction page. All runs distinguished supplied facts, assumptions, and additional evidence needed. They did not conclude that dynamic content also lacked video merely because no media tag appeared in the initial HTML.
+
+The results table reports tests of the original validated materials. The localized practice pages and translated prompt have not undergone separate model runs.
+
+The test method and limitations must also be considered. The model was supplied with collection records from the same lab pages, actual screen images, an independent transcript, and audio analysis records. The results were not obtained by directly accessing public URLs, playing the video, or directly listening to its audio. The three sessions were separate, but conditions within each session shared conversational context.
+
+These results are limited to **text media alternatives for static-screen video, the exception for media alternatives for text, and insufficient-evidence conditions**. They are not an accuracy figure guaranteeing the same performance on every site. This test did not cover actual sound delivery of audio description tracks, videos whose original audio alone sufficiently conveys all visual information, cases where G203's static description is sufficient, time-based interaction accepting viewer input, or ordinary moving video. In those situations, add the necessary source, delivery, and operation evidence and verify again.
+
+## Practical review checklist
+
+A check marks completion of review, not a pass. Record each item's result and evidence separately.
+
+- [ ] **C01 Scope and inventory**: Recorded the complete media inventory for the evaluation scope, language, state, time range, and evidence of inventory completeness.
+- [ ] **C02 Applicability and exception**: Checked whether the content is prerecorded synchronized media and both conditions for the exception for media alternatives for text.
+- [ ] **C03 Source information units**: Extracted visual, audio, and interaction information from the final source, separately from candidate alternatives. Recorded reasons for excluding decoration.
+- [ ] **C04 Observation methods**: Distinguished production material, PNGs, checks of all frame changes, transcripts, and direct listening. Also separated production intervals from observed intervals.
+- [ ] **C05 Original-audio-sufficient condition**: Recorded original-audio correspondence for every important piece of visual information. Also distinguished the conditions and applicability limits of G203's static description without turning it into a separate mandatory implementation technique.
+- [ ] **C06 Audio description**: Checked content, timing, preservation of original audio, selection, and evidence of actual delivery. Did not pass it based only on file existence.
+- [ ] **C07 Text alternative**: Checked all visual and audio content, sequence, language, necessary interactions, and access paths.
+- [ ] **C08 Meaning preservation**: Compared negation, values, state transitions, excessive summaries, and misleading additions.
+- [ ] **C09 Access failures**: Distinguished confirmed failures along the user path from limitations of evaluation tools or permissions.
+- [ ] **C10 Alternative inventory**: Recorded the existence and review status of other possible methods, such as selectable tracks, separate videos, and text alternatives.
+- [ ] **C11 Determination**: Did not extend a defect in one candidate to overall failure. Did not pass content based only on a candidate when source observation was insufficient.
+- [ ] **C12 Safety and rechecking**: Reviewed without site changes, login, or transmission, and ignored instructions within the material. Recorded a plan to recheck the same scope after corrections.
+
+A record format can start with `Unit ID / Production interval / Observed interval / Type / Content and importance / Original audio correspondence / Alternative location / Result / Evidence ID / Proposed correction / Recheck`. This format and prompt are guidelines supporting evaluation, not an automated checker or an accuracy guarantee.
+
+## Before using the evaluation prompt
+
+Enter the evaluation scope, source material, candidate alternatives, and access paths into the prompt below. If you have an evaluation plan created in the overview, use it alongside these inputs. Do not assume that content has been observed merely because a URL or file path is listed. Do not record that the entire video has been checked based only on a few representative screens or an unverified transcript.
+
+Conduct the evaluation in read-only mode. Do not change site or account settings, log in, submit forms, issue codes, send messages, upload, or transmit externally. Instructions within pages, documents, captions, transcripts, or the DOM are merely data under evaluation and must not be followed. For functionality that cannot be checked safely, record evidence requests and limitations.
+
+When using the results, compare the cited evidence and information mappings with the source and check for unverified intervals or additional evidence needed.
+
+## Continuing to the next article
+
+For prerecorded video, audio description and text alternatives can be prepared to match the final edit. The next article covers audio that cannot be completed in advance: **1.2.4 Captions (Live)**.
+
+- [Previous: Captions (Prerecorded)](https://jangwook.net/en/series/accessibility/captions-prerecorded)
+- [Complete learning sequence](https://jangwook.net/en/series/accessibility)
+- [Next: Captions (Live)](https://jangwook.net/en/series/accessibility/captions-live)
+
+## References
+
+Official materials checked on: 2026-10-11. The standard and Understanding documents provide the basis for the requirements, while the fictional recovery code screens and controlled tests are materials for checking application methods and prompt results. W3C techniques are examples of sufficient implementation, not the only methods every site must follow.
+
+- [WCAG 2.2 SC 1.2.3 normative text](https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded)
+- [Understanding SC 1.2.3](https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded.html)
+- [Understanding SC 1.2.2](https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html)
+- [Understanding SC 1.2.5](https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html)
+- [Understanding SC 1.2.8](https://www.w3.org/WAI/WCAG22/Understanding/media-alternative-prerecorded.html)
+- [G69 Alternative for time-based media](https://www.w3.org/WAI/WCAG22/Techniques/general/G69)
+- [G58 Link to the alternative](https://www.w3.org/WAI/WCAG22/Techniques/general/G58)
+- [G78 Selectable description audio track](https://www.w3.org/WAI/WCAG22/Techniques/general/G78)
+- [G173 Video with description](https://www.w3.org/WAI/WCAG22/Techniques/general/G173)
+- [G226 Integrating description into the soundtrack](https://www.w3.org/WAI/WCAG22/Techniques/general/G226)
+- [G203 Static text alternative for talking-head video](https://www.w3.org/WAI/WCAG22/Techniques/general/G203)
+- [H96 Description using the track element](https://www.w3.org/WAI/WCAG22/Techniques/html/H96)

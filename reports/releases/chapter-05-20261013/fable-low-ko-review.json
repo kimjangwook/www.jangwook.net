@@ -1,0 +1,94 @@
+{
+  "reviewer": "Claude Fable 5.1 (Low), independent session",
+  "reviewed_at": "2026-10-13T17:05+09:00",
+  "scope": "chapter05 (WCAG 2.2 SC 1.2.3) 한국어 정본 article.md 공개 전 독자용 편집 리뷰. 다른 리뷰 보고서는 읽지 않음.",
+  "verdict": "pass",
+  "rerun_required": false,
+  "rerun_reason": "prompt.md sha256(6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd), reference-private.json sha256(78b2f1d3…29b), V01~V12-input.md, source-observations.json, observed-1~6.png 해시가 test-input-freeze.json과 모두 일치. article.md sha256(f2d3dd09…9c6)은 editorial-change-scope.json과 일치. 본문에 기록된 36개 판정·6개 계획과 r1/r2/r3 원시 결과가 일치하므로 독자용 편집만으로는 재실행이 필요 없음. 단, 승인 해시(approvalHash)는 이 article.md 해시로 다시 묶어야 함.",
+  "mandatory_changes": [],
+  "optional_changes": [
+    {
+      "location": "article.md:171",
+      "issue": "“개요 프롬프트는 영상 실습과 소개 페이지의 수집 자료를 이용해 총 여섯 번 실행했습니다.” — P-NONE는 ABOUT-DOM 수집 자료를 썼지만 P-LAB 세 번은 수집 자료 없이 범위 기획용 설명(PLAN-CONTEXT)만 입력됐다(r1/r2/r3 P-LAB-output.md 모두 ‘근거 자료는 PLAN-CONTEXT 하나뿐’이라고 명시).",
+      "suggestion": "“영상 실습의 범위 설명과 소개 페이지의 수집 자료를 이용해 총 여섯 번 실행했습니다.” 정도로 입력 성격을 구분."
+    },
+    {
+      "location": "article.md:173",
+      "issue": "“같은 실습 페이지의 수집 기록 … 공개 URL에 직접 접속하거나 … 결과는 아닙니다.” — 입력은 공개 전 로컬 서버(127.0.0.1:8826) 사본에서 수집된 기록이라는 점이 함축만 되어 있음. 고지 자체는 보존됨.",
+      "suggestion": "“공개 전 로컬 사본에서 수집한 기록”처럼 한 구절을 더해 독자가 공개 URL 접속 결과로 오해하지 않게 할 수 있음. 필수는 아님."
+    },
+    {
+      "location": "article.md:176-177",
+      "issue": "빈 줄이 두 개 연속.",
+      "suggestion": "빈 줄 하나로 정리."
+    },
+    {
+      "location": "figures-svg.json 01-six-screens.svg (장면 05 화면란)",
+      "issue": "“가상 코드: R7K2-P9M4 실제 계정 사용 불가”는 실제 화면 문구(“교육용 가상 코드: R7K2-P9M4 / 이 화면의 코드는 실제 계정에서 사용할 수 없습니다.”)의 축약. 와이어프레임으로서 허용 범위이며 본문 표(101행)와 alt는 정확함.",
+      "suggestion": "도식은 변경 대상이 아니므로 그대로 두어도 됨. 기록용 메모."
+    }
+  ],
+  "checks": {
+    "internal_process_leftovers": "없음. 수정 이력·모델 교체·출력 오류 처리·도구 이름(faster-whisper 등)·시행착오 서술이 본문에 남아 있지 않음. 128행(V12는 입력 부족 조건이며 실습 페이지 고장이 아님), 134행(원본 추출 정보와 후보를 구분해 입력), 138행(기준 답 사전 고정·비제공)은 독자가 결과를 읽는 데 필요한 설명으로 판단.",
+    "required_disclosures": {
+      "validation_scope": "175행에 보존. 정적 화면 영상의 텍스트 대안·본문 대안 예외·증거 부족 조건에 한정, AD 실제 전달·원음 충분 영상·G203 정적 설명·실제 시간기반 상호작용·움직이는 영상은 미포함. test-audit.json limits와 일치.",
+      "indirect_audio_evidence": "106행(독립 자동 전사와 음성 신호 분석, 경고음 의미는 화면 문구·실습 소리 정의에 근거)과 173행(영상 재생·직접 청취 아님)에 보존. 36개 결과 모두 direct_audio_or_video_reported=false이며 evidence_registry에 transcript_only/tool_output로 기록됨.",
+      "session_separation_and_shared_context": "173행 “세 세션은 서로 분리했으나 각 세션 안의 조건들은 대화 맥락을 공유했습니다”로 보존. test-input-freeze.json·test-audit.json limits와 일치.",
+      "local_collection_notice": "173행에 보존(공개 URL 접속·재생·청취 결과가 아님). ‘로컬’이라는 단어는 없으나 의미는 전달됨. optional_changes 참조.",
+      "reader_vs_model_input_difference": "169행(V12는 입력 자료 부족 조건, 공개 실습 화면에는 영상과 대안이 함께 있음)에 보존."
+    },
+    "standard_interpretation_vs_sources": [
+      "11~17행 기준 요구·두 접근법·AD 정의: source-00 Understanding 1.2.3 Intent·Key Terms와 일치.",
+      "21~24행 1.2.2/1.2.5/1.2.8 관계: source-01, final-source-captions-prerecorded, final-source-media-alternative-prerecorded와 일치. ‘명확히 표기된 본문 대안 미디어는 동기화 미디어 정의의 제외 조건’은 synchronized media 정의와 일치.",
+      "32~37행 본문 대안 예외 두 조건: media alternative for text 정의 + ‘clearly labeled’ 문구와 일치.",
+      "41~43행 원음 충분 조건: Understanding Note(‘all of the important information’)와 AD 정의 Note 3(‘all of the video information’)의 두 표현을 정확히 인용.",
+      "45~47행 G203: source-06의 적용 범위·정적 설명 내용·aria-describedby 예시·다중 화자 제외 조건과 일치.",
+      "71행 G78/G173/G226/확장 AD: source-03/04/05와 일치. ‘G226은 G173과 함께 쓸 때 충분’은 G226 문서의 ‘Sufficient when used with G173’과 일치.",
+      "75행 H96 권고 기법: final-source-H96과 일치.",
+      "77행 G69+G58 연결: source-02·final-source-G58·Understanding Sufficient Techniques 구조와 일치."
+    ],
+    "results_vs_raw_outputs": [
+      "140~153행 표의 12개 판정과 3/3 일치: reference-private.json과 r1/r2/r3 V01~V12-result.json result 필드가 모두 일치(36/36). test-audit.json matched=36.",
+      "138행 ‘Claude Opus 5.5 Medium의 세 세션’: test-audit.json model/effort/sessions와 일치.",
+      "159행 V02·V03 결함 요약: 세 세션의 defects(unit 누락 목록)와 일치.",
+      "161행 V06 부정문 반전·V07 순서 왜곡과 대사 모순 언급: 세 세션 defects·reason과 일치.",
+      "163행 V05 pass(번호·타임코드 없음), V08 링크 응답 대조, V09 404+전체 현황 근거: 세 세션 결과와 일치.",
+      "165행 V10 not_applicable(두 조건 verified), V11 ‘표기는 있으나 본문 이상 정보’로 예외 불성립: 세 세션 conditions와 일치.",
+      "169행 V12 inconclusive, 후보 가독성만 확인: 세 세션 모두 information_units=[]·run_status=partial·inconclusive.",
+      "171행 개요 계획 6회·사실/가정/추가 증거 구분·초기 HTML 태그 0을 확정 근거로 쓰지 않음: r1/r2/r3 P-LAB/P-NONE-output.md와 일치.",
+      "155행 ‘세부 정보 단위 분할과 중요성 판단 차이’: r1 14단위, r2 20단위, r3 24단위(r3는 장식 선 not_important 포함)로 실제 차이가 존재함을 확인."
+    ],
+    "figures_vs_text_and_prompt": [
+      "figure-1(01-six-screens): 관찰 구간 0.00–7.33/7.33–11.92/11.92–16.13/16.13–19.79/19.79–27.00/27.00–31.21초가 source-observations.json decoded_frame_record(7.333/11.917/16.125/19.792/27.0/31.208)를 반올림한 값이며 95~102행 표와 일치. 화면·원음 분리 표시가 본문 설명과 일치. alt와 SVG desc 동일.",
+      "figure-2(02-decision-branches): 대상 확인 → 예외 두 조건 → 원음 충분 → 두 선택지 → 충족/판단 유보/미충족/증거 부족 유보 흐름이 prompt.md 판정 규칙(pass/fail/not_applicable/inconclusive)과 51~57행 본문과 일치. ‘1.2.5(AA) 별도 평가’ 각주도 23·53행과 일치.",
+      "figure-3(03-coverage-matrix): 실패 장면 전사 vs 보강 대안 비교, AD는 원음 재전사 의무 없음·대안은 대사 포함이라는 65행 설명과 일치. ‘오디오 설명도 필요한 시각 정보를 모두 전달할 수 있습니다’는 15행과 일치.",
+      "figure-4(04-scene-to-alternative): 문단 3·5·6 연결과 검토 항목(빠진 의미·부정문·순서·접근 경로), ‘장면 번호·타임코드는 필수 형식 아님’, ‘시연 버튼 ≠ 시청자 입력’이 89·110·116~122행·V05 결과와 일치.",
+      "네 도식의 img alt가 figures-svg.json의 <desc>와 문자 단위로 일치함을 확인."
+    ],
+    "structure": "전체 설명(1~124행) → 실습 iframe과 직접 링크(126~134행) → 실제 결과와 해석(136~175행) → 체크리스트(178~195행) → 프롬프트 사용 안내(197~203행) → 다음 글(205~211행) → 참고 자료(213~228행). article-detail-guidelines.md의 요구 순서와 일치. 메타데이터 제목·요약은 본문 범위를 넘는 성과를 약속하지 않음.",
+    "prompt_md": "독자용 복사본으로 적합. 내부 경로·세션 ID·기준 답 없음. V01~V12-input.md의 규칙 본문과 문자 단위 동일(입력란만 교체됨)을 diff로 확인."
+  },
+  "evidence_checked": [
+    "article.md (sha256 f2d3dd0905d049e34e3a878b5315fcfba2fc3e5ca69e5980f94b0c9a746779c6)",
+    "prompt.md (sha256 6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd)",
+    "metadata.json", "editorial-change-scope.json",
+    "accessibility-production-workflow.md", "editorial-guide.md", "article-detail-guidelines.md",
+    "test-audit.json", "test-input-freeze.json", "reference-private.json (sha256 78b2f1d345fb0307b53207de8bba0b4ef95ddcde1b160adcf17392097a3e2b29)",
+    "source-observations.json (sha256 6974029a536d59b554fc2e7f8d43141dda1d0ec785426822b8ea10b3cd11a935)",
+    "figures-svg.json", "figure-1.png", "figure-2.png", "figure-3.png", "figure-4.png",
+    "source-00.txt ~ source-07.txt (source-08~11은 폴더에 없음; final-source-G58.txt, final-source-H96.txt, final-source-captions-prerecorded.txt, final-source-media-alternative-prerecorded.txt로 대체 확인)",
+    "final-additional-sources.json",
+    "V01-input.md ~ V12-input.md (12개 모두 freeze 해시 일치)",
+    "observed-1.png ~ observed-6.png 해시만 freeze와 대조(내용은 열지 않음)",
+    "r1/V01~V12-result.json, r1/P-LAB-output.md, r1/P-NONE-output.md",
+    "r2/V01~V12-result.json, r2/P-LAB-output.md, r2/P-NONE-output.md",
+    "r3/V01~V12-result.json, r3/P-LAB-output.md, r3/P-NONE-output.md"
+  ],
+  "limits": [
+    "리뷰어는 원본 영상(source.mp4)을 재생하거나 소리를 듣지 않았고 observed-1~6.png도 열지 않았다. 화면·소리 내용의 사실 확인은 source-observations.json(production_spec, decoded_frame_record, asr_raw, sound)과 세 세션의 결과 기록에 의존한다.",
+    "공개 URL(jangwook.net/labs/...)과 iframe 실제 렌더링, 네 언어 번역본, SSR·JSON-LD·approvalHash 재바인딩은 이 리뷰 범위 밖이다.",
+    "source-08.txt~source-11.txt는 요청 목록에 있었으나 폴더에 존재하지 않아 final-source-*.txt 4개를 해당 자료로 간주했다.",
+    "sources.json, fixture-browser-validation.json, all-criterion-results.json, all-overview-results.json, source-frame-provenance.json은 요청 목록에 없어 읽지 않았다.",
+    "W3C 원문은 폴더의 로컬 사본(확인일 2026-10-11/12)으로만 대조했고 이번 세션에서 재접속하지 않았다."
+  ]
+}

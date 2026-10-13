@@ -1,0 +1,72 @@
+{
+  "criterion": "WCAG 2.2 SC 1.2.3",
+  "prompt_version": "0.1.1",
+  "scope_statement": "V09 페이지(ko)의 사전녹화 동기화 영상 1편(SOURCE-05, 31.208초)과 링크된 대안에 대한 1.2.3만 평가. 사이트 전체 적합성은 평가하지 않음.",
+  "run_status": "complete",
+  "inventory": {"media_list_complete": "yes", "evidence_ids": ["EV-06"], "missing_items": []},
+  "evidence_registry": [
+    {"id": "EV-01", "origin": "source", "kind": "디코드 대표 프레임 PNG 6장", "basis": "supplied_observation", "observation_mode": "png_visual_check", "provided_as": "observed-1~6.png, Read로 직접 시각 확인", "time_range_s": [0, 31.208333], "verification_limits": "화면별 대표 1장."},
+    {"id": "EV-02", "origin": "source", "kind": "전체 인접 프레임 비교(749프레임, 변화 5회)", "basis": "supplied_observation", "observation_mode": "all_frame_comparison", "provided_as": "decoded_frame_record", "time_range_s": [0, 31.208333], "verification_limits": "전환 확인용. 통제 자료 한정."},
+    {"id": "EV-03", "origin": "source", "kind": "독립 ASR 전사", "basis": "supplied_observation", "observation_mode": "transcript_only", "provided_as": "asr_raw", "time_range_s": [0, 31.189375], "verification_limits": "간접 증거. 30.0~31.16 제외."},
+    {"id": "EV-04", "origin": "source", "kind": "ASR 꼬리 PCM 감사", "basis": "supplied_observation", "observation_mode": "tool_output", "provided_as": "asr_tail_audit", "time_range_s": [27.6, 31.16], "verification_limits": "30.0~31.16 무음."},
+    {"id": "EV-05", "origin": "source", "kind": "톤 이벤트 2회", "basis": "supplied_observation", "observation_mode": "tool_output", "provided_as": "sound", "time_range_s": [12.2, 12.82], "verification_limits": "의미는 화면3 맥락 근거."},
+    {"id": "EV-06", "origin": "page_context", "kind": "미디어 목록 INV-V09", "basis": "supplied_observation", "observation_mode": "tool_output", "provided_as": "입력 JSON", "time_range_s": null, "verification_limits": "공급 기록."},
+    {"id": "EV-07", "origin": "candidate", "kind": "링크 '복구 코드 발급 안내 전체 미디어 대안' → missing-alternative.html (CAND-V09)", "basis": "supplied_observation", "observation_mode": "dom_text", "provided_as": "입력 HTML과 linked_documents(status 404, body null)", "time_range_s": null, "verification_limits": "대안 내용 자체가 존재하지 않음."},
+    {"id": "EV-08", "origin": "access_log", "kind": "ACCESS-V09", "basis": "supplied_observation", "observation_mode": "tool_output", "provided_as": "입력 JSON(페이지 200, 링크 404)", "time_range_s": null, "verification_limits": "공급 브라우저 관찰. 정적 로컬 페이지로 인증·권한 요인 없음."}
+  ],
+  "media_results": [
+    {
+      "media_id": "M01",
+      "applicability": {"is_prerecorded_synchronized_media": "yes", "reason": "MP4 영상+AAC 음성 사전녹화 동기화 미디어.", "evidence_ids": ["EV-06", "EV-03"]},
+      "alternative_inventory": {"complete": "yes", "candidate_ids": ["CAND-V09"], "reason": "링크 1개 외 AD·텍스트·별도 영상 경로 없음, 연결 응답 캡처됨.", "evidence_ids": ["EV-06", "EV-07", "EV-08"]},
+      "processed_ranges": [
+        {"modality": "visual", "range_s": [0, 31.208333], "method": "PNG 6장 + 전체 프레임 전환 기록", "evidence_ids": ["EV-01", "EV-02"]},
+        {"modality": "audio", "range_s": [0, 31.208333], "method": "ASR, 꼬리 무음 감사, 톤 분석", "evidence_ids": ["EV-03", "EV-04", "EV-05"]},
+        {"modality": "access", "range_s": null, "method": "공급 링크 응답 검토", "evidence_ids": ["EV-07", "EV-08"]}
+      ],
+      "unprocessed_ranges": [
+        {"modality": "audio", "range_s": [0, 31.208333], "reason": "직접 청취 없음."},
+        {"modality": "interaction", "range_s": null, "reason": "녹화 시연 버튼은 시청자 조작 아님."}
+      ],
+      "information_units": [
+        {"unit_id": "U01", "production_range_s": [0, 7.35], "observed_range_s": [0, 7.333333], "modality": "visual", "content": "화면1 '보안 설정', '설정 → 보안 → 복구 코드', 버튼 '새 코드 발급'", "importance": "important", "importance_reason": "경로·버튼", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "partial", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U02", "production_range_s": null, "observed_range_s": [1.0, 3.04], "modality": "audio", "content": "'설정에서 보안을 선택합니다.'", "importance": "important", "importance_reason": "안내 대사", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U03", "production_range_s": null, "observed_range_s": [3.96, 6.56], "modality": "audio", "content": "질문 '이전 코드를 지금 버려도 되나요?'", "importance": "important", "importance_reason": "질문 맥락", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U04", "production_range_s": [7.35, 11.95], "observed_range_s": [7.333333, 11.916667], "modality": "visual", "content": "화면2 '발급 전 확인', 경고 문구, 버튼 '이전 코드 유지'", "importance": "important", "importance_reason": "경고·버튼", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "partial", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U05", "production_range_s": null, "observed_range_s": [7.5, 11.18], "modality": "audio", "content": "'아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.'", "importance": "important", "importance_reason": "부정 답", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U06", "production_range_s": [11.95, 16.17], "observed_range_s": [11.916667, 16.125], "modality": "visual", "content": "화면3 '보안 확인 실패', 문구, 버튼 '보안 확인 다시 하기'", "importance": "important", "importance_reason": "실패 상태, 대사 없음", "source_evidence_ids": ["EV-01", "EV-02", "EV-03"], "conveyed_by_original_audio": "no", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U07", "production_range_s": null, "observed_range_s": [12.2, 12.82], "modality": "audio", "content": "실패 경고음 2회", "importance": "important", "importance_reason": "비음성 경고", "source_evidence_ids": ["EV-05", "EV-01"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U08", "production_range_s": [16.17, 19.81], "observed_range_s": [16.125, 19.791667], "modality": "visual", "content": "화면4 '재인증 완료', 문구, 버튼 '발급 확인'", "importance": "important", "importance_reason": "상태 전이", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "partial", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U09", "production_range_s": null, "observed_range_s": [16.0, 18.98], "modality": "audio", "content": "'보안 확인을 다시 끝낸 뒤 발급을 확인합니다.'", "importance": "important", "importance_reason": "안내 대사", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U10", "production_range_s": [19.81, 27.05], "observed_range_s": [19.791667, 27.0], "modality": "visual", "content": "화면5 '새 복구 코드', R7K2-P9M4, 사용 불가 안내, 버튼 '코드 저장'", "importance": "important", "importance_reason": "코드 값", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "no", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U11", "production_range_s": null, "observed_range_s": [20.32, 26.02], "modality": "audio", "content": "'새 코드를 안전한 곳에 저장합니다.' / '새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.'", "importance": "important", "importance_reason": "저장 지시", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U12", "production_range_s": [27.05, 31.208333], "observed_range_s": [27.0, 31.208333], "modality": "visual", "content": "화면6 '발급 완료', '새 코드 저장 완료 · 이전 코드 사용 불가', 버튼 '설정으로 돌아가기'", "importance": "important", "importance_reason": "완료 상태", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "partial", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U13", "production_range_s": null, "observed_range_s": [27.6, 29.1], "modality": "audio", "content": "'발급 완료 화면을 확인합니다.'", "importance": "important", "importance_reason": "완료 안내", "source_evidence_ids": ["EV-03", "EV-04"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U14", "production_range_s": null, "observed_range_s": [0, 31.208333], "modality": "visual", "content": "상단 '복구 코드 발급 안내 · 교육용 가상 화면', 진행 'n / 6'", "importance": "important", "importance_reason": "가상 맥락과 순서", "source_evidence_ids": ["EV-01"], "conveyed_by_original_audio": "no", "candidate_coverage": [{"candidate_id": "CAND-V09", "status": "missing", "location": "링크 대상 404", "evidence_ids": ["EV-07"]}]}
+      ],
+      "conditions": {
+        "original_audio_sufficient": {"status": "rejected", "reason": "U06·U10 화면 정보가 대사에 없음.", "evidence_ids": ["EV-01", "EV-03"]},
+        "static_description_g203": {"has_no_important_time_based_visual_information": "no", "all_static_context_conveyed": "no", "programmatic_association_and_readable_path": "rejected", "audio_unidentified_speaker_changes_visually_only": "no", "status": "rejected", "reason": "시간기반 화면 정보가 있고 연결된 설명도 읽을 수 없음.", "evidence_ids": ["EV-02", "EV-07"]},
+        "media_alternative_for_text_exception": {"no_more_information_than_text": "no", "clearly_labeled": "no", "status": "rejected", "reason": "본문은 안내 문장과 링크뿐이고 영상이 더 많은 정보를 담음.", "evidence_ids": ["EV-07"]}
+      },
+      "alternative_methods": [
+        {"candidate_id": "CAND-V09", "type": "text_alternative", "access_status": "verified_unavailable", "content_status": "undetermined", "status": "not_provided", "reason": "링크 대상이 404이며 본문 없음. 정적 로컬 페이지라 평가자 권한 문제가 아니라 이용자에게도 같은 응답.", "evidence_ids": ["EV-07", "EV-08"]},
+        {"candidate_id": null, "type": "audio_description", "access_status": "verified_unavailable", "content_status": "undetermined", "status": "not_provided", "reason": "AD 수단 없음.", "evidence_ids": ["EV-06"]}
+      ],
+      "defects": [
+        {"candidate_id": "CAND-V09", "type": "alternative_link_broken_404", "unit_ids": ["U01", "U02", "U03", "U04", "U05", "U06", "U07", "U08", "U09", "U10", "U11", "U12", "U13", "U14"], "location": "본문 링크 missing-alternative.html", "evidence_ids": ["EV-07", "EV-08"], "effect_on_user": "대안 링크를 따라가도 404로 아무 정보도 얻지 못함.", "effect_on_overall_result": "유일한 대안 경로가 이용 불가, AD 없음 → fail"}
+      ],
+      "result": "fail",
+      "result_reason": "예외·원음 충분·G203 배제, 대안 현황 완전, 유일한 대안 링크가 404로 제공되지 않음, AD 미제공.",
+      "scope_limit": "404는 공급 브라우저 기록에 의존. 통제 자료 한정."
+    }
+  ],
+  "result": "fail",
+  "result_reason": "단일 미디어 M01 fail 확정.",
+  "scope_limit": "V09 페이지 한 영상에 한정.",
+  "missing_materials": [],
+  "out_of_scope_observations": ["한국어 captions 트랙 존재(1.2.2 범위). 링크 텍스트는 실제 존재하지 않는 대안을 가리킴."],
+  "safety_limitations": ["지정 파일 Read만 사용. 링크 재요청·사이트 조작·직접 청취 없음."],
+  "next_evidence_requests": [],
+  "recheck_plan": "링크 대상이 200으로 전체 대안을 반환하는지 확인한 뒤 내용 재대조."
+}

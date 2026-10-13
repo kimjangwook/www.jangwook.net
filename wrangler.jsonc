@@ -14,7 +14,8 @@
       "/lab-fixtures/media-1.2.1/playback/*.mp4",
       "/lab-fixtures/media-1.2.1/original/assets/*.mp4",
       "/lab-fixtures/media-1.2.1/original/assets/*.wav",
-      "/labs/accessibility/captions/ko/*.mp4"
+      "/labs/accessibility/captions/ko/*.mp4",
+      "/labs/accessibility/media-alternatives-1-2-3/ko/source.mp4"
     ]
   },
   "vars": {

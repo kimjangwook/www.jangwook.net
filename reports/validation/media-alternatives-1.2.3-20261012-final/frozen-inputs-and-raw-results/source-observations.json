@@ -1,0 +1,219 @@
+{
+  "source_id": "SOURCE-05",
+  "source_sha256": "acdcdc41cfbc35dee0d01d555b1125a4b9e022d447dcc266eeedae915d381bf3",
+  "duration_s": 31.208333,
+  "observation_limits": "PNG actual decoded frame observation; no model direct listening/video playback. Static six-screen authored fixture only. ASR independent of candidates; uncertain ASR remains indirect. No general video guarantee.",
+  "frames": [
+    {
+      "id": "SRC-PNG-1",
+      "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/observed-1.png",
+      "kind": "actual decoded source PNG",
+      "sha256": "1d3f5b1830f72ec54a89d50b8f2c5955742eed9f0dd3576485d05576321d6b06"
+    },
+    {
+      "id": "SRC-PNG-2",
+      "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/observed-2.png",
+      "kind": "actual decoded source PNG",
+      "sha256": "69b322b75795cae22d49768ee0be9917d1b500904577607af45d9145a9f6d892"
+    },
+    {
+      "id": "SRC-PNG-3",
+      "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/observed-3.png",
+      "kind": "actual decoded source PNG",
+      "sha256": "9863caf6f963d2cb1ca9ebec1e233feec898a8c5bd72dcd9ae508945b0a9dd63"
+    },
+    {
+      "id": "SRC-PNG-4",
+      "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/observed-4.png",
+      "kind": "actual decoded source PNG",
+      "sha256": "0657e392a79cdc781fd17541078d8856895543cebe40fc9d066564315510c8fe"
+    },
+    {
+      "id": "SRC-PNG-5",
+      "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/observed-5.png",
+      "kind": "actual decoded source PNG",
+      "sha256": "bc80cde1635f36b3628bdf76124f5064c4cd4b09a5efc6ecd7db2dff2dda6737"
+    },
+    {
+      "id": "SRC-PNG-6",
+      "path": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/observed-6.png",
+      "kind": "actual decoded source PNG",
+      "sha256": "eacb77ee376aad1ffa48cd7f5e7be301673f7562add424b16c7a84633470eb37"
+    }
+  ],
+  "decoded_frame_record": {
+    "decoded_frames": 749,
+    "duration": 31.208333333333332,
+    "scale": [
+      160,
+      100
+    ],
+    "method": "Compare every decoded adjacent frame; mean RGB difference >0.3 locates changes in this authored static six-screen fixture. All six actual representative frame PNGs independently visually checked; not a general motion/video classifier.",
+    "changes": [
+      {
+        "frame": 176,
+        "time": 7.333333,
+        "mean_pixel_change": 1.4927
+      },
+      {
+        "frame": 286,
+        "time": 11.916667,
+        "mean_pixel_change": 1.2616
+      },
+      {
+        "frame": 387,
+        "time": 16.125,
+        "mean_pixel_change": 1.2457
+      },
+      {
+        "frame": 475,
+        "time": 19.791667,
+        "mean_pixel_change": 2.4358
+      },
+      {
+        "frame": 648,
+        "time": 27.0,
+        "mean_pixel_change": 2.3345
+      }
+    ],
+    "max_delta": 2.43575
+  },
+  "asr_raw": {
+    "tool": "faster-whisper large-v3 multilingual CPU int8",
+    "source_video_sha256": "acdcdc41cfbc35dee0d01d555b1125a4b9e022d447dcc266eeedae915d381bf3",
+    "decoded_audio_sha256": "27aa99e4d4d36bbe8de68225d680873af9fc987769837ace5a0b80ea45df6c64",
+    "independence": "Decoded new MP4 audio only; no script, alternative, cue file, expected decisions, initial prompt or hotwords supplied. ASR is fallible; no evaluator native listening claim.",
+    "duration": 31.189375,
+    "segments": [
+      {
+        "start": 1.0,
+        "end": 3.04,
+        "text": " 설정에서 보안을 선택합니다."
+      },
+      {
+        "start": 3.96,
+        "end": 6.56,
+        "text": " 이전 코드를 지금 버려도 되나요?"
+      },
+      {
+        "start": 7.5,
+        "end": 11.18,
+        "text": " 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요."
+      },
+      {
+        "start": 16.0,
+        "end": 18.98,
+        "text": " 보안 확인을 다시 끝낸 뒤 발급을 확인합니다."
+      },
+      {
+        "start": 20.32,
+        "end": 22.12,
+        "text": " 새 코드를 안전한 곳에 저장합니다."
+      },
+      {
+        "start": 22.66,
+        "end": 26.02,
+        "text": " 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다."
+      },
+      {
+        "start": 27.6,
+        "end": 29.1,
+        "text": " 발급 완료 화면을 확인합니다."
+      },
+      {
+        "start": 30.0,
+        "end": 31.16,
+        "text": " 발급 완료 화면을 확인합니다."
+      }
+    ],
+    "elapsed_seconds": 47.36
+  },
+  "asr_tail_audit": {
+    "method": "Decoded new MP4 PCM amplitude measured across the exact ASR tail segment. ASR raw result retained; all-zero PCM cannot contain the repeated spoken line. No text hint or caption used.",
+    "ranges": [
+      {
+        "start": 27.6,
+        "end": 29.1,
+        "RMS": 0.19314053654670715,
+        "max_abs": 0.8197124600410461
+      },
+      {
+        "start": 29.6,
+        "end": 30,
+        "RMS": 2.5161531880257826e-07,
+        "max_abs": 4.78403308079578e-06
+      },
+      {
+        "start": 30,
+        "end": 31.16,
+        "RMS": 0.0,
+        "max_abs": 0.0
+      }
+    ],
+    "excluded_ASR_segment": [
+      30.0,
+      31.16
+    ]
+  },
+  "sound": {
+    "source_video_sha256": "acdcdc41cfbc35dee0d01d555b1125a4b9e022d447dcc266eeedae915d381bf3",
+    "decoded_audio_sha256": "27aa99e4d4d36bbe8de68225d680873af9fc987769837ace5a0b80ea45df6c64",
+    "method": "Decoded source audio only; 20ms FFT windows, 800–1000Hz energy fraction >0.8 and RMS>0.02 locate tonal events in this controlled source. Candidate text/captions not input. Not a general sound-recognition test.",
+    "observed_events": [
+      {
+        "start": 12.2,
+        "end": 12.4
+      },
+      {
+        "start": 12.62,
+        "end": 12.82
+      }
+    ],
+    "meaning_source": "Both events coincide with decoded screen3 showing security verification failure; authored two-beep warning convention. Meaning is contextual, not inferred from frequency alone."
+  },
+  "production_spec": [
+    [
+      0,
+      7.35,
+      "보안 설정",
+      "설정 → 보안 → 복구 코드",
+      "새 코드 발급"
+    ],
+    [
+      7.35,
+      11.95,
+      "발급 전 확인",
+      "새 코드를 저장하기 전에는 이전 코드를 버리지 마세요.",
+      "이전 코드 유지"
+    ],
+    [
+      11.95,
+      16.17,
+      "보안 확인 실패",
+      "보안 확인에 실패했습니다. 다시 인증해 주세요.",
+      "보안 확인 다시 하기"
+    ],
+    [
+      16.17,
+      19.81,
+      "재인증 완료",
+      "보안 확인이 완료되었습니다. 새 코드 발급을 확인하세요.",
+      "발급 확인"
+    ],
+    [
+      19.81,
+      27.05,
+      "새 복구 코드",
+      "교육용 가상 코드: R7K2-P9M4\n이 화면의 코드는 실제 계정에서 사용할 수 없습니다.",
+      "코드 저장"
+    ],
+    [
+      27.05,
+      31.208333,
+      "발급 완료",
+      "새 코드 저장 완료 · 이전 코드 사용 불가",
+      "설정으로 돌아가기"
+    ]
+  ],
+  "asr_usage": "Exclude only raw ASR segment 30.0-31.16 because decoded PCM audit establishes exact digital silence. Retain other segments as indirect fallible transcript. ASR timing approximate."
+}

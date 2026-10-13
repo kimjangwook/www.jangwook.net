@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-10-13T08:07:43.424235+00:00",
+  "reviewer": {
+    "assigned_role": "independent GPT-6.1 Sol High",
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "high",
+    "runtime_model_verification": "Parent-assigned subagent session. No provider-returned model or effort identifier is observable in this subagent tool surface; do not treat the assignment label as a separate API receipt."
+  },
+  "verdict": "pass",
+  "mandatory_findings": [],
+  "optional_findings": [],
+  "scope": "Exact edited Korean article, unchanged prompt 0.1.1, metadata, old article, four Korean SVG semantic descriptions/names and preserved test evidence. No implementation/publication performed.",
+  "input_sha256": {
+    "reports/releases/chapter-05-20261013/article.md": "f2d3dd0905d049e34e3a878b5315fcfba2fc3e5ca69e5980f94b0c9a746779c6",
+    "reports/releases/chapter-05-20261013/article-before-edit.md": "af1b34346cfb9096d112c80d9fb74321d4d6ee27459e0f6b61dd43e1fe0c10cc",
+    "reports/releases/chapter-05-20261013/prompt.md": "6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd",
+    "reports/releases/chapter-05-20261013/metadata.json": "7875b290f97a96bc893f4b6e90460f19ec3908dc7a34afe83141fb5b44ec5086",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/test-input-freeze.json": "0effe4985f56eac8fd19da4bf89c6b96c5bc0a1c319e28c1399d34cd142f876a",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/test-audit.json": "d618f2e73534f46e8450bd5db52bb5e53b59d0ba6b7c0c12b9c486408a3902e9",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/execution-receipt.json": "7e3f1b7d472bfc99a4666c7a6a4d6672e36deeedf72216d08c17e3be14ea5242",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/source-frame-provenance.json": "3dc0643ee6d2f8f0e29c97ef8c78a59d49e2b675defc2eb6c3f93636b3500274",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/internal-observation-limits.md": "2949952d4a359fabca3c8db6d2e4bdd70d02df43e2089a63d7dd6cf2c4bc0d2d",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/source-observations.json": "6974029a536d59b554fc2e7f8d43141dda1d0ec785426822b8ea10b3cd11a935",
+    "reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/reference-private.json": "78b2f1d345fb0307b53207de8bba0b4ef95ddcde1b160adcf17392097a3e2b29",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V01-input.md": "d76842919698d827ef4923056ebcbe32d09364ca555d6d1c920540e9f8bd919f",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V02-input.md": "4d99daf78c6fc8e3460dd48b5d7116183b72cd5cf3f06ee13183a34dcf631d88",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V03-input.md": "ec246079068bf3f266cd40d1a54915b3180ff74a2595ad8d14f209ee47b594c7",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V04-input.md": "baa089bbdf905c46a986c3ce3bba3e0e96fa43166e17994256892301fce64a8f",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V05-input.md": "58decb6b0bfbcd7858c789f182561c1fdb09016486575909e703d6fa94707e42",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V06-input.md": "9f8bc67868710b20aeac013396fa4900b2f630aff46bc150a21b230f29eb050d",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V07-input.md": "2bf7b8e47520b42de2f399379f24e96838e18a64fa9489da87fb1d8cb01d28f2",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V08-input.md": "80bb600991634203e78684554b4cb8302fae3f83da90eaaa49042979bdd22d35",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V09-input.md": "e324c0dbbe680fa05bb829546b9e7cff4b14c680d18091db6eee4aec564cb449",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V10-input.md": "be02bb481c6a95e6945736d7cb713b25dabc5191ba02499662ddb42b530e50c4",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V11-input.md": "d913db2e1d5b7e811cd73f454825e9963353118db77d9deb562bb0e9e7c088d5",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/V12-input.md": "b71657c629a02ae112d623addc25c13e1ff243c08426ebce42992beea702ef68",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V01-result.json": "d66fbfbde89f265de0e4cc762f40b461024c8bb60b0e32a03281cfb7f965ed47",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V02-result.json": "71f9db591e865e12d28c12bf28a63da52f28fe21f94be72af2ad028449fcf2b1",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V03-result.json": "18def1917601f5546bce603291cf6ff04f2175e9eee9e821b2136faa5ba53595",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V04-result.json": "26327da1f835811d9515e0dc3cde3d6a7fb9421b0497377557242e4f785c5524",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V05-result.json": "4de5c26b591f31240e7f0e432da1dc47c97034cb2cce8f77e8a421befa5f56c1",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V06-result.json": "c30246902219754c8f62ed7452de3bdfec8d64517ea2bba432cfdec61690038d",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V07-result.json": "9b0d7dca4ee79e5005166ed1097d012e7606d10be39fc75c434f768e8409d099",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V08-result.json": "c1f68ee7afa235cce9fe3e84b78a6f74b8f27f4dd9bca89c4d8640689265fe69",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V09-result.json": "f2958ffd0faa45ec1018d6cb5fa357e939e8558880807864b4799081ab0c4399",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V10-result.json": "a0842b589c2adc8c8bc58cc4c676940197ad05451115ea908539cf74f5e71024",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V11-result.json": "8b560adf2da7954ba03806773e69407662db5eb1f8312786bdba242ad2ba5cd2",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/V12-result.json": "469cd25ee03d47a0e1b338b882fb94133b5a07eeeb9d111c5a91a00a06a0fdbb",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V01-result.json": "3590e53a07180fa6e8d57f49d7660939886dbab05ca7822b2c04dbd7c9dfc3e6",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V02-result.json": "e571f71f4e438eda6ecb31c6e4e7acee04cbb4d25ef640ae8b85dd4b7a532674",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V03-result.json": "3ecea1c73f37da275b87e75081c1d9ea916e217bcac683a8dce35608ce3c50fc",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V04-result.json": "adf6015babd32d35edc0697257850a4eea7ee15d3abfcbc0039cf10a9a8150e1",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V05-result.json": "49dc11814346b5f5e573ecc80be835e6f9858da83248f8e00167d58cec4f5766",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V06-result.json": "0ffc3b35b9646cf92a30d012707f2ca7cf3be7e19f85c6ff40faf58ed27beecc",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V07-result.json": "fad6f6de2ef2e190ccf8936c112b354d9af11099df970d45a1ed10f2573e1d1c",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V08-result.json": "007243790a27cb6a9fde8f91e0b22a54332936de846dcfadbd134afa979966d8",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V09-result.json": "4294161a99bda1cf538f995598886563ae08297486d7d45f9435023a817074b0",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V10-result.json": "3e92502742f646e1365499323ac316b559604dbea271c9d1bbe94d8d5da027a5",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V11-result.json": "134e470cee6f9999190e58b8af267b99399a177617cba9d1e2033853d8d0084e",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/V12-result.json": "f5563ef77adfbac2c9bee08a758fdc5dc6ddb9a818bec05de557678c4b595465",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V01-result.json": "3fad282ff0629ff862a09ceebd9a8092a14e2bde2b26febeaef9d568ec7e8b5b",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V02-result.json": "0173a74d1942c6ae9522c12b81241908c891a8d33ea1067b1df8c11faa894b4f",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V03-result.json": "e6c4be5199b107b7fd23e0c1f178eff2ad94f00e3edaa4042993cc516d986210",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V04-result.json": "a6f8944f1d9e9a17be5fd9b912591dbe15a95d83b90f48817a22cbfc31205349",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V05-result.json": "5e7c641cc81e957bd87e41bc0a8b86e0ebd7bba798d9d8cc8bf2638c90cb1481",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V06-result.json": "2363a0c8ec4ad8c7b352934012905b520a6f3307151fe3afd14f411721570779",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V07-result.json": "bce9ff734b74feaeaba93c8e3e52ae69767b188ba0f80ddf1c7e564fc4d268d0",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V08-result.json": "73a6b0b442220e25d668504c09a8fc5896036704e9024b32a8768cff84bb0f05",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V09-result.json": "91e1e4e5380f45b776d94ef7f32e978f5743c05a7142faad4e3bd3d63091c84c",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V10-result.json": "3bb46661031162d31fcb75f1ce861b8a91d5c3c789b6f8c914f9cc96085bd5b6",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V11-result.json": "3f71a91971b6c095a3bdc02acb2b43181461fb9584f89d11726d5109a19b3715",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/V12-result.json": "5ba295a280ccbad0ad3222f111d49deefcd5594b6182624813087c91d7c18bae",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/P-LAB-output.md": "a15976299bd22fcc72709ee113507f52a2145b5ab9f5aba7c1554a4eca69e63f",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r1/P-NONE-output.md": "28c6db3f93ade3b0ddd33c7cb8f725081eb53ed91c2725657e4d5ad869ac0dbf",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/P-LAB-output.md": "e9e726db9faa5dddea1e9e8d3212d79a0fbb14fbd20f6048a8714d0babdd3af8",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r2/P-NONE-output.md": "a525d150867245dad3027dabbdc5697891ec27ed72bf6dd03d5a598580a6e945",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/P-LAB-output.md": "1f3d6677ac3c0abf1d65e7da2e4bfe1e70774430624ebc8f9a5597e593af58ae",
+    "reports/validation/media-alternatives-1.2.3-20261012-final/frozen-inputs-and-raw-results/r3/P-NONE-output.md": "d6adcb0469aa5bfaf5fa70d351be62af0ea41aa6bf7e411739298802a1e5e37d",
+    "static/images/accessibility/media-alternatives-1-2-3/ko/01-six-screens.svg": "b212ae39e8e7eca1c2285cb7b2dcbe0fde9547991a1efa5ada386e4b5062ccb7",
+    "static/images/accessibility/media-alternatives-1-2-3/ko/02-decision-branches.svg": "0a1096856461e5e78f6e3777c033102962d7ff38100b6c751e4e8f3cba94667d",
+    "static/images/accessibility/media-alternatives-1-2-3/ko/03-coverage-matrix.svg": "70b479dc85fa539831a35865355092766341d70123edfe92681028e2d409dc36",
+    "static/images/accessibility/media-alternatives-1-2-3/ko/04-scene-to-alternative.svg": "a996156056744aa156a0d964ce55a650f5f9c29b2c7a4f682da5058bbf215ad0"
+  },
+  "checks": [
+    {
+      "id": "standards",
+      "status": "pass",
+      "finding": "The two sufficient approaches, original-audio-sufficient condition, clearly labeled text-media exception, limits of G203, G226/G173 combination, H96 advisory status and distinction from 1.2.2/1.2.5/1.2.8 remain unchanged and agree with current W3C material."
+    },
+    {
+      "id": "editorial-delta",
+      "status": "pass",
+      "finding": "Repeated provenance and caveats were consolidated. No material limitation disappears: static authored fixture, text route only, indirect audio evidence, no direct URL/playback/listening result, shared within-session context, non-universal decision agreement and untested AD/original-audio/G203/interaction/motion cases remain explicit. Frame count and V12 ordering may remain in internal reproducibility records without burdening the reader."
+    },
+    {
+      "id": "36-decisions",
+      "status": "pass",
+      "finding": "All 36 preserved JSON results independently counted and compared with the frozen private reference. V01/V05/V08 pass; V02/V03/V04/V06/V07/V09/V11 fail; V10 not_applicable; V12 inconclusive. Every case agrees 3/3. V12 is partial and has zero source information units. Unit granularity differs (r1 14, r2 20, r3 24 for V01–V11), supporting the article caveat about non-identical reasoning."
+    },
+    {
+      "id": "6-plans",
+      "status": "pass",
+      "finding": "Six raw P-LAB/P-NONE plan files are present across r1/r2/r3. Their separation of supplied facts, assumptions, missing evidence and planned actions supports the restrained article statement. No rendered/dynamic media absence is concluded from the initial HTTP HTML."
+    },
+    {
+      "id": "diagram-names",
+      "status": "pass",
+      "finding": "The four SVGs have role=img, title/desc referenced by aria-labelledby/aria-describedby; article alt descriptions preserve core diagram information. The linked-image names identify the diagram and opening the original. Scene timings, two warning sounds, fictional code, completion state, sequence and candidate-vs-criterion result distinction match preserved observations. This is semantic/source inspection, not rendered layout or screen-reader playback verification."
+    },
+    {
+      "id": "metadata",
+      "status": "pass",
+      "finding": "Title and summary match the article coverage and make no certification, sitewide conformance or universal accuracy claim."
+    },
+    {
+      "id": "reader-flow",
+      "status": "pass",
+      "finding": "Explanation leads to iframe/direct lab links, results, checklist, prompt guidance and next chapter. Internal revision history and production tools are absent; actual test model attribution is concise and relevant."
+    }
+  ],
+  "test_evidence": {
+    "criterion_results": 36,
+    "reference_matches": 36,
+    "overview_plans": 6,
+    "cases": [
+      {
+        "run": "r1",
+        "case": "V01",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V02",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V03",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V04",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V05",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V06",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V07",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V08",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V09",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V10",
+        "result": "not_applicable",
+        "reference": "not_applicable",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V11",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r1",
+        "case": "V12",
+        "result": "inconclusive",
+        "reference": "inconclusive",
+        "matches": true,
+        "run_status": "partial"
+      },
+      {
+        "run": "r2",
+        "case": "V01",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V02",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V03",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V04",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V05",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V06",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V07",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V08",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V09",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V10",
+        "result": "not_applicable",
+        "reference": "not_applicable",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V11",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r2",
+        "case": "V12",
+        "result": "inconclusive",
+        "reference": "inconclusive",
+        "matches": true,
+        "run_status": "partial"
+      },
+      {
+        "run": "r3",
+        "case": "V01",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V02",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V03",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V04",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V05",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V06",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V07",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V08",
+        "result": "pass",
+        "reference": "pass",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V09",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V10",
+        "result": "not_applicable",
+        "reference": "not_applicable",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V11",
+        "result": "fail",
+        "reference": "fail",
+        "matches": true,
+        "run_status": "complete"
+      },
+      {
+        "run": "r3",
+        "case": "V12",
+        "result": "inconclusive",
+        "reference": "inconclusive",
+        "matches": true,
+        "run_status": "partial"
+      }
+    ],
+    "frozen_prompt_sha256": "6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd",
+    "prompt_matches_frozen": true,
+    "preserved_input_and_raw_output_hash_mismatches": []
+  },
+  "additional_execution": {
+    "opus_prompt_tests_required_for_this_edit": false,
+    "reason": "The evaluated prompt, raw source/inputs, reference decisions, tested conclusions and tested routes are unchanged. This edit consolidates reader-facing explanation and limitations, so renewed hash-bound editorial review is sufficient. Do not represent this as a new prompt execution.",
+    "remaining_publication_checks": "Independent final translation/source alignment review plus site/build/rendered/operational publication checks remain separate gates. New prompt/evaluation-input/route claims would require affected tests to be frozen and rerun."
+  },
+  "sources_verified": [
+    "https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded",
+    "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded.html",
+    "https://www.w3.org/WAI/WCAG22/Techniques/general/G203",
+    "https://www.w3.org/WAI/WCAG22/Techniques/general/G226",
+    "https://www.w3.org/WAI/WCAG22/Techniques/html/H96",
+    "https://www.w3.org/WAI/WCAG22/Understanding/media-alternative-prerecorded.html"
+  ],
+  "limits": [
+    "No other reviewer report was opened or used to determine this verdict.",
+    "This review did not play source MP4, directly listen to audio, rerun ASR/decode, or claim model native media observation. Audio/frame provenance was reviewed from preserved records.",
+    "Raw decision/result fields and representative evidence reasoning were inspected; this is not an independent re-execution or a fresh exhaustive semantic judgment of every source information unit.",
+    "No actual screen-reader output, responsive render, live public URL, deployed hash, translated content, or public posting was checked in this Korean editorial review.",
+    "Passing is bound to the hashes listed here and does not establish universal prompt accuracy or full WCAG conformance."
+  ]
+}

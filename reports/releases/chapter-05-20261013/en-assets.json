@@ -1,0 +1,312 @@
+{
+  "figures": {
+    "01-six-screens.svg": {
+      "title": "Information from screen and sound",
+      "desc": "A recovery code tutorial video wireframe with six scenes arranged in two columns and three rows in reading order. Screen information and original audio information are shown separately for each scene. The security check failure scene has a failure message and a retry button, but the original audio contains only two warning beeps. The new code scene contains the fictional training code R7K2-P9M4, and the final scene shows that saving is complete and the previous code is unusable.",
+      "labels": [
+        "Information from screen and sound",
+        "Reading order: left → right, top → bottom · Observed intervals rounded",
+        "01 · Security settings",
+        "0.00–7.33 s",
+        "Screen",
+        "Settings → Security → Recovery codes",
+        "Issue new code",
+        "Original audio",
+        "Security selection guidance and “Can I",
+        "discard the old code now?”",
+        "02 · Before issuance",
+        "7.33–11.92 s",
+        "Screen",
+        "Do not discard the old code",
+        "before saving the new code.",
+        "Keep old code",
+        "Original audio",
+        "“No. Do not discard it before",
+        "saving the new recovery code.”",
+        "03 · Security check failed",
+        "11.92–16.13 s",
+        "Screen",
+        "Security check failed.",
+        "Please authenticate again.",
+        "Retry security check",
+        "Original audio",
+        "No dialogue. Two warning beeps",
+        "04 · Reauthentication complete",
+        "16.13–19.79 s",
+        "Screen",
+        "Security check complete.",
+        "Confirm new code issuance.",
+        "Confirm issuance",
+        "Original audio",
+        "“After repeating the security check,",
+        "confirm issuance.”",
+        "05 · New recovery code",
+        "19.79–27.00 s",
+        "Screen",
+        "Fictional code: R7K2-P9M4 Not valid",
+        "for real accounts",
+        "Save code",
+        "Original audio",
+        "Guidance to save safely. Old code",
+        "no longer usable",
+        "06 · Issuance complete",
+        "27.00–31.21 s",
+        "Screen",
+        "New code saved · Old code",
+        "no longer usable",
+        "Return to settings",
+        "Original audio",
+        "“Check the issuance complete screen.”",
+        "Recorded fictional demo · No real account operations · Compare screen and sound information separately."
+      ]
+    },
+    "02-decision-branches.svg": {
+      "title": "1.2.3 options and decision flow",
+      "desc": "The evaluation flow for 1.2.3. After checking applicability and the exception for a media alternative for text, review whether the original audio conveys all important visual information. If additional description is needed, check audio description and alternatives for time-based media. The criterion is met if one sufficient method is verified across the full scope. If only a defect in one method is confirmed and the status of other methods is unclear, the judgment is deferred. A judgment of not met requires confirmation that no other sufficient method exists.",
+      "labels": [
+        "1.2.3 options and decision flow",
+        "Check scope of applicability and original evidence",
+        "Is it prerecorded synchronized video?",
+        "Check both conditions for the text-alternative exception",
+        "No information beyond the text + clearly labeled as a media alternative",
+        "Both conditions met → Not applicable",
+        "Does original audio convey all key screen information?",
+        "If so, additional audio description is not needed",
+        "Full correspondence verified → Met",
+        "Option 1 · Audio description",
+        "Convey key visual information",
+        "through sound with original audio",
+        "Option 2 · Media alternative",
+        "Convey visual and audio information",
+        "in text in the same order",
+        "One sufficient method verified across full scope → Met",
+        "One candidate defective + other methods unverified → Deferred",
+        "All methods checked + no sufficient method → Not met",
+        "Insufficient original evidence → Deferred, even if candidate is detailed",
+        "Distinguish a single candidate's defect from failure of the entire criterion.",
+        "Evaluate the audio description requirement of 1.2.5 (AA) separately."
+      ]
+    },
+    "04-scene-to-alternative.svg": {
+      "title": "Linking the original to an alternative",
+      "desc": "Links screen and audio information from the failure, new code, and completion scenes to paragraphs 3, 5, and 6 of the alternative. Preserves the failure message and warning beeps, the fictional code value and saving guidance, and the specific completion results together. The final review items cover meaning, negation, order, and access paths.",
+      "labels": [
+        "Linking the original to an alternative",
+        "First identify information units in the original, then compare candidate paragraphs.",
+        "Failure screen",
+        "Visual",
+        "Failure message + retry button",
+        "Audio",
+        "Two warning beeps",
+        "Alternative document",
+        "Describe all three in paragraph 3",
+        "New code screen",
+        "Visual",
+        "R7K2-P9M4 + Save button",
+        "Audio",
+        "Guidance to save in a safe place",
+        "Alternative document",
+        "Keep value, action, dialogue in paragraph 5",
+        "Completion screen",
+        "Visual",
+        "Saved + old code no longer usable",
+        "Audio",
+        "“Check the issuance complete screen.”",
+        "Alternative document",
+        "State specific results in paragraph 6",
+        "Review items",
+        "□ Missing meaning  □ Reversed negation  □ Order  □ Actual access path",
+        "Scene numbers and timecodes are not required formats.",
+        "Demo screen buttons ≠ actual viewer input",
+        "If interaction actually exists, check equivalent means for choices and results."
+      ]
+    },
+    "03-coverage-matrix.svg": {
+      "title": "Transcript versus full alternative",
+      "desc": "Compares a transcript and a full alternative for the failure scene. The transcript of dialogue and sounds contains only two warning beeps. The alternative enhanced with visual description includes the security check failure message, retry button, and warning beeps. Audio description conveys visual information through sound alongside the original audio, while a media alternative conveys screens, dialogue, and sounds in text in the same order.",
+      "labels": [
+        "Transcript versus full alternative",
+        "Compare directly what is missing from the same failure scene.",
+        "Dialogue-and-sound transcript",
+        "[Two warning beeps]",
+        "The on-screen failure message",
+        "and reauthentication button are missing",
+        "Alternative with visual description",
+        "The message “Security check failed.",
+        "Please authenticate again.” and the",
+        "‘Retry security check’ button appear.",
+        "Two warning beeps sound.",
+        "Adding visual information to a transcript can yield a sufficient media alternative.",
+        "Audio description",
+        "Original audio + needed visual description → understood through sound. No duty to retranscribe original audio.",
+        "Alternative for time-based media",
+        "Screen + dialogue + meaningful sounds → understood through text in the same order.",
+        "Check actual content and access paths, not just the format's name.",
+        "Audio description can also convey all necessary visual information.",
+        "If dialogue is dense, consider extended description or description-integrated narration."
+      ]
+    }
+  },
+  "labs": {
+    "v08.html": {
+      "texts": [
+        "Recovery code issuance guide · V08",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V08 · The code in the video cannot be used with real accounts.",
+        "Recovery code issuance guide: full media alternative"
+      ],
+      "aria": []
+    },
+    "v04.html": {
+      "texts": [
+        "Recovery code issuance guide · V04",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V04 · The code in the video cannot be used with real accounts."
+      ],
+      "aria": []
+    },
+    "v12.html": {
+      "texts": [
+        "Recovery code issuance guide · V12",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V12 · The code in the video cannot be used with real accounts.",
+        "Media alternative",
+        "This material provides the same information in the same order as the recovery code issuance guide video. These are fictional training screens that cannot be used with real accounts.\n1. The security settings screen shows the ‘Settings → Security → Recovery codes’ path and the ‘Issue new code’ button. The guide says, “Select Security in Settings.” The user asks, “Can I discard the old code now?”\n2. The ‘Before issuance’ screen displays a Keep old code button and the warning “Do not discard the old code before saving the new code.” The guide replies, “No. Do not discard it before saving the new recovery code.”\n3. The security check failure screen displays the message “Security check failed. Please authenticate again.” and the ‘Retry security check’ button. Two warning beeps signal the security check failure.\n4. The reauthentication complete screen displays the message “Security check complete. Confirm new code issuance.” and the ‘Confirm issuance’ button. The guide says, “After repeating the security check, confirm issuance.”\n5. The new recovery code screen shows the fictional training code R7K2-P9M4, the notice “The code on this screen cannot be used with real accounts.” and the ‘Save code’ button. The guide says, “Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.”\n6. The issuance complete screen displays “New code saved · Old code no longer usable” and the ‘Return to settings’ button. The guide says, “Check the issuance complete screen.”\nThe buttons in the video are part of the demonstration screens; no actual button presses are performed. The page's video player provides playback, pause, and seeking."
+      ],
+      "aria": []
+    },
+    "index.html": {
+      "texts": [
+        "Comparing media alternatives for a video",
+        "Comparing media alternatives for a video",
+        "Compare the information conveyed by alternatives linked to the same video.",
+        "Condition V01",
+        "Condition V02",
+        "Condition V03",
+        "Condition V04",
+        "Condition V05",
+        "Condition V06",
+        "Condition V07",
+        "Condition V08",
+        "Condition V09",
+        "Condition V10",
+        "Condition V11",
+        "Condition V12"
+      ],
+      "aria": []
+    },
+    "v05.html": {
+      "texts": [
+        "Recovery code issuance guide · V05",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V05 · The code in the video cannot be used with real accounts.",
+        "Media alternative",
+        "This material provides the same information in the same order as the recovery code issuance guide video. These are fictional training screens that cannot be used with real accounts.\nThe security settings screen shows the ‘Settings → Security → Recovery codes’ path and the ‘Issue new code’ button. The guide says, “Select Security in Settings.” The user asks, “Can I discard the old code now?”\nThe ‘Before issuance’ screen displays a Keep old code button and the warning “Do not discard the old code before saving the new code.” The guide replies, “No. Do not discard it before saving the new recovery code.”\nThe security check failure screen displays the message “Security check failed. Please authenticate again.” and the ‘Retry security check’ button. Two warning beeps signal the security check failure.\nThe reauthentication complete screen displays the message “Security check complete. Confirm new code issuance.” and the ‘Confirm issuance’ button. The guide says, “After repeating the security check, confirm issuance.”\nThe new recovery code screen shows the fictional training code R7K2-P9M4, the notice “The code on this screen cannot be used with real accounts.” and the ‘Save code’ button. The guide says, “Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.”\nThe issuance complete screen displays “New code saved · Old code no longer usable” and the ‘Return to settings’ button. The guide says, “Check the issuance complete screen.”\nThe buttons in the video are part of the demonstration screens; no actual button presses are performed. The page's video player provides playback, pause, and seeking."
+      ],
+      "aria": []
+    },
+    "v09.html": {
+      "texts": [
+        "Recovery code issuance guide · V09",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V09 · The code in the video cannot be used with real accounts.",
+        "Recovery code issuance guide: full media alternative"
+      ],
+      "aria": []
+    },
+    "v02.html": {
+      "texts": [
+        "Recovery code issuance guide · V02",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V02 · The code in the video cannot be used with real accounts.",
+        "Media alternative",
+        "Guide: Select Security in Settings.\nUser: Can I discard the old code now?\nGuide: No. Do not discard it before saving the new recovery code.\n[Two warning beeps signaling security check failure]\nGuide: After repeating the security check, confirm issuance.\nGuide: Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.\nGuide: Check the issuance complete screen."
+      ],
+      "aria": []
+    },
+    "v03.html": {
+      "texts": [
+        "Recovery code issuance guide · V03",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V03 · The code in the video cannot be used with real accounts.",
+        "Media alternative",
+        "1. Security settings: Settings → Security → Recovery codes · Issue new code\n2. Before issuance: Do not discard the old code before saving the new code. · Keep old code\n3. Security check failed: Security check failed. Please authenticate again. · Retry security check\n4. Reauthentication complete: Security check complete. Confirm new code issuance. · Confirm issuance\n5. New recovery code: Fictional training code: R7K2-P9M4 The code on this screen cannot be used with real accounts. · Save code\n6. Issuance complete: New code saved · Old code no longer usable · Return to settings"
+      ],
+      "aria": []
+    },
+    "v01.html": {
+      "texts": [
+        "Recovery code issuance guide · V01",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V01 · The code in the video cannot be used with real accounts.",
+        "Media alternative",
+        "This material provides the same information in the same order as the recovery code issuance guide video. These are fictional training screens that cannot be used with real accounts.\n1. The security settings screen shows the ‘Settings → Security → Recovery codes’ path and the ‘Issue new code’ button. The guide says, “Select Security in Settings.” The user asks, “Can I discard the old code now?”\n2. The ‘Before issuance’ screen displays a Keep old code button and the warning “Do not discard the old code before saving the new code.” The guide replies, “No. Do not discard it before saving the new recovery code.”\n3. The security check failure screen displays the message “Security check failed. Please authenticate again.” and the ‘Retry security check’ button. Two warning beeps signal the security check failure.\n4. The reauthentication complete screen displays the message “Security check complete. Confirm new code issuance.” and the ‘Confirm issuance’ button. The guide says, “After repeating the security check, confirm issuance.”\n5. The new recovery code screen shows the fictional training code R7K2-P9M4, the notice “The code on this screen cannot be used with real accounts.” and the ‘Save code’ button. The guide says, “Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.”\n6. The issuance complete screen displays “New code saved · Old code no longer usable” and the ‘Return to settings’ button. The guide says, “Check the issuance complete screen.”\nThe buttons in the video are part of the demonstration screens; no actual button presses are performed. The page's video player provides playback, pause, and seeking."
+      ],
+      "aria": []
+    },
+    "v10.html": {
+      "texts": [
+        "Recovery code issuance guide · V10",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V10 · The code in the video cannot be used with real accounts.",
+        "Recovery code issuance guide text",
+        "This material provides the same information in the same order as the recovery code issuance guide video. These are fictional training screens that cannot be used with real accounts.\n1. The security settings screen shows the ‘Settings → Security → Recovery codes’ path and the ‘Issue new code’ button. The guide says, “Select Security in Settings.” The user asks, “Can I discard the old code now?”\n2. The ‘Before issuance’ screen displays a Keep old code button and the warning “Do not discard the old code before saving the new code.” The guide replies, “No. Do not discard it before saving the new recovery code.”\n3. The security check failure screen displays the message “Security check failed. Please authenticate again.” and the ‘Retry security check’ button. Two warning beeps signal the security check failure.\n4. The reauthentication complete screen displays the message “Security check complete. Confirm new code issuance.” and the ‘Confirm issuance’ button. The guide says, “After repeating the security check, confirm issuance.”\n5. The new recovery code screen shows the fictional training code R7K2-P9M4, the notice “The code on this screen cannot be used with real accounts.” and the ‘Save code’ button. The guide says, “Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.”\n6. The issuance complete screen displays “New code saved · Old code no longer usable” and the ‘Return to settings’ button. The guide says, “Check the issuance complete screen.”\nThe buttons in the video are part of the demonstration screens; no actual button presses are performed. The page's video player provides playback, pause, and seeking.",
+        "The video below is a media alternative for the text above."
+      ],
+      "aria": []
+    },
+    "v06.html": {
+      "texts": [
+        "Recovery code issuance guide · V06",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V06 · The code in the video cannot be used with real accounts.",
+        "Media alternative",
+        "This material provides the same information in the same order as the recovery code issuance guide video. These are fictional training screens that cannot be used with real accounts.\n1. The security settings screen shows the ‘Settings → Security → Recovery codes’ path and the ‘Issue new code’ button. The guide says, “Select Security in Settings.” The user asks, “Can I discard the old code now?”\n2. The ‘Before issuance’ screen displays a Keep old code button and the warning “Discard the old code before saving the new code.” The guide replies, “No. Do not discard it before saving the new recovery code.”\n3. The security check failure screen displays the message “Security check failed. Please authenticate again.” and the ‘Retry security check’ button. Two warning beeps signal the security check failure.\n4. The reauthentication complete screen displays the message “Security check complete. Confirm new code issuance.” and the ‘Confirm issuance’ button. The guide says, “After repeating the security check, confirm issuance.”\n5. The new recovery code screen shows the fictional training code R7K2-P9M4, the notice “The code on this screen cannot be used with real accounts.” and the ‘Save code’ button. The guide says, “Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.”\n6. The issuance complete screen displays “New code saved · Old code no longer usable” and the ‘Return to settings’ button. The guide says, “Check the issuance complete screen.”\nThe buttons in the video are part of the demonstration screens; no actual button presses are performed. The page's video player provides playback, pause, and seeking."
+      ],
+      "aria": []
+    },
+    "v07.html": {
+      "texts": [
+        "Recovery code issuance guide · V07",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V07 · The code in the video cannot be used with real accounts.",
+        "Media alternative",
+        "This material provides the same information in the same order as the recovery code issuance guide video. These are fictional training screens that cannot be used with real accounts.\n1. The security settings screen shows the ‘Settings → Security → Recovery codes’ path and the ‘Issue new code’ button. The guide says, “Select Security in Settings.” The user asks, “Can I discard the old code now?”\n2. The ‘Before issuance’ screen displays a Keep old code button and the warning “Do not discard the old code before saving the new code.” The guide replies, “No. Do not discard it before saving the new recovery code.”\n3. After first completing reauthentication, the security check failure screen displays the message “Security check failed. Please authenticate again.” and the ‘Retry security check’ button. Two warning beeps signal the security check failure.\n4. The reauthentication complete screen, already performed before the failure, displays the message “Security check complete. Confirm new code issuance.” and the ‘Confirm issuance’ button. The guide says, “After repeating the security check, confirm issuance.”\n5. The new recovery code screen shows the fictional training code R7K2-P9M4, the notice “The code on this screen cannot be used with real accounts.” and the ‘Save code’ button. The guide says, “Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.”\n6. The issuance complete screen displays “New code saved · Old code no longer usable” and the ‘Return to settings’ button. The guide says, “Check the issuance complete screen.”\nThe buttons in the video are part of the demonstration screens; no actual button presses are performed. The page's video player provides playback, pause, and seeking."
+      ],
+      "aria": []
+    },
+    "alternative.html": {
+      "texts": [
+        "Recovery code issuance guide — Full media alternative",
+        "Recovery code issuance guide — Full media alternative",
+        "This material provides the same information in the same order as the recovery code issuance guide video. These are fictional training screens that cannot be used with real accounts.\n1. The security settings screen shows the ‘Settings → Security → Recovery codes’ path and the ‘Issue new code’ button. The guide says, “Select Security in Settings.” The user asks, “Can I discard the old code now?”\n2. The ‘Before issuance’ screen displays a Keep old code button and the warning “Do not discard the old code before saving the new code.” The guide replies, “No. Do not discard it before saving the new recovery code.”\n3. The security check failure screen displays the message “Security check failed. Please authenticate again.” and the ‘Retry security check’ button. Two warning beeps signal the security check failure.\n4. The reauthentication complete screen displays the message “Security check complete. Confirm new code issuance.” and the ‘Confirm issuance’ button. The guide says, “After repeating the security check, confirm issuance.”\n5. The new recovery code screen shows the fictional training code R7K2-P9M4, the notice “The code on this screen cannot be used with real accounts.” and the ‘Save code’ button. The guide says, “Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.”\n6. The issuance complete screen displays “New code saved · Old code no longer usable” and the ‘Return to settings’ button. The guide says, “Check the issuance complete screen.”\nThe buttons in the video are part of the demonstration screens; no actual button presses are performed. The page's video player provides playback, pause, and seeking."
+      ],
+      "aria": []
+    },
+    "v11.html": {
+      "texts": [
+        "Recovery code issuance guide · V11",
+        "Lab list",
+        "Recovery code issuance guide",
+        "Controlled training case V11 · The code in the video cannot be used with real accounts.",
+        "Recovery code issuance guide text",
+        "This material provides the same information in the same order as the recovery code issuance guide video. These are fictional training screens that cannot be used with real accounts.\n1. The security settings screen shows the ‘Settings → Security → Recovery codes’ path and the ‘Issue new code’ button. The guide says, “Select Security in Settings.” The user asks, “Can I discard the old code now?”\n2. The ‘Before issuance’ screen displays a Keep old code button and the warning “Do not discard the old code before saving the new code.” The guide replies, “No. Do not discard it before saving the new recovery code.”\n3. The security check failure screen displays the message “Security check failed. Please authenticate again.” and the ‘Retry security check’ button. Two warning beeps signal the security check failure.\n4. The reauthentication complete screen displays the message “Security check complete. Confirm new code issuance.” and the ‘Confirm issuance’ button. The guide says, “After repeating the security check, confirm issuance.”\n5. The new recovery code screen shows a fictional training code, the notice “The code on this screen cannot be used with real accounts.” and the ‘Save code’ button. The guide says, “Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.”\n6. The issuance complete screen displays “New code saved · Old code no longer usable” and the ‘Return to settings’ button. The guide says, “Check the issuance complete screen.”\nThe buttons in the video are part of the demonstration screens; no actual button presses are performed. The page's video player provides playback, pause, and seeking.",
+        "The video below is a media alternative for the text above."
+      ],
+      "aria": []
+    }
+  },
+  "vtt": "WEBVTT\n\nA1\n00:00:01.000 --> 00:00:03.400 line:76%\nGuide: Select Security in Settings.\n\nB1\n00:00:04.000 --> 00:00:07.000 line:76%\nUser: Can I discard the old code now?\n\nA2\n00:00:07.600 --> 00:00:11.600 line:76%\nGuide: No. Do not discard it before saving the new recovery code.\n\nSFX\n00:00:12.200 --> 00:00:15.820 line:76%\n[Two warning beeps signaling security check failure]\n\nA3\n00:00:16.420 --> 00:00:19.460 line:76%\nGuide: After repeating the security check, confirm issuance.\n\nA4\n00:00:20.060 --> 00:00:26.700 line:76%\nGuide: Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.\n\nA5\n00:00:27.300 --> 00:00:29.580 line:76%\nGuide: Check the issuance complete screen.\n",
+  "source_notice": "Video audio and on-screen text remain in Korean, while page text and captions are translated into English."
+}

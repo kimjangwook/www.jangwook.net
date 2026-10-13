@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-10-13T08:19:18.209300+00:00",
+  "reviewer": {
+    "assigned_role": "independent GPT-6.1 Sol High",
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "high",
+    "actual_runtime_verification_limit": "Parent-assigned inherited subagent session; provider-returned model/effort identifier not independently visible."
+  },
+  "verdict": "pass",
+  "mandatory_findings": [],
+  "optional_findings": [
+    {
+      "id": "O01",
+      "path": "static/images/accessibility/media-alternatives-1-2-3/en/02-decision-branches-dba9ebb0be16.svg",
+      "finding": "The central vertical arrow touches the end of the exception outcome label in the rendered EN diagram. Text remains understandable, but a shorter label would give it space.",
+      "exact_old": "Both conditions met → Not applicable",
+      "suggested_new": "Both met → Not applicable",
+      "blocking": false
+    }
+  ],
+  "checked_input_sha256": {
+    "content/series/accessibility/posts/audio-description-or-media-alternative-prerecorded.md": "1b180533442630978829b6c01b077db04c55481d4260b6835e4550dbaefdce02",
+    "content/series/accessibility/prompts/audio-description-or-media-alternative-prerecorded.md": "6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd",
+    "content/series/accessibility/manifest.json": "059211e25ede70b079e351472699f53920ce705e7a8281e80a5db0aac9f74cce",
+    "static/images/accessibility/media-alternatives-1-2-3/ko/01-six-screens.svg": "b212ae39e8e7eca1c2285cb7b2dcbe0fde9547991a1efa5ada386e4b5062ccb7",
+    "static/images/accessibility/media-alternatives-1-2-3/ko/02-decision-branches.svg": "0a1096856461e5e78f6e3777c033102962d7ff38100b6c751e4e8f3cba94667d",
+    "static/images/accessibility/media-alternatives-1-2-3/ko/03-coverage-matrix.svg": "70b479dc85fa539831a35865355092766341d70123edfe92681028e2d409dc36",
+    "static/images/accessibility/media-alternatives-1-2-3/ko/04-scene-to-alternative.svg": "a996156056744aa156a0d964ce55a650f5f9c29b2c7a4f682da5058bbf215ad0",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/alternative.html": "00634d5b32928eacf4bbb3113e8d69f8830b0ca7353d91b7819db7261fd7364f",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/index.html": "d012a1833fb8499c4bf6ae68902142998c37893d4daf8106b9d8ed731e52feb6",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v01.html": "6cc4f3286402a5e2b2d703e11ff2a3ef17cb4036e4d9ff34c5c97fdf96a8b5e0",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v02.html": "88963f3075de94a485b8458dbf695653920229f4a0846e556465bb2f4a071727",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v03.html": "9cf29190bf7870a852400c1d06be3f72207ca385efee1d6fbec335ebbb384269",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v04.html": "fcd57d90aeee293ed696ef5a9298df966cba2cac2e86e9208869de8d975b8597",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v05.html": "9f24241e114bfa2b63825bd47aa5623c36f0c3a82f64ac07a5acdf20c6ade23b",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v06.html": "a0e5ca785f50ae60eebebab4131f07d922837a3294e8db3ea4c98775bb77276b",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v07.html": "04ead8a0b539890114f53b1489327646f386bec266e282be89443481e4421816",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v08.html": "37ecd09d6e7027b7019f36a9014891af54ab011d159428c2a66a5f178eace722",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v09.html": "96f38bd22658b0c0533ad447e4f7bb5a342e290b56ef1065af8d82b10c84c5a0",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v10.html": "c3a36f26843e0badc03e21573d347419b36f950d006603c2ebdbbfa8cd7d28fa",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v11.html": "40612fa12609eac44a7fdc65389abcf023fc8fc3fa577e9bbe058a6d6b7e771f",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/v12.html": "da93ba86d76a7c3a2a1e7f0e40147a95b61639ed421216a08192920beef739c9",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/captions.vtt": "4886a7393fd334c10d33b41c5efe4da9dc920830818e32bec910087eae13e69b",
+    "content/series/accessibility/translations/en/posts/audio-description-or-media-alternative-prerecorded.md": "5df13810b1c176eb6e36a38b2ecdfbe0e8032b721e2c686d235f08c7481548f2",
+    "content/series/accessibility/translations/en/prompts/audio-description-or-media-alternative-prerecorded.md": "52c6413debc42efc197849793fced59dc93d91192307c03275386ec972c7c335",
+    "content/series/accessibility/translations/en/manifest.json": "99ceb8f0d1623a46e9fd3414d34bd21400eb00224416d650b7da8fcf198b6d77",
+    "static/images/accessibility/media-alternatives-1-2-3/en/01-six-screens-0365d0065d03.svg": "0365d0065d033bc7c027b96f4f124561aacf01fd5f7d17316e862d7828ea3181",
+    "static/images/accessibility/media-alternatives-1-2-3/en/02-decision-branches-dba9ebb0be16.svg": "dba9ebb0be16c9f572528b0583051b4f317ffd79a2b6ee194e19f5f8fee05d96",
+    "static/images/accessibility/media-alternatives-1-2-3/en/03-coverage-matrix-1851ad5a1150.svg": "1851ad5a1150840357d2190b7c2c0393e439d6ab0e5f0e484d830440ee79ab8e",
+    "static/images/accessibility/media-alternatives-1-2-3/en/04-scene-to-alternative-afde189f6f48.svg": "afde189f6f48078a27cd09f3ad736fb3e250eb835117b1c67fbb689930c740c3",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/alternative.html": "297956c4515fc9499186fc56e5e802e2f7e0f5dd2a354259302662bbdb618950",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/index.html": "a5d1a5cc7dcc9cc9a5f02b31c100f87cf1255bf149c193b5bcece0d122ed7587",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v01.html": "b23208307c7a6dd40c389685a5d8d954e648b95e9af3ef3d9ae9939483c6f98d",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v02.html": "e60ef5f49a24a6071a89fa57c85f91503933e4c6b3bab9d4ead6f1d25b3071d6",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v03.html": "e34eefbb5220352879553f2ada05994268272d6f2fbf962b4ba8f8e85cd6c1b1",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v04.html": "73dbcab370d4132c8712a9cdf48234201c5d4885b71b6e6d6a3e8ce408f022b8",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v05.html": "55461d795a6add0a3973090d5e2aabb6ebedb91d457db526e0c5f20d6d241f0c",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v06.html": "c91c4e7530147840406c549497db18b736ff944b1134ddcc9598c1a04e17a955",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v07.html": "72bfa198cb6f56d2f4c8505d5449d7d8328ed53a7a9dc63865e48a4bdf1e60f3",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v08.html": "4a40f3dc1f8327b3fc3f1807413e18335ceb2dc107c1f3fc16a104cc2820941b",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v09.html": "cb024792799ae460560931ae7d5557dfd00c51017ea836ffd455c98cf5075874",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v10.html": "703599550f7805f39a4299176eb94a96be1318e5abdef17d508693b99bc81f52",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v11.html": "a52b6383718261464dd1b62b0ae12b5c58c4e1ed81c965739ade188d934a4a0d",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/v12.html": "06e06adb1cccf0b1ffb3174437ba4215e15c95e3349899a66851b308d9e61a4c",
+    "static/labs/accessibility/media-alternatives-1-2-3/en/captions.vtt": "3a5bec91c01be296196efe990f8caf7ec6a64fb31b6e3e396d1dc238f827176a",
+    "content/series/accessibility/translations/ja/posts/audio-description-or-media-alternative-prerecorded.md": "87431940c90b3a71439bc91005547188398cafc31ca45e688118ac5712020304",
+    "content/series/accessibility/translations/ja/prompts/audio-description-or-media-alternative-prerecorded.md": "028970116ce833b83eb7e740b14785682ebd71e2e4e4cb8512c30a196d3b8744",
+    "content/series/accessibility/translations/ja/manifest.json": "fa9ddf911b8c8fe9be23fc67b7bc75e79d070fb9d6c96ddbe0572479a08074ed",
+    "static/images/accessibility/media-alternatives-1-2-3/ja/01-six-screens-e168cb38ca41.svg": "e168cb38ca41492b7f9363e0f9a8d953ebc65c1296765aa77b132ce26d0ffb7d",
+    "static/images/accessibility/media-alternatives-1-2-3/ja/02-decision-branches-77c1fcd179e0.svg": "77c1fcd179e03444a9f079d1fa1996098ddcdde7d10fb2a37a78811f71291cc7",
+    "static/images/accessibility/media-alternatives-1-2-3/ja/03-coverage-matrix-be32eb1328bb.svg": "be32eb1328bbe9bc5f7fa8fd57bd444c2d1ff24a3031b3211d1c6bdf9cfe223a",
+    "static/images/accessibility/media-alternatives-1-2-3/ja/04-scene-to-alternative-c3ca035367e6.svg": "c3ca035367e663366a14fd877c2637027abd28599db7962ec3deb6f162e3de62",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/alternative.html": "731e715021c4b0c8ec7379c5c0eb95a139c2490ebf7bce636a72f0c2baf1a416",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/index.html": "ba2666d9aa1f451ae7f7ba03b47bcf9a19d4a710b769bc427979afa1fe5e874b",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v01.html": "1ae25f8331d4d9abd7b24f0a02cf394d1a4fe680649794399c08369581e5d698",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v02.html": "33103e14cb21c71a069f4331a8c62dc65543b56f62d9b10c9b7073b0c3cbfb07",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v03.html": "ed540869d4399221a0aab6911c3896f2793de7a505abf8f52eb50106a938e383",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v04.html": "7ddb1ca85aee016af15271cd01f52530e3360c5b31a42bbcba661bf4f2db8091",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v05.html": "38746a7dd1cca5867354168e0b3a50b0c8a690ff440bb3af8414a34cc5395213",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v06.html": "5e764a192ff19430684f4a64d4143cd2305a21323a2768e98684c89afb832cd8",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v07.html": "8d118c1463c737a82e17a22044159c63702e4d28d62dfd69522d0edbd79cf35e",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v08.html": "e857269aac54af2c665466f16af1f8ba08d191616becbdd5d7440c522fb57531",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v09.html": "59dda513965f60aa257e16a1252e5afc10b4c449984fc0b7b6de147c51fb6611",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v10.html": "4302fbf414eb93718ffd5a4d7de806a4c074ee9bc1735766feafc4a92f426799",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v11.html": "45da758c9bae7e8a101a847d07db1d87c5696d7814bd041d89def71130eed5c3",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/v12.html": "b9ddfa78e4026bcc4b4dea4098f71c0ababf40d0c6e9150cfff74dfe58d00a18",
+    "static/labs/accessibility/media-alternatives-1-2-3/ja/captions.vtt": "13344c8f85db619992d6fb67a584a55c119235996605f00b8f9137a4197c0993",
+    "content/series/accessibility/translations/zh/posts/audio-description-or-media-alternative-prerecorded.md": "9a46ac07349416278304bc2c855ee76b388620339bc80dc3710bdbf69431022e",
+    "content/series/accessibility/translations/zh/prompts/audio-description-or-media-alternative-prerecorded.md": "0f25e91fa94ba37ba142c5f59c9c584830599c67c08202e98fee22098eb498f0",
+    "content/series/accessibility/translations/zh/manifest.json": "0ab552196dcd108c6e9131aa0dff922688a07010ae92b6d0fe6dff56323e45df",
+    "static/images/accessibility/media-alternatives-1-2-3/zh/01-six-screens-0d59d943e370.svg": "0d59d943e370bd2e0b03abde30527e14d3cd5de6f0a9d7111571d3808925cbd8",
+    "static/images/accessibility/media-alternatives-1-2-3/zh/02-decision-branches-2e137251b2f6.svg": "2e137251b2f6fe6ffbe2ce7805f9868a4fd095fd454fc249b8a0555fd11b8d8e",
+    "static/images/accessibility/media-alternatives-1-2-3/zh/03-coverage-matrix-be8716d07d47.svg": "be8716d07d47eec6345e73166db3dd5ef3854c025a30ec62fc9154b3ab3d9d34",
+    "static/images/accessibility/media-alternatives-1-2-3/zh/04-scene-to-alternative-0158bc2de74a.svg": "0158bc2de74acebd15221df43463f65fbc89a36f98460f703cd82427e4ed718a",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/alternative.html": "d79cf4457d383ff38aa14e4cec287ed7a4b68a0ac9682bb0317ce2865ba2c2bd",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/index.html": "b61d14cc574f45913a6b5db58c5361b525bf3c65885361295de0994448295b7a",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v01.html": "bbe114b83e4143fd7ff85ccff72804be19938bbf3ff8af7ac6dfa6e39173ee2d",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v02.html": "66ab562ad424838b024b3b52f4d487ef0b5dd87b9597c397bb2897126e182065",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v03.html": "4866b5941541d65e105615a3badc4900440512b09c83bffefae4af4267d9bd4a",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v04.html": "1411eb8292030ddbeec90f57a9b8bdab9a06f0d9786d50d087e43a0bde82b3c6",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v05.html": "c441a17f3c470a6685f6ae6e8b378b75a6d0657f8f6618d5b915103a6a96c579",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v06.html": "f1046ad127de1b444d095b088e5fb56b6510292648dd0107a9302a02cefd3d8d",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v07.html": "633ee1723d6b7b3dfa998614819a48acd6679bb5d963088e9a8281e363e78703",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v08.html": "d5ea3329c750a566215360f7008e71bd00b5065e1d03dcee2586f2d463462ec8",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v09.html": "75c62bd5add2b01a15f2de2e8699a79fb3036fd636f62f3f0a44855491446663",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v10.html": "a3c0bd8956f797f768782ddcf5b63d9f37452f43c04ce53ea31916d3fc19452d",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v11.html": "1ca5e9b53b0f82e5a046e9fa1c33524f22235b7a3a1b8cd8a668ab55dd5e3733",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/v12.html": "97be31c758788f90dc1fb9f35f89c756c1ea7b03c2784f115f27e9168b04bb5f",
+    "static/labs/accessibility/media-alternatives-1-2-3/zh/captions.vtt": "2e07f35d0c86a28921563be9f90c080757d29a374c6f654c831cdae985101ffd",
+    "reports/releases/chapter-05-20261013/diagram-en-01-six-screens.png": "86b658c2d4dc3564bc90cd51161d266aabb68f2e1d3078a1056ed34c7030ed2d",
+    "reports/releases/chapter-05-20261013/diagram-en-02-decision-branches.png": "0baeb6e47a8ff43e1be4967507b6d1e3414c9b18b1873df0bf32262720d62fa8",
+    "reports/releases/chapter-05-20261013/diagram-en-03-coverage-matrix.png": "8d09a16dce2f701b28cd26ad2e75d2041ccbd3cc3ac33c44d628dde889f253d1",
+    "reports/releases/chapter-05-20261013/diagram-en-04-scene-to-alternative.png": "abe3e19ba05245951eadbe94f3db02de0e5b17423ee1b05f14fc02d0c08f4c29",
+    "reports/releases/chapter-05-20261013/diagram-ja-01-six-screens.png": "7f1dcf866770906a033b02a23d5536149eceba035ce0e816486fe065d58a236b",
+    "reports/releases/chapter-05-20261013/diagram-ja-02-decision-branches.png": "c656b2a10467692204480a0abb3174ffe90fed6f9b727c920acb43871dab129b",
+    "reports/releases/chapter-05-20261013/diagram-ja-03-coverage-matrix.png": "31eb1052b081d934e972f9bb7b2364afd36d960bc121f39933f7e4a6ef22444a",
+    "reports/releases/chapter-05-20261013/diagram-ja-04-scene-to-alternative.png": "f150dae9e5d411adfda77bac1e4f769267178b495251c1043f2783c38fe0b20b",
+    "reports/releases/chapter-05-20261013/diagram-zh-01-six-screens.png": "96fdb62c4df05bc0e8d50d446f75445aff1faf3d9cf9a11923e77b2e939f4b2d",
+    "reports/releases/chapter-05-20261013/diagram-zh-02-decision-branches.png": "f8640cde9c8bd00121c8c8652d1aa8022ba279c47e0d2a071474dd5c4bc6e901",
+    "reports/releases/chapter-05-20261013/diagram-zh-03-coverage-matrix.png": "7a15215feaff5d97e1bdbcb8ec1d6736101447a2dd85ba56d674216282476e7f",
+    "reports/releases/chapter-05-20261013/diagram-zh-04-scene-to-alternative.png": "1875966f967663c3385fc3e950f641458d9d07643228ed82e6bfecc7d87d018b",
+    "static/labs/accessibility/media-alternatives-1-2-3/ko/source.mp4": "acdcdc41cfbc35dee0d01d555b1125a4b9e022d447dcc266eeedae915d381bf3"
+  },
+  "checked_file_count": 101,
+  "metadata_entries": {
+    "ko": {
+      "title": "화면의 정보까지 전달하기: 오디오 설명과 미디어 대안 (WCAG 1.2.3)",
+      "summary": "사전 녹화 영상의 화면과 소리를 동등하게 전달하는 방법을 설명합니다. 자막·전사·오디오 설명의 차이, 본문 대안 예외와 실제 검증 결과를 바탕으로 WCAG 1.2.3 평가 프롬프트를 제공합니다.",
+      "entry_sha256": "885308d7aeb99f2710ddc0d8cf2907b41ecde7f9dd45da70a74cbee1a950e90d"
+    },
+    "en": {
+      "title": "Conveying On-Screen Information Too: Audio Description and Media Alternatives (WCAG 1.2.3)",
+      "summary": "Explains how to convey the visual and audio information in prerecorded video equivalently. Provides a WCAG 1.2.3 evaluation prompt based on the differences between captions, transcripts, and audio description, the exception for media alternatives for text, and actual verification results.",
+      "entry_sha256": "f530a68af2040d6bad3d05ebe4ace7bc1d2df10efa072c56ae07d4dfe3ebbeb7"
+    },
+    "ja": {
+      "title": "画面の情報まで伝える：音声解説とメディアの代替（WCAG 1.2.3）",
+      "summary": "収録済み映像の画面と音を同等に伝える方法を説明します。字幕・書き起こし・音声解説の違い、本文の代替に関する例外と実際の検証結果を基に、WCAG 1.2.3の評価プロンプトを提供します。",
+      "entry_sha256": "c9fc24b450a8b18b78c166bf0054a611c1c29f3ba4228709e0784224dde3b1f6"
+    },
+    "zh": {
+      "title": "传达画面中的信息：音频描述与媒体替代（WCAG 1.2.3）",
+      "summary": "说明如何等效传达预录视频中的画面与声音。基于字幕、转录文本与音频描述的区别、正文替代例外及实际验证结果，提供 WCAG 1.2.3 评估提示词。",
+      "entry_sha256": "100f161ca9501afd7ea2eccdbb010ee68fc45d5dc65b58858b0e3a61c785ab11"
+    }
+  },
+  "checks": [
+    {
+      "id": "canonical-wording",
+      "status": "pass",
+      "finding": "Final Korean canonical article equals the release article byte-for-byte and says 영상 실습의 범위 설명과 소개 페이지의 수집 자료 for overview plans. This correctly distinguishes scope description from collected source evidence."
+    },
+    {
+      "id": "translation-meaning",
+      "status": "pass",
+      "finding": "EN/JA/ZH preserve standard applicability, both exception conditions, original-audio sufficiency, G203 limits, G226/G173 combination, H96 advisory status, independent candidate and criterion conclusions, source/candidate distinction, non-universal results and safety boundaries. The six scene time ranges, 31-second fixture, fictional R7K2-P9M4 value, 36 results/three sessions/3-of-3 and six plans are preserved."
+    },
+    {
+      "id": "translation-test-attribution",
+      "status": "pass",
+      "finding": "The concise original-versus-localized note is now present in EN/JA/ZH at the method/limits section. It explicitly says the table reports original validated-material tests and that localized practice pages/translated prompts have not undergone separate model runs. The initially reported ambiguity is resolved in the exact final hashes recorded here."
+    },
+    {
+      "id": "prompt-schema",
+      "status": "pass",
+      "finding": "All four fenced JSON examples are deeply identical including keys, enum choice strings and null/array structures. Seven input placeholders are identical and ordered. Translated instructions preserve applicability, pass/fail/inconclusive rules, no fabricated observation, read-only safeguards and per-media/range distinctions. Translation is not a new execution validation.",
+      "json_schemas_identical": true,
+      "placeholders_identical": true,
+      "ko_prompt_frozen_sha256_match": true
+    },
+    {
+      "id": "lab-fixtures",
+      "status": "pass",
+      "finding": "All 14 HTML pages per locale are present (index, alternative, V01–V12). V02 remains dialogue/sound only; V03 visual-only; V06 flips only the visual warning while retaining correct spoken negation; V07 puts reauthentication before failure; V11 lacks the exact code value while retaining the text-media label. V01 and separate alternative retain equivalent complete text, V05 retains content/order without numbering, V04 has no alternative, V08 links alternative.html and V09 intentionally links absent missing-alternative.html. V10 and V11 labels are translated accurately. V12 public pages retain the source video and full alternative; all article translations distinguish withheld evaluation-input evidence from public-page media availability."
+    },
+    {
+      "id": "paths-and-source-notice",
+      "status": "pass",
+      "finding": "Article lab/diagram and previous/next/series links use the locale paths. Lab HTML lang and caption srclang match each locale; internal links and caption paths are relative within locale. The only deliberate source cross-locale path is the Korean frozen MP4, shared by translated pages. Every translated HTML page has a truthful notice that video audio/screen text remain Korean and page/caption text is translated."
+    },
+    {
+      "id": "captions",
+      "status": "pass",
+      "finding": "Seven cue IDs, intervals and placement settings are preserved across all locales. Translated dialogue, negative warning, previous-code invalidity and two warning sounds are accurate. This confirms VTT source text/timing correspondence, not native player rendering or timing by direct audio observation."
+    },
+    {
+      "id": "diagrams",
+      "status": "pass",
+      "finding": "Inspected all 16 SVGs and directly viewed all 12 supplied EN/JA/ZH diagram PNGs. Core scene, text/audio coverage, candidate-vs-criterion flow and information mapping are preserved; all translated SVGs retain title/desc and programmatic image names. No material clipping or unreadable core text found. Optional O01 concerns a minor EN label/arrow intersection. Exact ASCII hyphen in R7K2-P9M4 was verified in SVG text."
+    },
+    {
+      "id": "metadata",
+      "status": "pass",
+      "finding": "All four title/summary entries describe the article accurately without adding performance/certification/sitewide conformance claims. Publication flags are still draft at this review snapshot and must be handled in the separate approved publication process."
+    },
+    {
+      "id": "frozen-media",
+      "status": "pass",
+      "finding": "Korean source.mp4 bytes match preserved source SHA-256 acdcdc41cfbc35dee0d01d555b1125a4b9e022d447dcc266eeedae915d381bf3."
+    }
+  ],
+  "execution_assessment": {
+    "new_opus_execution_required": false,
+    "reason": "Canonical tested prompt, frozen original inputs/results and video bytes are unchanged. Translated content is being checked for source meaning and fixture preservation; the attribution correction prevents claiming separately executed translated performance. If a translated model-performance claim is later made, it needs actual fresh translated-input executions."
+  },
+  "independence": {
+    "translation_calls_not_performed_by_this_reviewer": true,
+    "fable_report_not_opened": true,
+    "other_reviewer_verdict_not_used": true,
+    "parent_wording_policy": "Concise original-versus-localized scope note requested by parent, without repeating the execution language."
+  },
+  "limits": [
+    "Direct visual observation in this review covers supplied translated diagram PNGs only; no source-video playback or model native listening is claimed.",
+    "HTML, VTT, link paths and SVG descriptions were reviewed from saved files; live HTTP status, keyboard/player interaction, screen-reader output, mobile/no-JS, deployed SSR/hash/JSON-LD/canonical/hreflang and X publication were not checked by this reviewer.",
+    "The 36 original decisions and six plans were reviewed against preserved raw records in the Korean review earlier in this same task; no translated or original prompt rerun was performed.",
+    "This verdict is bound to the checked file hashes and metadata entry hashes. Changes need affected re-review. Content was not edited, pushed or deployed by this reviewer."
+  ],
+  "resolved_findings": [
+    {
+      "id": "M01",
+      "finding": "Initial translated model-run attribution ambiguity resolved before final report was saved. Exact inserted scope notes reread and their final article hashes confirmed.",
+      "paths": [
+        "content/series/accessibility/translations/en/posts/audio-description-or-media-alternative-prerecorded.md",
+        "content/series/accessibility/translations/ja/posts/audio-description-or-media-alternative-prerecorded.md",
+        "content/series/accessibility/translations/zh/posts/audio-description-or-media-alternative-prerecorded.md"
+      ],
+      "additional_model_execution_required": false
+    }
+  ]
+}

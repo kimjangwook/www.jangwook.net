@@ -1,0 +1,44 @@
+
+> jangwook-net@2.0.0 test
+> node --test tests/*.test.mjs
+
+✔ localized teaching links retain destination identity without hiding source changes (0.925541ms)
+WebSocket server error: Port 24678 is already in use
+5:29:58 PM [vite] (client) [optimizer] bundling dependencies...
+✔ language preference respects explicit selection and weighted browser languages (3.61225ms)
+✔ four real localized homes provide SSR metadata, selector links and only approved reading (2.547417ms)
+✔ all 352 documents have modification dates; only published editions have a first-publication date (1.00475ms)
+✔ latest list is limited to five approved articles in first-publication order (0.3535ms)
+WebSocket server error: Port 24678 is already in use
+5:29:58 PM [vite] (client) [optimizer] bundling dependencies...
+✔ validation rejects malformed email, unrecognized role and missing consent (0.747833ms)
+✔ drafts are available only in local preview; public bundles exclude all drafts (0.575875ms)
+✔ lead, optional consent and captured mail persist; duplicate request creates no second mail (128.05275ms)
+✔ concurrent submissions produce one request and one captured outbox (83.383125ms)
+✔ rate limit stops the sixth request (217.469208ms)
+✔ public draft submission and nonlocal capture cannot create leads (3.861125ms)
+✔ provider acceptance records a receipt and attaches approved prompts; failures stay distinct (130.21325ms)
+✔ expired material links can be requested again with a fresh token (89.662958ms)
+✔ changed content, invalid approval dates and future publication remain private (0.34275ms)
+✔ provider acceptance followed by database failure keeps the send claim and receipt (76.140666ms)
+✔ native media headers expose length and preserve source bytes (20.628ms)
+✔ prefix, suffix and open-ended ranges return the exact source interval (2.778875ms)
+✔ unsatisfiable ranges and validator mismatches retain HTTP semantics (0.915209ms)
+✔ media routing excludes HTML, unrelated paths and arbitrary language assets (0.29175ms)
+ENOENT: no such file or directory, stat '/private/tmp/jangwook-publish-20261013/.svelte-kit/types/src/routes/proxy+page.server.ts'
+5:29:56 PM [vite] (client) Forced re-optimization of dependencies
+5:29:58 PM [vite] (client) [optimizer] bundling dependencies...
+✔ localized overview has a real translated body, prompt, four figures and reciprocal paths (58.833125ms)
+✔ all chapters have four-language preparation pages without a Korean fallback (63.469916ms)
+✔ exact translation approval and current Korean source are required outside preview (0.360417ms)
+✔ RSS and multilingual sitemap expose only approved chapters and exclude stale approvals (5.355542ms)
+✔ article learning navigation exposes only ordered metadata and honest publication state (1.013542ms)
+✔ canonical learning links preserve the reader language and prompt fragment (5.24675ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4675.386333

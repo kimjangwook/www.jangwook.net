@@ -1,0 +1,29 @@
+{
+  "account": "effloow",
+  "status": "prepared_not_posted",
+  "posts": [
+    {
+      "en": "[1/4]\n\"Check the completion screen\" does not explain what completed. A recovery-code video can leave someone who cannot see the screen without its warning, new code, or final state.",
+      "ko": "완료 화면을 확인하라는 말만으로는 무엇이 완료되었는지 알 수 없습니다. 화면을 볼 수 없는 사람에게 경고, 새 코드, 최종 상태가 전달되지 않을 수 있습니다.",
+      "characters": 181
+    },
+    {
+      "en": "[2/4]\nWCAG 1.2.3 allows audio description or a full media alternative. Captions and dialogue-only transcripts do not automatically cover visual information. The separate AA requirement, 1.2.5, may still require audio description.",
+      "ko": "1.2.3은 오디오 설명이나 전체 미디어 대안을 허용합니다. 자막과 대사 전사만으로 시각 정보가 전달되는 것은 아닙니다. 별도 AA 기준인 1.2.5의 오디오 설명 요구도 확인해야 합니다.",
+      "characters": 229
+    },
+    {
+      "en": "[3/4]\nA frozen prompt was tested on 12 controlled cases in 3 Claude Opus 5.5 Medium sessions. All 36 decisions matched reference answers. This static-screen test used images, transcripts, and audio analysis; it did not measure direct model listening.",
+      "ko": "고정 프롬프트를 Opus Medium 세 세션에서 12조건에 적용해 36판정이 기준 답과 일치했습니다. 정적 화면 시험이며 이미지·전사·음성 분석을 사용했고 모델 직접 청취를 측정하지 않았습니다.",
+      "characters": 250
+    },
+    {
+      "en": "[4/4]\nThe new article includes the practice page, results, diagrams, a checklist, and the full evaluation prompt. It shows when to withhold judgment if source evidence is missing. Korean, English, Japanese, and Simplified Chinese editions are available.",
+      "ko": "새 글에 실습 페이지, 결과, 도식, 체크리스트, 전체 프롬프트를 제공합니다. 원본 증거가 없을 때 판단을 유보하는 방법도 설명하며 네 언어로 제공됩니다.",
+      "characters": 253
+    }
+  ],
+  "linkReply": "https://jangwook.net/en/series/accessibility/audio-description-or-media-alternative-prerecorded",
+  "linkRule": "Separate self reply to final fourth post only; post after production identity verification.",
+  "sourceHash": "2518118829ec8ad1dc7c53a9b39a13ac98f85674e23bbc37c50df6ab41afaf3f"
+}

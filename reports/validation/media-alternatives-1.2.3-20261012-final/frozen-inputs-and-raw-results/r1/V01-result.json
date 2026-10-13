@@ -1,0 +1,75 @@
+{
+  "criterion": "WCAG 2.2 SC 1.2.3",
+  "prompt_version": "0.1.1",
+  "scope_statement": "V01 페이지(ko)의 사전녹화 동기화 영상 1편(SOURCE-05, 31.208초)과 연결된 대안에 대한 1.2.3만 평가. 사이트 전체 적합성은 평가하지 않음.",
+  "run_status": "complete",
+  "inventory": {
+    "media_list_complete": "yes",
+    "evidence_ids": ["EV-06"],
+    "missing_items": []
+  },
+  "evidence_registry": [
+    {"id": "EV-01", "origin": "source", "kind": "디코드 대표 프레임 PNG 6장(SRC-PNG-1~6)", "basis": "supplied_observation", "observation_mode": "png_visual_check", "provided_as": "observed-1~6.png, 본 실행에서 Read로 직접 시각 확인", "time_range_s": [0, 31.208333], "verification_limits": "화면별 대표 1장. 화면 내 움직임 의미는 EV-02 전환 기록에 의존."},
+    {"id": "EV-02", "origin": "source", "kind": "전체 인접 프레임 비교 기록(749프레임, 변화 5회)", "basis": "supplied_observation", "observation_mode": "all_frame_comparison", "provided_as": "source-observations.json decoded_frame_record", "time_range_s": [0, 31.208333], "verification_limits": "전환 위치 확인용. 프레임 의미 이해나 직접 영상 관찰이 아님. 정적 6화면 통제 자료에 한정."},
+    {"id": "EV-03", "origin": "source", "kind": "독립 ASR 전사(faster-whisper large-v3)", "basis": "supplied_observation", "observation_mode": "transcript_only", "provided_as": "source-observations.json asr_raw", "time_range_s": [0, 31.189375], "verification_limits": "청각 내용의 간접 증거. 모델 직접 청취 없음. 화자 구별 정보 없음. 30.0~31.16 구간은 EV-04로 제외."},
+    {"id": "EV-04", "origin": "source", "kind": "ASR 꼬리 구간 PCM 진폭 감사", "basis": "supplied_observation", "observation_mode": "tool_output", "provided_as": "source-observations.json asr_tail_audit", "time_range_s": [27.6, 31.16], "verification_limits": "30.0~31.16 디지털 무음 확인. 직접 청취 아님."},
+    {"id": "EV-05", "origin": "source", "kind": "비음성 소리 분석(800~1000Hz 톤 이벤트 2회)", "basis": "supplied_observation", "observation_mode": "tool_output", "provided_as": "source-observations.json sound", "time_range_s": [12.2, 12.82], "verification_limits": "통제 자료용 탐지. 경고 의미는 화면3 맥락에 근거하며 주파수만으로 추론하지 않음."},
+    {"id": "EV-06", "origin": "page_context", "kind": "미디어 목록 INV-V01", "basis": "supplied_observation", "observation_mode": "tool_output", "provided_as": "입력 JSON", "time_range_s": null, "verification_limits": "공급 기록. 본 실행에서 페이지 직접 조사 없음."},
+    {"id": "EV-07", "origin": "candidate", "kind": "인라인 텍스트 대안 CAND-V01(section '미디어 대안')", "basis": "supplied_observation", "observation_mode": "dom_text", "provided_as": "입력 HTML과 observed_body", "time_range_s": null, "verification_limits": "공급된 DOM 텍스트. 화면 낭독기 시험 없음."},
+    {"id": "EV-08", "origin": "access_log", "kind": "ACCESS-V01 접근·재생 기록", "basis": "supplied_observation", "observation_mode": "tool_output", "provided_as": "입력 JSON(status 200, Chromium/WebKit 재생·탐색 통과)", "time_range_s": null, "verification_limits": "공급 브라우저 관찰. 본 실행의 브라우저 조작 아님."},
+    {"id": "EV-09", "origin": "source", "kind": "제작 명세 production_spec", "basis": "production_spec", "observation_mode": "tool_output", "provided_as": "source-observations.json production_spec", "time_range_s": [0, 31.208333], "verification_limits": "제작 자료. 관찰 결과와 구분하여 구간 보조로만 사용."}
+  ],
+  "media_results": [
+    {
+      "media_id": "M01",
+      "applicability": {"is_prerecorded_synchronized_media": "yes", "reason": "MP4 h264 영상+AAC 음성의 사전녹화 동기화 미디어 1편, 원음에 대사 존재.", "evidence_ids": ["EV-06", "EV-03"]},
+      "alternative_inventory": {"complete": "yes", "candidate_ids": ["CAND-V01"], "reason": "descriptions 트랙·대체 음성·설명 영상 없음, 인라인 텍스트 대안 1개, 연결 문서 없음.", "evidence_ids": ["EV-06", "EV-07"]},
+      "processed_ranges": [
+        {"modality": "visual", "range_s": [0, 31.208333], "method": "대표 PNG 6장 시각 확인 + 전체 인접 프레임 전환 기록", "evidence_ids": ["EV-01", "EV-02"]},
+        {"modality": "audio", "range_s": [0, 31.208333], "method": "독립 ASR, 꼬리 무음 감사, 톤 이벤트 분석", "evidence_ids": ["EV-03", "EV-04", "EV-05"]},
+        {"modality": "access", "range_s": null, "method": "공급 DOM과 접근 기록 검토", "evidence_ids": ["EV-07", "EV-08"]}
+      ],
+      "unprocessed_ranges": [
+        {"modality": "audio", "range_s": [0, 31.208333], "reason": "모델 직접 청취 없음. 화자 구별·어조는 ASR로 확인 불가."},
+        {"modality": "interaction", "range_s": null, "reason": "영상 내 버튼은 녹화 시연이며 시청자 조작 대상 아님."}
+      ],
+      "information_units": [
+        {"unit_id": "U01", "production_range_s": [0, 7.35], "observed_range_s": [0, 7.333333], "modality": "visual", "content": "화면1 제목 '보안 설정', 경로 '설정 → 보안 → 복구 코드', 버튼 '새 코드 발급'", "importance": "important", "importance_reason": "절차 경로와 동작 이름", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "partial", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 1", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U02", "production_range_s": null, "observed_range_s": [1.0, 3.04], "modality": "audio", "content": "대사 '설정에서 보안을 선택합니다.'", "importance": "important", "importance_reason": "안내 대사", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 1", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U03", "production_range_s": null, "observed_range_s": [3.96, 6.56], "modality": "audio", "content": "질문 '이전 코드를 지금 버려도 되나요?' (화자 구별은 ASR로 미확인)", "importance": "important", "importance_reason": "다음 경고의 맥락이 되는 질문", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 1(사용자 질문으로 표기, 화자 귀속은 원본으로 미검증)", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U04", "production_range_s": [7.35, 11.95], "observed_range_s": [7.333333, 11.916667], "modality": "visual", "content": "화면2 '발급 전 확인', 경고 '새 코드를 저장하기 전에는 이전 코드를 버리지 마세요.', 버튼 '이전 코드 유지'", "importance": "important", "importance_reason": "부정 경고와 버튼 이름", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "partial", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 2", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U05", "production_range_s": null, "observed_range_s": [7.5, 11.18], "modality": "audio", "content": "대사 '아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.'", "importance": "important", "importance_reason": "질문에 대한 부정 답", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 2", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U06", "production_range_s": [11.95, 16.17], "observed_range_s": [11.916667, 16.125], "modality": "visual", "content": "화면3 '보안 확인 실패', 문구 '보안 확인에 실패했습니다. 다시 인증해 주세요.', 버튼 '보안 확인 다시 하기'", "importance": "important", "importance_reason": "실패 상태 전이. 이 구간 대사 없음", "source_evidence_ids": ["EV-01", "EV-02", "EV-03"], "conveyed_by_original_audio": "no", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 3", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U07", "production_range_s": null, "observed_range_s": [12.2, 12.82], "modality": "audio", "content": "톤 이벤트 2회(12.2~12.4, 12.62~12.82), 화면3 실패와 동시 발생하는 경고음", "importance": "important", "importance_reason": "실패를 알리는 비음성 소리", "source_evidence_ids": ["EV-05", "EV-01"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 3 '경고음이 두 번'", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U08", "production_range_s": [16.17, 19.81], "observed_range_s": [16.125, 19.791667], "modality": "visual", "content": "화면4 '재인증 완료', 문구 '보안 확인이 완료되었습니다. 새 코드 발급을 확인하세요.', 버튼 '발급 확인'", "importance": "important", "importance_reason": "상태 전이와 버튼 이름", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "partial", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 4", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U09", "production_range_s": null, "observed_range_s": [16.0, 18.98], "modality": "audio", "content": "대사 '보안 확인을 다시 끝낸 뒤 발급을 확인합니다.'", "importance": "important", "importance_reason": "안내 대사", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 4", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U10", "production_range_s": [19.81, 27.05], "observed_range_s": [19.791667, 27.0], "modality": "visual", "content": "화면5 '새 복구 코드', '교육용 가상 코드: R7K2-P9M4', '이 화면의 코드는 실제 계정에서 사용할 수 없습니다.', 버튼 '코드 저장'", "importance": "important", "importance_reason": "코드 값과 사용 불가 안내", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "no", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 5", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U11", "production_range_s": null, "observed_range_s": [20.32, 26.02], "modality": "audio", "content": "대사 '새 코드를 안전한 곳에 저장합니다.' / '새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.'", "importance": "important", "importance_reason": "저장 지시와 이전 코드 무효", "source_evidence_ids": ["EV-03"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 5", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U12", "production_range_s": [27.05, 31.208333], "observed_range_s": [27.0, 31.208333], "modality": "visual", "content": "화면6 '발급 완료', '새 코드 저장 완료 · 이전 코드 사용 불가', 버튼 '설정으로 돌아가기'", "importance": "important", "importance_reason": "완료 상태", "source_evidence_ids": ["EV-01", "EV-02"], "conveyed_by_original_audio": "partial", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 6", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U13", "production_range_s": null, "observed_range_s": [27.6, 29.1], "modality": "audio", "content": "대사 '발급 완료 화면을 확인합니다.' (30.0~31.16 ASR 반복은 무음으로 제외)", "importance": "important", "importance_reason": "완료 안내", "source_evidence_ids": ["EV-03", "EV-04"], "conveyed_by_original_audio": "yes", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "항목 6", "evidence_ids": ["EV-07"]}]},
+        {"unit_id": "U14", "production_range_s": null, "observed_range_s": [0, 31.208333], "modality": "visual", "content": "전 화면 상단 '복구 코드 발급 안내 · 교육용 가상 화면'과 진행 표시 'n / 6'", "importance": "important", "importance_reason": "가상 화면이라는 맥락과 순서", "source_evidence_ids": ["EV-01"], "conveyed_by_original_audio": "no", "candidate_coverage": [{"candidate_id": "CAND-V01", "status": "covered", "location": "도입 문장 '교육용 가상 화면'과 번호 1~6", "evidence_ids": ["EV-07"]}]}
+      ],
+      "conditions": {
+        "original_audio_sufficient": {"status": "rejected", "reason": "화면3 실패 문구와 화면5 코드 값 등은 대사로 전달되지 않음(U06, U10).", "evidence_ids": ["EV-01", "EV-03"]},
+        "static_description_g203": {"has_no_important_time_based_visual_information": "no", "all_static_context_conveyed": "undetermined", "programmatic_association_and_readable_path": "undetermined", "audio_unidentified_speaker_changes_visually_only": "no", "status": "rejected", "reason": "화면 전환에 따른 시간기반 시각 정보가 있어 G203 상황이 아님.", "evidence_ids": ["EV-02"]},
+        "media_alternative_for_text_exception": {"no_more_information_than_text": "undetermined", "clearly_labeled": "no", "status": "rejected", "reason": "영상이 본문의 미디어 대체물로 표기되어 있지 않음. '미디어 대안' 절은 영상의 대안이다.", "evidence_ids": ["EV-07"]}
+      },
+      "alternative_methods": [
+        {"candidate_id": "CAND-V01", "type": "text_alternative", "access_status": "verified_available", "content_status": "sufficient", "status": "sufficient", "reason": "U01~U14 모두 같은 순서로 포함. 경로·부정 경고·버튼 이름·코드 R7K2-P9M4·경고음 2회 일치. 같은 언어(ko), 영상 바로 뒤 본문에 위치. 추가 문장(시연 버튼 안내·플레이어 기능)은 정확한 접근 안내.", "evidence_ids": ["EV-01", "EV-03", "EV-05", "EV-07", "EV-08"]},
+        {"candidate_id": null, "type": "audio_description", "access_status": "verified_unavailable", "content_status": "undetermined", "status": "not_provided", "reason": "descriptions 트랙·설명 음성·설명 영상 없음.", "evidence_ids": ["EV-06"]}
+      ],
+      "defects": [],
+      "result": "pass",
+      "result_reason": "원본 전 구간 정보 단위와 대조하여 텍스트 대안 CAND-V01이 시각·청각 정보 전체를 같은 순서·같은 언어로 제공함을 확인. 오디오 설명 부재는 충족을 막지 않음.",
+      "scope_limit": "U03 화자 귀속은 원본 음성 관찰로 확인하지 못했으나 내용 대응에는 영향 없음. 정적 6화면 통제 자료에 한정된 검증 방법."
+    }
+  ],
+  "result": "pass",
+  "result_reason": "목록이 완전한 단일 미디어 M01이 pass.",
+  "scope_limit": "V01 페이지 한 영상에 한정.",
+  "missing_materials": [],
+  "out_of_scope_observations": ["한국어 captions 트랙 존재(1.2.2 범위, 판정하지 않음)."],
+  "safety_limitations": ["사이트 접근·재생·조작 없이 공급 자료와 지정 파일만 Read. 직접 청취 없음.", "교육용 가상 코드만 다룸."],
+  "next_evidence_requests": [],
+  "recheck_plan": "영상 또는 대안 텍스트가 바뀌면 같은 정보 단위로 재대조."
+}

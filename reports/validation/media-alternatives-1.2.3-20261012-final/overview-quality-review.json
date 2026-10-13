@@ -1,0 +1,91 @@
+{
+  "plans_checked": 6,
+  "section_validation": "passed",
+  "plans": [
+    {
+      "run": "r1",
+      "case": "P-LAB",
+      "sections": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "sha256": "a15976299bd22fcc72709ee113507f52a2145b5ab9f5aba7c1554a4eca69e63f",
+      "file": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/r1/P-LAB-output.md"
+    },
+    {
+      "run": "r1",
+      "case": "P-NONE",
+      "sections": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "sha256": "28c6db3f93ade3b0ddd33c7cb8f725081eb53ed91c2725657e4d5ad869ac0dbf",
+      "file": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/r1/P-NONE-output.md"
+    },
+    {
+      "run": "r2",
+      "case": "P-LAB",
+      "sections": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "sha256": "e9e726db9faa5dddea1e9e8d3212d79a0fbb14fbd20f6048a8714d0babdd3af8",
+      "file": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/r2/P-LAB-output.md"
+    },
+    {
+      "run": "r2",
+      "case": "P-NONE",
+      "sections": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "sha256": "a525d150867245dad3027dabbdc5697891ec27ed72bf6dd03d5a598580a6e945",
+      "file": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/r2/P-NONE-output.md"
+    },
+    {
+      "run": "r3",
+      "case": "P-LAB",
+      "sections": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "sha256": "1f3d6677ac3c0abf1d65e7da2e4bfe1e70774430624ebc8f9a5597e593af58ae",
+      "file": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/r3/P-LAB-output.md"
+    },
+    {
+      "run": "r3",
+      "case": "P-NONE",
+      "sections": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "sha256": "d6adcb0469aa5bfaf5fa70d351be62af0ea41aa6bf7e411739298802a1e5e37d",
+      "file": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter05-tests-final-20261011/r3/P-NONE-output.md"
+    }
+  ],
+  "semantic_review": "Final Sol High and Fable Low review packet contains all six complete plans; final independent review required."
+}

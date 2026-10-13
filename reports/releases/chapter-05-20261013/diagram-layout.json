@@ -1,0 +1,182 @@
+[
+  {
+    "lang": "en",
+    "file": "01-six-screens-0365d0065d03.svg",
+    "adjustments": [
+      {
+        "text": "Settings → Security → Recovery codes",
+        "from": 25,
+        "to": 23.8,
+        "available": 378
+      },
+      {
+        "text": "Fictional code: R7K2-P9M4 Not valid",
+        "from": 25,
+        "to": 24.4,
+        "available": 378
+      },
+      {
+        "text": "Recorded fictional demo · No real account operations · Compare screen and sound information separately.",
+        "from": 22,
+        "to": 21.2,
+        "available": 946
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "file": "02-decision-branches-dba9ebb0be16.svg",
+    "adjustments": [
+      {
+        "text": "Check scope of applicability and original evidence",
+        "from": 28,
+        "to": 25.8,
+        "available": 571
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "file": "03-coverage-matrix-1851ad5a1150.svg",
+    "adjustments": [
+      {
+        "text": "and reauthentication button are missing",
+        "from": 25,
+        "to": 23.8,
+        "available": 401
+      },
+      {
+        "text": "Alternative with visual description",
+        "from": 28,
+        "to": 26.2,
+        "available": 401
+      },
+      {
+        "text": "Original audio + needed visual description → understood through sound. No duty to retranscribe original audio.",
+        "from": 26,
+        "to": 18.9,
+        "available": 881
+      },
+      {
+        "text": "Screen + dialogue + meaningful sounds → understood through text in the same order.",
+        "from": 26,
+        "to": 24.5,
+        "available": 881
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "file": "04-scene-to-alternative-afde189f6f48.svg",
+    "adjustments": [
+      {
+        "text": "Keep value, action, dialogue in paragraph 5",
+        "from": 26,
+        "to": 21.2,
+        "available": 381
+      },
+      {
+        "text": "“Check the issuance complete screen.”",
+        "from": 24,
+        "to": 23.7,
+        "available": 381
+      },
+      {
+        "text": "State specific results in paragraph 6",
+        "from": 26,
+        "to": 25.5,
+        "available": 381
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "01-six-screens-e168cb38ca41.svg",
+    "adjustments": [
+      {
+        "text": "新しいコードを保存するまでは、以前の",
+        "from": 25,
+        "to": 24.5,
+        "available": 378
+      },
+      {
+        "text": "「いいえ。新しい復旧コードを保存するまでは、",
+        "from": 23,
+        "to": 22.5,
+        "available": 414
+      },
+      {
+        "text": "セキュリティ確認に失敗しました。再度",
+        "from": 25,
+        "to": 24.4,
+        "available": 378
+      },
+      {
+        "text": "セキュリティ確認が完了しました。新しい",
+        "from": 25,
+        "to": 23.1,
+        "available": 378
+      },
+      {
+        "text": "架空コード：R7K2-P9M4 実際のアカウントでは",
+        "from": 25,
+        "to": 19.5,
+        "available": 378
+      },
+      {
+        "text": "新しいコードの保存完了 · 以前のコードは使用",
+        "from": 25,
+        "to": 20.8,
+        "available": 378
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "02-decision-branches-77c1fcd179e0.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "ja",
+    "file": "03-coverage-matrix-be32eb1328bb.svg",
+    "adjustments": [
+      {
+        "text": "セキュリティ確認に失敗したという画面の",
+        "from": 25,
+        "to": 24.2,
+        "available": 401
+      },
+      {
+        "text": "認証してください。」と「セキュリティ確認を",
+        "from": 25,
+        "to": 23.3,
+        "available": 401
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "04-scene-to-alternative-c3ca035367e6.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "zh",
+    "file": "01-six-screens-0d59d943e370.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "zh",
+    "file": "02-decision-branches-2e137251b2f6.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "zh",
+    "file": "03-coverage-matrix-be8716d07d47.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "zh",
+    "file": "04-scene-to-alternative-0158bc2de74a.svg",
+    "adjustments": []
+  }
+]

@@ -1,0 +1,494 @@
+{
+  "base": "http://127.0.0.1:8840",
+  "articles": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "sourceHash": "28bfa73ce03f1e444847e9cb899258e82d97562a1d176eb930b8a225b62374af",
+      "firstPublishedAt": "2026-10-13T08:29:33.011Z",
+      "updatedAt": "2026-10-13",
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "sourceHash": "2518118829ec8ad1dc7c53a9b39a13ac98f85674e23bbc37c50df6ab41afaf3f",
+      "firstPublishedAt": "2026-10-13T08:29:33.011Z",
+      "updatedAt": "2026-10-13",
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "sourceHash": "6bc08f2f81bb2ebee585bc593c95fb1a69f9f1872582b98713fceb30d996cc17",
+      "firstPublishedAt": "2026-10-13T08:29:33.011Z",
+      "updatedAt": "2026-10-13",
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "sourceHash": "cfa324e909768c941a22fb328b2d060092a24068ff515e9da83f3d706af91427",
+      "firstPublishedAt": "2026-10-13T08:29:33.011Z",
+      "updatedAt": "2026-10-13",
+      "SSR": true
+    }
+  ],
+  "responsive": [
+    {
+      "lang": "ko",
+      "width": 1440,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "ja",
+      "width": 390,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "axeViolations": 0,
+      "overflow": false,
+      "figures": 4
+    }
+  ],
+  "playback": [
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "paused": false,
+      "time": 0.687853,
+      "duration": 31.208333,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "active": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요."
+      }
+    },
+    {
+      "engine": "chromium",
+      "lang": "en",
+      "paused": false,
+      "time": 1.073602,
+      "duration": 31.208333,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "active": "Guide: No. Do not discard it before saving the new recovery code."
+      }
+    },
+    {
+      "engine": "chromium",
+      "lang": "ja",
+      "paused": false,
+      "time": 1.060953,
+      "duration": 31.208333,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "active": "案内者：いいえ。新しい復旧コードを保存するまでは、捨てないでください。"
+      }
+    },
+    {
+      "engine": "chromium",
+      "lang": "zh",
+      "paused": false,
+      "time": 1.048662,
+      "duration": 31.208333,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "active": "讲解者：不可以。保存新恢复码前，请勿丢弃。"
+      }
+    },
+    {
+      "engine": "webkit",
+      "lang": "ko",
+      "paused": false,
+      "time": 0.5179739999768734,
+      "duration": 31.209,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "active": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요."
+      }
+    },
+    {
+      "engine": "webkit",
+      "lang": "en",
+      "paused": false,
+      "time": 0.8809881438199301,
+      "duration": 31.209,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "active": "Guide: No. Do not discard it before saving the new recovery code."
+      }
+    },
+    {
+      "engine": "webkit",
+      "lang": "ja",
+      "paused": false,
+      "time": 0.8594508788761671,
+      "duration": 31.209,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "active": "案内者：いいえ。新しい復旧コードを保存するまでは、捨てないでください。"
+      }
+    },
+    {
+      "engine": "webkit",
+      "lang": "zh",
+      "paused": false,
+      "time": 0.8687833940529587,
+      "duration": 31.209,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "active": "讲解者：不可以。保存新恢复码前，请勿丢弃。"
+      }
+    }
+  ],
+  "practice": [
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/alternative.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v01.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v02.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v03.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v04.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v05.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v06.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v07.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v08.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v09.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v10.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v11.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ko/v12.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/alternative.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v01.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v02.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v03.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v04.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v05.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v06.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v07.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v08.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v09.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v10.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v11.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/en/v12.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/alternative.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v01.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v02.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v03.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v04.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v05.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v06.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v07.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v08.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v09.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v10.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v11.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/ja/v12.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/alternative.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v01.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v02.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v03.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v04.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v05.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v06.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v07.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v08.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v09.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v10.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v11.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/media-alternatives-1-2-3/zh/v12.html",
+      "status": 200
+    }
+  ],
+  "noJS": [
+    {
+      "path": "/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "prompt": true,
+      "curriculum": true
+    },
+    {
+      "path": "/en/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "prompt": true,
+      "curriculum": true
+    },
+    {
+      "path": "/ja/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "prompt": true,
+      "curriculum": true
+    },
+    {
+      "path": "/zh/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "prompt": true,
+      "curriculum": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,117 @@
+{
+  "research": {
+    "deepseek": {
+      "requested_model": "deepseek-v4.1-flash",
+      "returned_model": "deepseek-v4.1-flash",
+      "provider": "ollama-cloud",
+      "requested_effort": "high",
+      "finish_reason": "stop",
+      "elapsed_seconds": 63.4,
+      "input_sha256": "cc99931fceea3b25ef693a34db8b8098bd0ab25d1f97826341033c15690f7f95",
+      "output_sha256": "1c7ba9afa4f0856b2857dd0179993e3e1b6a6a8b3ccc3f35c6718afa224e80e6"
+    },
+    "sol_high": {
+      "requested_model": "gpt-6.1-sol",
+      "returned_model": "gpt-6.1-sol",
+      "provider": "codex",
+      "requested_effort": "high",
+      "finish_reason": "stop",
+      "elapsed_seconds": 200.8,
+      "input_sha256": "d8e6e65b37972624501c1e0671040da495f784ae6606611a70c181141db081c0",
+      "output_sha256": "f90bdecc40d742aa2c66e79e6b5d48568c784d0fc6e649ad7d64af1a7cb10787"
+    }
+  },
+  "sonnet": {
+    "session": "local_1bc33f24-9767-4d65-a3de-c730ce498358",
+    "UI_model": "Sonnet 5.5",
+    "UI_effort": "Medium",
+    "status": "completed",
+    "server_model_id": "not observable from Desktop"
+  },
+  "publication": {
+    "status": "draft",
+    "deployed": false,
+    "pushed": false,
+    "translated": false
+  },
+  "evidence_limit": "Actual PNG Read is visual observation; independent ASR and tone records are indirect audio evidence. No model native listening or general motion-video performance claim.",
+  "sol_medium_draft": {
+    "requested_model": "gpt-6.1-sol",
+    "returned_model": "gpt-6.1-sol",
+    "provider": "codex",
+    "requested_effort": "medium",
+    "finish_reason": "stop",
+    "elapsed_seconds": 350.47,
+    "input_sha256": "9d3f398c2e324c15943efa19fb0a9871da7efef212e952af5cdaf903974f5106",
+    "output_sha256": "1a152b5a480d41ca08fb3ceb3363d2c5a528c11fde8fdc2809ead7889b9a16f0"
+  },
+  "initial_tests": {
+    "model": "Claude Desktop Opus 5.5",
+    "effort": "medium",
+    "criterion_runs": 36,
+    "reference_matches": 36,
+    "overview_plans": 6,
+    "overview_plans_quality_passed": 6,
+    "input_freeze": "/Users/jangwook/workspace/www.jangwook.net/reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/test-input-freeze.json",
+    "actual_results": "/Users/jangwook/workspace/www.jangwook.net/reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/test-audit.json",
+    "desktop_session_ids": [
+      "local_1bfa0a87-623d-4c99-b0a9-1532805fcee4",
+      "local_552e57a1-a012-4a48-9d15-255877bb04b7",
+      "local_2d58d487-67be-4cc4-b7a9-77b4fda80a0e"
+    ]
+  },
+  "initial_reviews": {
+    "sol_high": "running",
+    "fable_low": "running",
+    "fable_session": "local_31ffa487-d008-4cfb-961a-c2265dd6d700"
+  },
+  "tests": {
+    "status": "completed",
+    "prompt_version": "0.1.1",
+    "model": "Claude Desktop Opus 5.5",
+    "effort": "medium",
+    "sessions": {
+      "r1": "local_ccc8a90e-7532-4d1d-a36a-4fedc099c4e8",
+      "r2": "local_6ce018ee-23ad-4f83-85d0-3ca34f395e08",
+      "r3": "local_25d3b547-fd5a-4ccc-b8ca-6c8ae8c72eb1"
+    },
+    "input_freeze": "/Users/jangwook/workspace/www.jangwook.net/reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/test-input-freeze.json",
+    "actual_results": "/Users/jangwook/workspace/www.jangwook.net/reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/test-audit.json",
+    "criterion_runs": 36,
+    "reference_matches": 36,
+    "overview_plans": 6,
+    "completed_at": "2026-10-12T13:20:20.028506+00:00"
+  },
+  "review": {
+    "status": "completed",
+    "sol_high": {
+      "requested_model": "gpt-6.1-sol",
+      "returned_model": "gpt-6.1-sol",
+      "provider": "codex",
+      "requested_effort": "high",
+      "finish_reason": "stop",
+      "elapsed_seconds": 126.82,
+      "input_sha256": "1d5947ee5ac7e3a36f1099cb38fe1e3d0ae2944eca5f5d4a8a931d8c2ffc8ef0",
+      "output_sha256": "23c59363a7f0bb4b4897a382b8685b9b9734039daa36ff7d2be2cf1a7be52a0c"
+    },
+    "fable_low": {
+      "model": "Claude Desktop Fable 5.1",
+      "effort": "low",
+      "session": "local_e203f658-6b18-4ed5-822a-cc7cc5216e29",
+      "verdict": "pass",
+      "output": "/Users/jangwook/workspace/www.jangwook.net/reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/fable-low-final-review.json",
+      "review_method": "Independent initial review of all 36 raw outputs and 6 plans; follow-up independently reviewed corrected article/SVG/PNG and all 12 exact frozen inputs; no other reviewer output provided."
+    },
+    "final_acceptance": "/Users/jangwook/workspace/www.jangwook.net/reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/independent-final-reviews.json"
+  },
+  "delivery": {
+    "status": "sent",
+    "message_ids": [
+      2973
+    ],
+    "pdf_pages": 20,
+    "pdf_sha256": "f1bd36b25b7719e5f93a88338d48369792d7b78b6f3f9db05d6a4a909b233d16",
+    "approval_status": "awaiting_user_review"
+  },
+  "durable_validation_records": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-alternatives-1.2.3-20261012-final"
+}

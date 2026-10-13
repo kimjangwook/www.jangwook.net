@@ -1,0 +1,29 @@
+WEBVTT
+
+A1
+00:00:01.000 --> 00:00:03.400 line:76%
+Guide: Select Security in Settings.
+
+B1
+00:00:04.000 --> 00:00:07.000 line:76%
+User: Can I discard the old code now?
+
+A2
+00:00:07.600 --> 00:00:11.600 line:76%
+Guide: No. Do not discard it before saving the new recovery code.
+
+SFX
+00:00:12.200 --> 00:00:15.820 line:76%
+[Two warning beeps signaling security check failure]
+
+A3
+00:00:16.420 --> 00:00:19.460 line:76%
+Guide: After repeating the security check, confirm issuance.
+
+A4
+00:00:20.060 --> 00:00:26.700 line:76%
+Guide: Save the new code in a safe place. Once a new code is issued, the old code can no longer be used.
+
+A5
+00:00:27.300 --> 00:00:29.580 line:76%
+Guide: Check the issuance complete screen.

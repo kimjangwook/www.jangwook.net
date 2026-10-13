@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "article_sha256": "af1b34346cfb9096d112c80d9fb74321d4d6ee27459e0f6b61dd43e1fe0c10cc",
+  "prompt_sha256": "6500195185f722e1352e26e299d5bea0322d1302c17de23ffc9ddcd459d3affd",
+  "figure_sha256": {
+    "1": "b29ed8b91de648ab446ceef545b482e4c001b4b5b8a227f46d1c5f3597c19cd6",
+    "2": "d952b0cc4b47904e3f8bd882c416c89705a138589880e1cc93a28db23789dfbd",
+    "3": "16d97bc2066fc13b889ed34407e405a0b84bb2858d707fb64f46e7dc36bd8563",
+    "4": "ba27fbd2a6f756b95ee17343f2369949bd1589aec01bf4636dd87f2c9ed1e7bd"
+  },
+  "reviews": [
+    {
+      "model": "GPT-6.1 Sol",
+      "effort": "high",
+      "verdict": "pass",
+      "receipt": {
+        "requested_model": "gpt-6.1-sol",
+        "returned_model": "gpt-6.1-sol",
+        "provider": "codex",
+        "requested_effort": "high",
+        "finish_reason": "stop",
+        "elapsed_seconds": 126.82,
+        "input_sha256": "1d5947ee5ac7e3a36f1099cb38fe1e3d0ae2944eca5f5d4a8a931d8c2ffc8ef0",
+        "output_sha256": "23c59363a7f0bb4b4897a382b8685b9b9734039daa36ff7d2be2cf1a7be52a0c"
+      },
+      "output": "/Users/jangwook/workspace/www.jangwook.net/reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/sol-high-final-review.txt"
+    },
+    {
+      "model": "Claude Desktop Fable 5.1",
+      "effort": "low",
+      "session": "local_e203f658-6b18-4ed5-822a-cc7cc5216e29",
+      "verdict": "pass",
+      "output": "/Users/jangwook/workspace/www.jangwook.net/reports/drafts/audio-description-or-media-alternative-prerecorded-20261011/fable-low-final-review.json",
+      "review_method": "Independent initial review of all 36 raw outputs and 6 plans; follow-up independently reviewed corrected article/SVG/PNG and all 12 exact frozen inputs; no other reviewer output provided."
+    }
+  ],
+  "accepted_at": "2026-10-12T13:32:23.048921+00:00"
+}

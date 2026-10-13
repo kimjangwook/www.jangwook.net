@@ -1,0 +1,148 @@
+{
+  "criterion": "WCAG 2.2 SC 1.2.3",
+  "prompt_version": "0.1.1",
+  "scope_statement": "V12 입력(V12-input.md)만 사용. 미관찰 원본 SOURCE-WITHHELD 한 편(사전 녹화 동기화 영상, 31.208333초)과 인라인 후보 CAND-V12의 1.2.3만 평가. 원본 내용 자료가 제공되지 않았고 다른 사례 원본은 증거로 쓰지 않음. 페이지·사이트 전체 적합성으로 확대하지 않음.",
+  "run_status": "partial",
+  "inventory": {
+    "media_list_complete": "yes",
+    "evidence_ids": ["EV-01", "EV-02"],
+    "missing_items": ["SOURCE-WITHHELD 원본 시각·청각 내용", "source_hash"]
+  },
+  "evidence_registry": [
+    {
+      "id": "EV-01",
+      "origin": "page_context",
+      "kind": "범위·환경·미디어 목록(V12, INV-V12)",
+      "basis": "supplied_observation",
+      "observation_mode": "tool_output",
+      "provided_as": "입력 내 JSON 텍스트: complete=true, media_count=1, prerecorded synchronized video, duration 31.208333s, 대안은 인라인 후보 하나뿐",
+      "time_range_s": null,
+      "verification_limits": "범위와 미디어 유형만 확인됨. 원본 내용·원본 접근 없음. source_hash 미제공. 이번 실행에서 DOM·영상 직접 확인 없음."
+    },
+    {
+      "id": "EV-02",
+      "origin": "candidate",
+      "kind": "인라인 텍스트 대안 후보(CAND-V12)",
+      "basis": "supplied_observation",
+      "observation_mode": "dom_text",
+      "provided_as": "입력 내 후보 전문 텍스트(6단계 장면 설명, 화면 문구·버튼·안내자 대사·경고음 2회·가상 코드 R7K2-P9M4 포함)",
+      "time_range_s": null,
+      "verification_limits": "후보일 뿐 원본 증거 아님. 원본과의 대응 확인 불가."
+    },
+    {
+      "id": "EV-03",
+      "origin": "access_log",
+      "kind": "읽기 전용 접근 기록",
+      "basis": "supplied_observation",
+      "observation_mode": "tool_output",
+      "provided_as": "입력 문장: 후보의 읽기 가능 상태만 확인, 원본 내용/청취/재생/시각 관찰 자료 없음",
+      "time_range_s": null,
+      "verification_limits": "공급된 기록이며 이번 실행에서 재확인하지 않음. 원본 재생·청취 기록 없음."
+    },
+    {
+      "id": "EV-04",
+      "origin": "page_context",
+      "kind": "본문 텍스트 대안 미디어 표기 정보",
+      "basis": "supplied_observation",
+      "observation_mode": "tool_output",
+      "provided_as": "입력 문장: 본문의 대안 미디어 표기는 없음",
+      "time_range_s": null,
+      "verification_limits": "공급된 진술. 본문 전문은 제공되지 않음."
+    },
+    {
+      "id": "EV-05",
+      "origin": "source",
+      "kind": "원본 영상 내용",
+      "basis": "supplied_observation",
+      "observation_mode": "not_provided",
+      "provided_as": "없음",
+      "time_range_s": null,
+      "verification_limits": "원본 화면·음성·전사·프레임·파일 모두 미제공."
+    }
+  ],
+  "media_results": [
+    {
+      "media_id": "M01",
+      "applicability": {
+        "is_prerecorded_synchronized_media": "yes",
+        "reason": "INV-V12가 prerecorded synchronized video로 범위·유형을 확인함.",
+        "evidence_ids": ["EV-01"]
+      },
+      "alternative_inventory": {
+        "complete": "yes",
+        "candidate_ids": ["CAND-V12"],
+        "reason": "INV-V12가 인라인 후보 하나뿐이며 다른 설명·오디오·영상·텍스트 대안이 없다고 기록함.",
+        "evidence_ids": ["EV-01", "EV-02"]
+      },
+      "processed_ranges": [
+        {"modality": "access", "range_s": null, "method": "공급된 접근 기록과 후보 텍스트 읽기", "evidence_ids": ["EV-02", "EV-03"]}
+      ],
+      "unprocessed_ranges": [
+        {"modality": "visual", "range_s": [0, 31.208333], "reason": "원본 화면 자료 미제공"},
+        {"modality": "audio", "range_s": [0, 31.208333], "reason": "원본 음성·전사·소리 자료 미제공"},
+        {"modality": "interaction", "range_s": [0, 31.208333], "reason": "원본 내 시연 동작 관찰 자료 미제공"}
+      ],
+      "information_units": [],
+      "conditions": {
+        "original_audio_sufficient": {
+          "status": "undetermined",
+          "reason": "원본 음성과 시각 정보를 관찰하지 못함.",
+          "evidence_ids": ["EV-05"]
+        },
+        "static_description_g203": {
+          "has_no_important_time_based_visual_information": "undetermined",
+          "all_static_context_conveyed": "undetermined",
+          "programmatic_association_and_readable_path": "undetermined",
+          "audio_unidentified_speaker_changes_visually_only": "undetermined",
+          "status": "undetermined",
+          "reason": "원본 미관찰. 후보 텍스트가 장면 전환을 서술하지만 이를 원본 증거로 쓰지 않음.",
+          "evidence_ids": ["EV-05"]
+        },
+        "media_alternative_for_text_exception": {
+          "no_more_information_than_text": "undetermined",
+          "clearly_labeled": "no",
+          "status": "rejected",
+          "reason": "본문의 대안 미디어 표기가 없다고 공급됨. 명확한 표기 조건이 충족되지 않아 예외 불성립.",
+          "evidence_ids": ["EV-04"]
+        }
+      },
+      "alternative_methods": [
+        {
+          "candidate_id": "CAND-V12",
+          "type": "text_alternative",
+          "access_status": "verified_available",
+          "content_status": "undetermined",
+          "status": "inconclusive",
+          "reason": "공급된 기록상 인라인으로 읽을 수 있음. 원본 정보 단위가 없어 내용·순서 동등성을 대조할 수 없음. 후보 텍스트만으로 통과시키지 않음.",
+          "evidence_ids": ["EV-02", "EV-03", "EV-05"]
+        }
+      ],
+      "defects": [],
+      "result": "inconclusive",
+      "result_reason": "적용 대상이고 대안 현황은 완전하나, 원본 관찰이 전혀 없어 후보의 충분성과 원음 충분 조건을 결정할 수 없음. 확인된 후보 결함 없음(대조 자체가 불가).",
+      "scope_limit": "원본 0–31.208333초 전 모달리티 미처리. 후보 자체의 가독성만 공급 기록으로 확인."
+    }
+  ],
+  "result": "inconclusive",
+  "result_reason": "미디어 목록은 완전(1편)하지만 유일한 미디어 M01이 원본 증거 부재로 inconclusive. 확정된 fail 없음.",
+  "scope_limit": "평가 입력에서 원본 증거를 제공하지 않은 조건의 결과이며 실제 페이지 고장이나 이용자 접근 실패를 뜻하지 않음.",
+  "missing_materials": [
+    "SOURCE-WITHHELD 원본 프레임(PNG) 또는 영상, 시간 범위 포함",
+    "원본 음성 전사와 의미 있는 소리 분석",
+    "source_hash",
+    "본문 전문(예외 조건의 '본문 이상의 정보 없음' 검토용)"
+  ],
+  "out_of_scope_observations": [
+    "후보는 페이지 플레이어가 재생·일시 정지·탐색을 제공한다고 서술함(1.2.3 판정에 사용하지 않음)."
+  ],
+  "safety_limitations": [
+    "읽기 전용. 사이트 접근·조작 없음.",
+    "후보의 R7K2-P9M4는 후보 텍스트상 교육용 가상 코드로 표기됨. 원본 미관찰이라 실제성은 확인하지 않았고 추가 노출하지 않음."
+  ],
+  "next_evidence_requests": [
+    "원본 전체 구간의 장면 전환 기록과 대표 PNG, 전체 인접 프레임 비교 기록",
+    "원본 음성의 독립 전사와 경고음 등 비언어 소리 분석",
+    "원본과 후보의 식별자 연결(source_hash 등)"
+  ],
+  "recheck_plan": "원본 자료 수령 후 정보 단위를 먼저 추출하고 CAND-V12와 단위별(문구·버튼·부정문·코드·순서·소리)로 대조해 M01과 범위 결과를 다시 판정."
+}

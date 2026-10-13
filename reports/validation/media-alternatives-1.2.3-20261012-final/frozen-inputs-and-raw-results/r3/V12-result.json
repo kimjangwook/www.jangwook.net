@@ -1,0 +1,148 @@
+{
+  "criterion": "WCAG 2.2 SC 1.2.3",
+  "prompt_version": "0.1.1",
+  "scope_statement": "V12 페이지(ko)의 사전녹화 동기화 영상 1편(SOURCE-WITHHELD, 31.208333초)과 인라인 후보 대안 CAND-V12에 대한 1.2.3만 평가. 원본 내용 증거는 입력에 제공되지 않았고 다른 사례 원본은 사용하지 않음. 평가자는 V12-input.md만 읽었으며 URL 접속·재생·청취·영상 처리는 하지 않음.",
+  "run_status": "partial",
+  "inventory": {
+    "media_list_complete": "yes",
+    "evidence_ids": ["EV-01"],
+    "missing_items": ["원본 영상 해시(source_hash: not supplied)"]
+  },
+  "evidence_registry": [
+    {
+      "id": "EV-01",
+      "origin": "page_context",
+      "kind": "범위·미디어 목록(INV-V12)과 환경 정보(V12)",
+      "basis": "supplied_observation",
+      "observation_mode": "tool_output",
+      "provided_as": "입력 문서 내 JSON 텍스트(complete: true, media_count: 1, prerecorded synchronized video, duration_s 31.208333, 후보는 인라인 1개뿐)",
+      "time_range_s": null,
+      "verification_limits": "범위와 미디어 종류만 확인된 제공 기록. 원본 시각·음성 내용과 원본 접근 없음. 평가자가 직접 확인하지 않음."
+    },
+    {
+      "id": "EV-02",
+      "origin": "source",
+      "kind": "원본 영상 내용(SOURCE-WITHHELD)",
+      "basis": "supplied_observation",
+      "observation_mode": "not_provided",
+      "provided_as": "없음. 화면·음성·전사·장면·코드·영상 파일·URL 모두 미제공",
+      "time_range_s": null,
+      "verification_limits": "원본 정보 단위를 만들 수 없음. 후보로 원본을 역추정하지 않음."
+    },
+    {
+      "id": "EV-03",
+      "origin": "candidate",
+      "kind": "인라인 텍스트 대안(CAND-V12)",
+      "basis": "supplied_observation",
+      "observation_mode": "dom_text",
+      "provided_as": "입력 문서에 인용된 한국어 텍스트(6단계: 보안 설정, 발급 전 확인, 보안 확인 실패와 경고음 2회, 재인증 완료, 교육용 가상 코드 R7K2-P9M4, 발급 완료)와 'inline readable candidate supplied' 표기",
+      "time_range_s": null,
+      "verification_limits": "후보 내용만 있음. 원본 대조 불가. 페이지 내 위치·영상과의 연결은 '인라인'이라는 서술 외 DOM 구조 미제공. 평가자가 페이지를 열어 확인하지 않음."
+    },
+    {
+      "id": "EV-04",
+      "origin": "access_log",
+      "kind": "읽기 전용 접근·재생 확인 기록",
+      "basis": "supplied_observation",
+      "observation_mode": "tool_output",
+      "provided_as": "입력 서술: 후보의 읽기 가능 상태만 확인, 원본 내용·청취·재생·시각 관찰 자료 없음",
+      "time_range_s": null,
+      "verification_limits": "평가 입력 조건에 의한 원본 부재이며 실습 페이지 고장을 뜻하지 않음."
+    },
+    {
+      "id": "EV-05",
+      "origin": "page_context",
+      "kind": "본문 대안 미디어 표기(예외 검토)",
+      "basis": "supplied_observation",
+      "observation_mode": "tool_output",
+      "provided_as": "입력 서술: 본문의 대안 미디어 표기 없음",
+      "time_range_s": null,
+      "verification_limits": "DOM 원문 미제공, 서술 기록만 있음."
+    }
+  ],
+  "media_results": [
+    {
+      "media_id": "M01",
+      "applicability": {
+        "is_prerecorded_synchronized_media": "yes",
+        "reason": "INV-V12 제공 기록에 prerecorded synchronized video로 명시. 영상은 녹화된 시연이며 시청자 조작 계정 흐름이 아님.",
+        "evidence_ids": ["EV-01"]
+      },
+      "alternative_inventory": {
+        "complete": "yes",
+        "candidate_ids": ["CAND-V12"],
+        "reason": "INV-V12에 '인라인 후보 1개뿐, 다른 설명/오디오/비디오/텍스트 대안 없음'으로 기록. 제공 기록에 근거하며 평가자가 직접 확인하지 않음.",
+        "evidence_ids": ["EV-01"]
+      },
+      "processed_ranges": [
+        {"modality": "access", "range_s": null, "method": "제공된 후보 텍스트와 접근 기록 서술 읽기", "evidence_ids": ["EV-03", "EV-04"]}
+      ],
+      "unprocessed_ranges": [
+        {"modality": "visual", "range_s": [0, 31.208333], "reason": "원본 화면 증거 미제공"},
+        {"modality": "audio", "range_s": [0, 31.208333], "reason": "원본 음성·전사·소리 분석 미제공"},
+        {"modality": "interaction", "range_s": [0, 31.208333], "reason": "원본 장면 증거 미제공. 영상 속 버튼은 녹화 시연이라는 범위 서술만 있음"}
+      ],
+      "information_units": [],
+      "conditions": {
+        "original_audio_sufficient": {
+          "status": "undetermined",
+          "reason": "원본 음성과 화면 내용이 모두 미제공되어 원음이 중요한 시각 정보를 전달하는지 확인 불가.",
+          "evidence_ids": ["EV-02"]
+        },
+        "static_description_g203": {
+          "has_no_important_time_based_visual_information": "undetermined",
+          "all_static_context_conveyed": "undetermined",
+          "programmatic_association_and_readable_path": "undetermined",
+          "audio_unidentified_speaker_changes_visually_only": "undetermined",
+          "status": "undetermined",
+          "reason": "원본 시각 정보 미관찰. 후보 서술상 화면 전이가 여럿이라 G203 상황일 가능성은 낮아 보이나 후보로 원본을 추정하지 않으므로 미결.",
+          "evidence_ids": ["EV-02"]
+        },
+        "media_alternative_for_text_exception": {
+          "no_more_information_than_text": "undetermined",
+          "clearly_labeled": "no",
+          "status": "rejected",
+          "reason": "본문에 대안 미디어 표기가 없다는 기록(EV-05). 명확한 표기 조건이 충족되지 않으므로 예외 배제.",
+          "evidence_ids": ["EV-05"]
+        }
+      },
+      "alternative_methods": [
+        {
+          "candidate_id": "CAND-V12",
+          "type": "text_alternative",
+          "access_status": "verified_available",
+          "content_status": "undetermined",
+          "status": "inconclusive",
+          "reason": "인라인으로 읽을 수 있다는 제공 기록은 있음. 원본 정보 단위가 없어 내용·순서 동등성을 대조할 수 없음. 후보 텍스트만으로 pass를 주지 않음.",
+          "evidence_ids": ["EV-03", "EV-04"]
+        }
+      ],
+      "defects": [],
+      "result": "inconclusive",
+      "result_reason": "적용 대상이고 대안 현황은 제공 기록상 완전하나 원본 시각·청각 증거가 전혀 없어 후보의 충분성과 원음 충분 조건을 결정할 수 없음. 확인된 후보 결함도 없음.",
+      "scope_limit": "원본 0~31.208333초 전 구간 미관찰. 결과는 이 영상 1편에 한하며 페이지·사이트 적합성으로 확대하지 않음."
+    }
+  ],
+  "result": "inconclusive",
+  "result_reason": "범위 내 유일한 미디어 M01이 inconclusive이고 확정된 fail이 없음.",
+  "scope_limit": "평가 입력에 원본 증거가 없음. 평가자는 URL 접속·재생·청취·DOM 직접 검사 없이 입력 문서만 읽음. 미디어 목록 완전성은 제공 기록에 의존.",
+  "missing_materials": [
+    "원본 영상의 시각 증거(타임코드가 있는 디코드 PNG 또는 전체 프레임 전환 기록)",
+    "원본 음성 전사 또는 ASR, 의미 있는 소리(경고음 등) 분석",
+    "원본 해시와 출처 식별",
+    "후보 대안의 DOM 위치와 영상과의 연결 구조"
+  ],
+  "out_of_scope_observations": [
+    "후보 서술에 따르면 페이지 플레이어는 재생·일시 정지·탐색을 제공함(제공 서술, 미검증, 다른 기준 소관)."
+  ],
+  "safety_limitations": [
+    "읽기 전용. 사이트 접속·조작·코드 발급 없음.",
+    "후보의 R7K2-P9M4는 교육용 가상 코드로 서술되어 있으며 실제 비밀로 다루지 않음."
+  ],
+  "next_evidence_requests": [
+    "SOURCE-WITHHELD의 디코드 프레임 PNG(장면 전환별)와 전체 인접 프레임 비교 기록",
+    "원본 음성의 독립 ASR과 소리 분석",
+    "후보가 포함된 페이지 DOM 스냅숏"
+  ],
+  "recheck_plan": "원본 증거 수령 후 정보 단위를 후보와 무관하게 먼저 작성하고, 원음 충분성·CAND-V12의 내용·순서·부정문·코드·버튼명·경고음 대응을 단위별로 대조해 media 결과를 재판정."
+}

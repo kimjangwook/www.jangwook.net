@@ -1,0 +1,32 @@
+{
+  "slug": "audio-description-or-media-alternative-prerecorded",
+  "criterion": "1.2.3",
+  "language": "ko",
+  "prompt_version": "0.1.1",
+  "approval_status": "awaiting_user_review",
+  "published": false,
+  "site_deployed": false,
+  "translations_generated": false,
+  "committed": false,
+  "pushed": false,
+  "firstPublishedAt": null,
+  "source_hash": "511026760cf3f46e1194083c96d6edb4cf0372402428bb8e2052e4406d4be298",
+  "pdf_sha256": "f1bd36b25b7719e5f93a88338d48369792d7b78b6f3f9db05d6a4a909b233d16",
+  "pdf_path": "/Users/jangwook/workspace/www.jangwook.net/output/pdf/accessibility-05-media-alternative-20261011-ko.pdf",
+  "pages": 20,
+  "diagrams": 4,
+  "checklist_items": 12,
+  "criterion_reference_matches": "36/36",
+  "overview_plans": "6/6",
+  "created_at": "2026-10-12T13:32:39.521202+00:00",
+  "telegram": {
+    "status": "sent",
+    "recipient": "existing configured LifeManager Telegram chat",
+    "started_at": "2026-10-12T13:32:39.585565+00:00",
+    "message_ids": [
+      2973
+    ],
+    "delivery_id": null,
+    "sent_at": "2026-10-12T13:32:43.869533+00:00"
+  }
+}
