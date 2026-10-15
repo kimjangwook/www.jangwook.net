@@ -1,0 +1,32 @@
+{
+  "status": "chapter06-only-local-sync",
+  "releaseCommit": "8307e62a93c9223f3121b9b1ec4b4b914df5e5d5",
+  "filesAndDirectories": [
+    "content/series/accessibility/manifest.json",
+    "content/series/accessibility/posts/captions-live.md",
+    "content/series/accessibility/prompts/captions-live.md",
+    "static/images/accessibility/captions-live/ko",
+    "static/labs/accessibility/captions-live/ko",
+    "content/series/accessibility/translations/en/manifest.json",
+    "content/series/accessibility/translations/en/posts/captions-live.md",
+    "content/series/accessibility/translations/en/prompts/captions-live.md",
+    "static/images/accessibility/captions-live/en",
+    "static/labs/accessibility/captions-live/en",
+    "content/series/accessibility/translations/ja/manifest.json",
+    "content/series/accessibility/translations/ja/posts/captions-live.md",
+    "content/series/accessibility/translations/ja/prompts/captions-live.md",
+    "static/images/accessibility/captions-live/ja",
+    "static/labs/accessibility/captions-live/ja",
+    "content/series/accessibility/translations/zh/manifest.json",
+    "content/series/accessibility/translations/zh/posts/captions-live.md",
+    "content/series/accessibility/translations/zh/prompts/captions-live.md",
+    "static/images/accessibility/captions-live/zh",
+    "static/labs/accessibility/captions-live/zh",
+    "tests/home-language.test.mjs",
+    "tests/leads.test.mjs",
+    "tests/series-locales.test.mjs"
+  ],
+  "nonChapterManifestEntriesUnchanged": true,
+  "originalGitBranchNotMoved": true,
+  "backup": "/private/tmp/jangwook-ch06-before-local-sync-20261016"
+}

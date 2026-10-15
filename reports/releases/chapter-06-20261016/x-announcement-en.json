@@ -25,6 +25,7 @@
     }
   ],
   "linkReply": "https://jangwook.net/en/series/accessibility/captions-live",
-  "status": "prepared_pending_verified_production",
-  "scope": "Four connected numbered posts without URLs; canonical URL only as a self-reply to post4."
+  "status": "published_verified",
+  "scope": "Four connected numbered posts without URLs; canonical URL only as a self-reply to post4.",
+  "receipt": "x-publication-receipt.json"
 }

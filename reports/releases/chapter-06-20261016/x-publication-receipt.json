@@ -1,0 +1,38 @@
+{
+  "status": "published_verified",
+  "account": "effloow",
+  "englishSourceHash": "538ccd8b7664088e345d4f477965a35bfa8cf4388694ee44e569cad309d5311f",
+  "startedAt": "2026-10-15T23:29:20.920139+00:00",
+  "draft": "x-announcement-en.json",
+  "posts": [
+    {
+      "text": "[1/4] New accessibility chapter: live captions (WCAG 2.2 SC 1.2.4, AA). A LIVE badge alone does not establish that the criterion applies. Check where the audio comes from and how it reaches the viewer.",
+      "url": "https://x.com/effloow/status/2110875716653060136"
+    },
+    {
+      "text": "[2/4] A caption file or server log does not prove what viewers saw. Compare the original audio, displayed captions and screen state on the same clock. Check negation, speaker attribution and meaningful sounds.",
+      "url": "https://x.com/effloow/status/2110875718410510467"
+    },
+    {
+      "text": "[3/4] We ran 12 designed cases three times each in fresh conversations. All 36 final decision pairs matched the predefined reference. The scope is supplied-scenario reasoning and recorded or computer-generated media classification.",
+      "url": "https://x.com/effloow/status/2110875719916294163"
+    },
+    {
+      "text": "[4/4] The article includes three diagrams, inline practice pages, results, an 11-point checklist and the full prompt. It separates actual evidence from hypothetical premises. Korean, English, Japanese and Simplified Chinese editions are available.",
+      "url": "https://x.com/effloow/status/2110875721656852756"
+    }
+  ],
+  "linkReply": {
+    "url": "https://x.com/effloow/status/2110875879933100327",
+    "parent": "https://x.com/effloow/status/2110875721656852756",
+    "submittedText": "https://jangwook.net/en/series/accessibility/captions-live",
+    "shortURL": "https://t.co/I83QDYHwgl",
+    "actualLinkTarget": "https://jangwook.net/en/series/accessibility/captions-live",
+    "parentVerification": "Post4 conversation displays link reply; opening reply shows posts1-4 as ancestor chain.",
+    "evidence": "x-final-thread-visible.txt"
+  },
+  "fourPostLinkFree": true,
+  "verifiedAt": "2026-10-15T23:30:52.539290+00:00",
+  "screenshot": "x-publication-thread.png",
+  "workflow": "effloow-x-growth Workflow C, approved jangwook.net publication announcement"
+}

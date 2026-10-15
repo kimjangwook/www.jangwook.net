@@ -1,0 +1,94 @@
+{
+  "base": "https://jangwook.net",
+  "articles": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/captions-live",
+      "sourceHash": "b827b196788440461db28ebc4bfd32a38467f6dcc3a5a5f7323d31ffb46714cb",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z",
+      "updatedAt": "2026-10-16",
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/captions-live",
+      "sourceHash": "538ccd8b7664088e345d4f477965a35bfa8cf4388694ee44e569cad309d5311f",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z",
+      "updatedAt": "2026-10-16",
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/captions-live",
+      "sourceHash": "a1cb350b4150ac31730a8623e63bfe65bc5e0b6e077d1ec0e86d9aef6524f3c6",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z",
+      "updatedAt": "2026-10-16",
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/captions-live",
+      "sourceHash": "bf80ae52c57072df794263957ae6ac61884769768f86893c4878e7e9b9792976",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z",
+      "updatedAt": "2026-10-16",
+      "SSR": true
+    }
+  ],
+  "practice": [
+    {
+      "path": "/labs/accessibility/captions-live/ko/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ko/replay.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ko/generated.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/en/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/en/replay.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/en/generated.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ja/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ja/replay.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ja/generated.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/zh/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/zh/replay.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/zh/generated.html",
+      "status": 200
+    }
+  ],
+  "responsive": [],
+  "playback": [],
+  "generated": [],
+  "noJS": [],
+  "errors": [
+    "locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('article iframe')\u001b[22m\n\n    at /private/tmp/jangwook-publish-20261016/reports/releases/chapter-06-20261016/verify.mjs:7:359"
+  ]
+}

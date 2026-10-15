@@ -1,0 +1,360 @@
+{
+  "base": "https://jangwook.net",
+  "articles": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/captions-live",
+      "sourceHash": "b827b196788440461db28ebc4bfd32a38467f6dcc3a5a5f7323d31ffb46714cb",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z",
+      "updatedAt": "2026-10-16",
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/captions-live",
+      "sourceHash": "538ccd8b7664088e345d4f477965a35bfa8cf4388694ee44e569cad309d5311f",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z",
+      "updatedAt": "2026-10-16",
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/captions-live",
+      "sourceHash": "a1cb350b4150ac31730a8623e63bfe65bc5e0b6e077d1ec0e86d9aef6524f3c6",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z",
+      "updatedAt": "2026-10-16",
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/captions-live",
+      "sourceHash": "bf80ae52c57072df794263957ae6ac61884769768f86893c4878e7e9b9792976",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z",
+      "updatedAt": "2026-10-16",
+      "SSR": true
+    }
+  ],
+  "practice": [
+    {
+      "path": "/labs/accessibility/captions-live/ko/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ko/replay.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ko/generated.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/en/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/en/replay.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/en/generated.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ja/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ja/replay.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/ja/generated.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/zh/index.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/zh/replay.html",
+      "status": 200
+    },
+    {
+      "path": "/labs/accessibility/captions-live/zh/generated.html",
+      "status": 200
+    }
+  ],
+  "responsive": [
+    {
+      "lang": "ko",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "ja",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": 0,
+      "figures": 3
+    }
+  ],
+  "playback": [
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "paused": false,
+      "time": 0.021333,
+      "duration": 31.208333,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "language": "ko",
+        "active": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요."
+      }
+    },
+    {
+      "engine": "chromium",
+      "lang": "en",
+      "paused": false,
+      "time": 0.180141,
+      "duration": 31.208333,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "language": "en",
+        "active": "Guide: No. Do not discard them before saving the new recovery codes."
+      }
+    },
+    {
+      "engine": "chromium",
+      "lang": "ja",
+      "paused": false,
+      "time": 0.149357,
+      "duration": 31.208333,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "language": "ja",
+        "active": "案内役：いいえ。新しい復旧コードを保存するまでは捨てないでください。"
+      }
+    },
+    {
+      "engine": "chromium",
+      "lang": "zh",
+      "paused": false,
+      "time": 0.179105,
+      "duration": 31.208333,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "language": "zh",
+        "active": "引导员：不可以。在保存新的恢复码之前，请不要丢弃。"
+      }
+    },
+    {
+      "engine": "webkit",
+      "lang": "ko",
+      "paused": false,
+      "time": 0.012878916691988707,
+      "duration": 31.209,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "language": "ko",
+        "active": "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요."
+      }
+    },
+    {
+      "engine": "webkit",
+      "lang": "en",
+      "paused": false,
+      "time": 0.02394554205238819,
+      "duration": 31.209,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "language": "en",
+        "active": "Guide: No. Do not discard them before saving the new recovery codes."
+      }
+    },
+    {
+      "engine": "webkit",
+      "lang": "ja",
+      "paused": false,
+      "time": 0.05820275004953146,
+      "duration": 31.209,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "language": "ja",
+        "active": "案内役：いいえ。新しい復旧コードを保存するまでは捨てないでください。"
+      }
+    },
+    {
+      "engine": "webkit",
+      "lang": "zh",
+      "paused": false,
+      "time": 0.011829791590571404,
+      "duration": 31.209,
+      "error": null,
+      "track": {
+        "time": 9,
+        "tracks": 1,
+        "mode": "showing",
+        "cues": 7,
+        "language": "zh",
+        "active": "引导员：不可以。在保存新的恢复码之前，请不要丢弃。"
+      }
+    }
+  ],
+  "generated": [
+    {
+      "lang": "ko",
+      "source": "fully_computer_generated",
+      "externalCapture": false,
+      "beeps": 1,
+      "frames": 6
+    },
+    {
+      "lang": "en",
+      "source": "fully_computer_generated",
+      "externalCapture": false,
+      "beeps": 1,
+      "frames": 6
+    },
+    {
+      "lang": "ja",
+      "source": "fully_computer_generated",
+      "externalCapture": false,
+      "beeps": 1,
+      "frames": 6
+    },
+    {
+      "lang": "zh",
+      "source": "fully_computer_generated",
+      "externalCapture": false,
+      "beeps": 1,
+      "frames": 6
+    }
+  ],
+  "noJS": [
+    {
+      "lang": "ko",
+      "prompt": true,
+      "curriculum": true,
+      "caseToggle": true
+    },
+    {
+      "lang": "en",
+      "prompt": true,
+      "curriculum": true,
+      "caseToggle": true
+    },
+    {
+      "lang": "ja",
+      "prompt": true,
+      "curriculum": true,
+      "caseToggle": true
+    },
+    {
+      "lang": "zh",
+      "prompt": true,
+      "curriculum": true,
+      "caseToggle": true
+    }
+  ],
+  "errors": []
+}

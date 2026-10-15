@@ -1,0 +1,198 @@
+- heading "키보드 단축키를 보려면 물음표를 누르세요. 키보드 단축키 보기" [level=2]:
+  - generic: 키보드 단축키를 보려면 물음표를 누르세요.
+  - link "키보드 단축키 보기":
+    - /url: /i/keyboard_shortcuts
+- button "Grok":
+- button "채팅":
+- button "홈 타임라인으로 건너뛰기"
+- button "실시간 트렌드로 건너뛰기"
+- banner:
+  - heading "X" [level=1]:
+    - link "X":
+      - /url: /home
+  - navigation "기본":
+    - link "홈":
+      - /url: /home
+    - link "검색 및 탐색":
+      - /url: /explore
+    - link "알림":
+      - /url: /notifications
+    - link "팔로우하기":
+      - /url: /i/connect_people
+    - link "쪽지":
+      - /url: /i/chat
+    - link "통화":
+      - /url: /i/calls
+    - link "Grok":
+      - /url: /i/grok
+      - generic "안 읽은 항목 undefined개"
+    - button "메뉴 항목 더 보기":
+  - link "게시하기":
+    - /url: /compose/post
+  - button "계정 메뉴":
+    - generic "Jangwook from Effloow":
+      - img "Jangwook from Effloow"
+    - generic "안 읽은 항목 undefined개"
+- main:
+  - generic "홈 타임라인":
+    - button "돌아가기":
+    - heading "게시물" [level=2]
+    - link:
+      - /url: /effloow/thread/2110875879933100327
+    - status:
+      - button:
+        - generic: 새 게시물 보기
+    - region "대화":
+      - heading "대화" [level=1]
+      - 'generic "타임라인: 대화"':
+        - 'article "Jangwook from Effloow 인증된 계정 @effloow 1분 전 [1/4] New accessibility chapter: live captions (WCAG 2.2 SC 1.2.4, AA). A LIVE badge alone does not establish that the criterion applies. Check where the audio comes from and how it reaches the viewer. 1 답글, 2 조회수 님"':
+          - link:
+            - /url: /effloow
+          - link "Jangwook from Effloow 인증된 계정":
+            - /url: /effloow
+            - generic: Jangwook from Effloow
+            - img "인증된 계정"
+          - link "@effloow":
+            - /url: /effloow
+            - generic: "@effloow"
+          - generic: ·
+          - link "1분 전":
+            - /url: /effloow/status/2110875716653060136
+            - time: 1분
+          - button "Grok 작업":
+          - button "더 보기":
+          - generic: "[1/4] New accessibility chapter: live captions (WCAG 2.2 SC 1.2.4, AA). A LIVE badge alone does not establish that the criterion applies. Check where the audio comes from and how it reaches the viewer."
+          - group "1 답글, 2 조회수 님":
+            - button "1 답글. 답글하기":
+              - generic: "1"
+            - button "0 재게시. 재게시":
+            - button "0 마음에 들어요. 마음에 들어요":
+            - link "2 조회수. 게시 애널리틱스 보기":
+              - /url: /effloow/status/2110875716653060136/analytics
+              - generic: "2"
+            - button "북마크":
+            - button "게시물 공유하기":
+        - article "Jangwook from Effloow 인증된 계정 @effloow 1분 전 [2/4] A caption file or server log does not prove what viewers saw. Compare the original audio, displayed captions and screen state on the same clock. Check negation, speaker attribution and meaningful sounds. 1 답글, 2 조회수 님":
+          - link:
+            - /url: /effloow
+          - link "Jangwook from Effloow 인증된 계정":
+            - /url: /effloow
+            - generic: Jangwook from Effloow
+            - img "인증된 계정"
+          - link "@effloow":
+            - /url: /effloow
+            - generic: "@effloow"
+          - generic: ·
+          - link "1분 전":
+            - /url: /effloow/status/2110875718410510467
+            - time: 1분
+          - button "Grok 작업":
+          - button "더 보기":
+          - generic: "[2/4] A caption file or server log does not prove what viewers saw. Compare the original audio, displayed captions and screen state on the same clock. Check negation, speaker attribution and meaningful sounds."
+          - group "1 답글, 2 조회수 님":
+            - button "1 답글. 답글하기":
+              - generic: "1"
+            - button "0 재게시. 재게시":
+            - button "0 마음에 들어요. 마음에 들어요":
+            - link "2 조회수. 게시 애널리틱스 보기":
+              - /url: /effloow/status/2110875718410510467/analytics
+              - generic: "2"
+            - button "북마크":
+            - button "게시물 공유하기":
+        - article "Jangwook from Effloow 인증된 계정 @effloow 1분 전 [3/4] We ran 12 designed cases three times each in fresh conversations. All 36 final decision pairs matched the predefined reference. The scope is supplied-scenario reasoning and recorded or computer-generated media classification. 1 답글, 1 조회수 님":
+          - link:
+            - /url: /effloow
+          - link "Jangwook from Effloow 인증된 계정":
+            - /url: /effloow
+            - generic: Jangwook from Effloow
+            - img "인증된 계정"
+          - link "@effloow":
+            - /url: /effloow
+            - generic: "@effloow"
+          - generic: ·
+          - link "1분 전":
+            - /url: /effloow/status/2110875719916294163
+            - time: 1분
+          - button "Grok 작업":
+          - button "더 보기":
+          - generic: "[3/4] We ran 12 designed cases three times each in fresh conversations. All 36 final decision pairs matched the predefined reference. The scope is supplied-scenario reasoning and recorded or computer-generated media classification."
+          - group "1 답글, 1 조회수 님":
+            - button "1 답글. 답글하기":
+              - generic: "1"
+            - button "0 재게시. 재게시":
+            - button "0 마음에 들어요. 마음에 들어요":
+            - link "1 조회수. 게시 애널리틱스 보기":
+              - /url: /effloow/status/2110875719916294163/analytics
+              - generic: "1"
+            - button "북마크":
+            - button "게시물 공유하기":
+        - article "Jangwook from Effloow 인증된 계정 @effloow 1분 전 [4/4] The article includes three diagrams, inline practice pages, results, an 11-point checklist and the full prompt. It separates actual evidence from hypothetical premises. Korean, English, Japanese and Simplified Chinese editions are available. 1 답글, 1 조회수 님":
+          - link:
+            - /url: /effloow
+          - link "Jangwook from Effloow 인증된 계정":
+            - /url: /effloow
+            - generic: Jangwook from Effloow
+            - img "인증된 계정"
+          - link "@effloow":
+            - /url: /effloow
+            - generic: "@effloow"
+          - generic: ·
+          - link "1분 전":
+            - /url: /effloow/status/2110875721656852756
+            - time: 1분
+          - button "Grok 작업":
+          - button "더 보기":
+          - generic: "[4/4] The article includes three diagrams, inline practice pages, results, an 11-point checklist and the full prompt. It separates actual evidence from hypothetical premises. Korean, English, Japanese and Simplified Chinese editions are available."
+          - group "1 답글, 1 조회수 님":
+            - button "1 답글. 답글하기":
+              - generic: "1"
+            - button "0 재게시. 재게시":
+            - button "0 마음에 들어요. 마음에 들어요":
+            - link "1 조회수. 게시 애널리틱스 보기":
+              - /url: /effloow/status/2110875721656852756/analytics
+              - generic: "1"
+            - button "북마크":
+            - button "게시물 공유하기":
+        - 'article "Jangwook from Effloow 인증된 계정 @effloow jangwook.net Captions (Live) (SC 1.2.4): Determining Live-Broadcast Applicability and Checking On-Screen... Determine whether real-time media qualifies as live under the normative definition, and compare the original audio’s dialogue, speakers, and important sounds with the timing of captions displayed on..."':
+          - link [active]:
+            - /url: /effloow
+          - link "Jangwook from Effloow 인증된 계정":
+            - /url: /effloow
+            - generic: Jangwook from Effloow
+            - img "인증된 계정"
+          - link "@effloow":
+            - /url: /effloow
+            - generic: "@effloow"
+          - button "Grok 작업":
+          - button "더 보기":
+          - 'generic "jangwook.net Captions (Live) (SC 1.2.4): Determining Live-Broadcast Applicability and Checking On-Screen... Determine whether real-time media qualifies as live under the normative definition, and compare the original audio’s dialogue, speakers, and important sounds with the timing of captions displayed on..."':
+            - 'generic "jangwook.net Captions (Live) (SC 1.2.4): Determining Live-Broadcast Applicability and Checking On-Screen... Determine whether real-time media qualifies as live under the normative definition, and compare the original audio’s dialogue, speakers, and important sounds with the timing of captions displayed on..."':
+              - link:
+                - /url: https://t.co/I83QDYHwgl
+              - 'link "jangwook.net Captions (Live) (SC 1.2.4): Determining Live-Broadcast Applicability and Checking On-Screen... Determine whether real-time media qualifies as live under the normative definition, and compare the original audio’s dialogue, speakers, and important sounds with the timing of captions displayed on..."':
+                - /url: https://t.co/I83QDYHwgl
+                - generic: jangwook.net
+                - generic: "Captions (Live) (SC 1.2.4): Determining Live-Broadcast Applicability and Checking On-Screen..."
+                - generic: Determine whether real-time media qualifies as live under the normative definition, and compare the original audio’s dialogue, speakers, and important sounds with the timing of captions displayed on...
+          - link "오전 8:30 · 2026년 10월 16일":
+            - /url: /effloow/status/2110875879933100327
+            - time: 오전 8:30 · 2026년 10월 16일
+          - generic: ·
+          - link "1 조회수":
+            - /url: /effloow/status/2110875879933100327/analytics
+            - generic: "1"
+            - generic: 조회수
+          - group "1 조회수":
+            - button "0 답글. 답글하기":
+            - button "0 재게시. 재게시":
+            - button "0 마음에 들어요. 마음에 들어요":
+            - button "0 북마크. 북마크":
+            - button "게시물 공유하기":
+        - link "Jangwook from Effloow":
+          - /url: /effloow
+          - generic "Jangwook from Effloow":
+            - img "Jangwook from Effloow"
+        - generic: 답글 게시하기
+        - textbox "게시물 본문"
+        - button "답글" [disabled]:
+          - generic: 답글

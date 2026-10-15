@@ -1,0 +1,25 @@
+{
+  "status": "deployed",
+  "releaseCommit": "8307e62a93c9223f3121b9b1ec4b4b914df5e5d5",
+  "worker": "www-jangwook-net",
+  "workerVersion": "916d48ab-be65-4f65-a4f3-52e441fe8028",
+  "rollbackVersion": "6b4eec30-66be-4653-b3ca-1b7277a7b750",
+  "domains": [
+    "jangwook.net",
+    "www.jangwook.net"
+  ],
+  "approval": "approval.json",
+  "productionVerification": "production-validation.json",
+  "notedAt": "2026-10-15T23:28:44.511855+00:00",
+  "productionVerificationPassed": true,
+  "checks": {
+    "articles": 4,
+    "practice": 12,
+    "playback": 8,
+    "responsive": 12,
+    "generated": 4,
+    "noJS": 4
+  },
+  "firstObservation": "production-validation-first-observation.json",
+  "firstObservationNote": "First browser run timed out locating article iframe. Direct observation and a fresh complete rerun passed without content or application changes; cause not established."
+}

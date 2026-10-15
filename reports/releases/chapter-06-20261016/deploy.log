@@ -1,0 +1,65 @@
+
+> jangwook-net@2.0.0 deploy
+> node scripts/require-deploy-approval.mjs && wrangler deploy --env production
+
+
+ ⛅️ wrangler 4.145.0 (update available 4.151.0)
+───────────────────────────────────────────────
+🌀 Building list of assets...
+✨ Read 2652 files from the assets directory /private/tmp/jangwook-publish-20261016/.svelte-kit/cloudflare
+🌀 Starting asset upload...
+🌀 Found 33 new or modified static assets to upload. Proceeding with upload...
++ /_app/version.json
++ /_app/immutable/nodes/1.BPxnkiMz.js
++ /labs/accessibility/captions-live/en/replay.html
++ /images/accessibility/captions-live/zh/fig-02-3a038e2d27a4.svg
++ /labs/accessibility/captions-live/ko/generated.html
++ /images/accessibility/captions-live/ko/fig-03-86c09d71482f.svg
++ /images/accessibility/captions-live/ja/fig-02-8e0ecb918b64.svg
++ /images/accessibility/captions-live/zh/fig-01-d19372d0b1b3.svg
++ /_app/immutable/nodes/0.CF6BjLkQ.js
++ /labs/accessibility/captions-live/en/index.html
++ /labs/accessibility/captions-live/zh/cases-source.json
++ /_app/immutable/entry/start.UiWwkREw.js
++ /labs/accessibility/captions-live/zh/replay.html
++ /labs/accessibility/captions-live/ja/replay.html
++ /labs/accessibility/captions-live/en/generated.html
++ /images/accessibility/captions-live/zh/fig-03-47a91a890dca.svg
++ /labs/accessibility/captions-live/ja/generated.html
++ /images/accessibility/captions-live/ja/fig-03-b8559b087483.svg
++ /images/accessibility/captions-live/ja/fig-01-2949beec3588.svg
++ /labs/accessibility/captions-live/zh/index.html
++ /labs/accessibility/captions-live/ja/index.html
++ /_app/immutable/chunks/BW_f5ANW.js
++ /_app/immutable/chunks/CAbuNkDe.js
++ /labs/accessibility/captions-live/ko/replay.html
++ /labs/accessibility/captions-live/zh/generated.html
++ /images/accessibility/captions-live/ko/fig-02-7d4dae7f83ec.svg
++ /images/accessibility/captions-live/en/fig-02-54d5cb0fe588.svg
++ /images/accessibility/captions-live/en/fig-03-c7a79ec4b086.svg
++ /images/accessibility/captions-live/ko/fig-01-474c459ef219.svg
++ /images/accessibility/captions-live/en/fig-01-063e6e3e64f0.svg
++ /labs/accessibility/captions-live/ko/index.html
++ /_app/immutable/entry/app.BnIWhfLj.js
++ /labs/accessibility/captions-live/zh/results.json
+Uploaded 11 of 33 assets
+Uploaded 22 of 33 assets
+Uploaded 33 of 33 assets
+✨ Success! Uploaded 33 files (2529 already uploaded) (1.44 sec)
+
+Total Upload: 5620.44 KiB / gzip: 1036.76 KiB
+Worker Startup Time: 43 ms
+Your Worker has access to the following bindings:
+Binding                                        Resource
+env.LEADS_DB (jangwook-leads)                  D1 Database
+env.ASSETS                                     Assets
+env.MAIL_MODE ("disabled")                     Environment Variable
+env.SITE_URL ("https://jangwook.net")          Environment Variable
+env.FROM_EMAIL ("materials@jangwook.net")      Environment Variable
+
+Uploaded www-jangwook-net (9.21 sec)
+Deployed www-jangwook-net triggers (1.52 sec)
+  jangwook.net (custom domain)
+  www.jangwook.net (custom domain)
+  schedule: 17 18 * * *
+Current Version ID: 916d48ab-be65-4f65-a4f3-52e441fe8028
