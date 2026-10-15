@@ -1,0 +1,290 @@
+[
+  {
+    "case": "L01",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_cb03d589-785c-4855-a51d-219a31124114",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "1e93017cd2a773ef1902b43ce5b9e1dc45139eda1c870e0781a4eb394abd2e3f",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L02",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_f6aa7826-ed72-42d5-8591-979b83e13116",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "0262396299d447b2b05fe515729e2bdd4847dfe5f1f7ef6beee8a32fb96d1daa",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L03",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_1ebcabe6-4ad1-47fb-8af0-baa6b24303df",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "a91d508c261e206c0df597b2140bb8ec8d28d9503191ff2f2b554f1d8bc9f7f6",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L04",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_87f0affa-acc4-415c-82ea-6ce07180a728",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "57b955b282175368d6a2fcb31b45e2c8ac65fee0412d6f323198cee42521ec0b",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L05",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_01c0e3be-b722-40e4-9ce9-87492dc13b08",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "177f8ad2bd15b8472fd9d1d6bb54953a97b383a0a19f07d157cd5f795170e2d9",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L06",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_7f927e9d-0e02-4651-aadb-f5c2747509b6",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "1d0e93f7862954645b1f00278b25c937a2886ff5b31b1bfdb436c93a99172e17",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L07",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_f6ff3822-57b4-4f28-8bff-b2666005db91",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "1ba3c09fc8067d0806c831a243b59ed933a61a7d32933bd8a5ffd896dad374d3",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L08",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_e2a6a877-a168-492f-bf0c-d5b05283aba4",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "32f9c086f1d1a9b1391a6fbe3590927a623b1af06581eb0b928279847f2c0326",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L09",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_8a4df91e-f11a-471c-865f-f99218a130a2",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "870ca91087e3328b24f51ff1f18f7f7fc889db3f243573edab7b56da8a1616a2",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L10",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_87baa8e9-f666-4307-b07c-6160d747c89c",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "509338943a0653eff8d784c972f9bc18ad25a60ae8b82dc27c3d11a90034c67a",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L11",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_7971373a-2359-4536-a309-0f9dc46a1a43",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "26dd84c41586e214a66049e4468ae02bca1fe1ac931384da88fb16cfc2fabf88",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L12",
+    "repetition": 1,
+    "url": "claude.ai/epitaxy/local_135f3233-a772-4261-a61f-086f3bb31e1b",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "c47ff1fc870089496d267603b1628584f56c8972aab70a864b27d42356ccb50b",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L01",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_96d49101-d592-4bd9-b085-4b12d4f3bcae",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "8790824252601770715f2f3272e1ad8eed60423c2ae39bf52837b438dfd7690c",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L02",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_9e356003-7f98-468b-a4d5-badeb6bf44f5",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "07cd9ff197aacb15de92bbb0d7d701601143c496f9d1a44789eec4c74239f7b6",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L03",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_9ea6167c-d540-4f89-b4dc-0a89f7997c4e",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "a9f5796cd8dac256724fb692a7363807bf54b11b84723ae136e11ad2f73c87e2",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L04",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_4bd2574d-0596-4b72-8876-eccac435f8ac",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "ae4c55393aae561b80fc12a3a6a734fa5f30381c373b0f63b10edca9ddfc5330",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L05",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_d7eb24ec-7ece-42c1-b8e8-142bdb348fe2",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "731c56b6092d852e6f470f954e2e239e8be964129a79778095069c8c359ee6c3",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L06",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_dae341c1-beb4-4c61-846e-56c3707b09bd",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "97b6961a80608362f926ad689b5d467473905193e284b2f9c2d2466070f8cc7a",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L07",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_050c36e3-9889-46a1-b599-05ae733f92f3",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "11b8c3cfdbc62401241832a33a3e87fe5da74800230975c0f0a470be92bc615b",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L08",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_af722b04-46cb-4e19-a46b-a4eb4e94251b",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "9991fd7710005b7559c5f92cd808122c15b1243609ef9a529320d5f4582125f8",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L09",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_0c015ec5-e9e5-44c2-bfe8-ad7030810ace",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "d2bdee5ab24f21e4fc85641b33d7084ccb7e39893ce10818a5d3f9b49f63bb4c",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L10",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_eff70e0b-7fde-46b8-9e96-6559cafbb442",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "f11b211e07d81faf3f9c835d6a364e2ce20409e9ff08c2c0b4337e8eb066d23c",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L11",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_8f142b0c-8db8-4be0-94d9-52691a3c7dcc",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "e3f641036c32cf925e873e0147e1d2749a6eec304432d4a92b5e7f516fc3a2e2",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L12",
+    "repetition": 2,
+    "url": "claude.ai/epitaxy/local_4cb0d28f-8644-4c04-acb9-9f7d0b0dc7c4",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "ab95d44896357a5e9208bb4bd7ba06bcb81446d0da4eb09b07fe3957b5151adc",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L01",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_f6e1b982-8a65-4c81-b29c-cc22bdd596cf",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "be191fad88b54397c8e7ae4eeb646062ed3f5522f83b990d457f754058026eb0",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L02",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_a34b083c-9aaf-4f4b-b432-78351964ef1c",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "12f643a39859e3ee3fc43b0e085a9d20d1bee8b6ddce43c65498ce0913a9cd51",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L03",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_ce911119-71a1-411a-8cb1-92b47bcbf89c",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "467460e6c11cf5b2f710542ce004755a10f4f8127b864afc2b8db9f5d6b30a92",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L04",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_ba7fd41e-7f17-4eb4-a618-9d45fc3b8004",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "663b7a25c12e0ff48108eb4a91ee8ee5c452c0712c3c5fb72f29483ba93da9e8",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L05",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_f2eb14a8-fffa-4af5-b0f1-155dfb0650b6",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "5fb96ba7107895112a8482a8ea372fdeabdd2cafaa7d6614e94b6b8e876a04e4",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L06",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_69362d33-27bc-466c-a222-b5654c2b6544",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "4b12a01e445d682d8a6925c364fafe2cfef7a0d63d2e7155c2bc42fcf755657d",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L07",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_774a5240-920c-452e-aa81-4b44fc991972",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "8609be56a7ffab109e500cf04c37ba830ee95ce9078772409490ec8f876e7cbb",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L08",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_2f71e65b-b064-4a65-bbc7-bad3b4e83478",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "6c338df7354bf034766ae7d532b886d4e8e5d3d32956ecace78dc68e7af15deb",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L09",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_4278c4bc-a888-4df5-be58-62f4d3546b60",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "aead6d8a32184f9280198ac7bf64069989c11fabcd777a1c0220506f62c39ad5",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L10",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_7d181ac8-735b-457b-92b2-407c430009f8",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "37efe048e9bcd7b2b910149578548bae5f3317660a6e33ca83be07b3bc9c37df",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L11",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_2fef77b6-7b59-4572-b08a-e5f0c8e16bee",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "c3fd0878873dba114c80f86f1cda2289ba5d46e4851bda3f20de6ef2698c5ffb",
+    "observed_model_medium": true
+  },
+  {
+    "case": "L12",
+    "repetition": 3,
+    "url": "claude.ai/epitaxy/local_609a56cc-c33b-4d0d-ae37-51eac66b4c13",
+    "model": "Opus 5.5 중간",
+    "request_sha256": "8fec7e3d442b6b4c4b809d0b499f5e757a6ef11afb87a50f4b104f474894939f",
+    "observed_model_medium": true
+  }
+]

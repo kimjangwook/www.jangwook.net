@@ -1,0 +1,10 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "returned_model": "gpt-6.1-sol",
+  "provider": "codex",
+  "requested_effort": "medium",
+  "elapsed_seconds": 38.81,
+  "finish_reason": "stop",
+  "input_sha256": "f4792ae6145eef51a41ab3f832d219cc3b58b21aa9c44c00fc7998dd7b3ec387",
+  "output_sha256": "3bd616ed1928d5ec95555ab7a4ba7e9b33b982fa3e6ca9fee0d393c5d15852e7"
+}

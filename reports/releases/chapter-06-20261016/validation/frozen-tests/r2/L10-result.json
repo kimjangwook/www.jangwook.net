@@ -1,0 +1,55 @@
+{
+  "packet_id": "L10",
+  "evidence_mode": "actual_supplied_evidence",
+  "scope": {
+    "evaluated_target": "교육용 관찰 자료: 로컬 페이지 '완전 컴퓨터 생성 매체와 실시간 구분'(제공된 page_html)의 canvas 숫자 화면과 Web Audio 합성 알림음",
+    "evaluated_segment": "완전 컴퓨터 생성 여부에 따른 실시간(live) 분류만",
+    "is_full_program_covered": false
+  },
+  "applicability": {
+    "is_synchronized_media": "yes",
+    "is_live_audio": "no",
+    "is_labeled_media_alternative_for_text": "no",
+    "sc_1_2_4_applicable": "not_applicable",
+    "rationale": "제공된 page_html의 스크립트에서 오디오(OscillatorNode 660Hz 알림음)는 requestAnimationFrame으로 갱신되는 canvas 숫자 화면의 4초 시점에 맞춰 재생되므로, 오디오가 다른 정보 제시 형식과 시간적으로 결합된 동기화 미디어로 볼 수 있습니다(입력 자료로부터의 도출). 텍스트의 미디어 대안이라는 라벨은 페이지에 없고 입력에서도 text_alternative_conditions가 '미제공'이므로 그 예외는 적용하지 않았습니다. 그러나 라이브 축에서, 소스 전체가 브라우저 코드(canvas 그리기, AudioContext 합성)로만 화면과 소리를 만들고 getUserMedia·외부 스트림 등 실세계 캡처 입력이 소스에 존재하지 않으며, browser_record에도 source='fully_computer_generated', externalCapture=false로 기록되어 있습니다. WCAG 2.2 'live' 정의 Note 2의 원문은 'If information is completely computer generated, it is not live.'이므로, 이 매체는 정의상 live가 아니고 'prerecorded'(information that is not live)에 해당합니다. 1.2.4는 'live audio content in synchronized media'에만 적용되므로, 원음 타임라인이나 캡션 표시 기록이 부족하더라도 판단을 유보하지 않고 1.2.4 비대상으로 판정합니다. 동기화 미디어이므로 캡션 요구는 1.2.2 Captions (Prerecorded) 검토 대상입니다."
+  },
+  "scenario_decision": "not_applicable_actual_mode",
+  "actual_live_audit_decision": "not_applicable",
+  "evidence_used": [
+    "complete_source_packet.page_html 스크립트: canvas 2D 컨텍스트로 숫자(0~10)와 문구를 그리고, t===4일 때 AudioContext.createOscillator()(frequency 660, gain 0.05, 0.18초)로 알림음을 합성함. 마이크·카메라·외부 미디어 입력 API 호출 없음(제공 소스 내 확인, 줄 번호 없음)",
+    "complete_source_packet.page_html 스크립트: window.demoEvidence={source:'fully_computer_generated',externalCapture:false,...} 초기화",
+    "complete_source_packet.browser_record: kind 'generated', source 'fully_computer_generated', externalCapture false, beeps 1, frames 6, status '4 / 10초'",
+    "complete_source_packet.limits: '카메라·마이크·외부 사건 입력이 없으며 수집된 소스가 전부'",
+    "page_html 및 generated-preview.png 화면 문구: '실세계 사건을 촬영하거나 녹음하지 않습니다. 화면과 소리는 브라우저 코드가 생성합니다.', canvas 내 '컴퓨터 생성 데모 · 실제 생중계 아님'",
+    "generated-preview.png: canvas에 '04'와 '[알림음]' 문구, 상태 출력 '4 / 10초' 표시(정지화면 1장, 4초 시점)",
+    "sources/normative-definitions.txt 및 source-00.txt: 'live' 정의 Note 2 'If information is completely computer generated, it is not live.', 'prerecorded: information that is not live', SC 1.2.4 원문 'Captions are provided for all live audio content in synchronized media.'"
+  ],
+  "findings": [
+    {
+      "category": "applicability_live_classification",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 원문 및 'live' 정의 Note 2, 'prerecorded' 정의 (sources/normative-definitions.txt, source-00.txt)",
+      "informative_reference": "Understanding SC 1.2.4 (source-01.txt)에 동일 정의 수록",
+      "description": "제공된 소스와 브라우저 기록 모두에서 화면·소리가 브라우저 코드로 완전히 생성되며 실세계 사건 캡처가 없음이 확인됩니다. 재생 시점에 실시간으로 생성된다는 사실은 'live' 정의(실세계 사건에서 캡처)를 충족하지 않으므로 1.2.4는 적용되지 않습니다. 페이지 문구의 자기 선언('live 정의를 충족하지 않습니다')은 판정 근거가 아니라 참고로만 취급했고, 판정은 소스 코드 구조와 정의 원문의 대조로 도출했습니다."
+    },
+    {
+      "category": "referral_out_of_scope",
+      "normative_basis": "WCAG 2.2 'synchronized media' 정의 및 'prerecorded' 정의로부터의 도출",
+      "informative_reference": "Understanding SC 1.2.2 (source-05.txt)",
+      "description": "오디오가 canvas 시각 정보와 동기화되어 있고 텍스트의 미디어 대안 라벨이 없으므로, 캡션 충족 여부(4초 알림음이 canvas의 '[알림음]' 문구로 표현되는지 등)는 1.2.2 Captions (Prerecorded)에서 별도 평가해야 합니다. 이 패킷의 평가 범위가 실시간 분류에 한정되므로 1.2.2 충족 여부는 판정하지 않았습니다."
+    }
+  ],
+  "missing_evidence": [
+    "1.2.2 평가에 필요한 전체 10초 구간의 연속 화면·오디오 동시 기록(제공된 것은 4초 시점 정지화면 1장과 frames 6 집계뿐)",
+    "실제 배포 환경에서 동일 소스가 제공되는지에 대한 확인(평가 대상은 로컬 페이지 소스로 한정)"
+  ],
+  "unreviewed_scope": [
+    "SC 1.2.2 Captions (Prerecorded) 및 기타 성공 기준 전반",
+    "4초 이외 시점의 화면 표시와 알림음-문구 동기화의 실제 렌더링 결과",
+    "사례 목록·녹화 재생 등 링크된 다른 페이지",
+    "다양한 사용자 에이전트 및 보조기술 호환성"
+  ],
+  "fixes_and_retest": [
+    "1.2.4 관점의 수정 사항은 없습니다. 다만 동기화 미디어로서 1.2.2를 별도로 검토하여, 4초 알림음과 같은 이해에 필요한 비음성 정보가 화면 문구 등으로 소리와 같은 시점에 계속 제공되는지 확인하십시오.",
+    "향후 이 페이지가 마이크·카메라·외부 스트림 등 실세계 사건 캡처 입력을 받아 방송 지연 이내로 전달하도록 바뀌면 live 분류가 달라지므로, 그때는 1.2.4 적용 대상으로 재분류하고 수신 화면과 원음을 공통 시계로 동시 기록해 재평가하십시오."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "packet_id": "L07",
+  "evidence_mode": "hypothetical_supplied_scenario",
+  "scope": {
+    "evaluated_target": "가상 공개 웨비나(교육용 관찰 자료)의 오디오 및 시청자 화면 캡션",
+    "evaluated_segment": "가상 40초 공개 웨비나 전 구간(녹화 삽입 없음)으로 지정되었으나, 실제 관찰 자료는 20초 시점 스크린샷 기술 1건뿐",
+    "is_full_program_covered": false
+  },
+  "applicability": {
+    "is_synchronized_media": "yes",
+    "is_live_audio": "yes",
+    "is_labeled_media_alternative_for_text": "no",
+    "sc_1_2_4_applicable": "applicable",
+    "rationale": "시나리오 전제(stipulated facts)상 실세계에서 말하는 두 사람을 카메라·마이크로 그 시점에 수록해 배신했고(실세계 사건 캡처), 통상적 방송 지연만 있고 대폭 편집이 없으며(live 정의 충족), 형식은 음성과 영상의 동기화 미디어입니다. 또한 원본 전문 텍스트가 없고 텍스트 대안이라는 표시도 없어 텍스트의 미디어 대안 예외의 두 조건이 모두 충족되지 않습니다. 따라서 이 가정 아래에서 SC 1.2.4 적용 대상입니다. 이는 제공된 정의 문구에 시나리오 전제를 대입한 논리적 도출입니다."
+  },
+  "scenario_decision": "cannot_determine",
+  "actual_live_audit_decision": "not_assessed",
+  "evidence_used": [
+    "가상 시나리오 전제(complete_source_packet.event.real_world_capture): 실세계에서 말하는 두 사람을 카메라와 마이크로 그 시점에 수록해 배신했다고 가정",
+    "가상 시나리오 전제(complete_source_packet.event.delay): 통상의 방송 지연만 있고 대폭 편집 없음으로 가정",
+    "가상 시나리오 전제(complete_source_packet.event.format): 음성과 영상의 동기화 미디어",
+    "가상 시나리오 전제(complete_source_packet.event.text_alternative_exception): 원본 전문 텍스트 없음, 대안 표시 없음",
+    "가상 관찰(complete_source_packet.observation.coverage): 전체 40초 중 20초 시점 스크린샷 기술 1건만 존재",
+    "가상 관찰(complete_source_packet.observation.visible_text): 화면에 '[案内者] いいえ。新しいコードを保存する前には捨てないでください。' 캡션이 보임",
+    "가상 관찰(complete_source_packet.observation.audio / other_caption_path / display): 원음 '未提供', 다른 캡션 경로 '未確認', 이 순간 캡션이 보이는 것 외 표시 상태 '未確認'",
+    "clock_and_provenance.clock_reference: 원자료에 시계 기준 정보가 없어 불명"
+  ],
+  "findings": [
+    {
+      "category": "speech_meaning_preservation",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 및 captions 정의(음성·비음성 오디오 정보의 동기화된 시각/텍스트 대안)",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "20초 시점 캡션 텍스트 1건만 있고 대응하는 원음 대사가 제공되지 않아, 이 캡션이 부정어('いいえ', '捨てないでください')를 포함한 발화 의미를 정확히 전달하는지, 혹은 반전·누락이 있는지 대조할 수 없습니다. 결함도 충족도 입증되지 않습니다."
+    },
+    {
+      "category": "speaker_identification",
+      "normative_basis": "WCAG 2.2 captions 정의(이해에 필요한 화자 식별 포함)",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "시나리오상 화자는 두 사람이며 관찰된 캡션에는 '[案内者]' 화자 라벨이 표시됩니다. 그러나 원음이 없어 실제 발화자가 안내자인지, 다른 화자의 발화가 다른 구간에서 어떻게 귀속되었는지 확인할 수 없습니다."
+    },
+    {
+      "category": "synchronization_and_coverage",
+      "normative_basis": "WCAG 2.2 SC 1.2.4(라이브 오디오 콘텐츠에 캡션 제공) 및 captions 정의(동기화)",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "원음 타임라인과 수신자 공통 시계가 없어 20초 시점 캡션의 동기 여부를 판단할 수 없고, 나머지 약 39초 구간의 캡션 표시 여부, 비음성 정보(경보음 등) 존재 및 캡션화 여부, 다른 캡션 경로 유무가 모두 미확인입니다. 정지화면 1장에서 결함이 보이지 않는다는 사실만으로 전 구간 pass_under_supplied_scenario를 도출할 수 없고, 위반을 특정할 근거도 없으므로 시나리오 내에서도 cannot_determine입니다."
+    }
+  ],
+  "missing_evidence": [
+    "40초 전 구간의 원음 대사 및 비음성 오디오 타임라인(수신자 공통 시계 기준)",
+    "40초 전 구간의 시청자 화면 캡션 표시 기록(표시 시각 포함)",
+    "20초 시점 캡션에 대응하는 원음 발화 내용(부정어 보존·화자 귀속 대조용)",
+    "다른 캡션 경로(오픈 캡션, CC 트랙, 별도 텍스트 뷰포트 등)의 존재 및 표시 상태",
+    "실제 감사로 전환하려면 실제 방송에서 수집한 당시 클라이언트 화면·오디오 동시 캡처 원본과 세션·시계 무결성 메타데이터(현 자료는 교재 작성자가 만든 가상 관찰 기록)"
+  ],
+  "unreviewed_scope": [
+    "20초 시점 이외의 0~40초 전 구간 캡션 표시 및 동기화",
+    "두 번째 화자의 발화 및 화자 귀속",
+    "비음성 오디오 정보와 그 캡션화 여부",
+    "다른 캡션 경로 및 사용자 에이전트·보조기술 환경",
+    "실제 대상 서비스에 대한 실제 라이브 감사(이 결과는 가정 하 조건부 추론이며 실제 방송 감사 결과가 아님)"
+  ],
+  "fixes_and_retest": [
+    "시나리오를 보완해 40초 전 구간에 대해 수신자 공통 시계 기준 원음 대사·비음성 사건 타임라인과 화면 캡션 표시 기록을 함께 제공하고, 다른 캡션 경로의 유무·표시 상태를 명시한 뒤 재평가하십시오.",
+    "특히 20초 시점 발화의 원음을 제공해 부정어('いいえ', '捨てないでください')와 화자 귀속('[案内者]')이 원음과 일치하는지 대조하십시오.",
+    "실제 대상 판정이 필요하면 실제 송출 환경에서 수신 화면과 오디오를 동시 기록해 actual_supplied_evidence 모드로 별도 감사하십시오. 이때 지연 축소를 위해 캡션 큐를 생략하거나 핵심 의미를 줄이는 요약은 하지 마십시오."
+  ]
+}

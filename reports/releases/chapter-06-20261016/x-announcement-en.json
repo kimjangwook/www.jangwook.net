@@ -1,0 +1,30 @@
+{
+  "account": "effloow",
+  "englishSourceHash": "538ccd8b7664088e345d4f477965a35bfa8cf4388694ee44e569cad309d5311f",
+  "canonical": "https://jangwook.net/en/series/accessibility/captions-live",
+  "posts": [
+    {
+      "text": "[1/4] New accessibility chapter: live captions (WCAG 2.2 SC 1.2.4, AA). A LIVE badge alone does not establish that the criterion applies. Check where the audio comes from and how it reaches the viewer.",
+      "ko": "접근성 새 글은 실시간 자막입니다. LIVE 표시만으로 적용 대상을 정하지 않고 음성의 기원과 전달 관계를 확인합니다.",
+      "weightedLength": 201
+    },
+    {
+      "text": "[2/4] A caption file or server log does not prove what viewers saw. Compare the original audio, displayed captions and screen state on the same clock. Check negation, speaker attribution and meaningful sounds.",
+      "ko": "자막 파일과 서버 로그만으로 실제 표시를 입증할 수 없습니다. 같은 시계에서 원음·자막·화면을 대조합니다.",
+      "weightedLength": 209
+    },
+    {
+      "text": "[3/4] We ran 12 designed cases three times each in fresh conversations. All 36 final decision pairs matched the predefined reference. The scope is supplied-scenario reasoning and recorded or computer-generated media classification.",
+      "ko": "12개 조건을 새 대화에서 3회씩 실행해36개 최종판정이 기준답과 일치했습니다. 가상 조건 추론과 비생중계 분류의 결과입니다.",
+      "weightedLength": 231
+    },
+    {
+      "text": "[4/4] The article includes three diagrams, inline practice pages, results, an 11-point checklist and the full prompt. It separates actual evidence from hypothetical premises. Korean, English, Japanese and Simplified Chinese editions are available.",
+      "ko": "도식3개·본문실습·결과·11개체크리스트·전체프롬프트를 담았습니다. 실제증거와가정을구분하며네언어로제공합니다.",
+      "weightedLength": 247
+    }
+  ],
+  "linkReply": "https://jangwook.net/en/series/accessibility/captions-live",
+  "status": "prepared_pending_verified_production",
+  "scope": "Four connected numbered posts without URLs; canonical URL only as a self-reply to post4."
+}

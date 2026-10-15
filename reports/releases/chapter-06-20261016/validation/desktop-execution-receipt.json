@@ -1,0 +1,401 @@
+{
+  "testRoot": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016",
+  "criterion_sessions": [
+    {
+      "repetition": 1,
+      "case": "L01",
+      "url": "claude.ai/epitaxy/local_cb03d589-785c-4855-a51d-219a31124114",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L01-result.json",
+      "output_sha256": "f5a63b4e92b9a5d4af1dcd1fd0f2264156525fb53116f174b5e0a64b553ce499",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L02",
+      "url": "claude.ai/epitaxy/local_f6aa7826-ed72-42d5-8591-979b83e13116",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L02-result.json",
+      "output_sha256": "614860ba1ced5c346e33a3e15f281f2eb995501a6f9ba3adc4864923937efc36",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L03",
+      "url": "claude.ai/epitaxy/local_1ebcabe6-4ad1-47fb-8af0-baa6b24303df",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L03-result.json",
+      "output_sha256": "b93158cae4c23229179de05ff2e94c5ce238fc53c43f94b6500687015599b4f5",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L04",
+      "url": "claude.ai/epitaxy/local_87f0affa-acc4-415c-82ea-6ce07180a728",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L04-result.json",
+      "output_sha256": "b6b59f2d62b0d33d12a131dddf72a3b63901dff3e57800f7139218f06abec859",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L05",
+      "url": "claude.ai/epitaxy/local_01c0e3be-b722-40e4-9ce9-87492dc13b08",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L05-result.json",
+      "output_sha256": "f626a9209a65ba34a98f101e37f6b6745a47490fe406ba8c07ffc84b42e2262e",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L06",
+      "url": "claude.ai/epitaxy/local_7f927e9d-0e02-4651-aadb-f5c2747509b6",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L06-result.json",
+      "output_sha256": "54b428ed1ec27e6d164250dfb22ea95f1e9381e474d8c46527287b2a4baa5443",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L07",
+      "url": "claude.ai/epitaxy/local_f6ff3822-57b4-4f28-8bff-b2666005db91",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L07-result.json",
+      "output_sha256": "da17bb7afe8b39e16f79260dab2df580319134e8e7abbd0b873d5c4c6b2c6136",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L08",
+      "url": "claude.ai/epitaxy/local_e2a6a877-a168-492f-bf0c-d5b05283aba4",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L08-result.json",
+      "output_sha256": "d8d97c6362b668fd0e401ad90275fa42902e614b178068e93d76ec9219e36e15",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L09",
+      "url": "claude.ai/epitaxy/local_8a4df91e-f11a-471c-865f-f99218a130a2",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L09-result.json",
+      "output_sha256": "fc73aeb444f8c7a34d26e32d434a40a794ba79cc4b5bd06472b862217c73ded1",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L10",
+      "url": "claude.ai/epitaxy/local_87baa8e9-f666-4307-b07c-6160d747c89c",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L10-result.json",
+      "output_sha256": "afe00a9c469fd755365b3f20be82ceb67c3c046113deea02cb77752059fcfdd1",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L11",
+      "url": "claude.ai/epitaxy/local_7971373a-2359-4536-a309-0f9dc46a1a43",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L11-result.json",
+      "output_sha256": "b8f14f58c11ffc5f611e0fbb8ea4f2085b2d0fea7192285c316b9fb31402fe7c",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 1,
+      "case": "L12",
+      "url": "claude.ai/epitaxy/local_135f3233-a772-4261-a61f-086f3bb31e1b",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r1/L12-result.json",
+      "output_sha256": "d867352c913c373cf84b8dcd13a844cac785999bf057c6494f48e9233b522933",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L01",
+      "url": "claude.ai/epitaxy/local_96d49101-d592-4bd9-b085-4b12d4f3bcae",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L01-result.json",
+      "output_sha256": "efaffd4d9862d37ea21f1acdf025ae104e56bbd10f04dfbcd5813c1ac88199a3",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L02",
+      "url": "claude.ai/epitaxy/local_9e356003-7f98-468b-a4d5-badeb6bf44f5",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L02-result.json",
+      "output_sha256": "3b194f0e1270b1b8da87e5d8f961854c6d23035aa5ae241296ecf6895c1d5fbe",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L03",
+      "url": "claude.ai/epitaxy/local_9ea6167c-d540-4f89-b4dc-0a89f7997c4e",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L03-result.json",
+      "output_sha256": "b66fbb42be3d281421f88ab511357fb25860e6583b443272bfc7159bab73e13a",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L04",
+      "url": "claude.ai/epitaxy/local_4bd2574d-0596-4b72-8876-eccac435f8ac",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L04-result.json",
+      "output_sha256": "1119f71fe27c4679abd040d4d371e738c03228f19b28647594dad6e702f0df6e",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L05",
+      "url": "claude.ai/epitaxy/local_d7eb24ec-7ece-42c1-b8e8-142bdb348fe2",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L05-result.json",
+      "output_sha256": "39472cc820d701f0664e3895ef3617e513f648d55d4b0cfc53b350fc93408cb1",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L06",
+      "url": "claude.ai/epitaxy/local_dae341c1-beb4-4c61-846e-56c3707b09bd",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L06-result.json",
+      "output_sha256": "0b90c59356cd9240f1c6a69e2acb710351c716529cf6e09370f9471464ee4e9e",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L07",
+      "url": "claude.ai/epitaxy/local_050c36e3-9889-46a1-b599-05ae733f92f3",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L07-result.json",
+      "output_sha256": "aab266d593ac67afadae15b30c819f5eeb55bfd45fbea72dff57305f929babe7",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L08",
+      "url": "claude.ai/epitaxy/local_af722b04-46cb-4e19-a46b-a4eb4e94251b",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L08-result.json",
+      "output_sha256": "fa6d713d1b50915130e6eb83c559ab778caefcb8623dd49d6e30dfd189814987",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L09",
+      "url": "claude.ai/epitaxy/local_0c015ec5-e9e5-44c2-bfe8-ad7030810ace",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L09-result.json",
+      "output_sha256": "e660a6ca195b31c27cda51c5e3e5d6b1ded51d10f32f81d4fb0743b7a176fa45",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L10",
+      "url": "claude.ai/epitaxy/local_eff70e0b-7fde-46b8-9e96-6559cafbb442",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L10-result.json",
+      "output_sha256": "e7234a44ae94f3d9d8c87a2b94809e1f6e23df795f3ff74f69c4c5e59e291c23",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L11",
+      "url": "claude.ai/epitaxy/local_8f142b0c-8db8-4be0-94d9-52691a3c7dcc",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L11-result.json",
+      "output_sha256": "9bdba168ae031de24cd1357042a546bb0d0c10c1408c1b05ed29060db85d90a5",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 2,
+      "case": "L12",
+      "url": "claude.ai/epitaxy/local_4cb0d28f-8644-4c04-acb9-9f7d0b0dc7c4",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r2/L12-result.json",
+      "output_sha256": "6f309b9fbb8318d926a25d4a5d0f6df0abf45ae525b87c12d5a5f8506d0634e0",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L01",
+      "url": "claude.ai/epitaxy/local_f6e1b982-8a65-4c81-b29c-cc22bdd596cf",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L01-result.json",
+      "output_sha256": "14380dffdaceb203bfbcef9e6ecaf52b3863a1cc4a758655767a5e44bcef7afc",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L02",
+      "url": "claude.ai/epitaxy/local_a34b083c-9aaf-4f4b-b432-78351964ef1c",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L02-result.json",
+      "output_sha256": "24ab5ea42b9cc5fb0645bc86b49b8e90206bc05090066b1093209a087210c5e5",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L03",
+      "url": "claude.ai/epitaxy/local_ce911119-71a1-411a-8cb1-92b47bcbf89c",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L03-result.json",
+      "output_sha256": "2f74517320ce5f563417ad50672ee3b4973b8b4505e159368f719060645cca14",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L04",
+      "url": "claude.ai/epitaxy/local_ba7fd41e-7f17-4eb4-a618-9d45fc3b8004",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L04-result.json",
+      "output_sha256": "df9d993df4163c46f0444aae94afb4b58b335d660c1bd254afe2bb55379a5c83",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L05",
+      "url": "claude.ai/epitaxy/local_f2eb14a8-fffa-4af5-b0f1-155dfb0650b6",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L05-result.json",
+      "output_sha256": "bbe16b7b9caca64717cff3f63d2ba95cf2f857d6adcf751332df7e0475feb7ca",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L06",
+      "url": "claude.ai/epitaxy/local_69362d33-27bc-466c-a222-b5654c2b6544",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L06-result.json",
+      "output_sha256": "6aea68301c1207ed23493de511386a0525a38552735986d712fa71a79d7a1843",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L07",
+      "url": "claude.ai/epitaxy/local_774a5240-920c-452e-aa81-4b44fc991972",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L07-result.json",
+      "output_sha256": "6be766e0765d8b30d5a5b26c6b060fdc6450e156e3e2d57c94ac6157b7a72d7f",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L08",
+      "url": "claude.ai/epitaxy/local_2f71e65b-b064-4a65-bbc7-bad3b4e83478",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L08-result.json",
+      "output_sha256": "114d9d4529d39f15df618bf519e70d4457b45211ca6cdd0d31d0fb5be4526cf9",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L09",
+      "url": "claude.ai/epitaxy/local_4278c4bc-a888-4df5-be58-62f4d3546b60",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L09-result.json",
+      "output_sha256": "3b6fdef1b36d2df3a86bd77cdd4eb170bee5f9bed6657c2b81048e1526db709b",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L10",
+      "url": "claude.ai/epitaxy/local_7d181ac8-735b-457b-92b2-407c430009f8",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L10-result.json",
+      "output_sha256": "f409d11a537230d3ed544e807daf083c1b927706e27f1e254b8a93d39a850000",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L11",
+      "url": "claude.ai/epitaxy/local_2fef77b6-7b59-4572-b08a-e5f0c8e16bee",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L11-result.json",
+      "output_sha256": "603d9541da7bcae115852781447dc346fa17a9d8d0e0dbcda39393c102bde8a4",
+      "status": "completed_output_verified"
+    },
+    {
+      "repetition": 3,
+      "case": "L12",
+      "url": "claude.ai/epitaxy/local_609a56cc-c33b-4d0d-ae37-51eac66b4c13",
+      "model": "Claude Opus5.5 Medium",
+      "fresh_single_case_session": true,
+      "output": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016/r3/L12-result.json",
+      "output_sha256": "8537e55f0df287f1c129523cf2a4a70a6d4cab749d23ed97eb546b8600b28ef8",
+      "status": "completed_output_verified"
+    }
+  ],
+  "overview_provenance": {
+    "input_unchanged": true,
+    "executed_root": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-revalidated-20261016",
+    "plans_sha256": {
+      "1": "5e520f837dcc4b5496ae86bef66fdc43b146b7ce0f9351e1e70e260309a1092e",
+      "2": "bc24c546a0ddcf02f3e91f445d95a56a8c4ba4e07bfb6efa07d14cfce81c79c2",
+      "3": "96ca880f35388aab4056d6c71dcc4723bf8f26c358cb739087d778c6ec782916"
+    },
+    "sessions": [
+      {
+        "run": 1,
+        "url": "claude.ai/epitaxy/local_5e6e0b8f-45af-41eb-bfac-d4477e8f58cf",
+        "model": "Opus 5.5 중간",
+        "completed": true
+      },
+      {
+        "run": 2,
+        "url": "claude.ai/epitaxy/local_fcda6aaa-8622-4b48-a5dc-3702f704860a",
+        "model": "Opus 5.5 중간",
+        "completed": true
+      },
+      {
+        "run": 3,
+        "url": "claude.ai/epitaxy/local_7c6bd76b-0baf-46b5-9871-522bab689bda",
+        "model": "Opus 5.5 중간",
+        "completed": true
+      }
+    ]
+  },
+  "launched_via": "Claude Desktop Code UI",
+  "permission_mode": "manual; no permission bypass changed",
+  "frozen_input_hashes_verified": true,
+  "criterion_responses": 36,
+  "distinct_criterion_session_ids": 36,
+  "decision_audit": "test-audit.json",
+  "raw_launch_evidence": "isolated-desktop-launches.json"
+}

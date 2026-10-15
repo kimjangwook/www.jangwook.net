@@ -1,0 +1,6 @@
+{
+  "approvedSourceHash": "9e49611840ca7a3b23f6c1f8720e289f8a467e4910f4466c8edb117595bd37ad",
+  "releaseSourceHash": "b827b196788440461db28ebc4bfd32a38467f6dcc3a5a5f7323d31ffb46714cb",
+  "onlyKoreanArticleChange": "Three unchanged SVG references now include their content hash in the filename. Visible content, prompt and test evidence unchanged.",
+  "promptByteIdentical": true
+}

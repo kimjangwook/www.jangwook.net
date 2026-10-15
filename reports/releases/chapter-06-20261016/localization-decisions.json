@@ -1,0 +1,4 @@
+{
+  "promptOutputLanguage": "Japanese and Simplified Chinese prompts explicitly request human-readable JSON values in their target language. Schema keys/enums and evaluation logic are unchanged. This is intentional localization.",
+  "replayNotice": "The Chinese replay notice now describes only the original video and localized page/caption controls; unrelated generated-demo description removed."
+}

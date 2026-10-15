@@ -1,0 +1,54 @@
+{
+  "fixedBeforeTesting": true,
+  "basis": "W3C WCAG2.2 normative SC1.2.4 + definitions and informative G9/G87/G93. Synthetic/source-classification and supplied hypothetical premises separated. Not a live-service audit.",
+  "cases": {
+    "L01": {
+      "actual": "not_assessed",
+      "conditional": "pass_under_supplied_scenario"
+    },
+    "L02": {
+      "actual": "not_assessed",
+      "conditional": "fail"
+    },
+    "L03": {
+      "actual": "not_assessed",
+      "conditional": "fail"
+    },
+    "L04": {
+      "actual": "not_assessed",
+      "conditional": "fail"
+    },
+    "L05": {
+      "actual": "not_assessed",
+      "conditional": "fail"
+    },
+    "L06": {
+      "actual": "not_assessed",
+      "conditional": "cannot_determine"
+    },
+    "L07": {
+      "actual": "not_assessed",
+      "conditional": "cannot_determine"
+    },
+    "L08": {
+      "actual": "not_assessed",
+      "conditional": "pass_under_supplied_scenario"
+    },
+    "L09": {
+      "actual": "not_applicable",
+      "conditional": "not_applicable_actual_mode"
+    },
+    "L10": {
+      "actual": "not_applicable",
+      "conditional": "not_applicable_actual_mode"
+    },
+    "L11": {
+      "actual": "cannot_determine",
+      "conditional": "not_applicable_actual_mode"
+    },
+    "L12": {
+      "actual": "not_assessed",
+      "conditional": "not_applicable"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "captions-live",
+  "criterion": "1.2.4",
+  "language": "ko",
+  "sourceHash": "9e49611840ca7a3b23f6c1f8720e289f8a467e4910f4466c8edb117595bd37ad",
+  "approval_status": "awaiting_user_review",
+  "published": false,
+  "deployed": false,
+  "translations_generated": false,
+  "committed": false,
+  "pushed": false,
+  "pdf_path": "/Users/jangwook/workspace/www.jangwook.net/output/pdf/accessibility-06-captions-live-20261016-ko.pdf",
+  "pdf_sha256": "ea6ec35302d21647e2111203f88ebf96230d132b362c6d94c333ff7fb0889f83",
+  "pages": 16,
+  "diagrams": 3,
+  "checklist_items": 11,
+  "test_decision_reference_agreements": "36/36",
+  "scope": "Conditional reasoning and nonlive classification; not a real live-caption quality audit.",
+  "created_at": "2026-10-15T22:19:09.316879+00:00",
+  "telegram": {
+    "status": "sent",
+    "recipient": "existing configured LifeManager Telegram chat",
+    "started_at": "2026-10-15T22:19:09.466132+00:00",
+    "message_ids": [
+      3071
+    ],
+    "delivery_id": null,
+    "sent_at": "2026-10-15T22:19:13.579963+00:00"
+  }
+}

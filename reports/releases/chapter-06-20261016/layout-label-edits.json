@@ -1,0 +1,9 @@
+{
+  "scope": "Concise English translations for fixed-width diagram boxes; Korean source and semantic claims unchanged",
+  "edits": {
+    "Presentation happening now": "Current presentation",
+    "Captured by camera and microphone": "Camera + microphone",
+    "Within broadcast delay / Delivered": "Within broadcast / delay",
+    "No real-world event captured": "No real-world capture"
+  }
+}

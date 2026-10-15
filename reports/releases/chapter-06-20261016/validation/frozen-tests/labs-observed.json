@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-10-15T21:17:43.999Z",
+  "method": "Playwright local browser; replay frame decoded; synthetic oscillator event and canvas observed. No microphone/camera, direct audio listening or real-live broadcast audit.",
+  "checks": [
+    {
+      "kind": "replay",
+      "readyState": 4,
+      "duration": 31.208333,
+      "currentTime": 2.045108,
+      "error": null,
+      "videoWidth": 1280,
+      "textTracks": [
+        {
+          "kind": "captions",
+          "language": "ko",
+          "mode": "showing",
+          "cues": 7
+        }
+      ]
+    },
+    {
+      "kind": "generated",
+      "source": "fully_computer_generated",
+      "externalCapture": false,
+      "beeps": 1,
+      "frames": 6,
+      "status": "4 / 10초"
+    },
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "overflow": false
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "frozenAt": "2026-10-16",
+  "testRoot": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-isolated-desktop-20261016",
+  "models": {
+    "test": "Claude Opus5.5",
+    "effort": "medium",
+    "criterion_sessions": 36,
+    "repetitions_per_case": 3
+  },
+  "files": {
+    "P1-filled.txt": "62b70ecb377388ac56c2f0aebb43f91ee013003e5fdffd5d02b36974275e9e26",
+    "P1-original.md": "ee86f412ab54a8f6cdaa3afd54057e3cabc1f7ef603a47b17f1f9499ba91eb8c",
+    "P2-original.md": "f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f",
+    "cases/L01-P2-filled.md": "55d3a2b4d9ece63d44ed7b597bbc132e358d35d84f0ac0eb4b15dfbe0417731f",
+    "cases/L02-P2-filled.md": "38d345a6b1c65bc1213c5ac575ef1c51f75598344803b783e08d1a0369b16394",
+    "cases/L03-P2-filled.md": "c495f8443baf205376638c6e59e19bfe4760d59c70dc84c54577d1d09409cd32",
+    "cases/L04-P2-filled.md": "ab76949f71e1082b4e415a525208d4a76712c0377f442297fd00c406c457b045",
+    "cases/L05-P2-filled.md": "5e9725aaa13077b5b0ccad1fa20c537d6f3fa6c63347d793539a126bb9f46d0c",
+    "cases/L06-P2-filled.md": "976feeee267c454fa8a80ad81dad8c7c1ba5ab53c104840dd24732f90762eb09",
+    "cases/L07-P2-filled.md": "18087e213676fab83444c4daa6b6b65be6292fd0653ecb7729fcebf9fa89f557",
+    "cases/L08-P2-filled.md": "7c3a9d834b8cc8514b71951dd7097b7cc0d72b9c0467dcba56cd167ca7169c66",
+    "cases/L09-P2-filled.md": "d5ad5c4b89098f0042388410469d629f64df0786f8d8668b2565e3848e53e6df",
+    "cases/L10-P2-filled.md": "154fe0bce8a253bd431a529feda7b821cabfb083e157da18e55e5643caf41875",
+    "cases/L11-P2-filled.md": "cbbf2970b961d6fd6fc51d191d468a431cfa1897581e24a4b6dd1da41aa9582e",
+    "cases/L12-P2-filled.md": "5b44d4d80882a0419035379bea702687a9722641cee3f0cd9b3030e6cb923b34",
+    "cases-input.json": "8c01f684469eead992804bcec305c1daeff1e9ef30d551e98a84326dd9c47bd0",
+    "cases-source.json": "8c01f684469eead992804bcec305c1daeff1e9ef30d551e98a84326dd9c47bd0",
+    "generated-preview.png": "3f73f9cc2d6efa78850edeb0cd123b70ebf0e79b557505582a983ab98e0d24fc",
+    "labs-observed.json": "8c9d3997a72922e67ddf72c18885bbf63eb19fc81a056a2231c711ab43258b5d",
+    "practice-preview.png": "3e038f2ad0a465fcc2880a097f61a5d6888bb5029958452a1bddaa8eae9ea477",
+    "sources/normative-definitions.txt": "2a7cd88b8ee65cd753b47c0ca2ef4515243fed02fa00fd618f452e7bdff8e551",
+    "sources/source-00.txt": "2a7cd88b8ee65cd753b47c0ca2ef4515243fed02fa00fd618f452e7bdff8e551",
+    "sources/source-01.txt": "0800dbefb8be24ae15fa6daf904096d48452cad98d2d3a9cd7e431edd1eddeee",
+    "sources/source-02.txt": "552cb71d905628ac83298cc1964f383cd305485232e3b1215c245084044bbed3",
+    "sources/source-03.txt": "962ac6ec7a21d552fb5a5253cfda193a76895d7e80e8b1779e676631121167bb",
+    "sources/source-04.txt": "bda704b2f0af8b15a04986a05ea3ad4aa51d8aa77357cfb1fce037db60228a1a",
+    "sources/source-05.txt": "ea7336fc07b54ef51097868904f622593073465218f5c3955fa21f70c87d86f1",
+    "sources/source-06.txt": "7fcd62046ff1726d96d747bc8c03f3f04b4a5f3e23da8dd8acea75e33546d079",
+    "sources/sources.json": "99f527248cc9800acef38a5e729e0c63a3276a45950638d61ead6ed4b14ab66f"
+  },
+  "private_reference_sha256": "a94369f178f564ade420c76c3bf08167cae45d513fa8349db01af8eed26a6d18",
+  "overview_provenance": {
+    "input_unchanged": true,
+    "executed_root": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-revalidated-20261016",
+    "plans_sha256": {
+      "1": "5e520f837dcc4b5496ae86bef66fdc43b146b7ce0f9351e1e70e260309a1092e",
+      "2": "bc24c546a0ddcf02f3e91f445d95a56a8c4ba4e07bfb6efa07d14cfce81c79c2",
+      "3": "96ca880f35388aab4056d6c71dcc4723bf8f26c358cb739087d778c6ec782916"
+    },
+    "sessions": [
+      {
+        "run": 1,
+        "url": "claude.ai/epitaxy/local_5e6e0b8f-45af-41eb-bfac-d4477e8f58cf",
+        "model": "Opus 5.5 중간",
+        "completed": true
+      },
+      {
+        "run": 2,
+        "url": "claude.ai/epitaxy/local_fcda6aaa-8622-4b48-a5dc-3702f704860a",
+        "model": "Opus 5.5 중간",
+        "completed": true
+      },
+      {
+        "run": 3,
+        "url": "claude.ai/epitaxy/local_7c6bd76b-0baf-46b5-9871-522bab689bda",
+        "model": "Opus 5.5 중간",
+        "completed": true
+      }
+    ]
+  },
+  "excludes": "One criterion case per fresh Desktop Code session. No other cases, answers, or outputs provided. Three unchanged P1 plans retained from their independent runs. Pilot/grouped data are excluded from final criterion metrics."
+}

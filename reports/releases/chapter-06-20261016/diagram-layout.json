@@ -1,0 +1,139 @@
+[
+  {
+    "lang": "ko",
+    "file": "fig-01-474c459ef219.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "ko",
+    "file": "fig-02-7d4dae7f83ec.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "ko",
+    "file": "fig-03-86c09d71482f.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "en",
+    "file": "fig-01-063e6e3e64f0.svg",
+    "adjustments": [
+      {
+        "text": "Within broadcastdelay",
+        "from": 18,
+        "to": 15.1,
+        "available": 108
+      },
+      {
+        "text": "Past presentationRecorded and stored file",
+        "from": 21,
+        "to": 19.2,
+        "available": 198
+      },
+      {
+        "text": "Generatedand displayed now",
+        "from": 18,
+        "to": 13.7,
+        "available": 108
+      },
+      {
+        "text": "Numbers and synthesized sound",
+        "from": 18,
+        "to": 16,
+        "available": 219
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "file": "fig-02-54d5cb0fe588.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "en",
+    "file": "fig-03-c7a79ec4b086.svg",
+    "adjustments": [
+      {
+        "text": "If material is insufficient, request the specific evidence needed.Do not treat one still image as evidence for the entire broadcast.",
+        "from": 18,
+        "to": 17.7,
+        "available": 480
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "fig-01-2949beec3588.svg",
+    "adjustments": [
+      {
+        "text": "放送遅延の範囲内で伝達",
+        "from": 18,
+        "to": 13.1,
+        "available": 108
+      },
+      {
+        "text": "コードで生成実世界の出来事は収集せず",
+        "from": 21,
+        "to": 18.3,
+        "available": 198
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "fig-02-8e0ecb918b64.svg",
+    "adjustments": [
+      {
+        "text": "捨てないでください",
+        "from": 17,
+        "to": 15.5,
+        "available": 121
+      },
+      {
+        "text": "捨てないでください",
+        "from": 17,
+        "to": 15.5,
+        "available": 121
+      },
+      {
+        "text": "捨てないでください",
+        "from": 17,
+        "to": 15.5,
+        "available": 121
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "file": "fig-03-b8559b087483.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "zh",
+    "file": "fig-01-d19372d0b1b3.svg",
+    "adjustments": [
+      {
+        "text": "当前进行的演讲通过摄像头·麦克风采集",
+        "from": 21,
+        "to": 20.5,
+        "available": 198
+      },
+      {
+        "text": "在广播延迟范围内传递",
+        "from": 18,
+        "to": 14.4,
+        "available": 108
+      }
+    ]
+  },
+  {
+    "lang": "zh",
+    "file": "fig-02-3a038e2d27a4.svg",
+    "adjustments": []
+  },
+  {
+    "lang": "zh",
+    "file": "fig-03-47a91a890dca.svg",
+    "adjustments": []
+  }
+]

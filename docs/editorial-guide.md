@@ -55,7 +55,7 @@
 
 ## 프롬프트 검증과 최종 원고 구성
 
-2026-10-11 사용자 지정 [접근성 시리즈 제작 원칙](accessibility-production-workflow.md)을 적용한다. 기초 조사는 Ollama Cloud DeepSeek v4.1, 보강 조사는 GPT-6.1 Sol High, 집필은 Claude Sonnet Medium과 GPT-6.1 Sol Medium, 테스트 실행은 Claude Opus Medium, 독립 리뷰는 GPT-6.1 Sol High와 Fable Low가 맡는다. 공개된 이전 글 또는 통제된 실습 자료에 개요와 항목별 프롬프트 원문을 고정해 적용하고, 실제 모델·effort·입력 해시·원시 결과·반복 일관성·범위와 한계를 내부 기록에 남긴다. 과거의 Sol·Opus High 비교 결과는 당시 사실대로 보존하며 앞으로의 필수 실행 모델 배정으로 사용하지 않는다.
+2026-10-11 사용자 지정 원칙과 2026-10-16 집필 단계 변경을 반영한 [접근성 시리즈 제작 원칙](accessibility-production-workflow.md)을 적용한다. 기초 조사는 Ollama Cloud DeepSeek v4.1, 보강 조사는 GPT-6.1 Sol High, 집필은 브라우저의 Gemini 4 Argon, 테스트 실행은 Claude Opus Medium, 독립 리뷰는 GPT-6.1 Sol High와 Fable Low가 맡는다. 공개된 이전 글 또는 통제된 실습 자료에 개요와 항목별 프롬프트 원문을 고정해 적용하고, 실제 모델·effort·입력 해시·원시 결과·반복 일관성·범위와 한계를 내부 기록에 남긴다. 과거의 Sol·Opus High 비교 결과는 당시 사실대로 보존하며 앞으로의 필수 실행 모델 배정으로 사용하지 않는다.
 
 최종 글에는 지정한 Opus Medium 테스트와 두 독립 리뷰로 확인한 결과 및 독자가 사용할 완성된 프롬프트를 싣는다. 별도 모델 비교를 진행한 경우에만 실제 확인된 비교 결과를 설명한다. 수정 이력, 시행착오, 모델 교체·인증·출력 오류 처리 과정은 독자용 본문에 쓰지 않는다. 실행 언어를 불필요하게 설명하지 않는다. 검증 범위와 실제 결과를 짧게 명시하고, 특정 사례의 통과를 모든 웹사이트에서의 완벽한 성능으로 확대하지 않는다.
 

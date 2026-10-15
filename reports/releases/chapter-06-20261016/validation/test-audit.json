@@ -1,0 +1,373 @@
+{
+  "frozen_inputs_unchanged": true,
+  "outputs": 36,
+  "expected_outputs": 36,
+  "reference_agreements": 36,
+  "mismatches": [],
+  "missing": [],
+  "rows": [
+    {
+      "session": 1,
+      "case": "L01",
+      "actual": "not_assessed",
+      "conditional": "pass_under_supplied_scenario",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "pass_under_supplied_scenario",
+      "agrees": true,
+      "sha256": "f5a63b4e92b9a5d4af1dcd1fd0f2264156525fb53116f174b5e0a64b553ce499"
+    },
+    {
+      "session": 1,
+      "case": "L02",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "614860ba1ced5c346e33a3e15f281f2eb995501a6f9ba3adc4864923937efc36"
+    },
+    {
+      "session": 1,
+      "case": "L03",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "b93158cae4c23229179de05ff2e94c5ce238fc53c43f94b6500687015599b4f5"
+    },
+    {
+      "session": 1,
+      "case": "L04",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "b6b59f2d62b0d33d12a131dddf72a3b63901dff3e57800f7139218f06abec859"
+    },
+    {
+      "session": 1,
+      "case": "L05",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "f626a9209a65ba34a98f101e37f6b6745a47490fe406ba8c07ffc84b42e2262e"
+    },
+    {
+      "session": 1,
+      "case": "L06",
+      "actual": "not_assessed",
+      "conditional": "cannot_determine",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "cannot_determine",
+      "agrees": true,
+      "sha256": "54b428ed1ec27e6d164250dfb22ea95f1e9381e474d8c46527287b2a4baa5443"
+    },
+    {
+      "session": 1,
+      "case": "L07",
+      "actual": "not_assessed",
+      "conditional": "cannot_determine",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "cannot_determine",
+      "agrees": true,
+      "sha256": "da17bb7afe8b39e16f79260dab2df580319134e8e7abbd0b873d5c4c6b2c6136"
+    },
+    {
+      "session": 1,
+      "case": "L08",
+      "actual": "not_assessed",
+      "conditional": "pass_under_supplied_scenario",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "pass_under_supplied_scenario",
+      "agrees": true,
+      "sha256": "d8d97c6362b668fd0e401ad90275fa42902e614b178068e93d76ec9219e36e15"
+    },
+    {
+      "session": 1,
+      "case": "L09",
+      "actual": "not_applicable",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "not_applicable",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "fc73aeb444f8c7a34d26e32d434a40a794ba79cc4b5bd06472b862217c73ded1"
+    },
+    {
+      "session": 1,
+      "case": "L10",
+      "actual": "not_applicable",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "not_applicable",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "afe00a9c469fd755365b3f20be82ceb67c3c046113deea02cb77752059fcfdd1"
+    },
+    {
+      "session": 1,
+      "case": "L11",
+      "actual": "cannot_determine",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "cannot_determine",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "b8f14f58c11ffc5f611e0fbb8ea4f2085b2d0fea7192285c316b9fb31402fe7c"
+    },
+    {
+      "session": 1,
+      "case": "L12",
+      "actual": "not_assessed",
+      "conditional": "not_applicable",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "not_applicable",
+      "agrees": true,
+      "sha256": "d867352c913c373cf84b8dcd13a844cac785999bf057c6494f48e9233b522933"
+    },
+    {
+      "session": 2,
+      "case": "L01",
+      "actual": "not_assessed",
+      "conditional": "pass_under_supplied_scenario",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "pass_under_supplied_scenario",
+      "agrees": true,
+      "sha256": "efaffd4d9862d37ea21f1acdf025ae104e56bbd10f04dfbcd5813c1ac88199a3"
+    },
+    {
+      "session": 2,
+      "case": "L02",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "3b194f0e1270b1b8da87e5d8f961854c6d23035aa5ae241296ecf6895c1d5fbe"
+    },
+    {
+      "session": 2,
+      "case": "L03",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "b66fbb42be3d281421f88ab511357fb25860e6583b443272bfc7159bab73e13a"
+    },
+    {
+      "session": 2,
+      "case": "L04",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "1119f71fe27c4679abd040d4d371e738c03228f19b28647594dad6e702f0df6e"
+    },
+    {
+      "session": 2,
+      "case": "L05",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "39472cc820d701f0664e3895ef3617e513f648d55d4b0cfc53b350fc93408cb1"
+    },
+    {
+      "session": 2,
+      "case": "L06",
+      "actual": "not_assessed",
+      "conditional": "cannot_determine",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "cannot_determine",
+      "agrees": true,
+      "sha256": "0b90c59356cd9240f1c6a69e2acb710351c716529cf6e09370f9471464ee4e9e"
+    },
+    {
+      "session": 2,
+      "case": "L07",
+      "actual": "not_assessed",
+      "conditional": "cannot_determine",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "cannot_determine",
+      "agrees": true,
+      "sha256": "aab266d593ac67afadae15b30c819f5eeb55bfd45fbea72dff57305f929babe7"
+    },
+    {
+      "session": 2,
+      "case": "L08",
+      "actual": "not_assessed",
+      "conditional": "pass_under_supplied_scenario",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "pass_under_supplied_scenario",
+      "agrees": true,
+      "sha256": "fa6d713d1b50915130e6eb83c559ab778caefcb8623dd49d6e30dfd189814987"
+    },
+    {
+      "session": 2,
+      "case": "L09",
+      "actual": "not_applicable",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "not_applicable",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "e660a6ca195b31c27cda51c5e3e5d6b1ded51d10f32f81d4fb0743b7a176fa45"
+    },
+    {
+      "session": 2,
+      "case": "L10",
+      "actual": "not_applicable",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "not_applicable",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "e7234a44ae94f3d9d8c87a2b94809e1f6e23df795f3ff74f69c4c5e59e291c23"
+    },
+    {
+      "session": 2,
+      "case": "L11",
+      "actual": "cannot_determine",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "cannot_determine",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "9bdba168ae031de24cd1357042a546bb0d0c10c1408c1b05ed29060db85d90a5"
+    },
+    {
+      "session": 2,
+      "case": "L12",
+      "actual": "not_assessed",
+      "conditional": "not_applicable",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "not_applicable",
+      "agrees": true,
+      "sha256": "6f309b9fbb8318d926a25d4a5d0f6df0abf45ae525b87c12d5a5f8506d0634e0"
+    },
+    {
+      "session": 3,
+      "case": "L01",
+      "actual": "not_assessed",
+      "conditional": "pass_under_supplied_scenario",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "pass_under_supplied_scenario",
+      "agrees": true,
+      "sha256": "14380dffdaceb203bfbcef9e6ecaf52b3863a1cc4a758655767a5e44bcef7afc"
+    },
+    {
+      "session": 3,
+      "case": "L02",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "24ab5ea42b9cc5fb0645bc86b49b8e90206bc05090066b1093209a087210c5e5"
+    },
+    {
+      "session": 3,
+      "case": "L03",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "2f74517320ce5f563417ad50672ee3b4973b8b4505e159368f719060645cca14"
+    },
+    {
+      "session": 3,
+      "case": "L04",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "df9d993df4163c46f0444aae94afb4b58b335d660c1bd254afe2bb55379a5c83"
+    },
+    {
+      "session": 3,
+      "case": "L05",
+      "actual": "not_assessed",
+      "conditional": "fail",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "fail",
+      "agrees": true,
+      "sha256": "bbe16b7b9caca64717cff3f63d2ba95cf2f857d6adcf751332df7e0475feb7ca"
+    },
+    {
+      "session": 3,
+      "case": "L06",
+      "actual": "not_assessed",
+      "conditional": "cannot_determine",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "cannot_determine",
+      "agrees": true,
+      "sha256": "6aea68301c1207ed23493de511386a0525a38552735986d712fa71a79d7a1843"
+    },
+    {
+      "session": 3,
+      "case": "L07",
+      "actual": "not_assessed",
+      "conditional": "cannot_determine",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "cannot_determine",
+      "agrees": true,
+      "sha256": "6be766e0765d8b30d5a5b26c6b060fdc6450e156e3e2d57c94ac6157b7a72d7f"
+    },
+    {
+      "session": 3,
+      "case": "L08",
+      "actual": "not_assessed",
+      "conditional": "pass_under_supplied_scenario",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "pass_under_supplied_scenario",
+      "agrees": true,
+      "sha256": "114d9d4529d39f15df618bf519e70d4457b45211ca6cdd0d31d0fb5be4526cf9"
+    },
+    {
+      "session": 3,
+      "case": "L09",
+      "actual": "not_applicable",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "not_applicable",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "3b6fdef1b36d2df3a86bd77cdd4eb170bee5f9bed6657c2b81048e1526db709b"
+    },
+    {
+      "session": 3,
+      "case": "L10",
+      "actual": "not_applicable",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "not_applicable",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "f409d11a537230d3ed544e807daf083c1b927706e27f1e254b8a93d39a850000"
+    },
+    {
+      "session": 3,
+      "case": "L11",
+      "actual": "cannot_determine",
+      "conditional": "not_applicable_actual_mode",
+      "expected_actual": "cannot_determine",
+      "expected_conditional": "not_applicable_actual_mode",
+      "agrees": true,
+      "sha256": "603d9541da7bcae115852781447dc346fa17a9d8d0e0dbcda39393c102bde8a4"
+    },
+    {
+      "session": 3,
+      "case": "L12",
+      "actual": "not_assessed",
+      "conditional": "not_applicable",
+      "expected_actual": "not_assessed",
+      "expected_conditional": "not_applicable",
+      "agrees": true,
+      "sha256": "8537e55f0df287f1c129523cf2a4a70a6d4cab749d23ed97eb546b8600b28ef8"
+    }
+  ],
+  "limits": "36 independent Desktop Opus5.5 Medium criterion sessions; one case per fresh context, each of12 cases repeated3 times. Three separately executed overview plans excluded from36. Nine hypothetical scenario cases are conditional reasoning with actual not_assessed, 2 local nonlive media classification controls and1 missing input. No real live broadcast or direct audio/video caption quality audit.",
+  "prompt_sha256": "f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f",
+  "overview_sha256": "ee86f412ab54a8f6cdaa3afd54057e3cabc1f7ef603a47b17f1f9499ba91eb8c"
+}

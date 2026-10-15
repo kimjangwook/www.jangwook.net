@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "accessedAt": "2026-10-16",
+    "path": "source-00.txt",
+    "sha256": "2a7cd88b8ee65cd753b47c0ca2ef4515243fed02fa00fd618f452e7bdff8e551"
+  },
+  {
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/captions-live.html",
+    "accessedAt": "2026-10-16",
+    "path": "source-01.txt",
+    "sha256": "0800dbefb8be24ae15fa6daf904096d48452cad98d2d3a9cd7e431edd1eddeee"
+  },
+  {
+    "url": "https://www.w3.org/WAI/WCAG22/Techniques/general/G9.html",
+    "accessedAt": "2026-10-16",
+    "path": "source-02.txt",
+    "sha256": "552cb71d905628ac83298cc1964f383cd305485232e3b1215c245084044bbed3"
+  },
+  {
+    "url": "https://www.w3.org/WAI/WCAG22/Techniques/general/G87.html",
+    "accessedAt": "2026-10-16",
+    "path": "source-03.txt",
+    "sha256": "962ac6ec7a21d552fb5a5253cfda193a76895d7e80e8b1779e676631121167bb"
+  },
+  {
+    "url": "https://www.w3.org/WAI/WCAG22/Techniques/general/G93.html",
+    "accessedAt": "2026-10-16",
+    "path": "source-04.txt",
+    "sha256": "bda704b2f0af8b15a04986a05ea3ad4aa51d8aa77357cfb1fce037db60228a1a"
+  },
+  {
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html",
+    "accessedAt": "2026-10-16",
+    "path": "source-05.txt",
+    "sha256": "ea7336fc07b54ef51097868904f622593073465218f5c3955fa21f70c87d86f1"
+  },
+  {
+    "url": "https://www.w3.org/WAI/WCAG22/Techniques/general/G157.html",
+    "accessedAt": "2026-10-16",
+    "path": "source-06.txt",
+    "sha256": "7fcd62046ff1726d96d747bc8c03f3f04b4a5f3e23da8dd8acea75e33546d079"
+  }
+]

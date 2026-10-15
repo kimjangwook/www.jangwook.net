@@ -1,0 +1,21 @@
+{
+  "model": "Gemini 4 Argon",
+  "channel": "Chrome Gemini web UI",
+  "conversation_url": "https://gemini.google.com/app/ba69156bb33c601a",
+  "date": "2026-10-16",
+  "input_sha256": "304ceac0f599427dd72214f2885af619b50ee749ba1ed995f46216f718888bac",
+  "raw_output_sha256": "cd0171c042842583fb962a988126bd606c3b713a5d22a33b69950a47583fdb71",
+  "extraction": "Visible response DOM text; JSON field delimiters split and escaped newlines decoded because inner prose quotes were unescaped. Raw output preserved.",
+  "proof": "gemini-writing-proof.png",
+  "final_article_sha256": "416907b80720f79ee49df82d041f54665920d344a4f75cc2a62658f60c812c90",
+  "final_prompt_sha256": "f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f",
+  "revision_sources": [
+    "body-revised-frontmatter.md",
+    "gemini-editorial-patches.json",
+    "gemini-results-section.md",
+    "gemini-final-review-patches.json",
+    "gemini-isolated-methodology.md"
+  ],
+  "coordinator_edits": "Verified facts, source-specific precision, no new prose generation; normalized markup and repetition wording to match isolated protocol. Typographic range separators changed from tilde to en dash to prevent unintended GFM strikethrough.",
+  "post_writing_browser_state": "After the completed writing response was extracted with Argon selected, a later browser refresh displayed a quota reset notice and automatically selected Flash-Lite. No further writing request was sent in that state."
+}

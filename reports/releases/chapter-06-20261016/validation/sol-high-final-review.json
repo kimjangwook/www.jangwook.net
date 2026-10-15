@@ -1,0 +1,88 @@
+{
+  "verdict": "pass",
+  "reviewed_source_hash": "9e49611840ca7a3b23f6c1f8720e289f8a467e4910f4466c8edb117595bd37ad",
+  "reviewed_files_sha256": {
+    "article.md": "416907b80720f79ee49df82d041f54665920d344a4f75cc2a62658f60c812c90",
+    "prompt.md": "f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f"
+  },
+  "reviewer": {
+    "model": "GPT-6.1 Sol",
+    "effort": "high",
+    "review_date": "2026-10-16",
+    "packet": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-review-v3-20261016",
+    "independence": "다른 리뷰 결과와 이전 리뷰 보고서·판정에 의존하지 않고 현 패킷을 검토했습니다. 본문·프롬프트·실습·입력·원시 출력은 수정하지 않았습니다."
+  },
+  "blockers": [],
+  "issues": [
+    {
+      "id": "SOL-V3-01",
+      "severity": "low",
+      "blocking": false,
+      "evidence": [
+        "frozen-tests/r3/L12-result.json:10은 is_synchronized_media를 yes로 기록합니다.",
+        "같은 파일:14는 이 값을 물리적인 오디오+비디오 구성으로 사용했으며, 명확히 라벨링된 텍스트 미디어 대안은 규범 정의에서 제외된다고 명시적으로 구분합니다. 최종 두 판정 필드는 올바르게 not_applicable / not_assessed입니다.",
+        "동일한 L12의 r1/r2 출력은 is_synchronized_media를 규범 정의 적용 후의 no로 사용합니다. sources/normative-definitions.txt:17–23은 명확히 라벨링된 텍스트 미디어 대안을 synchronized media에서 제외합니다."
+      ],
+      "finding": "L12의 비적용 판정과 설명은 맞지만 보조 필드의 의미가 반복 간에 물리적 구성과 규범상 정의로 달라집니다. 따라서 36/36은 본문에 적힌 최종 판정 필드의 일치이며 모든 보조 필드의 일치를 뜻하지 않습니다. r3가 사용한 뜻을 명시적으로 밝혔으므로 핵심 판정의 모순이나 본문 수정 차단 사유로 보지는 않습니다.",
+      "requested_change": "동결 원시 결과는 그대로 보존하고 검토 주석으로 이 차이를 기록하십시오. 향후 스키마를 기계적으로 재사용할 때는 is_synchronized_media가 정의상 예외 적용 후 값인지 물리적 구성 값인지 명시하는 것이 좋습니다. 이 선택적 스키마 보완은 현재 본문 통과의 선행 조건은 아닙니다."
+    },
+    {
+      "id": "SOL-V3-02",
+      "severity": "low",
+      "blocking": false,
+      "evidence": [
+        "frozen-tests/r2/L08-result.json:22 및 frozen-tests/r3/L08-result.json:22는 K1–K4에 화자 라벨이 포함된 것으로 서술합니다.",
+        "frozen-tests/cases-input.json의 L08 observation.rendered_captions에서 화자 라벨은 대사 K1–K3에 있으며, K4는 [警告音2回・認証失敗]입니다.",
+        "두 출력의 findings는 대사의 화자 귀속과 경고음의 의미 전달을 각각 올바르게 설명하고 최종 조건부 통과 판정도 맞습니다."
+      ],
+      "finding": "근거 배열의 K1–K4 범위가 화자 라벨에 대해서는 한 항목 넓게 적혔습니다. K4는 화자 발언이 아니므로 화자 라벨을 요구할 필요가 없고, 이 표현 차이는 자막 충분성 결론에 영향을 주지 않습니다.",
+      "requested_change": "원시 출력을 수정하지 말고 검토 주석에 “화자 라벨은 K1–K3, K4는 경고음과 인증 실패 의미를 제공”이라고 기록하는 정도면 충분합니다. 36/36을 근거 문구 전체의 무오류율로 소개하지 않는 현재 범위를 유지하십시오."
+    }
+  ],
+  "verified": {
+    "integrity": {
+      "review_freeze_files": 100,
+      "review_freeze_mismatches": 0,
+      "test_input_freeze_files": 29,
+      "test_input_freeze_mismatches": 0,
+      "private_reference_hash_matches": true,
+      "criterion_receipt_output_hashes_match": 36,
+      "distinct_criterion_session_urls": 36,
+      "overview_plan_hashes_match": 3
+    },
+    "final_format_delta": "v2에서 v3로 article.md의 ~ 13개가 en dash(–)로 바뀐 것만 확인했습니다. article.ko.html과 metadata.sourceHash도 대응 갱신되었습니다. prompt.md·12개 사례 입력·출처·36개 raw 출력·P1 계획·도식·실습·results.json은 바이트 기준 불변입니다. 제공 article.ko.html에는 del 요소가 없습니다. PDF의 시각적 판정은 포함하지 않았습니다.",
+    "prompt_identity": "prompt.md와 frozen-tests/P2-original.md가 동일하며, 12개 P2-filled는 입력 블록 밖 지침이 동일합니다. 각 complete_source_packet은 cases-input.json의 해당 사례와 일치합니다. L09/L10의 포함 HTML 전체 소스도 각각 labs/replay.html 및 labs/generated.html과 일치합니다.",
+    "decision_recomputation": {
+      "outputs": 36,
+      "reference_decision_pair_agreements": 36,
+      "hypothetical_actual_not_assessed": 27,
+      "hypothetical_cases": 9,
+      "observed_nonlive_classification_cases": 2,
+      "evidence_missing_cases": 1,
+      "overview_plans_excluded_from_denominator": 3,
+      "public_results_equal_frozen_raw": true
+    },
+    "standard_and_sources": "SC 1.2.4 AA의 모든 라이브 오디오·동기화 미디어 조건, live의 실세계 기원·방송 지연과 완전 컴퓨터 생성 제외, prerecorded, 텍스트 미디어 대안 두 조건이 현재 규범 발췌에 부합합니다. 양방향 통화의 Understanding 설명은 비규범으로 구분합니다. G9+G87/G93은 충분 기법 예시이고 유일한 의무 구현으로 표현하지 않습니다. 같은 언어 자막의 기법 안내와 가림 방지 should를 의무 수치로 바꾸지 않습니다. source-00.txt는 현 패킷에서 전체 규범 정의를 실제로 포함하며, 출력의 해당 인용 위치도 실제 자료로 뒷받침됩니다.",
+    "case_reference_validity": "L01/L08의 충분한 전 구간 자막 가정, L02의 의미 반전, L03의 필수 화자 귀속 누락, L04의 인증 실패 경고음 누락, L05의 판단 화면 이후 자막, L06/L07의 증거 부족, L09/L10의 비생중계 기원, L11의 예시 URL 단독, L12의 라벨과 정보 동일성 가정은 사전 기준 답과 독립적으로 대조해 타당하다고 판단했습니다.",
+    "raw_evidence_and_fixes": "36개 JSON의 적용성·판정·근거·발견 사항·미확인/미검토 범위·개선안을 확인했습니다. L12에 텍스트 대안 표시가 없다는 잔존 문구는 없으며, L05 세 결과는 필요한 큐 삭제·건너뛰기를 권고하지 않고 의미·화자·중요 소리·행동 기회를 보존하는 지연 개선과 판단 화면 유지 등을 제안합니다. 특정 ASR 원인을 확인하지 않고 사실로 단정하지 않습니다. 입력에 없는 중대한 근거 인용이나 임의의 규범 지연·정확도 임계값은 확인되지 않았습니다. 두 low 항목은 위와 같이 별도 기록했습니다.",
+    "scope_and_claims": "article.md:102–106의 P1 별도 3세션과 P2 사례별 새 대화 3회, 총36회 설명은 receipt/freeze/audit에 부합합니다. 36/36은 12개 고정 조건의 3회 판정 일치이며 새로운 36개 사례의 일반 정확도, 실제 생방송 품질, ASR 성능, 원음 직접 처리 성능, WCAG 인증으로 확대하지 않습니다. 실제 모드 라벨만으로 자료를 인증하지 않고 비적용·판단 유보·가상 조건부 판정을 구분합니다.",
+    "P1_plans": "3개 P1은 계획과 실제 실행을 구분하고 A–F 범위·상태/증거·실행 순서·검증·기록 양식·준비 자료를 제공합니다. 원문 미확인과 목표 밖 AAA 및 삭제된 4.1.1을 구분합니다. 각 계획의 세부 품질에 대한 완전성 성과를 본문이 주장하지 않으며 36건 분모에서도 제외합니다. P1 실행 출처와 해시가 별도 기록되어 있습니다.",
+    "timing_and_figures": "도식 PNG 3장과 실습 PNG 2장을 view_image로 확인했고 SVG title/desc·본문 alt/캡션도 대조했습니다. 그림02의 늦은 자막 화살표는 22초 화면 종료에서 30초 늦은 자막 등장으로 이어지며 정상 자막을 지칭하지 않습니다. 14–22초 발화→30–38초 자막은 발화 시작 기준16초 이동, 화면 종료22초 뒤8초 경과입니다. 본문·입력·출력·그림에서 이를 고정 합격선으로 사용하지 않습니다. 그림01은 기원과 전달, 그림03은 서버 생성과 수신 화면 및 실제/가상의 판정 분리를 전달합니다.",
+    "reader_flow_and_metadata": "제목·요약·SC1.2.4·AA가 본문과 일치하고 과장된 성과를 약속하지 않습니다. 설명→본문 내 실습 iframe과 직접 링크→실제 제한된 시험 결과→11개 체크리스트→재사용 프롬프트 안내→인접 기준과 출처로 이어집니다. 체크는 적합 판정이 아닌 검토 진행 기록이라고 밝힙니다. 체크리스트:148의 1.2.2 검토는 동기화 미디어인 경우로 한정됩니다. 도식 원본·실습·results·사례 앵커 링크를 제공하며 대상 없음과 시험 자료 부족을 구분합니다.",
+    "prompt_safety_and_reuse": "읽기 전용, 미방문/미청취를 했다고 쓰지 않기, 카메라·마이크·외부 전송 금지, 입력 데이터의 지시문 무시, 다른 패킷 사실 차용 금지, 실제/가상 판정 분리, 표본 실패와 전체 통과의 차이, 출력 전 사실·내부 논리·실재 출처·정보 보존 확인이 포함되어 있습니다. 검증 범위에서 재사용 가능한 템플릿이며 모든 입력의 완벽성은 주장하지 않습니다."
+  },
+  "reviewed_files": {
+    "packet_root": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-review-v3-20261016",
+    "file_manifest": "review-freeze.json의 files 100개",
+    "content_review": "article.md, prompt.md, metadata.json, sources의 규범·Understanding·G9/G87/G93/G157 및 출처 목록, labs HTML과 cases/results, 12개 filled 입력과 원본 P1/P2, P1 계획3개와 P2 JSON36개, private-reference/test-input-freeze/test-audit/desktop-execution-receipt, SVG3개 및 PNG5개",
+    "hash_only_or_separate_qa": "article.ko.html은 서식 치환 및 del 요소 부재만 확인. html-validation.json은 해시 검증만 수행했으며 HTML/PDF 전체 렌더링 시각 QA는 별도입니다. 동일 복사본은 해시/내용 동등성 확인으로 처리했습니다."
+  },
+  "limits": [
+    "Claude Desktop의 모델·effort·36개 새 대화와 기준 답 비공유는 제공된 실행 영수증·동결 기록에 근거합니다. 36개 고유 세션 URL과 결과 해시는 독립 확인했지만 세션을 다시 열거나 전체 실행 이력을 재현하지 않았습니다. raw_launch_evidence가 가리키는 실행 전문은 이 검토 패킷에 포함되지 않았습니다.",
+    "12개 조건을 각각3회 반복한 기록이며, 실제 생중계·원음 청취·영상 재생·장시간 방송·복합 장애·ASR 성능·보조기술 환경 시험을 수행한 것은 아닙니다. MP4/VTT 자체는 패킷에 없어 자막 전 구간 품질을 독립 재생 검증하지 않았습니다.",
+    "실제 자료는 두 로컬 비생중계 분류 대조군과 자료 부족 입력입니다. 가상9개 사례의 충족/위반은 주어진 전제 아래의 조건부 추론이며 실제 감사 판정은27개 모두 not_assessed입니다.",
+    "PDF16쪽의 시각 QA, 브라우저·모바일·키보드·no-JS 검수, 네 언어 번역, 공개 승인 및 운영 공개 상태 확인은 별도 단계입니다. 이 리뷰는 공개5편·6편draft 상태를 바꾸거나 발행하지 않았습니다.",
+    "pass는 위 정확한 한국어 원고·프롬프트와 공개 시험 주장의 범위에 대한 리뷰 판정입니다. 모든 JSON 보조 필드·문구의 무오류나 서비스 전체의 WCAG 적합성을 뜻하지 않습니다."
+  ],
+  "summary_ko": "통과입니다. v3 동결 해시100개, 입력 해시,36개 고유 판정 세션의 결과 해시,36/36 최종 판정 일치와 실제/가상 범위 구분을 확인했습니다. 그림02 시점과 11개 체크리스트도 정확합니다. 보조 필드 의미와 K4 라벨 범위에 관한 비차단 메모2건이 있으며 원시 결과 보존을 권고합니다. PDF시각QA는 별도입니다."
+}

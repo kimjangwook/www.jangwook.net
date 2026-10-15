@@ -1,0 +1,79 @@
+{
+  "packet_id": "L06",
+  "evidence_mode": "hypothetical_supplied_scenario",
+  "scope": {
+    "evaluated_target": "교육용 관찰 자료: 가상의 40초 공개 웨비나(녹화 삽입 없음)의 오디오 및 캡션 콘텐츠",
+    "evaluated_segment": "가상의 40초 공개 웨비나 전 구간 (원음 이벤트는 A1~A4, 0–24초 구간만 제시됨)",
+    "is_full_program_covered": false
+  },
+  "applicability": {
+    "is_synchronized_media": "yes",
+    "is_live_audio": "yes",
+    "is_labeled_media_alternative_for_text": "no",
+    "sc_1_2_4_applicable": "applicable",
+    "rationale": "시나리오 전제상 실세계에서 두 사람이 말하는 장면을 카메라와 마이크로 그 시점에 수록해 통상의 방송 지연만으로 큰 편집 없이 송출했고(live), 형식은 음성과 영상의 동기화 미디어이며, 원문 전문 텍스트도 없고 그 대안이라는 표시도 없으므로 텍스트의 미디어 대안 예외 두 조건이 충족되지 않습니다. 따라서 이 가정 아래에서 SC 1.2.4 적용 대상입니다(정의 결합에 따른 도출)."
+  },
+  "scenario_decision": "cannot_determine",
+  "actual_live_audit_decision": "not_assessed",
+  "evidence_used": [
+    "가상 시나리오 전제(complete_source_packet.event): 실세계 2인 발화를 그 시점에 수록·송출, 통상 방송 지연만 있고 큰 편집 없음, 음성과 영상의 동기화 미디어, 원문 전문 텍스트 및 대안 표시 없음",
+    "가상 시나리오 전제(observation.audio): A1 0–8 [案内者] 新しいコードを保存してください / A2 8–14 [質問者] 前のコードを今捨ててもいいですか / A3 14–22 [案内者] いいえ。新しいコードを保存する前には捨てないでください / A4 22–24 [警告音2回。認証失敗の意味]",
+    "가상 시나리오 전제(observation.rendered_captions): 빈 배열. observation.display: '字幕生成サーバーのテキストログだけ存在。利用者画面への配送・表示は未観察' — 즉 화면 미표시가 관찰된 것이 아니라 표시 여부 자체가 미관찰",
+    "가상 시나리오 전제(observation.coverage): 원음 이벤트 목록은 가정이며 생성 로그만 있고 실제 표시 구간은 불명",
+    "가상 시나리오 전제(observation.clock): 원음과 자막 로그는 별도 시계이며 오프셋 불명",
+    "가상 시나리오 전제(observation.speakers): 질문자·안내자는 화면 밖에 있어 화면과 문맥만으로는 구별 불가",
+    "가상 시나리오 전제(observation.other_caption_path): 별도 경로 자막은 존재하지 않음, 자막 생성 방침·담당·배포 절차는 있다고 가정",
+    "규범 원문: SC 1.2.4 'Captions are provided for all live audio content in synchronized media.' 및 captions·live·synchronized media 정의 (sources/normative-definitions.txt, source-00.txt; 줄 번호 미확인)",
+    "정보 문서: Understanding SC 1.2.4 (source-01.txt), G9 (source-02.txt), G87 (source-03.txt), G93 (source-04.txt) — 위치(줄 번호) 미확인"
+  ],
+  "findings": [
+    {
+      "category": "applicability",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 및 live, synchronized media, media alternative for text 정의",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "가정된 전제 아래에서 3축(동기화 미디어 yes, live yes, 텍스트의 미디어 대안 no)이 모두 확인되어 SC 1.2.4가 적용됩니다. 녹화 삽입이 없다고 명시되어 있어 prerecorded 구간 분리도 필요하지 않습니다."
+    },
+    {
+      "category": "caption_display_unobserved",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 ('Captions are provided') 및 captions 정의(동기화된 시각/텍스트 대안)",
+      "informative_reference": "Understanding SC 1.2.4, G9",
+      "description": "rendered_captions가 빈 배열이지만, 패킷은 이것이 '표시되지 않음이 관찰됨'이 아니라 '이용자 화면으로의 배송·표시가 미관찰'임을 명시합니다. 따라서 캡션 부재(fail)를 입증하는 자료가 아니며, 동시에 캡션 제공(pass)을 입증하는 자료도 아닙니다."
+    },
+    {
+      "category": "caption_content_unverifiable",
+      "normative_basis": "captions 정의(대사 및 비음성 정보, 화자 식별 포함)",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "자막 생성 서버의 텍스트 로그가 존재한다고만 기술되고 그 로그 내용 자체는 패킷에 제시되지 않았습니다. 따라서 A3의 부정어('いいえ', '捨てないでください') 보존 여부, 화면 밖 두 화자의 귀속 단서(화면·문맥만으로 구별 불가하므로 캡션 내 화자 식별이 이해에 필요함), A4 경고음 2회(인증 실패 의미)의 비음성 정보 포함 여부를 모두 평가할 수 없습니다."
+    },
+    {
+      "category": "synchronization_unverifiable",
+      "normative_basis": "captions 정의(synchronized), SC 1.2.4",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "원음과 자막 로그가 별도 시계이며 오프셋이 불명이므로 수신자 공통 시계 위에서 원음 사건과 표시 사건을 대조할 수 없습니다. 기능적 동기화 위반이나 충족 어느 쪽도 입증되지 않습니다. 1.2.4에는 고정 허용 지연 수치가 없으므로 임의 임계값을 적용하지 않았습니다."
+    },
+    {
+      "category": "procedures_not_sufficient_for_pass",
+      "normative_basis": "WCAG 2.2 SC 1.2.4",
+      "informative_reference": "G9",
+      "description": "자막 생성 방침·담당·배포 절차가 있다는 가정과 서버 생성 로그의 존재만으로는 실제 이용자 화면에서 캡션이 동기화되어 표시되었음을 입증할 수 없으므로 pass_under_supplied_scenario로 판정하지 않았습니다. 별도 자막 경로가 없다는 전제는 '유일한 경로의 결함이 입증되면 fail'이 될 수 있는 조건이지만, 그 유일한 경로의 결함 자체가 입증되지 않았으므로 fail도 확정할 수 없습니다."
+    }
+  ],
+  "missing_evidence": [
+    "자막 생성 서버 텍스트 로그의 실제 내용(큐 텍스트, 화자 표시, 비음성 정보 표기, 타임스탬프)",
+    "이용자 화면에 실제로 렌더링된 캡션의 관찰 기록(rendered_captions)과 배송·표시 구간",
+    "원음 타임라인과 자막 로그/표시 사이의 공통 시계 또는 확정된 오프셋",
+    "A1~A4 이후(24–40초) 구간의 원음 이벤트 정보",
+    "실제 감사 판정으로 전환하기 위한 실재 방송의 당시 수신 화면·오디오 동시 캡처와 세션·시계 무결성 메타데이터(본 패킷은 교재 작성자가 만든 가상 관찰 기록임)"
+  ],
+  "unreviewed_scope": [
+    "원음 이벤트가 제시되지 않은 24–40초 구간",
+    "이용자 화면으로의 캡션 배송·렌더링 전 과정",
+    "실재 서비스 및 실제 사용자 에이전트·보조기술 환경(본 평가는 가정 하의 조건부 추론이며 실제 방송 감사 결과가 아님)"
+  ],
+  "fixes_and_retest": [
+    "동일 세션에서 수신자 공통 시계 기준으로 원음과 이용자 화면에 렌더링된 캡션을 동시에 기록하여, A1~A4 각각에 대응하는 표시 큐가 제때 나타나는지 확인하십시오.",
+    "캡션 내용이 A3의 부정어('いいえ', '保存する前には捨てないでください')를 그대로 보존하는지, 화면 밖 두 화자를 구분하는 화자 식별 단서(예: [案内者]/[質問者] 또는 동등한 표기)를 필요한 지점에 포함하는지, A4의 경고음 2회와 그 의미(인증 실패)를 비음성 정보로 표기하는지 확인하고, 누락 시 실시간 캡션 작업자 확인·교정 등 G9 기반 절차를 보강하되 지연 단축을 이유로 이들 큐를 생략하거나 과도하게 요약하지 마십시오.",
+    "자막 생성 로그와 원음의 시계를 동기화(공통 타임스탬프 부여)하여 사후 대조가 가능하도록 하십시오.",
+    "별도 자막 경로가 없다는 전제이므로, 유일한 캡션 경로의 표시 실패 시 대체 수단이 없음을 감안해 배송·표시 모니터링을 운영 절차에 포함하고, 개선 후 실제 송출 환경에서 actual_supplied_evidence 모드로 재평가하십시오."
+  ]
+}

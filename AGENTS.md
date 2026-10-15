@@ -21,6 +21,6 @@ User update 2026-10-02: publish the four-language accessibility overview; deploy
 
 2026-10-04 reliability goal: continuously validate the overview and every criterion prompt using real evidence, frozen reference answers, normal/failure/exception/missing-input cases and isolated repetitions. Preserve hashes, actual models/tools, raw outputs and limits. See docs/editorial-guide.md. Never claim universal perfection or native media processing from derived text/images.
 
-## 접근성 시리즈 제작 모델과 절차 — 2026-10-11
+## 접근성 시리즈 제작 모델과 절차 — 2026-10-11, 집필 변경 2026-10-16
 
-사용자 지정 [제작 원칙](docs/accessibility-production-workflow.md)을 새 글과 내용 갱신에 적용한다. 기초 조사: Ollama Cloud DeepSeek v4.1. 보강 조사: GPT-6.1 Sol High. 집필: Claude Sonnet Medium + GPT-6.1 Sol Medium. 테스트: Claude Opus Medium. 독립 리뷰: GPT-6.1 Sol High + Fable Low. 이후 사용자 승인 범위의 네 언어 완성·커밋·푸시·배포·운영 확인·@effloow 영어 발표를 진행한다. 이전 Sol·Opus High 필수 비교 지침을 대체하며 과거 실제 실행 기록은 보존한다. 지정 모델과 effort를 실제로 확인하고 조용한 대체를 하지 않는다. 전역 Life Manager 역할과 자동 스케줄은 이 시리즈 지시로 변경하지 않는다.
+사용자 지정 [제작 원칙](docs/accessibility-production-workflow.md)을 새 글과 내용 갱신에 적용한다. 기초 조사: Ollama Cloud DeepSeek v4.1. 보강 조사: GPT-6.1 Sol High. 집필: 브라우저의 Gemini 4 Argon. 테스트: Claude Opus Medium. 독립 리뷰: GPT-6.1 Sol High + Fable Low. 이후 사용자 승인 범위의 네 언어 완성·커밋·푸시·배포·운영 확인·@effloow 영어 발표를 진행한다. 이전 Sol·Opus High 필수 비교 지침을 대체하며 과거 실제 실행 기록은 보존한다. 지정 모델과 effort를 실제로 확인하고 조용한 대체를 하지 않는다. 전역 Life Manager 역할과 자동 스케줄은 이 시리즈 지시로 변경하지 않는다.

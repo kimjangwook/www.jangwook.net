@@ -1,0 +1,56 @@
+{
+  "packet_id": "L12",
+  "evidence_mode": "hypothetical_supplied_scenario",
+  "scope": {
+    "evaluated_target": "교육용 관찰 자료로 제시된 가상의 40초 공개 웨비나(실세계 2인 발화, 음성·영상) 및 폐쇄 캡션",
+    "evaluated_segment": "0–40초 전 구간(녹화 삽입 없음, 동일 수신 세션의 화면·원음·캡션 전체 비교로 가정)",
+    "is_full_program_covered": true
+  },
+  "applicability": {
+    "is_synchronized_media": "no",
+    "is_live_audio": "yes",
+    "is_labeled_media_alternative_for_text": "yes",
+    "sc_1_2_4_applicable": "not_applicable",
+    "rationale": "시나리오 전제상 실세계에서 두 사람을 그 시점에 카메라·마이크로 수록해 통상의 방송 지연만으로 대폭 편집 없이 송출했으므로 live 축은 충족(yes)입니다. 매체 구성 자체는 음성과 영상이 결합된 형태이지만, 전제상 (1) 매체 바로 옆에 '이 매체는 아래 본문의 대안입니다'라는 명확한 라벨이 있고 (2) 사전에 제공된 본문에 발화·질문·경고 의미 등 모든 정보가 담겨 있어 매체가 본문 이상의 정보를 전혀 추가하지 않으며, 전체 비교로 두 조건이 모두 확인된 것으로 가정됩니다. WCAG 2.2의 synchronized media 정의는 '...unless the media is a media alternative for text that is clearly labeled as such'로 이러한 매체를 명시적으로 제외하므로(규범 원문), 정의상 동기화 미디어에 해당하지 않습니다(is_synchronized_media = no, 정의 적용에 따른 도출). SC 1.2.4는 '동기화 미디어 내의 모든 라이브 오디오 콘텐츠'를 대상으로 하므로 이 매체는 1.2.4 비대상이며, 판정 규칙의 비대상 우선 원칙에 따라 유보 없이 not_applicable로 판정합니다."
+  },
+  "scenario_decision": "not_applicable",
+  "actual_live_audit_decision": "not_assessed",
+  "evidence_used": [
+    "가상 시나리오 전제(complete_source_packet.event.real_world_capture): 실세계에서 말하는 두 사람을 그 시점에 카메라·마이크로 수록해 송출",
+    "가상 시나리오 전제(complete_source_packet.event.delay): 통상의 방송 지연만 있고 대폭 편집 없음",
+    "가상 시나리오 전제(complete_source_packet.event.format): 음성과 영상의 동기 미디어 구성",
+    "가상 시나리오 전제(complete_source_packet.event.text_alternative_exception): 매체 옆 '이 매체는 아래 본문의 대안입니다' 명확 표시, 본문에 모든 정보 포함·매체가 추가 정보 없음, 두 조건 모두 확인",
+    "가상 시나리오 전제(observation.coverage, clock): 0–40초 동일 수신 세션 전 구간 비교, 원음과 표시 캡션이 동일 수신측 시계",
+    "가상 관찰(A1–A4 / K1–K4): 원음 4개 사건과 표시 캡션 4개가 동일 시간대에 대응(부정어 'いいえ…捨てないでください', 화자 라벨 [案内者]/[質問者], 경고음 2회·인증 실패 의미 포함). 1.2.4 비대상 판정에는 사용하지 않은 참고 사실",
+    "규범 원문(sources/normative-definitions.txt, 17–19행): synchronized media 정의 및 'unless the media is a media alternative for text that is clearly labeled as such' 예외",
+    "규범 원문(sources/normative-definitions.txt, 21–23행): media alternative for text 정의 '본문에 이미 제시된 것 이상의 정보를 제시하지 않는 매체'",
+    "규범 원문(sources/normative-definitions.txt, 1행): SC 1.2.4 'Captions are provided for all live audio content in synchronized media'"
+  ],
+  "findings": [
+    {
+      "category": "applicability_exclusion",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 본문 및 용어 정의 'synchronized media'(텍스트의 미디어 대안 예외), 'media alternative for text'",
+      "informative_reference": "Understanding SC 1.2.4 (적용 범위 설명 참고)",
+      "description": "시나리오 전제상 이 라이브 매체는 명확히 라벨링되고 본문 이상의 정보를 담지 않는 '텍스트의 미디어 대안'이라는 두 조건을 모두 충족하므로 정의상 동기화 미디어가 아니며, 따라서 SC 1.2.4의 적용 대상이 아닙니다. 라이브 여부(yes)는 이 결론을 바꾸지 않습니다."
+    },
+    {
+      "category": "informational_note_not_a_verdict",
+      "normative_basis": "해당 없음(1.2.4 비대상이므로 캡션 품질은 1.2.4 판정 근거가 아님)",
+      "informative_reference": "captions 정의(음성 및 비음성 정보의 동기화된 대안) 참고",
+      "description": "참고로, 가정된 관찰에서 K1–K4는 A1–A4와 같은 시간대에 표시되었고 부정어, 화자 구분(화면 밖 화자임에도 라벨 제공), 인증 실패 의미의 경고음 2회가 보존되었습니다. 이는 1.2.4 통과를 의미하는 판정이 아니라, 비대상 판정과 별개로 기록하는 관찰 사실입니다."
+    }
+  ],
+  "missing_evidence": [
+    "실제 감사 판정으로 전환하려면: 매체 옆 대안 라벨의 실제 화면 캡처, 본문과 매체 내용의 실제 전수 대조 기록(본문이 경고음의 인증 실패 의미까지 포함하는지 포함)",
+    "실제 송출이 실세계 사건의 라이브 송출이었음을 보여주는 송출 파이프라인·지연 기록 및 당시 수신 화면·오디오 동시 캡처 원본"
+  ],
+  "unreviewed_scope": [
+    "시나리오 밖의 실제 대상 서비스 및 다른 페이지·매체 전체",
+    "인접 본문 텍스트 자체의 접근성(본문이 대안으로 기능하려면 그 본문의 접근성도 중요하나 본 1.2.4 평가 범위 밖)",
+    "실제 운영 환경의 다양한 사용자 에이전트·보조기술 호환성"
+  ],
+  "fixes_and_retest": [
+    "1.2.4 관점의 필수 수정 사항은 없습니다(비대상). 다만 예외 근거를 유지하려면 매체가 본문에 없는 정보를 추가하지 않도록 운영하고, 라이브 중 본문에 없는 발화·안내·경고음 의미가 추가될 경우 해당 매체는 예외를 잃어 1.2.4 적용 대상이 되므로, 현재와 같이 부정어·화자 구분·경고음 의미를 보존한 라이브 캡션 제공을 지속하십시오.",
+    "실제 대상에 대해서는 대안 라벨 표시, 본문과 매체의 정보 동일성(경고음 의미 포함)을 실제 화면·원음 대조로 확인하는 actual_supplied_evidence 모드 재평가를 수행하십시오."
+  ]
+}

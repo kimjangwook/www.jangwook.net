@@ -1,0 +1,55 @@
+{
+  "packet_id": "L09",
+  "evidence_mode": "actual_supplied_evidence",
+  "scope": {
+    "evaluated_target": "로컬 교육용 페이지 '녹화 재생과 실시간 매체 구분'(녹화본을 재생하는 화면)의 <video> 요소와 원본 MP4(static/labs/accessibility/captions/ko/compatible.mp4)",
+    "evaluated_segment": "1.2.4 적용성 중 실시간(live) 여부 분류만. 자막 내용과 실제 방송 품질의 완전한 평가는 범위 밖(패킷 scope 명시).",
+    "is_full_program_covered": false
+  },
+  "applicability": {
+    "is_synchronized_media": "yes",
+    "is_live_audio": "no",
+    "is_labeled_media_alternative_for_text": "no",
+    "sc_1_2_4_applicable": "not_applicable",
+    "rationale": "규범 근거: WCAG 2.2 SC 1.2.4는 '동기화 미디어의 모든 라이브 오디오 콘텐츠'에 캡션을 요구하고, 'live' 정의는 실세계 사건에서 캡처되어 상당한 편집을 허용하지 않는 방송 지연 이내로 수신자에게 전달된 정보이며, 'prerecorded'는 라이브가 아닌 정보로 정의됩니다(sources/normative-definitions.txt). 도출: 패킷의 collected_media는 preexisting_prerecorded_asset=true인 사전 제작 MP4(sha256 60e0e354…fdda1)이고, 페이지 본문이 '교육용 녹화 영상입니다. 실제 생중계가 아닙니다', '원본은 사전에 제작된 MP4 파일입니다'라고 밝히며, 브라우저 기록도 고정 duration 31.208333초의 일반 파일 재생(kind: replay)을 보여 줍니다. 실세계 사건을 방송 지연 이내로 전달하는 경로라는 증거가 없고 사전 제작 파일 재생이라는 증거가 일관되므로 라이브 축은 'no'입니다. 동기화 미디어 여부는 화면 밖 안내자와 사용자 대화·두 번의 경고음(페이지 설명)과 videoWidth 1280의 영상 트랙, 화면 캡처의 '안내자:' 캡션으로 보아 오디오+비디오 동기화 미디어로 판단되나 원음을 직접 청취하지는 않았습니다. 텍스트의 미디어 대안 라벨은 없습니다(text_alternative_conditions 미제공, 페이지에 해당 라벨 없음). 3축 중 라이브 축이 비대상으로 충분히 확인되므로 판단을 유보하지 않고 1.2.4는 not_applicable입니다. 이 미디어의 캡션 품질은 1.2.2(Captions (Prerecorded)) 검토 대상이며 본 판정에 포함하지 않습니다."
+  },
+  "scenario_decision": "not_applicable_actual_mode",
+  "actual_live_audit_decision": "not_applicable",
+  "evidence_used": [
+    "complete_source_packet.collected_media / origin_and_pipeline.source_type: path static/labs/accessibility/captions/ko/compatible.mp4, preexisting_prerecorded_asset: true, sha256 60e0e354b807c7cbfff847b5e557c8d5d57310fc39cae1dd051916ac526fdda1",
+    "complete_source_packet.page_html: 안내문 '교육용 녹화 영상입니다. 실제 생중계가 아닙니다. 이 화면의 재생을 확인해도 생중계 당시의 자막 제공 여부를 증명하지 않습니다.' 및 '원본은 사전에 제작된 MP4 파일입니다.'",
+    "complete_source_packet.page_html: <video>의 <source src=\"../../captions/ko/compatible.mp4\">와 <track kind=\"captions\" src=\"../../captions/ko/complete.vtt\" srclang=\"ko\" label=\"한국어 자막\" default>",
+    "complete_source_packet.browser_record: kind 'replay', readyState 4, duration 31.208333, currentTime 2.045108, error null, videoWidth 1280, textTracks [captions/ko/showing/cues 7]",
+    "complete_source_packet.limits: '원음 직접 청취와 실제 생중계 시청은 하지 않음. 기존 녹화 자산임과 파일 재생은 확인.'",
+    "practice-preview.png (평가자 Read): 페이지 상단 동일 안내문, 영상 프레임 '복구 코드 발급 안내 1 / 7', 재생 시간 0:02 / 0:31, 표시 캡션 '안내자: 설정에서 보안을 선택합니다.'",
+    "sources/normative-definitions.txt: SC 1.2.4 문구, 'live' 정의(Note 2 컴퓨터 생성은 live 아님 포함), 'prerecorded' 정의, 'synchronized media' 정의의 텍스트 미디어 대안 예외"
+  ],
+  "findings": [
+    {
+      "category": "applicability_live_classification",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 문구 및 'live'·'prerecorded' 용어 정의(직접 문장)",
+      "informative_reference": "Understanding SC 1.2.2 Captions (Prerecorded) (source-05) — 녹화 동기화 미디어의 캡션 검토 경로",
+      "description": "평가 대상 미디어는 사전 제작되어 보관된 MP4 파일을 브라우저에서 재생하는 녹화본이며, 실세계 사건을 방송 지연 이내로 전달하는 라이브 정보라는 근거가 없습니다. 따라서 1.2.4 비대상(not_applicable)으로 분류합니다(정의 결합에 따른 도출). 이 분류는 캡션 존재나 품질에 대한 충족 판정이 아닙니다."
+    },
+    {
+      "category": "out_of_scope_note",
+      "normative_basis": "해당 없음(범위 구분)",
+      "informative_reference": "패킷 scope 및 페이지 본문 '자막 내용을 평가할 때는 1.2.2를 별도로 검토합니다.'",
+      "description": "7개 큐의 한국어 캡션 트랙이 showing 상태로 관찰되고 1개 큐(화자 라벨 '안내자:')가 화면에 표시되었으나, 원음 타임라인과 나머지 큐, 두 번의 경고음 표기 여부는 제공·관찰되지 않았습니다. 이 사항은 1.2.2에서 별도로 검토해야 하며 본 1.2.4 판정의 근거로 쓰지 않았습니다."
+    }
+  ],
+  "missing_evidence": [
+    "원음 직접 청취 기록 또는 원음 타임라인(미제공) — 동기화 미디어 판단은 페이지 설명·영상 트랙·캡션 표시로부터의 추정",
+    "MP4 파일의 제작·편집 이력에 대한 독립 출처(현재는 패킷의 preexisting_prerecorded_asset 표기와 페이지 안내문에 의존)",
+    "complete.vtt 전체 큐 내용과 비음성 정보(경고음) 표기 여부 — 1.2.2 검토용"
+  ],
+  "unreviewed_scope": [
+    "캡션 내용의 정확성·완전성·동기화(1.2.2 범위)",
+    "동일 콘텐츠가 다른 곳에서 실제 생중계로 송출되었는지 여부와 그 당시의 자막 제공 여부",
+    "다른 실습 페이지(사례 목록, 컴퓨터 생성 등) 및 다양한 사용자 에이전트·보조기술 환경"
+  ],
+  "fixes_and_retest": [
+    "1.2.4 관점의 수정 사항은 없습니다(비대상). 대신 이 녹화 동기화 미디어를 1.2.2 기준으로 평가하여, complete.vtt의 7개 큐가 모든 대사와 화자 구분, 보안 확인 실패를 뜻하는 두 번의 경고음 같은 필수 비음성 정보를 시간에 맞게 담고 있는지 원음과 대조해 확인하십시오.",
+    "같은 콘텐츠를 실제 생중계로 송출하는 경우가 있다면 그 송출 경로를 별도 대상으로 정하고, 수신자 공통 시계 기준으로 원음과 화면 표시 캡션을 동시 기록하여 actual_supplied_evidence 모드로 1.2.4를 재평가하십시오."
+  ]
+}

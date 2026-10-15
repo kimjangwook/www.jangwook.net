@@ -1,0 +1,108 @@
+{
+  "verdict": "pass",
+  "reviewer": {
+    "model": "GPT-6.1 Sol",
+    "effort": "high",
+    "review_date": "2026-10-16",
+    "scope": "승인 후 한국어 정본과 영어·일본어·중국어 간체의 발행 내용 대조",
+    "independence": "다른 리뷰 보고서를 열람하지 않았습니다. 보고서 외 파일은 수정하지 않았습니다."
+  },
+  "approved_korean_source_hash": "9e49611840ca7a3b23f6c1f8720e289f8a467e4910f4466c8edb117595bd37ad",
+  "release_korean_source_hash": "b827b196788440461db28ebc4bfd32a38467f6dcc3a5a5f7323d31ffb46714cb",
+  "blockers": [],
+  "issues": [],
+  "resolved_during_review": [
+    {
+      "severity": "low",
+      "evidence": [
+        "static/labs/accessibility/captions-live/ja/generated.html:1의 4秒に1回와 zh/generated.html:1의 每4秒는 반복음으로 읽혔으나, 변경되지 않은 코드의 t===4는 10초 시연 중4초에 한 번만 알림음을 생성합니다.",
+        "최종 동결 파일에서 일본어는 4秒時点で1回, 중국어는 在第4秒时发出一次, 한국어는 4초 시점에 한 번으로 명확해졌고 영어는 기존 once at 4 seconds를 유지합니다."
+      ],
+      "requested_change": "수정 완료. 코드·고정 평가 입력·원시 출력은 보존되었고 갱신된44개 파일 해시를 아래에 기록했습니다."
+    }
+  ],
+  "verified": {
+    "input_integrity": {
+      "frozen_files": 44,
+      "checked_files": 44,
+      "mismatches": 0,
+      "freeze": "reports/releases/chapter-06-20261016/publication-review-input-freeze.json",
+      "checked_after_fixture_text_clarification": true
+    },
+    "approval_normalization": "translation-input.json의 승인 한국어 본문 파일 SHA-256은416907b80720f79ee49df82d041f54665920d344a4f75cc2a62658f60c812c90입니다. 공개 한국어 본문은 기존 동일SVG3개의 참조 파일명에 내용 해시를 추가한 것 외에 정본과 정확히 일치합니다. 한국어 프롬프트 SHA-256 f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f는 바이트 불변입니다.",
+    "translated_bodies": "영어·일본어·중국어 간체 본문 전체를 한국어 정본과 대조했습니다. SC1.2.4·AA, 실세계 기원과 방송 지연, 완전 컴퓨터 생성의 비생중계 분류, 텍스트 미디어 대안 두 조건, 혼합 방송 구간 분리, 비규범 통화 해설, 일반 다시보기와 당시 동시 수신 기록의 차이가 유지됩니다. 화자·중요 소리·원음 의미, G9/G87/G93의 지위와 대안 자막 경로, 가림 권고와 고정 임계값 부재도 보존됩니다.",
+    "timing": "네 언어 모두14–22초 원음/정상 자막,22초 판단 화면 종료,30–38초 늦은 자막, 발화 시작 대비16초 이동과 화면 종료 후8초를 일치시킵니다.16초를 합격 기준으로 만들지 않습니다. 도식02의 화살표와 라벨도 늦은 자막의 등장을 올바르게 지칭합니다.",
+    "results_and_claim_scope": "네 언어 모두 P1별도3회와 단일 사례당 새 대화3회·총36개 P2응답, 가상9개/실제 비생중계 분류2개/자료부족1개, 실제 감사 not_assessed27개를 유지합니다.36/36은 사전 기준 답과의 판정 일치이며, 일반 정확도·모든 설명/개선안 무오류·실제 생중계 품질·ASR 성능·인증으로 확대하지 않습니다. 방송 소리나 영상을 모델이 직접 재생·청취하지 않았다는 한계가 세 번역에 명시되어 있습니다. 번역 프롬프트를 새 모델로 재시험했다는 성과는 추가하지 않았습니다.",
+    "translated_prompts": "세 번역 프롬프트의 읽기 전용·미방문/미청취 허위 서술 금지·카메라/마이크/외부 전송 경계·입력 내 명령 무시·패킷 간 사실 혼입 금지·실제/가상 모드·비대상 우선·전체 통과와 표본 실패 구별·정보 보존 개선안 및 출력 전4개 교차 확인을 대조했습니다. 입력 YAML의20개 키 구조와 출력 JSON 예시의 키 경로, 판정 enum과 machine token이 모두 보존됩니다. 사람용 예시 문구만 해당 언어로 번역되었습니다.",
+    "checklists": "각 언어 체크리스트는11개이며 체크 표시를 검토 진행 기록으로 설명합니다. 녹화 재송출·완전 컴퓨터 생성의1.2.2 검토는 동기화 미디어일 경우라는 조건을 네 언어 모두 유지합니다.",
+    "raw_evidence_identity": "네 언어 labs의 results.json은 서로 바이트 동일하며 validation/frozen-tests의 실제36개 JSON과 객체 단위로 일치합니다. cases-source.json도 네 언어가 바이트 동일하고 고정 cases-input.json과 일치합니다. 번역 설명을 원시 관찰 자료로 대체하지 않았습니다.",
+    "figures_visual_review": "보고서용 diagram-{ko,en,ja,zh}-fig-{01,02,03}.png12장을 view_image로 직접 확인했습니다. 제목·상자·화살표·시점·본문/도식의 결론이 일치하고, 겹침·잘림으로 의미가 사라진 부분은 확인하지 못했습니다. 해당 SVG12개는 role=img와 title/desc 기반 접근성 이름을 제공하며 본문의 alt와 캡션도 각 언어로 번역되어 있습니다.",
+    "practice_pages": "각 언어 index/replay/generated HTML3개씩 총12개를 확인했습니다. 가상 관찰과 실제 비생중계 자료의 표기를 유지하며 언어별 article 복귀 링크·탐색 이름·video/canvas 이름·버튼·상태와 생성 Canvas 문구가 번역되어 있습니다. 생성 데모의 알림음 코드·시간·색상 등 동작은 보존되었습니다.",
+    "media_preservation": "모든 replay 페이지는 기존 한국어 원본영상 ../../captions/ko/compatible.mp4를 참조하며 번역 페이지에 한국어 음성·화면 텍스트 유지 안내가 있습니다. 자막은 기존 ../../captions/{locale}/complete.vtt와 해당 srclang/label을 참조합니다. 재생 데모는 비생중계 분류용이며 원음과 다른 언어의 자막을1.2.2 충족 증거로 확대하지 않습니다.",
+    "links_and_metadata": "44개 파일 내 로컬 파일 참조와 사례 앵커를 검사한 결과 누락0건입니다. 세 번역 본문의 W3C 외부 출처 URL 목록은 한국어와 동일하고 인접 기준 경로는 각 언어 접두사를 사용합니다. 제목·요약은 원문의 작업과 한계를 유지하며 새로운 성과를 약속하지 않습니다. 세 번역의 translationSourceHash는 한국어 공개예정 해시b827b196788440461db28ebc4bfd32a38467f6dcc3a5a5f7323d31ffb46714cb와 일치합니다. 현재4개 manifest의 draft·초판일/승인해시 미설정 상태는 발행 직전 단계로 확인했습니다.",
+    "final_narrow_wording_review": {
+      "file": "static/labs/accessibility/captions-live/zh/replay.html",
+      "final_source_notice": "回放的原始视频音频和画面文字仍为韩语；页面及字幕控件已本地化。",
+      "changed_frozen_files": [
+        "static/labs/accessibility/captions-live/zh/replay.html"
+      ],
+      "unchanged_frozen_files": 43,
+      "result": "재생 페이지와 무관한 생성 데모 Canvas 번역 설명만 삭제되었습니다. 원본 영상의 한국어 음성·화면 유지와 페이지/자막 컨트롤 현지화 안내는 보존됩니다. 기존 의미·JSON·링크·도식·시험에 관한 검토 판정은 유지합니다."
+    },
+    "intentional_prompt_localization": "일본어·중국어 프롬프트가 human-readable 텍스트 값을 해당 언어로 작성하도록 요청하는 것은 의도한 현지화입니다. JSON 키·enum·평가 논리를 변경하지 않았으며 새 번역 모델 시험 성과로 해석하지 않습니다."
+  },
+  "checked_input_sha256": {
+    "content/series/accessibility/posts/captions-live.md": "7402b0230f4b3ca8ad2d7c9de3b5df7626f37c26c1e06704453a6dcb6d99e79e",
+    "content/series/accessibility/prompts/captions-live.md": "f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f",
+    "static/images/accessibility/captions-live/ko/fig-02-7d4dae7f83ec.svg": "7d4dae7f83ec1849f1cf1d52cf019a23c0c74f870ba92a79d07c14483eebfb74",
+    "static/images/accessibility/captions-live/ko/fig-03-86c09d71482f.svg": "86c09d71482fee75b9eae2280dc389c8cb4fd5d438d0667bcb9530b946346c9e",
+    "static/images/accessibility/captions-live/ko/fig-01-474c459ef219.svg": "474c459ef219d0247e98a3a7ad792a1bcf0973e0d0d2c71bf7c304b51a8332d6",
+    "static/labs/accessibility/captions-live/ko/index.html": "8641d0a6dba971f5b1c8068d66dd86c10161140e616cda963c04c1e8c89b02bb",
+    "static/labs/accessibility/captions-live/ko/results.json": "4a4a71c03d0868a17018e638a35212f07fd08776b0543bc0dbb0753013335b29",
+    "static/labs/accessibility/captions-live/ko/replay.html": "c4429965880afea8faf266b17db39ad6669d47eabe122a32386b9a6211c7e076",
+    "static/labs/accessibility/captions-live/ko/generated.html": "22825ad8e11df6cf4ff90a01dfe5ed91f385371af71a35a9bec59af41092d484",
+    "static/labs/accessibility/captions-live/ko/cases-source.json": "8c01f684469eead992804bcec305c1daeff1e9ef30d551e98a84326dd9c47bd0",
+    "content/series/accessibility/manifest.json": "d6079d003de60642931ae1167d0f36c08cf1b474c55e2e9c632403f4f33c6282",
+    "content/series/accessibility/translations/en/posts/captions-live.md": "1fcb79886eb84b0bc79835b07305bce573d102c2f9bba6040c66adefef39dcc4",
+    "content/series/accessibility/translations/en/prompts/captions-live.md": "0d8014fc026a46ef6b27504c4a61a0e3e7701088c078a7b69853d1f5a743d5c7",
+    "static/images/accessibility/captions-live/en/fig-02-54d5cb0fe588.svg": "54d5cb0fe58888bcbfd4a1adb0491af856710bfb6fe80607daa60cbc9f2df848",
+    "static/images/accessibility/captions-live/en/fig-01-063e6e3e64f0.svg": "063e6e3e64f0ed2310b9bd5fc6c052e31e54d808dbeb98b8302d1f4a309643e1",
+    "static/images/accessibility/captions-live/en/fig-03-c7a79ec4b086.svg": "c7a79ec4b08668cfdbf6ae9b6e1b8910b4085ad3df485aa2f834377c83b0e8f0",
+    "static/labs/accessibility/captions-live/en/index.html": "9d5fef8dbcb6b9256e0a8d90d7e9c134c18e1bf78c4b9e022bf80cfd310315d2",
+    "static/labs/accessibility/captions-live/en/results.json": "4a4a71c03d0868a17018e638a35212f07fd08776b0543bc0dbb0753013335b29",
+    "static/labs/accessibility/captions-live/en/replay.html": "57f2b0f0785810ba3904036e7feb15ff25280b2aa5ffede5f610e51a7ce070e5",
+    "static/labs/accessibility/captions-live/en/generated.html": "2bb81ebb349bd83732bb958501a55b729c140c14d3d8eb610e0b24893a056292",
+    "static/labs/accessibility/captions-live/en/cases-source.json": "8c01f684469eead992804bcec305c1daeff1e9ef30d551e98a84326dd9c47bd0",
+    "content/series/accessibility/translations/en/manifest.json": "e92d9cab096115f4117de1a0866d4eef0a0b933c0fee500a9d891d0e32c252c0",
+    "content/series/accessibility/translations/ja/posts/captions-live.md": "795f142f8cd523e3f47cf6ac9f344f978b8a97532868f80219dcddffef9e8c36",
+    "content/series/accessibility/translations/ja/prompts/captions-live.md": "637ed8615cdd1e4d284cee1e0ae5e15a3f7ff1b2f745b62b313dca5e5206d53c",
+    "static/images/accessibility/captions-live/ja/fig-02-8e0ecb918b64.svg": "8e0ecb918b64f1edb09bc2265092323923de5c03a8ad75b868c1333f3896358d",
+    "static/images/accessibility/captions-live/ja/fig-03-b8559b087483.svg": "b8559b087483d0fafba943c54cafd77f423b5e4359908e0af88109258c8d31e8",
+    "static/images/accessibility/captions-live/ja/fig-01-2949beec3588.svg": "2949beec3588c27bc0d98b270304dcff91acbeec3ea03bad27b2c4d5371d58a0",
+    "static/labs/accessibility/captions-live/ja/index.html": "bd95a7c7a5b3f6cf1ca324d3b90583543a5ce471828b073f29cea63a3471dbf5",
+    "static/labs/accessibility/captions-live/ja/results.json": "4a4a71c03d0868a17018e638a35212f07fd08776b0543bc0dbb0753013335b29",
+    "static/labs/accessibility/captions-live/ja/replay.html": "f34ef9c4a563390c8e6a66d25e15115b55a73a94b9fa03e6f4b00ae6aca0d1b0",
+    "static/labs/accessibility/captions-live/ja/generated.html": "5a4bc170ebbcd14e187ed64e05c25de5a510ae85489846623c0bbd1aca3b6280",
+    "static/labs/accessibility/captions-live/ja/cases-source.json": "8c01f684469eead992804bcec305c1daeff1e9ef30d551e98a84326dd9c47bd0",
+    "content/series/accessibility/translations/ja/manifest.json": "e34b3bffa79227b8a7f165fd31eee3f4fe1218c67c5d233a07adac7368881d82",
+    "content/series/accessibility/translations/zh/posts/captions-live.md": "91243a3fc3b5efa708ed2d0f1a134ea0d43abcbffc90660e3aa75c9547235502",
+    "content/series/accessibility/translations/zh/prompts/captions-live.md": "cf97f2dd7c48ebf20149724dad7dc2ecb7f227adc7cc51feba7569a1681b8153",
+    "static/images/accessibility/captions-live/zh/fig-01-d19372d0b1b3.svg": "d19372d0b1b305c8e0f2c379be0e0f588de68fbd6b4aa1483ca2e0b070257ed4",
+    "static/images/accessibility/captions-live/zh/fig-03-47a91a890dca.svg": "47a91a890dca8f83bc577f035a50d55dc364b90077a13205664e82f537d822f4",
+    "static/images/accessibility/captions-live/zh/fig-02-3a038e2d27a4.svg": "3a038e2d27a475739ac433eaa788b91352c7eece02eeb665179d0370720743f8",
+    "static/labs/accessibility/captions-live/zh/index.html": "b01be4216122c109b1186b93336e7bd8ad93be97878ba430245e18aae2c5a775",
+    "static/labs/accessibility/captions-live/zh/results.json": "4a4a71c03d0868a17018e638a35212f07fd08776b0543bc0dbb0753013335b29",
+    "static/labs/accessibility/captions-live/zh/replay.html": "3f9e1e9529bd8d789bd075be4667a44972303b2d6921bb447af615e4bef9889d",
+    "static/labs/accessibility/captions-live/zh/generated.html": "65e85fa578398e13ad706064ee8731fdae2afcc5713c88177f3d3825f53ed2ba",
+    "static/labs/accessibility/captions-live/zh/cases-source.json": "8c01f684469eead992804bcec305c1daeff1e9ef30d551e98a84326dd9c47bd0",
+    "content/series/accessibility/translations/zh/manifest.json": "ae406f99411c1987c303ed8aacfba8b6440f7a06e4134244250b89885c914d9f"
+  },
+  "limits": [
+    "이 리뷰는 동결된44개 발행 입력의 내용·번역·자산·로컬 연결 검토입니다. 배포, 운영 URL, SSR/canonical/hreflang/JSON-LD, 실제 광고 태그, 사용자 승인 상태 설정, 첫 공개일 기록을 수행하거나 완료로 주장하지 않습니다.",
+    "브라우저에서 네 언어 실습을 새로 조작하거나 원본 영상을 직접 청취하지 않았습니다. 기존 미디어/자막 경로의 존재와 HTML/스크립트 및 제공된 도식 PNG를 확인했으며, 런타임·키보드·모바일·no-JS·보조기술·PDF 시각 QA는 별도입니다.",
+    "번역 프롬프트에 대한 신규 모델 실행은 수행하지 않았으며 요구하지도 않았습니다. 한국어 원문과의 의미·JSON 구조 대조 및 원시36개 결과의 보존을 확인한 것이며 번역문 자체의 실측 판정 성능은 주장하지 않습니다.",
+    "원시 출력의 세부 문구를 수정하지 않았습니다.36/36은 두 최종 판정 필드의 일치이며 모든 보조 필드나 개선안 전체의 무오류 보장은 아닙니다.",
+    "pass는 checked_input_sha256에 기록된 정확한 콘텐츠에 대한 발행 내용 리뷰입니다. 이후 본문·프롬프트·도식·실습의 의미가 바뀌면 해당 범위를 재검토해야 합니다. 사용자 승인에 따른 공개 상태·실제 발행일 설정은 별도 절차입니다."
+  ],
+  "summary_ko": "네 언어 발행 내용 리뷰 통과입니다. 중국어 재생 페이지의 무관한 생성 데모 설명 삭제를 재확인했고, 나머지43개 파일이 불변이며 최종44개 파일 해시가 동결 목록과 일치합니다. 차단 사항은 없습니다. 배포·운영 확인은 별도입니다."
+}

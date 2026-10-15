@@ -1,0 +1,54 @@
+{
+  "packet_id": "L10",
+  "evidence_mode": "actual_supplied_evidence",
+  "scope": {
+    "evaluated_target": "교육용 관찰 자료: 로컬 페이지 '완전 컴퓨터 생성 매체와 실시간 구분'(page_html)의 canvas 화면과 Web Audio 합성음",
+    "evaluated_segment": "완전 컴퓨터 생성 여부에 따른 실시간(live) 분류만. 10초 데모 1회 실행 기록(browser_record)과 정지화면 1장(generated-preview.png, 4 / 10초 시점)",
+    "is_full_program_covered": false
+  },
+  "applicability": {
+    "is_synchronized_media": "yes",
+    "is_live_audio": "no",
+    "is_labeled_media_alternative_for_text": "no",
+    "sc_1_2_4_applicable": "not_applicable",
+    "rationale": "제공된 page_html 소스에서 소리는 AudioContext의 OscillatorNode(660Hz, 0.18초)로, 화면은 canvas 2D 그리기로 생성되며, t===4 시점에 합성음과 화면의 '[알림음]' 문구가 같은 프레임 루프 안에서 함께 발생하므로 오디오가 시각 정보와 시간적으로 결합된 형태로 판단했습니다(소스 구조에서의 도출이며 실제 청취 확인 아님). 소스에는 getUserMedia, 외부 스트림, fetch/WebSocket 등 실세계 사건 입력 경로가 없고 browser_record도 source=fully_computer_generated, externalCapture=false입니다. WCAG 2.2 live 정의는 '실세계 사건에서 캡처되어 방송 지연 이내로 전달된 정보'이며 Note 2는 '완전히 컴퓨터로 생성된 정보는 live가 아니다'라고 명시합니다(규범 원문). 따라서 이 오디오는 live audio가 아니며, 판정 규칙 1의 비대상 우선 원칙에 따라 원음 타임라인이나 캡션 경로 자료가 없더라도 판단을 유보하지 않고 1.2.4 not_applicable로 판정합니다. 텍스트의 미디어 대안 라벨은 페이지에 없으나, live 축만으로 비대상이 확정되므로 결론에 영향이 없습니다."
+  },
+  "scenario_decision": "not_applicable_actual_mode",
+  "actual_live_audit_decision": "not_applicable",
+  "evidence_used": [
+    "complete_source_packet.page_html: 스크립트가 canvas.getContext('2d')로 숫자 화면을 그리고, t===4일 때 audio.createOscillator()로 660Hz 합성음을 0.18초 재생하며 window.demoEvidence.beeps를 증가시킴. 마이크·카메라·외부 스트림 API 호출 없음(소스 직접 확인)",
+    "complete_source_packet.page_html: window.demoEvidence 초기값 {source:'fully_computer_generated', externalCapture:false}",
+    "complete_source_packet.browser_record (origin_and_pipeline.source_type과 동일 값): kind=generated, source=fully_computer_generated, externalCapture=false, beeps=1, frames=6, status='4 / 10초'",
+    "complete_source_packet.limits: '카메라·마이크·외부 사건 입력이 없으며 수집된 소스가 전부. 원음 직접 청취나 생중계 감사 아님'",
+    "generated-preview.png: canvas에 '컴퓨터 생성 데모 · 실제 생중계 아님', 숫자 '04', '[알림음]' 표시, 상태 출력 '4 / 10초'",
+    "sources/normative-definitions.txt: live 정의 및 Note 2 'If information is completely computer generated, it is not live.'"
+  ],
+  "findings": [
+    {
+      "category": "applicability_live_classification",
+      "normative_basis": "WCAG 2.2 용어 정의 live 및 Note 2(완전히 컴퓨터로 생성된 정보는 live가 아님), SC 1.2.4 본문('live audio content in synchronized media')",
+      "informative_reference": "없음(판정에 정보 문서를 사용하지 않음)",
+      "description": "오디오와 화면 모두 브라우저 코드가 생성하며 실세계 사건 캡처 경로가 소스상 존재하지 않습니다. 브라우저 안에서 지금 생성된다는 실시간성은 live 정의 요건(실세계 사건 캡처)을 충족하지 않으므로 SC 1.2.4 비대상입니다. 페이지 문구('현재 생성된다는 사실만으로 WCAG의 live 정의를 충족하지 않습니다')는 평가 대상 텍스트일 뿐 판정 근거로 쓰지 않았고, 결론은 소스 구조와 규범 정의로 독립 도출했습니다."
+    },
+    {
+      "category": "out_of_scope_note",
+      "normative_basis": "판정 규칙 1(라이브가 아닌 동기화 미디어는 1.2.2 검토 대상)으로부터의 도출",
+      "informative_reference": "없음",
+      "description": "이 매체가 prerecorded 동기화 미디어로서 1.2.2 등 다른 기준을 충족하는지는 평가 범위('실시간 분류만') 밖이며 판단하지 않았습니다. 정지화면의 '[알림음]' 표시는 관찰 사실로만 기록하며 캡션 적합성 판정에 사용하지 않았습니다."
+    }
+  ],
+  "missing_evidence": [
+    "원음 타임라인(original_audio_timeline) 미제공. 단, 비대상 판정에는 불필요",
+    "대안 캡션 경로(alternative_caption_paths) 미제공. 단, 비대상 판정에는 불필요",
+    "Playwright 실행 이벤트의 원본 로그(타임스탬프 포함)는 요약 값(browser_record)만 제공되어 시계 대응은 확인 불가"
+  ],
+  "unreviewed_scope": [
+    "SC 1.2.2 등 prerecorded 동기화 미디어 관련 기준 및 기타 접근성 요구",
+    "실제 오디오 출력의 청취 확인(직접 재생·청취하지 않음)",
+    "제공된 로컬 페이지 외 다른 페이지(index.html, replay.html 등) 및 서비스 전체 적합성"
+  ],
+  "fixes_and_retest": [
+    "1.2.4 관점의 수정 사항은 없습니다. 이 매체를 비대상으로 유지하려면 실세계 사건 입력(마이크·카메라·외부 스트림)을 추가하지 않아야 하며, 추가할 경우 live 여부를 재분류하고 1.2.4 적용 여부를 다시 평가하십시오.",
+    "prerecorded 동기화 미디어로서의 캡션 요구(1.2.2)는 별도 범위로 평가하되, 4초 합성 알림음 같은 비음성 정보가 화면 텍스트로 시점에 맞게 전달되는지 실행 기록과 화면 캡처를 공통 시계로 대조해 확인하십시오."
+  ]
+}

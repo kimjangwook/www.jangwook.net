@@ -1,0 +1,9 @@
+{
+  "instruction": "내용 좋아.4가지 언어 배포해줘.",
+  "approved_sourceHash": "9e49611840ca7a3b23f6c1f8720e289f8a467e4910f4466c8edb117595bd37ad",
+  "approved_pdf_sha256": "ea6ec35302d21647e2111203f88ebf96230d132b362c6d94c333ff7fb0889f83",
+  "scope": "Four-language publication, commit/push/deployment and established post-deploy English announcement. Approved Korean text and tested prompt unchanged.",
+  "review_telegram_message_ids": [
+    3071
+  ]
+}

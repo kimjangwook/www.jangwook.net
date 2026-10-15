@@ -1,0 +1,62 @@
+{
+  "reviewer": "Claude Fable 5.1 (effort: low), independent review, no delegation, no other review report consulted",
+  "reviewed_at": "2026-10-16",
+  "packet": "/private/tmp/jangwook-a11y-claude-validation-20261003/chapter06-review-v3-20261016",
+  "verdict": "pass",
+  "reviewed_source_hash": "9e49611840ca7a3b23f6c1f8720e289f8a467e4910f4466c8edb117595bd37ad",
+  "reviewed_files_sha256": {
+    "article.md": "416907b80720f79ee49df82d041f54665920d344a4f75cc2a62658f60c812c90",
+    "prompt.md": "f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f"
+  },
+  "v2_to_v3_delta_verified": {
+    "v2_source_hash": "4e1f43a0632a40f8898057418c26af101c8f6adc94eaeb4bf616b62ede46eaf1",
+    "files_changed": ["article.md", "article.ko.html", "metadata.json"],
+    "article_change": "범위 표기 '~' 6곳을 en dash '–'로 치환(50, 53-54, 104, 116, 128행). 문장·수치·판정 내용 변화 없음.",
+    "html_change": "동일 치환 반영. v2 HTML 표 L05 행과 L05 불릿에 생성되던 <del> 취소선 2건이 v3에서 0건으로 해소됨.",
+    "metadata_change": "sourceHash만 갱신",
+    "unchanged": "prompt.md, review-freeze 내 frozen-tests 전 파일(36개 결과·12개 입력·P1 3개·sources), private-reference, test-audit, test-input-freeze, desktop-execution-receipt, figures/PNG, labs. v3 review-freeze.json 100개 파일 해시 전수 재계산 일치."
+  },
+  "checks": [
+    {"item": "패킷 동결 무결성", "result": "ok", "evidence": "review-freeze.json 100개 항목 sha256 전수 재계산 일치. frozen-tests/cases-input.json == cases-source.json == labs/cases-source.json. test-audit의 36개 output sha256 == review-freeze의 r1~r3 결과 해시."},
+    {"item": "36건 별도 단일 사례 새 대화 3회 반복, P1 계획 3개 별도 출처", "result": "ok", "evidence": "desktop-execution-receipt.json: criterion_sessions 36개 모두 fresh_single_case_session true, 세션 URL 36개 상이, output_sha256이 결과 파일과 일치. overview_provenance에 P1 세션 3개(별도 URL)와 plans_sha256 3개가 r1~r3/P1-output.md 해시와 일치. P1 출력 3건은 계획만 담고 판정을 포함하지 않음. 본문 '총 36건(P1 계획 3건 제외)' 서술과 일치."},
+    {"item": "36개 출력 스키마·enum·기준답 일치", "result": "ok", "evidence": "36건 모두 요구 11개 키 보유, enum 값 유효. scenario_decision/actual_live_audit_decision이 private-reference.json과 36/36 일치. 가상 9사례 27건 모두 actual=not_assessed. actual 모드 9건 모두 scenario_decision=not_applicable_actual_mode. F8/F74/F75 인용 없음. 존재하지 않는 source 파일 인용 없음."},
+    {"item": "L12 두 조건(대안 표시 있음 + 추가 정보 없음)", "result": "ok", "evidence": "cases-source L12 text_alternative_exception에 '명확하게 표시' 및 '본문에 없는 정보를 전혀 추가하지 않음' 두 조건 모두 명시. r1~r3 rationale 모두 두 조건을 각각 확인한 뒤 synchronized media 정의의 제외 문구를 인용해 not_applicable 도출. 본문 표 L12 행 '두 조건이 전제된 조건' 및 1.2.2 체크리스트 2조건 항목과 일치."},
+    {"item": "L05 개선안: 큐 삭제·의미 누락 금지", "result": "ok", "evidence": "r1~r3 fixes_and_retest 모두 '자막 큐를 생략/삭제하지 말고 부정어·화자 라벨 보존'을 명시. 지연 감소 목적의 요약·생략 권고 없음. 판정 근거는 고정 수치가 아닌 판단 화면 종료(22초)·순서 역전(K4 선행)에 둠. 본문 L05 발췌 JSON 4개 필드가 실제 결과 값과 일치."},
+    {"item": "원문 출처 실재", "result": "ok", "evidence": "sources.json 7개 URL이 본문 참고 자료 7개 링크와 1:1 일치. 본문 인용 사실(live 정의·Note1·Note2, captions Note4 'should', synchronized media 제외문, 양방향 통화 Understanding 문구, G9 테스트 절차 '절차·정책 확인', G87/G93 '같은 인간 언어', G157 30초·1.2.9 관계, 충분 기법 조합 G9+G93 / G9+G87)이 source-00~06 텍스트에 실제로 존재."},
+    {"item": "본문 방법·수치 일치", "result": "ok", "evidence": "모델 Opus 5.5 Medium, 12사례×3회=36, 가상 9/실제 2/부족 1, 27건 not_assessed, L09·L10 이미지 1장씩(총 2장) 입력 서술이 test-input-freeze·receipt·results.json·결과 evidence_used(practice-preview.png, generated-preview.png 언급)와 일치. 타임라인 14–22/22/30–38/16초/8초가 cases L05 screen 전제 및 fig-02와 일치. 체크리스트 11항목 = html-validation checklist 11."},
+    {"item": "과장 금지(실제 생방송·직접 청취·일반 정확도)", "result": "ok", "evidence": "본문이 '모델이 방송 소리나 영상을 직접 재생·청취하지 않았고', '실제 생중계 서비스 자막 품질…범위에 포함하지 않았습니다', '실습 페이지는 실제 생중계 관찰 자료가 아니며'를 명시. 일치율을 판정 필드에 한정('항목별 판정 36건'). 결과 JSON에도 직접 청취 주장 없음(L09 r1은 '원음을 직접 청취하지 않았으므로 페이지 서술에 기댄 판단' 명시)."},
+    {"item": "규범 정의와 기법의 지위", "result": "ok", "evidence": "본문이 Understanding을 '비규범 해설', G9/G87/G93을 '충족할 수 있는 대표 예시 경로이며 특정 기법 하나만 써야 하는 것은 아님', Note4를 '권고(should)'로 구분. 고정 지연 수치·정확도 백분율을 규범으로 쓰지 않음."},
+    {"item": "도식 2 시점·화살표", "result": "ok", "evidence": "fig-02.svg 축 척도 18px/초(0→210, 8→354, 14→462, 22→606, 30→750, 38→894, 40→930) 일관. 원음·정상 자막 462–606(14–22초), 늦은 자막 750–894(30–38초), 22초 점선, 화살표 609→746(22→30초) '늦은 자막은 화면 종료 뒤 등장'. 하단 주석 '16초 지연 수치를 합격선으로 사용하지 않습니다'. fig-02.png 렌더가 SVG와 일치. fig-01·fig-03도 본문 alt/figcaption 서술과 일치."},
+    {"item": "1.2.2 조건", "result": "ok", "evidence": "본문(17, 19, 23행, 체크리스트 3항)·프롬프트 규칙 1·L09 결과 모두 '라이브가 아니고 동기화 미디어에 해당하는 경우 1.2.2 검토'로 일관. L09는 1.2.2 자막 품질을 미평가로 분리."},
+    {"item": "AA 메타·요약·학습 순서·체크리스트·링크·문체", "result": "ok", "evidence": "metadata: criterion 1.2.4, level AA, order 6, source URL 유효, sourceHash v3 일치. summary가 본문 범위(생방송 판별·동기화 점검·로그/화면 분리·프롬프트 절차)를 정확히 요약. 섹션 순서: 적용 범위→내용→시간→경로/운영→AI 한계→실습→검증→체크리스트→프롬프트 사용법→전후 글→참고. labs/index.html에 #l01~#l12 앵커 존재, replay.html·generated.html·results.json 패킷 내 존재. results.json 요약 수치가 본문과 일치. 본문 '~' 치환으로 HTML 취소선 제거 확인. 대시(—)는 참고 자료 링크 제목 1곳만 사용."}
+  ],
+  "blockers": [],
+  "issues": [
+    {
+      "id": "I-01",
+      "severity": "low",
+      "evidence": "frozen-tests/r3/L12-result.json applicability.is_synchronized_media = \"yes\"(물리적 구성 기술로 설명), r1·r2는 \"no\"(정의 제외 적용). sc_1_2_4_applicable·scenario_decision·actual은 3회 모두 동일(not_applicable / not_assessed).",
+      "requested_change": "본문 수정 불필요. 본문의 '36건 모두 기준 답과 일치'는 판정 필드 기준이며 results.json scope도 'Agreement concerns decision fields'로 한정하고 있음. 선택 사항: 검증 결과 절에 '일치 판정은 두 판정 필드 기준이며 적용성 하위 축 표기는 사례에 따라 설명 방식이 달랐다'는 한 문장을 추가하면 보다 투명함."
+    },
+    {
+      "id": "I-02",
+      "severity": "low",
+      "evidence": "article.md 9행: '오디오 전용 방송 옆에 자막 텍스트가 흐르는 영역 하나만 덧붙여 놓았다고 해서 원래 콘텐츠가 자동으로 1.2.4의 동기화 미디어로 바뀌는 것은 아니므로'. 이 서술은 G157(1.2.9 기법) 구조에서 도출한 해석이며, 패킷 sources에 이를 직접 뒷받침하는 규범 문장은 없음(synchronized media 정의는 '다른 정보 제시 형식과 동기화된 오디오'를 포함하므로 해석 여지 있음). 프롬프트 규칙 1에도 같은 해석이 고정되어 있음.",
+      "requested_change": "필수 아님. 향후 개정 시 '…바뀌는 것은 아니라고 보는 것이 G157의 구성상 타당하므로' 정도로 해석임을 드러내는 완화 표현 권고. 프롬프트·동결 입력은 본 리뷰 범위상 수정 금지이므로 현재 판정에는 영향 없음."
+    },
+    {
+      "id": "I-03",
+      "severity": "low",
+      "evidence": "article.md 172행 참고 자료 링크 제목 'Web Content Accessibility Guidelines (WCAG) 2.2 — SC 1.2.4 …'에 em dash(—) 1회 사용.",
+      "requested_change": "선택 사항: 문체 규범상 대시 회피를 위해 ' – ' 또는 ': '로 치환. 판정에 영향 없음."
+    }
+  ],
+  "limits": [
+    "PDF 시각 QA는 별도 게이트이며 본 리뷰에 포함하지 않음.",
+    "패킷 외부 경로(/series/accessibility/audio-description-or-media-alternative-prerecorded, /series/accessibility/audio-description-prerecorded, /images/accessibility/captions-live/ko/fig-0x.svg 배포 경로, labs/replay.html이 참조하는 compatible.mp4·complete.vtt)의 실재는 패킷만으로 확인할 수 없음. html-validation.json은 figures 4개 loaded true를 보고하나 이는 패킷 외 산출물임.",
+    "36개 세션 URL(claude.ai/epitaxy/local_…)은 접속·검증하지 않았고 receipt의 자기 보고와 해시 일치만 확인함.",
+    "W3C 원문은 패킷 내 sources/ 동결 텍스트(accessedAt 2026-10-16)로만 대조했으며 실시간 웹 재조회는 하지 않음.",
+    "L09·L10의 화면 이미지는 P2 filled 입력(YAML)에 포함되지 않고 별도 첨부로 제공되었음이 r3/L09 evidence_used에 기록됨. 본문 '이미지도 함께 읽어들였습니다' 서술은 결과 evidence_used로 확인했으나 첨부 방식 자체의 로그는 패킷에 없음.",
+    "다른 모델·리뷰어 위임 및 타 보고서 열람 없이 단독 수행. 노력 수준 low 유지."
+  ]
+}

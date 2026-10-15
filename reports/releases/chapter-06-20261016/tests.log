@@ -1,0 +1,41 @@
+
+> jangwook-net@2.0.0 test
+> node --test tests/*.test.mjs
+
+✔ localized teaching links retain destination identity without hiding source changes (2.036166ms)
+WebSocket server error: Port 24678 is already in use
+✔ language preference respects explicit selection and weighted browser languages (6.933458ms)
+✔ four real localized homes provide SSR metadata, selector links and only approved reading (1.609542ms)
+✔ all 352 documents have modification dates; only published editions have a first-publication date (1.015875ms)
+✔ latest list is limited to five approved articles in first-publication order (0.27025ms)
+✔ validation rejects malformed email, unrecognized role and missing consent (1.183458ms)
+✔ drafts are available only in local preview; public bundles exclude all drafts (0.918583ms)
+✔ lead, optional consent and captured mail persist; duplicate request creates no second mail (231.698792ms)
+✔ concurrent submissions produce one request and one captured outbox (134.410917ms)
+✔ rate limit stops the sixth request (420.219125ms)
+✔ public draft submission and nonlocal capture cannot create leads (11.10925ms)
+✔ provider acceptance records a receipt and attaches approved prompts; failures stay distinct (239.590041ms)
+✔ expired material links can be requested again with a fresh token (149.586084ms)
+✔ changed content, invalid approval dates and future publication remain private (0.237ms)
+✔ provider acceptance followed by database failure keeps the send claim and receipt (74.883417ms)
+✔ native media headers expose length and preserve source bytes (25.687958ms)
+✔ prefix, suffix and open-ended ranges return the exact source interval (2.693416ms)
+✔ unsatisfiable ranges and validator mismatches retain HTTP semantics (0.872167ms)
+✔ media routing excludes HTML, unrelated paths and arbitrary language assets (0.309583ms)
+8:22:09 AM [vite] (client) Forced re-optimization of dependencies
+WebSocket server error: Port 24678 is already in use
+✔ localized overview has a real translated body, prompt, four figures and reciprocal paths (78.157708ms)
+✔ all chapters have four-language preparation pages without a Korean fallback (105.261667ms)
+✔ exact translation approval and current Korean source are required outside preview (0.191959ms)
+✔ RSS and multilingual sitemap expose only approved chapters and exclude stale approvals (18.889834ms)
+✔ article learning navigation exposes only ordered metadata and honest publication state (22.173167ms)
+✔ canonical learning links preserve the reader language and prompt fragment (33.523167ms)
+8:22:11 AM [vite] (client) [optimizer] bundling dependencies...
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4689.721125

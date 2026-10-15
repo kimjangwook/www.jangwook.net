@@ -1,0 +1,59 @@
+{
+  "packet_id": "L11",
+  "evidence_mode": "actual_supplied_evidence",
+  "scope": {
+    "evaluated_target": "https://example.org/live-webinar (예시 주소, 방문하지 않음)로 지정된 'LIVE webinar' 페이지의 오디오 및 캡션 콘텐츠",
+    "evaluated_segment": "실제 실시간 여부와 자막 확인 요청 (평가 가능한 구체적 시간 구간 미제공)",
+    "is_full_program_covered": false
+  },
+  "applicability": {
+    "is_synchronized_media": "insufficient_evidence",
+    "is_live_audio": "insufficient_evidence",
+    "is_labeled_media_alternative_for_text": "insufficient_evidence",
+    "sc_1_2_4_applicable": "cannot_determine",
+    "rationale": "패킷 L11이 제공한 자료는 페이지 이름 'LIVE webinar'라는 문자열과 방문하지 않은 예시 URL뿐이며, 매체·음성·화면·송출·편집·표시 기록이 모두 없습니다(evidence_type: missing). 따라서 (1) 오디오가 비디오·슬라이드·시간 기반 상호작용과 동기화되어 있는지, (2) 실세계 사건을 상당한 편집을 허용하지 않는 방송 지연 이내로 전달하는 live인지 아니면 보관·편집 후 재송출한 prerecorded이거나 완전히 컴퓨터로 생성된 것인지, (3) 텍스트의 미디어 대안인지 중 어느 축도 확인할 수 없습니다. 'LIVE'라는 이름이나 배지는 정의상 live 여부를 입증하지 않으므로 적용 근거로도, 비대상 근거로도 쓸 수 없습니다. 비대상임이 충분히 확인된 축이 하나도 없으므로 not_applicable로 즉시 판정할 수 없고, 적용 여부 자체가 미확정입니다."
+  },
+  "scenario_decision": "not_applicable_actual_mode",
+  "actual_live_audit_decision": "cannot_determine",
+  "evidence_used": [
+    "complete_source_packet.provided: '페이지 이름 LIVE webinar라는 문자열뿐. URL은 예시 주소이며 방문하지 않음. 매체, 음성, 화면, 송출·편집·표시 기록 없음.'",
+    "complete_source_packet.evidence_type: 'missing'",
+    "origin_and_pipeline.source_type: '불명', text_alternative_conditions: '미제공'",
+    "clock_and_provenance.record_provenance: '미제공'",
+    "supplied_observations.original_audio_timeline 및 alternative_caption_paths: '미제공'"
+  ],
+  "findings": [
+    {
+      "category": "insufficient_evidence_applicability",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 본문 및 용어 정의(live, synchronized media, captions, media alternative for text). 이 항목의 판단은 정의 문장을 패킷 사실에 적용한 논리적 도출이며 표준의 직접 문장이 아닙니다.",
+      "informative_reference": "Understanding SC 1.2.4 (적용 범위가 실시간 동기화 미디어임을 설명하는 정보 문서)",
+      "description": "제공 자료가 페이지 이름 문자열 하나뿐이어서 동기화 미디어 여부, 실세계 사건의 실시간 전달 여부, 텍스트의 미디어 대안 여부를 판정할 수 없습니다. 'LIVE' 표기만으로 live로 간주하거나 반대로 비대상으로 단정하지 않았습니다."
+    },
+    {
+      "category": "insufficient_evidence_captions",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 및 captions 정의(음성 및 비음성 오디오 정보의 동기화된 시각/텍스트 대안)",
+      "informative_reference": "Understanding SC 1.2.4, G9 (live 캡션 생성 기법, 정보 문서)",
+      "description": "원음 타임라인, 시청자 화면 표시 캡션, 대안 캡션 경로(폐쇄·오픈 캡션 등), 공통 시계, 기록 출처가 모두 미제공이므로 캡션 존재·정확성·동기화·화자 귀속·비음성 정보 포함 여부를 평가할 수 없습니다. pass와 fail 어느 쪽도 특정할 근거가 없습니다."
+    }
+  ],
+  "missing_evidence": [
+    "콘텐츠의 기원과 송출 경로: 실세계 사건을 방송 지연 이내로 전달하는지, 보관·편집 후 재송출인지, 완전히 컴퓨터로 생성된 것인지에 관한 기록",
+    "매체 구성: 비디오 트랙, 시간에 맞춰 전환되는 슬라이드, 시간 기반 상호작용 등 오디오와 동기화된 다른 형식의 존재 여부",
+    "텍스트의 미디어 대안 해당 여부: 명확한 라벨링과 본문 텍스트 이상 정보 비포함의 두 조건에 대한 근거",
+    "양방향 통화인지 방송인지, 평가 대상이 플랫폼 기능인지 호스트 제공 콘텐츠인지에 관한 정보",
+    "동일 세션 식별자와 수신자 공통 시계 기준으로 동시 기록된 원음 오디오 타임라인과 시청자 화면 캡션 표시 캡처",
+    "모든 캡션 경로(폐쇄 캡션 트랙·버튼, 오픈 캡션, 별도 텍스트 뷰포트 등)의 존재 및 실제 표시 관찰 기록",
+    "기록의 출처와 무결성: 수신 당시 동시 기록인지 사후 수정 가능한 아카이브인지"
+  ],
+  "unreviewed_scope": [
+    "https://example.org/live-webinar 페이지 및 방송 전체 (URL은 방문하지 않았고 미디어를 재생·청취하지 않음)",
+    "모든 캡션 경로와 실제 수신 화면 표시",
+    "다양한 사용자 에이전트 및 보조기술 환경",
+    "이 평가는 제공 입력 범위 내 분석이며 대상 서비스 전체의 WCAG 적합성을 보증하지 않음"
+  ],
+  "fixes_and_retest": [
+    "재평가를 위해 대상 방송의 기원과 송출·편집 경로(실세계 사건의 실시간 송출인지, 재송출·생성 콘텐츠인지)와 매체 구성을 문서로 제공하십시오.",
+    "적용 대상으로 확인될 경우, 실제 송출 중 동일 세션에서 수신자 공통 시계 기준으로 원음 오디오와 시청자 화면에 렌더링된 모든 캡션 경로를 동시 캡처하여 actual_supplied_evidence 모드로 재검증하십시오. 이때 핵심 대사 의미, 중요 비음성 소리, 화자 구분, 이용자가 제때 행동할 수 있는 동기화가 보존되는지 확인하십시오.",
+    "캡션이 없거나 부족한 것으로 확인되면, 대사 의미와 필수 비음성 정보를 삭제·과도 요약하지 않는 실시간 캡션 체계(예: 사람 캡셔너 또는 사람이 확인·교정하는 실시간 캡션, G9 참고)를 도입한 뒤 같은 방식으로 재검증하십시오."
+  ]
+}

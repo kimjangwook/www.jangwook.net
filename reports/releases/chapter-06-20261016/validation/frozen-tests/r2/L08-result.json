@@ -1,0 +1,64 @@
+{
+  "packet_id": "L08",
+  "evidence_mode": "hypothetical_supplied_scenario",
+  "scope": {
+    "evaluated_target": "교육용 관찰 자료(가상의 공개 웨비나)의 오디오 및 시청자 화면 캡션 콘텐츠",
+    "evaluated_segment": "가상 40초 공개 웨비나 전 구간(0–40초), 녹화 삽입 없음",
+    "is_full_program_covered": true
+  },
+  "applicability": {
+    "is_synchronized_media": "yes",
+    "is_live_audio": "yes",
+    "is_labeled_media_alternative_for_text": "no",
+    "sc_1_2_4_applicable": "applicable",
+    "rationale": "시나리오 전제상 실세계에서 말하는 두 사람을 카메라와 마이크로 그 시점에 수록해 통상의 방송 지연만으로 대폭 편집 없이 송출했으므로 live에 해당하고, 형식은 음성과 영상의 동기화 미디어입니다. 원본 전문 텍스트가 없고 텍스트의 대안이라는 표시도 없으므로 텍스트의 미디어 대안 예외 두 조건이 충족되지 않습니다. 따라서 이 가정 아래에서 SC 1.2.4 적용 대상입니다."
+  },
+  "scenario_decision": "pass_under_supplied_scenario",
+  "actual_live_audit_decision": "not_assessed",
+  "evidence_used": [
+    "가상 시나리오 전제(complete_source_packet.event): 실세계 두 사람의 동시 수록·송출, 통상 방송 지연만, 대폭 편집 없음, 음성·영상 동기화 미디어, 텍스트 대안 표시 및 원문 텍스트 없음",
+    "가상 시나리오 전제(observation.coverage, clock): 0–40초를 동일 수신 세션의 화면·원음·자막으로 모두 비교했고 추가 음성 이벤트 없음, 원음과 표시 자막은 동일 수신측 시계",
+    "가상 시나리오 전제(observation.audio A1–A4 / rendered_captions K1–K4): 각 원음 구간(0–8, 8–14, 14–22, 22–24)에 대해 동일 시각에 동일 대사·화자 표시의 자막이 표시됨. A3의 부정어 「いいえ」「捨てないでください」가 K3에 보존됨. A4 경고음 2회(인증 실패 의미)가 K4 「[警告音2回・認証失敗]」로 표시됨",
+    "가상 시나리오 전제(observation.speakers): 질문자·안내자는 화면 밖이라 화면과 문맥만으로 구분 불가하며, K1–K4에 [案内者]/[質問者] 화자 표시가 있음",
+    "가상 시나리오 전제(observation.display, other_caption_path): 폐쇄 자막(CC)은 활성화해도 표시되지 않으나, 상시 표시 자막(오픈 캡션)이 원음과 동시에 K1–K4 전부를 전 구간에서 올바르게 표시하고 중요한 화면을 가리지 않으며 읽을 수 있음이 확인되었다고 가정"
+  ],
+  "findings": [
+    {
+      "category": "alternative_caption_path",
+      "normative_basis": "WCAG 2.2 SC 1.2.4(라이브 동기화 미디어의 모든 라이브 오디오 콘텐츠에 캡션 제공) 및 captions 정의(동기화된 시각/텍스트 대안). 경로 판단은 본 프롬프트의 대안 경로 확인 원칙에 따른 도출",
+      "informative_reference": "Understanding SC 1.2.4 (위치 미확인: sources/ 발췌의 정확한 줄 번호는 확인하지 않음)",
+      "description": "폐쇄 자막 경로는 활성화해도 표시되지 않는 결함이 있으나, 동일 수신 화면에 상시 표시 자막이 전 구간의 모든 필수 정보를 동기화된 상태로 표시하므로 이 결함만으로 1.2.4 위반이 되지는 않습니다(비위반 관찰 사항)."
+    },
+    {
+      "category": "speech_meaning_and_speaker_attribution",
+      "normative_basis": "WCAG 2.2 captions 정의(대사와 비음성 정보의 동기화된 대안). 판정은 시나리오 비교 결과로부터의 도출",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "A1–A3 대사가 K1–K3에 의미 그대로 표시되고 A3의 부정 지시가 보존되었으며, 화면 밖 두 화자를 구분하는 화자 표시가 모든 대사 자막에 있어 누가 말했는지 귀속이 유지됩니다. 결함 없음."
+    },
+    {
+      "category": "non_speech_audio",
+      "normative_basis": "WCAG 2.2 captions 정의(비음성 오디오 정보 포함)",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "인증 실패를 뜻하는 경고음 2회(A4, 22–24초)가 같은 시각 K4로 의미와 함께 표시되었습니다. 결함 없음."
+    },
+    {
+      "category": "synchronization",
+      "normative_basis": "WCAG 2.2 captions 정의(synchronized). 고정 지연 수치 기준은 사용하지 않음",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "동일 수신측 시계에서 각 자막이 대응 원음과 같은 구간에 표시되어, 안내의 자막이 다음 발화 뒤로 밀리는 등의 의미 귀속 붕괴가 없습니다."
+    }
+  ],
+  "missing_evidence": [
+    "실제 감사 판정으로 전환하려면 실제 송출의 당시 수신 화면·원음 동시 캡처 원본과 세션·시계 무결성 메타데이터가 필요함(현재는 교재 작성자가 만든 가상 관찰 기록)",
+    "폐쇄 자막이 표시되지 않는 원인에 대한 정보(본 판정에는 영향 없음)"
+  ],
+  "unreviewed_scope": [
+    "실재 대상 서비스·실제 방송(이 결론은 가정 아래의 조건부 결론이며 실제 대상의 WCAG 적합성을 보증하지 않음)",
+    "다양한 사용자 에이전트·보조기술 환경에서의 상시 표시 자막 표시 상태",
+    "SC 1.2.4 외 다른 성공 기준(예: 폐쇄 자막 기능의 사용자 경험 관련 사항)"
+  ],
+  "fixes_and_retest": [
+    "1.2.4 위반 해소 조치는 필요 없으나, 사용자가 켤 수 있다고 제시된 폐쇄 자막(CC) 경로가 표시되지 않는 결함은 수정을 권장합니다. 수정 시 상시 표시 자막과 동일하게 대사 의미(부정어 포함), 화자 표시, 경고음 2회와 그 의미를 모두 보존하고 원음과 동기화된 상태로 표시하십시오. 수정 중에도 상시 표시 자막은 제거하지 마십시오.",
+    "실제 송출 환경에서 수신자 공통 시계 기준으로 원음, 상시 표시 자막, 폐쇄 자막을 동일 세션에서 동시 기록하여 actual_supplied_evidence 모드로 재검증하십시오."
+  ]
+}

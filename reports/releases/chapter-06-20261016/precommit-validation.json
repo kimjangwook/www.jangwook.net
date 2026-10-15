@@ -1,0 +1,22 @@
+{
+  "localRuntimePassed": true,
+  "unitTests": 25,
+  "languages": [
+    "ko",
+    "en",
+    "ja",
+    "zh"
+  ],
+  "SSRArticles": 4,
+  "practicePages": 12,
+  "nativePlaybackChecks": 8,
+  "responsiveAxeChecks": 12,
+  "generatedDemoChecks": 4,
+  "noJavaScriptChecks": 4,
+  "previousFiveArticleEntriesByteEquivalent": true,
+  "changedArticleSlugs": [
+    "captions-live"
+  ],
+  "remoteDatabaseMigrations": false,
+  "mailActivation": false
+}

@@ -1,0 +1,36 @@
+{
+  "userInstruction": "내용 좋아.4가지 언어 배포해줘.",
+  "approvedAt": "2026-10-15T23:22:01.824Z",
+  "records": [
+    {
+      "lang": "ko",
+      "sourceHash": "b827b196788440461db28ebc4bfd32a38467f6dcc3a5a5f7323d31ffb46714cb",
+      "articleSha256": "7402b0230f4b3ca8ad2d7c9de3b5df7626f37c26c1e06704453a6dcb6d99e79e",
+      "promptSha256": "f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z"
+    },
+    {
+      "lang": "en",
+      "sourceHash": "538ccd8b7664088e345d4f477965a35bfa8cf4388694ee44e569cad309d5311f",
+      "articleSha256": "1fcb79886eb84b0bc79835b07305bce573d102c2f9bba6040c66adefef39dcc4",
+      "promptSha256": "0d8014fc026a46ef6b27504c4a61a0e3e7701088c078a7b69853d1f5a743d5c7",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z"
+    },
+    {
+      "lang": "ja",
+      "sourceHash": "a1cb350b4150ac31730a8623e63bfe65bc5e0b6e077d1ec0e86d9aef6524f3c6",
+      "articleSha256": "795f142f8cd523e3f47cf6ac9f344f978b8a97532868f80219dcddffef9e8c36",
+      "promptSha256": "637ed8615cdd1e4d284cee1e0ae5e15a3f7ff1b2f745b62b313dca5e5206d53c",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z"
+    },
+    {
+      "lang": "zh",
+      "sourceHash": "bf80ae52c57072df794263957ae6ac61884769768f86893c4878e7e9b9792976",
+      "articleSha256": "91243a3fc3b5efa708ed2d0f1a134ea0d43abcbffc90660e3aa75c9547235502",
+      "promptSha256": "cf97f2dd7c48ebf20149724dad7dc2ecb7f227adc7cc51feba7569a1681b8153",
+      "firstPublishedAt": "2026-10-15T23:22:01.824Z"
+    }
+  ],
+  "previousPublicationsUnchanged": true,
+  "scope": "Approved Korean chapter06 and faithful localized teaching editions, including reviewed diagrams and practice pages. Original prompt/test evidence unchanged. No new multilingual model trial."
+}

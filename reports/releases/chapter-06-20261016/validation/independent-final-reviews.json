@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "sourceHash": "9e49611840ca7a3b23f6c1f8720e289f8a467e4910f4466c8edb117595bd37ad",
+  "article_sha256": "416907b80720f79ee49df82d041f54665920d344a4f75cc2a62658f60c812c90",
+  "prompt_sha256": "f90ceaa556685fd074e35c1522ee12b43cf3bee241fa5acd20eecd728bf0916f",
+  "reviews": [
+    {
+      "model": "GPT6.1 Sol High",
+      "verdict": "pass",
+      "report": "sol-high-final-review.json",
+      "report_sha256": "c1294243c6c13fcd18442ae5d6aff78b7e7dd0d9a93f948739bb1d6215f8f09e",
+      "nonblocking_issues": [
+        {
+          "id": "SOL-V3-01",
+          "severity": "low",
+          "blocking": false,
+          "evidence": [
+            "frozen-tests/r3/L12-result.json:10은 is_synchronized_media를 yes로 기록합니다.",
+            "같은 파일:14는 이 값을 물리적인 오디오+비디오 구성으로 사용했으며, 명확히 라벨링된 텍스트 미디어 대안은 규범 정의에서 제외된다고 명시적으로 구분합니다. 최종 두 판정 필드는 올바르게 not_applicable / not_assessed입니다.",
+            "동일한 L12의 r1/r2 출력은 is_synchronized_media를 규범 정의 적용 후의 no로 사용합니다. sources/normative-definitions.txt:17–23은 명확히 라벨링된 텍스트 미디어 대안을 synchronized media에서 제외합니다."
+          ],
+          "finding": "L12의 비적용 판정과 설명은 맞지만 보조 필드의 의미가 반복 간에 물리적 구성과 규범상 정의로 달라집니다. 따라서 36/36은 본문에 적힌 최종 판정 필드의 일치이며 모든 보조 필드의 일치를 뜻하지 않습니다. r3가 사용한 뜻을 명시적으로 밝혔으므로 핵심 판정의 모순이나 본문 수정 차단 사유로 보지는 않습니다.",
+          "requested_change": "동결 원시 결과는 그대로 보존하고 검토 주석으로 이 차이를 기록하십시오. 향후 스키마를 기계적으로 재사용할 때는 is_synchronized_media가 정의상 예외 적용 후 값인지 물리적 구성 값인지 명시하는 것이 좋습니다. 이 선택적 스키마 보완은 현재 본문 통과의 선행 조건은 아닙니다."
+        },
+        {
+          "id": "SOL-V3-02",
+          "severity": "low",
+          "blocking": false,
+          "evidence": [
+            "frozen-tests/r2/L08-result.json:22 및 frozen-tests/r3/L08-result.json:22는 K1–K4에 화자 라벨이 포함된 것으로 서술합니다.",
+            "frozen-tests/cases-input.json의 L08 observation.rendered_captions에서 화자 라벨은 대사 K1–K3에 있으며, K4는 [警告音2回・認証失敗]입니다.",
+            "두 출력의 findings는 대사의 화자 귀속과 경고음의 의미 전달을 각각 올바르게 설명하고 최종 조건부 통과 판정도 맞습니다."
+          ],
+          "finding": "근거 배열의 K1–K4 범위가 화자 라벨에 대해서는 한 항목 넓게 적혔습니다. K4는 화자 발언이 아니므로 화자 라벨을 요구할 필요가 없고, 이 표현 차이는 자막 충분성 결론에 영향을 주지 않습니다.",
+          "requested_change": "원시 출력을 수정하지 말고 검토 주석에 “화자 라벨은 K1–K3, K4는 경고음과 인증 실패 의미를 제공”이라고 기록하는 정도면 충분합니다. 36/36을 근거 문구 전체의 무오류율로 소개하지 않는 현재 범위를 유지하십시오."
+        }
+      ]
+    },
+    {
+      "model": "Fable5.1 Low",
+      "verdict": "pass",
+      "report": "fable-low-review.json",
+      "report_sha256": "42984a3b49f85100d5055544a70d7461ffcf43ad128925c3859583202d634eba",
+      "nonblocking_issues": [
+        {
+          "id": "I-01",
+          "severity": "low",
+          "evidence": "frozen-tests/r3/L12-result.json applicability.is_synchronized_media = \"yes\"(물리적 구성 기술로 설명), r1·r2는 \"no\"(정의 제외 적용). sc_1_2_4_applicable·scenario_decision·actual은 3회 모두 동일(not_applicable / not_assessed).",
+          "requested_change": "본문 수정 불필요. 본문의 '36건 모두 기준 답과 일치'는 판정 필드 기준이며 results.json scope도 'Agreement concerns decision fields'로 한정하고 있음. 선택 사항: 검증 결과 절에 '일치 판정은 두 판정 필드 기준이며 적용성 하위 축 표기는 사례에 따라 설명 방식이 달랐다'는 한 문장을 추가하면 보다 투명함."
+        },
+        {
+          "id": "I-02",
+          "severity": "low",
+          "evidence": "article.md 9행: '오디오 전용 방송 옆에 자막 텍스트가 흐르는 영역 하나만 덧붙여 놓았다고 해서 원래 콘텐츠가 자동으로 1.2.4의 동기화 미디어로 바뀌는 것은 아니므로'. 이 서술은 G157(1.2.9 기법) 구조에서 도출한 해석이며, 패킷 sources에 이를 직접 뒷받침하는 규범 문장은 없음(synchronized media 정의는 '다른 정보 제시 형식과 동기화된 오디오'를 포함하므로 해석 여지 있음). 프롬프트 규칙 1에도 같은 해석이 고정되어 있음.",
+          "requested_change": "필수 아님. 향후 개정 시 '…바뀌는 것은 아니라고 보는 것이 G157의 구성상 타당하므로' 정도로 해석임을 드러내는 완화 표현 권고. 프롬프트·동결 입력은 본 리뷰 범위상 수정 금지이므로 현재 판정에는 영향 없음."
+        },
+        {
+          "id": "I-03",
+          "severity": "low",
+          "evidence": "article.md 172행 참고 자료 링크 제목 'Web Content Accessibility Guidelines (WCAG) 2.2 — SC 1.2.4 …'에 em dash(—) 1회 사용.",
+          "requested_change": "선택 사항: 문체 규범상 대시 회피를 위해 ' – ' 또는 ': '로 치환. 판정에 영향 없음."
+        }
+      ]
+    }
+  ],
+  "review_packet_files_unchanged": true,
+  "raw_outputs_modified": false,
+  "scope": "Korean review draft;36 decision pairs agreed with the reference on12 designed conditions. Nonblocking raw explanatory notes preserved. No universal correctness or actual live-caption quality claim.",
+  "validated_at": "2026-10-15T22:19:08.805339+00:00"
+}

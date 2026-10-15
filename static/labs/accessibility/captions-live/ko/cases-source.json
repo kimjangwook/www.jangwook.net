@@ -1,0 +1,562 @@
+[
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "元になる全文テキストはなく、その代替という表示もない"
+    },
+    "observation": {
+      "coverage": "0–40秒を同一受信セッションの画面・原音・字幕として全て比較したと仮定。追加音声イベントなし。",
+      "clock": "原音イベントと利用者に見えた字幕は同じ受信側時計",
+      "speakers": "質問者・案内者は画面外であり画面と文脈のみでは区別できない",
+      "audio": [
+        {
+          "id": "A1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "A2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "A3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "A4",
+          "t": "22–24",
+          "content": "[警告音2回。認証失敗の意味]"
+        }
+      ],
+      "rendered_captions": [
+        {
+          "id": "K1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "K2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "K3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "K4",
+          "t": "22–24",
+          "content": "[警告音2回・認証失敗]"
+        }
+      ],
+      "display": "閉じた字幕を有効にして全区間で表示。重要な画面内容を隠さず、読める表示時間だったと仮定。",
+      "other_caption_path": "別経路の字幕は存在しないと仮定。字幕生成の方針・担当と配信手順があると仮定。"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L01"
+  },
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "元になる全文テキストはなく、その代替という表示もない"
+    },
+    "observation": {
+      "coverage": "0–40秒を同一受信セッションの画面・原音・字幕として全て比較したと仮定。追加音声イベントなし。",
+      "clock": "原音イベントと利用者に見えた字幕は同じ受信側時計",
+      "speakers": "質問者・案内者は画面外であり画面と文脈のみでは区別できない",
+      "audio": [
+        {
+          "id": "A1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "A2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "A3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "A4",
+          "t": "22–24",
+          "content": "[警告音2回。認証失敗の意味]"
+        }
+      ],
+      "rendered_captions": [
+        {
+          "id": "K1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "K2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "K3",
+          "t": "14–22",
+          "content": "[案内者] はい。新しいコードを保存する前に捨ててください。"
+        },
+        {
+          "id": "K4",
+          "t": "22–24",
+          "content": "[警告音2回・認証失敗]"
+        }
+      ],
+      "display": "閉じた字幕を有効にして全区間で表示。重要な画面内容を隠さず、読める表示時間だったと仮定。",
+      "other_caption_path": "別経路の字幕は存在しないと仮定。字幕生成の方針・担当と配信手順があると仮定。"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L02"
+  },
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "元になる全文テキストはなく、その代替という表示もない"
+    },
+    "observation": {
+      "coverage": "0–40秒を同一受信セッションの画面・原音・字幕として全て比較したと仮定。追加音声イベントなし。",
+      "clock": "原音イベントと利用者に見えた字幕は同じ受信側時計",
+      "speakers": "두 패널은 화면 밖에서 발언함. 원음을 들으면 두 목소리를 구별할 수 있다고 가정. 화면과 문맥에는 각 발언을 패널 A/B에 연결하는 시각적 단서가 없고 발언의 귀속이 필요함.",
+      "audio": [
+        {
+          "id": "A1",
+          "t": "0–8",
+          "content": "[패널 A] 지금 업데이트를 진행해도 됩니다."
+        },
+        {
+          "id": "A2",
+          "t": "8–14",
+          "content": "[패널 B] 지금 업데이트를 진행하면 안 됩니다."
+        },
+        {
+          "id": "A3",
+          "t": "14–22",
+          "content": "[패널 A] 먼저 백업 상태를 확인해야 합니다."
+        },
+        {
+          "id": "A4",
+          "t": "22–24",
+          "content": "[警告音2回。認証失敗の意味]"
+        }
+      ],
+      "rendered_captions": [
+        {
+          "id": "K1",
+          "t": "0–8",
+          "content": "지금 업데이트를 진행해도 됩니다."
+        },
+        {
+          "id": "K2",
+          "t": "8–14",
+          "content": "지금 업데이트를 진행하면 안 됩니다."
+        },
+        {
+          "id": "K3",
+          "t": "14–22",
+          "content": "먼저 백업 상태를 확인해야 합니다."
+        },
+        {
+          "id": "K4",
+          "t": "22–24",
+          "content": "[警告音2回・認証失敗]"
+        }
+      ],
+      "display": "閉じた字幕を有効にして全区間で表示。重要な画面内容を隠さず、読める表示時間だったと仮定。",
+      "other_caption_path": "別経路の字幕は存在しないと仮定。字幕生成の方針・担当と配信手順があると仮定。"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L03"
+  },
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "元になる全文テキストはなく、その代替という表示もない"
+    },
+    "observation": {
+      "coverage": "0–40秒を同一受信セッションの画面・原音・字幕として全て比較したと仮定。追加音声イベントなし。",
+      "clock": "原音イベントと利用者に見えた字幕は同じ受信側時計",
+      "speakers": "質問者・案内者は画面外であり画面と文脈のみでは区別できない",
+      "audio": [
+        {
+          "id": "A1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "A2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "A3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "A4",
+          "t": "22–24",
+          "content": "[警告音2回。認証失敗の意味]"
+        }
+      ],
+      "rendered_captions": [
+        {
+          "id": "K1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "K2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "K3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        }
+      ],
+      "display": "閉じた字幕を有効にして全区間で表示。重要な画面内容を隠さず、読める表示時間だったと仮定。",
+      "other_caption_path": "別経路の字幕は存在しないと仮定。字幕生成の方針・担当と配信手順があると仮定。"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L04"
+  },
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "元になる全文テキストはなく、その代替という表示もない"
+    },
+    "observation": {
+      "coverage": "0–40秒を同一受信セッションの画面・原音・字幕として全て比較したと仮定。追加音声イベントなし。",
+      "clock": "原音イベントと利用者に見えた字幕は同じ受信側時計",
+      "speakers": "質問者・案内者は画面外であり画面と文脈のみでは区別できない",
+      "audio": [
+        {
+          "id": "A1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "A2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "A3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "A4",
+          "t": "22–24",
+          "content": "[警告音2回。認証失敗の意味]"
+        }
+      ],
+      "rendered_captions": [
+        {
+          "id": "K1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "K2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "K3",
+          "t": "30–38",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "K4",
+          "t": "22–24",
+          "content": "[警告音2回・認証失敗]"
+        }
+      ],
+      "display": "閉じた字幕を有効にして全区間で表示。重要な画面内容を隠さず、読める表示時間だったと仮定。",
+      "other_caption_path": "別経路の字幕は存在しないと仮定。字幕生成の方針・担当と配信手順があると仮定。",
+      "screen": "14–22秒に前のコードを破棄するかの判断を求める画面。22秒で確認が閉じる。字幕K3はその画面が閉じるまで一度も表示されず、別の操作画面に移った30秒に初めて表示されると仮定。"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L05"
+  },
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "元になる全文テキストはなく、その代替という表示もない"
+    },
+    "observation": {
+      "coverage": "原音イベント一覧は仮定。生成ログしかなく実際の表示区間は不明。",
+      "clock": "原音と字幕ログは別時計でオフセット不明",
+      "speakers": "質問者・案内者は画面外であり画面と文脈のみでは区別できない",
+      "audio": [
+        {
+          "id": "A1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "A2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "A3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "A4",
+          "t": "22–24",
+          "content": "[警告音2回。認証失敗の意味]"
+        }
+      ],
+      "rendered_captions": [],
+      "display": "字幕生成サーバーのテキストログだけ存在。利用者画面への配送・表示は未観察。",
+      "other_caption_path": "別経路の字幕は存在しないと仮定。字幕生成の方針・担当と配信手順があると仮定。"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L06"
+  },
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "元になる全文テキストはなく、その代替という表示もない"
+    },
+    "observation": {
+      "coverage": "全40秒のうち20秒のスクリーンショットの記述1件だけ。",
+      "visible_text": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。",
+      "audio": "未提供",
+      "other_caption_path": "未確認",
+      "display": "この一瞬に字幕が見える以外は未確認"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L07"
+  },
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "元になる全文テキストはなく、その代替という表示もない"
+    },
+    "observation": {
+      "coverage": "0–40秒を同一受信セッションの画面・原音・字幕として全て比較したと仮定。追加音声イベントなし。",
+      "clock": "原音イベントと利用者に見えた字幕は同じ受信側時計",
+      "speakers": "質問者・案内者は画面外であり画面と文脈のみでは区別できない",
+      "audio": [
+        {
+          "id": "A1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "A2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "A3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "A4",
+          "t": "22–24",
+          "content": "[警告音2回。認証失敗の意味]"
+        }
+      ],
+      "rendered_captions": [
+        {
+          "id": "K1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "K2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "K3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "K4",
+          "t": "22–24",
+          "content": "[警告音2回・認証失敗]"
+        }
+      ],
+      "display": "閉じた字幕は有効にしても表示されない。一方、常時表示字幕が原音と同時に上記のK1–K4全てを全区間で正しく表示し、重要な画面を隠さず読めることを確認したと仮定。",
+      "other_caption_path": "常時表示字幕の全区間は上記の通り確認済みと仮定。"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L08"
+  },
+  {
+    "evidence_type": "observed",
+    "scope": "로컬 교육용 페이지의 실시간 여부 분류만. 자막 내용이나 실제 방송 품질의 완전한 평가는 아님.",
+    "provenance": "평가자가 로컬 파일과 Playwright로 수집.",
+    "page_html": "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><meta name=\"robots\" content=\"noindex, follow\"><title>녹화 재생과 실시간 매체 구분</title><style>*{box-sizing:border-box}html{font-family:system-ui,sans-serif;background:#fafaf8;color:#252525}body{max-width:850px;margin:auto;padding:24px;line-height:1.8}h1{font-size:26px;line-height:1.4}a{color:inherit;text-underline-offset:4px}nav{display:flex;gap:20px;flex-wrap:wrap}video,canvas{width:100%;height:auto;border:1px solid #aaa;border-radius:6px}button{font:inherit;padding:12px 20px;background:#252525;color:#fff;border:1px solid #252525;border-radius:4px;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #745c41;outline-offset:4px}.notice{border-left:3px solid #8a7357;padding:12px 16px;background:#f0ede7}details{border-top:1px solid #ccc;padding:16px 0}summary{cursor:pointer;font-weight:650}table{border-collapse:collapse;width:100%}td,th{text-align:left;vertical-align:top;border-bottom:1px solid #ccc;padding:10px}code,pre{white-space:pre-wrap;overflow-wrap:anywhere}.small{font-size:14px;color:#575750}@media(max-width:500px){body{padding:18px}h1{font-size:23px}}</style></head><body><nav aria-label=\"실습 페이지\"><a href=\"index.html\">사례 목록</a><a href=\"replay.html\">녹화 재생</a><a href=\"generated.html\">컴퓨터 생성</a></nav><h1>녹화본을 재생하는 화면</h1><p class=\"notice\">교육용 녹화 영상입니다. 실제 생중계가 아닙니다. 이 화면의 재생을 확인해도 생중계 당시의 자막 제공 여부를 증명하지 않습니다.</p><p>복구 코드 안내 영상을 재생하고 자막을 켤 수 있습니다. 원본은 사전에 제작된 MP4 파일입니다.</p><video controls playsinline preload=\"metadata\" aria-label=\"복구 코드 안내 녹화 영상\"><source src=\"../../captions/ko/compatible.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"../../captions/ko/complete.vtt\" srclang=\"ko\" label=\"한국어 자막\" default></video><p class=\"small\">화면 밖 안내자와 사용자가 대화하며 두 번의 경고음은 보안 확인 실패를 뜻합니다. 자막 내용을 평가할 때는 1.2.2를 별도로 검토합니다. 이 페이지는 1.2.4의 실시간 매체 분류를 비교하기 위한 자료입니다.</p><p><a href=\"/series/accessibility/captions-live\">실시간 자막 글로 돌아가기</a></p></body></html>",
+    "collected_media": {
+      "path": "static/labs/accessibility/captions/ko/compatible.mp4",
+      "preexisting_prerecorded_asset": true,
+      "sha256": "60e0e354b807c7cbfff847b5e557c8d5d57310fc39cae1dd051916ac526fdda1"
+    },
+    "browser_record": {
+      "kind": "replay",
+      "readyState": 4,
+      "duration": 31.208333,
+      "currentTime": 2.045108,
+      "error": null,
+      "videoWidth": 1280,
+      "textTracks": [
+        {
+          "kind": "captions",
+          "language": "ko",
+          "mode": "showing",
+          "cues": 7
+        }
+      ]
+    },
+    "limits": "원음 직접 청취와 실제 생중계 시청은 하지 않음. 기존 녹화 자산임과 파일 재생은 확인.",
+    "case_id": "L09"
+  },
+  {
+    "evidence_type": "observed",
+    "scope": "완전 컴퓨터 생성 여부에 따른 실시간 분류만",
+    "provenance": "평가자가 로컬 페이지 전체 소스와 Playwright 실행 이벤트를 수집",
+    "page_html": "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><meta name=\"robots\" content=\"noindex, follow\"><title>완전 컴퓨터 생성 매체와 실시간 구분</title><style>*{box-sizing:border-box}html{font-family:system-ui,sans-serif;background:#fafaf8;color:#252525}body{max-width:850px;margin:auto;padding:24px;line-height:1.8}h1{font-size:26px;line-height:1.4}a{color:inherit;text-underline-offset:4px}nav{display:flex;gap:20px;flex-wrap:wrap}video,canvas{width:100%;height:auto;border:1px solid #aaa;border-radius:6px}button{font:inherit;padding:12px 20px;background:#252525;color:#fff;border:1px solid #252525;border-radius:4px;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #745c41;outline-offset:4px}.notice{border-left:3px solid #8a7357;padding:12px 16px;background:#f0ede7}details{border-top:1px solid #ccc;padding:16px 0}summary{cursor:pointer;font-weight:650}table{border-collapse:collapse;width:100%}td,th{text-align:left;vertical-align:top;border-bottom:1px solid #ccc;padding:10px}code,pre{white-space:pre-wrap;overflow-wrap:anywhere}.small{font-size:14px;color:#575750}@media(max-width:500px){body{padding:18px}h1{font-size:23px}}</style></head><body><nav aria-label=\"실습 페이지\"><a href=\"index.html\">사례 목록</a><a href=\"replay.html\">녹화 재생</a><a href=\"generated.html\">컴퓨터 생성</a></nav><h1>컴퓨터가 전부 생성하는 화면과 소리</h1><p class=\"notice\">실세계 사건을 촬영하거나 녹음하지 않습니다. 화면과 소리는 브라우저 코드가 생성합니다. 현재 생성된다는 사실만으로 WCAG의 live 정의를 충족하지 않습니다.</p><p>재생하면 0부터 10까지 숫자가 바뀌며 4초에 한 번 짧은 소리가 납니다. 화면에도 ‘알림음’이 표시됩니다. 마이크·카메라·외부 스트림을 사용하지 않습니다.</p><canvas width=\"960\" height=\"420\" role=\"img\" aria-label=\"코드가 생성한 숫자 화면. 4초의 알림음은 화면의 알림음 문구로도 표현됩니다.\"></canvas><p><button type=\"button\" id=\"start\">10초 데모 재생</button> <output id=\"status\">대기</output></p><p class=\"small\">이 매체는 실시간 생성 데모이며 생중계 실적이 아닙니다. 자막과 다른 접근성 요구의 평가는 별도입니다.</p><p><a href=\"/series/accessibility/captions-live\">실시간 자막 글로 돌아가기</a></p><script>const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),status=document.querySelector('#status'),button=document.querySelector('#start');let raf=0,audio;window.demoEvidence={source:'fully_computer_generated',externalCapture:false,beeps:0,frames:0};function draw(t){ctx.fillStyle='#ece9e1';ctx.fillRect(0,0,960,420);ctx.fillStyle='#252525';ctx.font='28px sans-serif';ctx.fillText('컴퓨터 생성 데모 · 실제 생중계 아님',60,80);ctx.font='80px sans-serif';ctx.fillText(String(t).padStart(2,'0'),60,210);ctx.font='28px sans-serif';ctx.fillText(t===4?'[알림음]':'숫자 화면과 합성 소리',60,310);window.demoEvidence.frames++;}draw(0);button.addEventListener('click',async()=>{button.disabled=true;audio=new AudioContext();await audio.resume();const start=performance.now();let previous=-1;function frame(){const t=Math.min(10,Math.floor((performance.now()-start)/1000));if(t!==previous){draw(t);status.value=t+' / 10초';previous=t;if(t===4){const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=660;g.gain.value=.05;o.connect(g).connect(audio.destination);o.start();o.stop(audio.currentTime+.18);window.demoEvidence.beeps++;}}if(t<10){raf=requestAnimationFrame(frame);}else{button.disabled=false;audio.close();}}frame();});</script></body></html>",
+    "browser_record": {
+      "kind": "generated",
+      "source": "fully_computer_generated",
+      "externalCapture": false,
+      "beeps": 1,
+      "frames": 6,
+      "status": "4 / 10초"
+    },
+    "limits": "카메라·마이크·외부 사건 입력이 없으며 수집된 소스가 전부. 원음 직접 청취나 생중계 감사 아님.",
+    "case_id": "L10"
+  },
+  {
+    "evidence_type": "missing",
+    "target_url": "https://example.org/live-webinar",
+    "provided": "페이지 이름 LIVE webinar라는 문자열뿐. URL은 예시 주소이며 방문하지 않음. 매체, 음성, 화면, 송출·편집·표시 기록 없음.",
+    "tools": "없음",
+    "scope": "실제 실시간 여부와 자막 확인 요청",
+    "case_id": "L11"
+  },
+  {
+    "evidence_type": "hypothetical",
+    "provenance": "教材作者が作成した仮想観察記録。実際の放送・音声・映像を収集した記録ではありません。以下の事実関係を仮定した条件付きの推論を求めます。",
+    "scope": "架空の40秒の公開ウェビナー全区間。録画挿入なし。",
+    "event": {
+      "real_world_capture": "実世界で話す二人をカメラとマイクでその時点に収録して配信したと仮定",
+      "delay": "通常の放送遅延のみで大幅編集なしと仮定",
+      "format": "音声と映像の同期メディア",
+      "text_alternative_exception": "사전에 이미 제공된 본문에 발화·질문·경고 의미 등 모든 정보가 담겨 있고 매체가 본문에 없는 정보를 전혀 추가하지 않음. 매체 바로 옆에 “이 매체는 아래 본문의 대안입니다”라고 명확하게 표시되어 있으며, 전체 비교에서 두 조건 모두 확인됐다고 가정."
+    },
+    "observation": {
+      "coverage": "0–40秒を同一受信セッションの画面・原音・字幕として全て比較したと仮定。追加音声イベントなし。",
+      "clock": "原音イベントと利用者に見えた字幕は同じ受信側時計",
+      "speakers": "質問者・案内者は画面外であり画面と文脈のみでは区別できない",
+      "audio": [
+        {
+          "id": "A1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "A2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "A3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "A4",
+          "t": "22–24",
+          "content": "[警告音2回。認証失敗の意味]"
+        }
+      ],
+      "rendered_captions": [
+        {
+          "id": "K1",
+          "t": "0–8",
+          "content": "[案内者] 新しいコードを保存してください。"
+        },
+        {
+          "id": "K2",
+          "t": "8–14",
+          "content": "[質問者] 前のコードを今捨ててもいいですか。"
+        },
+        {
+          "id": "K3",
+          "t": "14–22",
+          "content": "[案内者] いいえ。新しいコードを保存する前には捨てないでください。"
+        },
+        {
+          "id": "K4",
+          "t": "22–24",
+          "content": "[警告音2回・認証失敗]"
+        }
+      ],
+      "display": "閉じた字幕を有効にして全区間で表示。重要な画面内容を隠さず、読める表示時間だったと仮定。",
+      "other_caption_path": "別経路の字幕は存在しないと仮定。字幕生成の方針・担当と配信手順があると仮定。"
+    },
+    "limits": "実際の放送監査結果として扱わない。実在対象の結論とこの仮定の下での結論を区別する。",
+    "case_id": "L12"
+  }
+]

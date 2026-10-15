@@ -1,0 +1,13 @@
+# Accessibility chapter 06 release
+
+User approval: “내용 좋아.4가지 언어 배포해줘.” Korean source and evaluated prompt are approved; English, Japanese and Simplified Chinese are faithful teaching translations. The source article was authored in browser Gemini 4 Argon. Translation uses the prior GPT-6.1 Sol Medium publication setting, followed by independent GPT-6.1 Sol High and Claude Desktop Fable 5.1 Low checks.
+
+The Korean article differs from the approved review PDF only in three unchanged SVG references now using content-hash filenames. The evaluated Korean prompt and original frozen model inputs/results are preserved. Twelve designed conditions were run three times in separate Desktop Opus5.5 Medium conversations; the36 final decision pairs matched the predefined reference. Three separate overview plans are excluded from that count. This is conditional reasoning and nonlive classification evidence, not a real live-caption quality audit, universal accuracy score or a new translated-copy model test.
+
+Each language provides the article, full prompt, three accessible diagrams and three public practice pages. Localized practice views retain the original recorded Korean video with an explicit language notice, use the existing translated caption tracks, and translate all generated-demo canvas/control text. The original case/result JSON files remain byte-identical across languages. The demo emits one beep at t=4 seconds; descriptions say this explicitly. Frozen observed inputs are retained as originally tested.
+
+Independent publication review hashes bind the exact content and assets. Publication metadata is set only after both reviews pass. Previous five chapters and their original publication dates are retained. The remaining82 chapters remain preparation pages. A local production-mode Worker verifies SSR, SEO metadata, the inline iframe, practice links, native Chromium/WebKit video playback, caption language/cues/seeking, generated-demo behavior, responsive layouts, keyboard/no-JavaScript interaction and automated axe checks. These UI checks do not establish full WCAG conformance.
+
+Only this chapter, its evidence, the browser-Argon writing preference, generated catalogs and release-related test expectations are included. No remote database migration, mail activation, new credential, account permission or schedule is changed. The release uses a clean clone of main; unrelated source-workspace changes remain untouched. The pre-release Worker version is recorded in predeploy-deployments.log for rollback.
+
+Push, deployment, production verification and the established @effloow four-post English announcement with its separate final link reply are recorded by later receipts. A prepared social draft does not establish publication.

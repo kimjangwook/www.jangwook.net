@@ -1,0 +1,64 @@
+{
+  "packet_id": "L07",
+  "evidence_mode": "hypothetical_supplied_scenario",
+  "scope": {
+    "evaluated_target": "교재 작성자가 만든 가상 공개 웨비나(실세계에서 말하는 2인을 카메라·마이크로 수록해 송출했다고 가정)의 오디오 및 캡션 콘텐츠",
+    "evaluated_segment": "가상 웨비나 전체 40초 구간(녹화 삽입 없음)이 범위이나, 관찰 자료는 20초 시점 스크린샷 기술 1건뿐",
+    "is_full_program_covered": false
+  },
+  "applicability": {
+    "is_synchronized_media": "yes",
+    "is_live_audio": "yes",
+    "is_labeled_media_alternative_for_text": "no",
+    "sc_1_2_4_applicable": "applicable",
+    "rationale": "시나리오 전제(stipulated)상 형식은 '音声と映像の同期メディア'이고, 실세계에서 말하는 2인을 그 시점에 수록·송출했으며 통상의 방송 지연만 있고 대폭 편집이 없다고 가정되므로 동기화 미디어이자 라이브입니다. 또한 '元になる全文テキストはなく、その代替という表示もない'로 텍스트의 미디어 대안 예외의 두 조건(라벨링, 추가 정보 없음)이 모두 충족되지 않습니다. 따라서 이 가정 아래에서 SC 1.2.4 적용 대상입니다. 이는 실재 대상에 대한 판단이 아니라 가정된 전제로부터의 도출입니다."
+  },
+  "scenario_decision": "cannot_determine",
+  "actual_live_audit_decision": "not_assessed",
+  "evidence_used": [
+    "가상 시나리오 전제(complete_source_packet.event): 실세계 2인 화자의 당시 수록·송출, 통상 방송 지연만 있고 대폭 편집 없음, 음성·영상 동기화 미디어, 원문 전체 텍스트 및 대안 표시 없음",
+    "가상 관찰(observation.coverage): 전체 40초 중 20초 시점 스크린샷 기술 1건만 제공",
+    "가상 관찰(observation.visible_text): 해당 순간 화면에 '[案内者] いいえ。新しいコードを保存する前には捨てないでください。' 텍스트가 보임",
+    "가상 관찰(observation.audio, original_audio_timeline): 원음 '未提供'",
+    "가상 관찰(observation.other_caption_path, alternative_caption_paths): '未確認'",
+    "가상 관찰(observation.display): 'この一瞬に字幕が見える以外は未確認'",
+    "clock_and_provenance.clock_reference: 첨부 원자료에 시계 정보 없음(불명)"
+  ],
+  "findings": [
+    {
+      "category": "speech_meaning_preservation",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 및 captions 정의(음성 및 비음성 오디오 정보의 동기화된 시각/텍스트 대안)",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "20초 시점에 화자 라벨([案内者])과 부정 표현(いいえ, 捨てないでください)을 포함한 캡션 텍스트가 보이는 것은 확인되나, 대응하는 원음이 제공되지 않아 이 캡션이 실제 발화의 의미(부정어 포함 여부 등)를 정확히 보존하는지 대조할 수 없습니다. 결함도 충족도 입증되지 않습니다."
+    },
+    {
+      "category": "synchronization",
+      "normative_basis": "WCAG 2.2 captions 정의(동기화된 대안)",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "수신자 공통 시계와 원음 타임라인이 없어 해당 캡션이 대응 발화와 시점상 일치하는지 판단할 수 없습니다. 1.2.4에는 규범적 지연 수치가 없으므로 임의 임계값을 적용하지 않았습니다."
+    },
+    {
+      "category": "coverage_and_alternative_paths",
+      "normative_basis": "WCAG 2.2 SC 1.2.4 (라이브 동기화 미디어의 모든 라이브 오디오 콘텐츠에 캡션 제공)",
+      "informative_reference": "Understanding SC 1.2.4",
+      "description": "관찰은 40초 중 한 순간뿐이며, 나머지 구간의 캡션 표시, 두 번째 화자의 발화 캡션 및 화자 구분, 비음성 오디오 정보, 다른 캡션 경로 유무가 모두 미확인입니다. 일부 순간에 결함이 보이지 않았다는 사실만으로 전체 pass를 선언할 수 없고, 결함 입증도 없으므로 fail도 특정할 수 없습니다."
+    }
+  ],
+  "missing_evidence": [
+    "가정 범위 안에서도: 전체 40초 원음 타임라인(두 화자의 발화 및 비음성 오디오 사건)",
+    "가정 범위 안에서도: 전체 구간의 시청자 화면 표시 캡션 기록과 공통 시계 대응",
+    "가정 범위 안에서도: 다른 캡션 경로(CC 트랙, 오픈 캡션, 텍스트 뷰포트 등)의 존재·표시 여부",
+    "실제 감사로 전환하려면: 실재 대상의 당시 수신 화면·오디오 동시 캡처 원본 및 세션·시계 무결성 메타데이터"
+  ],
+  "unreviewed_scope": [
+    "20초 시점 이외의 나머지 약 39초 구간 전체",
+    "두 번째 화자의 발화 및 화자 전환 구간",
+    "비음성 오디오 정보(효과음, 경보음 등) 존재 여부와 캡션 반영",
+    "실재 서비스·사용자 에이전트·보조기술 환경(이 결과는 실제 방송 감사 결과가 아님)"
+  ],
+  "fixes_and_retest": [
+    "현 자료로는 결함이 입증되지 않았으므로 특정 수정을 권고하지 않습니다. 대신 전체 40초에 대해 공통 시계 기준 원음 타임라인과 화면 표시 캡션 기록을 함께 갖춘 관찰 패킷을 보완해 재평가하십시오.",
+    "재평가 시 두 화자 각각의 발화가 화자 구분 단서와 함께 빠짐없이 표시되는지, 부정어 등 핵심 의미가 보존되는지, 이해에 필요한 비음성 오디오 정보가 표시되는지, 그리고 다른 캡션 경로의 존재·표시 여부를 확인하십시오.",
+    "실재 대상의 결론이 필요하면 실제 송출 환경에서 수신 화면과 오디오를 동시 기록하여 actual_supplied_evidence 모드로 별도 평가하십시오."
+  ]
+}
