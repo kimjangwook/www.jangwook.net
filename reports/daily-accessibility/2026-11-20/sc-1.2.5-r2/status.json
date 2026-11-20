@@ -7,7 +7,7 @@
     "ja",
     "zh"
   ],
-  "stage": "approved_site_integrated_pending_deployment",
+  "stage": "published_four_languages",
   "review_pdf": "review.ko.pdf",
   "manuscript_bundle": "accessibility-07-four-languages-20261120-r2.zip",
   "telegram_draft_caption": "웹 접근성 07 · 오늘 글 재작성본\n사전 녹화 오디오 설명(SC 1.2.5, AA)\n\nGPT + Gemini 4 Neon 제작·독립 교차 검수\n한국어 PDF 14쪽 + 한·영·일·중 원고·전체 프롬프트\n실제 영상 6장면 대조 · 도표 4종(5패널)\n\n조건부 시나리오 24/24 일치(실제 미디어 정확도 아님).\n실제 근거 검토의 전체 판정은 유보이며 미확인 범위를 명시했습니다.\n아직 공개하지 않은 재작성 검토본입니다.",
@@ -21,8 +21,8 @@
   "scenario_matches": 24,
   "actual_decision": "inconclusive",
   "approved": true,
-  "published": false,
-  "deployed": false,
+  "published": true,
+  "deployed": true,
   "created_at": "2026-11-20T13:25:41.614383+00:00",
   "source_hashes": {
     "ko": "a6d0b19515cd5adf986f295b5912709cc0ba4122aad1cfabd5c5805af515ba56",
@@ -53,5 +53,19 @@
     "first_writing_date": "2026-11-21",
     "next_criterion": "1.2.6",
     "future_publication_requires_approval": true
-  }
+  },
+  "urls": {
+    "ko": "https://jangwook.net/series/accessibility/audio-description-prerecorded",
+    "en": "https://jangwook.net/en/series/accessibility/audio-description-prerecorded",
+    "ja": "https://jangwook.net/ja/series/accessibility/audio-description-prerecorded",
+    "zh": "https://jangwook.net/zh/series/accessibility/audio-description-prerecorded"
+  },
+  "release_commit": "1cdaa563194726484ea119569ccccf2889b26881",
+  "worker_version": "97d25a5e-d73b-4099-b16c-de9d442de268",
+  "telegram_publication_delivery": "sent",
+  "telegram_publication_message_ids": [
+    3898
+  ],
+  "x_announcement": "published_verified",
+  "x_thread_url": "https://x.com/effloow/status/2123795132478898577"
 }

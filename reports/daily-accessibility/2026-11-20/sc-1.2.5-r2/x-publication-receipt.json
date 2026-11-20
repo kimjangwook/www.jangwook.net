@@ -1,0 +1,46 @@
+{
+  "account": "effloow",
+  "sourceHash": "a2aa5ead877c0ba29a0f3d9dc5d48bda81f5a8cbc7d87650fae204fb8cbf3b37",
+  "status": "published_verified",
+  "posts": [
+    {
+      "text": "[1/4] Two beeps can signal an error without explaining what failed or what to do next. The new accessibility chapter examines missing visual information in prerecorded video under WCAG 2.2 SC 1.2.5 (AA).",
+      "ko": "경고음 두 번만으로 실패 내용이나 다음 행동을 알 수는 없습니다. 새 글은 사전 녹화 영상의 중요 시각 정보 누락을 다룹니다.",
+      "weighted_length": 203,
+      "url": "https://x.com/effloow/status/2123795132478898577",
+      "verified_visible": true
+    },
+    {
+      "text": "[2/4] Captions describe the audio. Audio description fills gaps in the visual story. A regular transcript alone does not meet the AA requirement when important visual information is missing from the soundtrack.",
+      "ko": "자막은 소리를 전달하고 오디오 설명은 화면 정보의 공백을 채웁니다. 중요 시각 정보가 원음에 없다면 일반 전사만으로 AA 요구를 충족하지 못합니다.",
+      "weighted_length": 210,
+      "url": "https://x.com/effloow/status/2123795134257242435",
+      "verified_visible": true
+    },
+    {
+      "text": "[3/4] The recovery-code example compares six scenes with the original speech. It separates a missing failure/retry explanation from a missing training-only warning. Proposed narration must preserve meaningful beeps and be checked for timing.",
+      "ko": "복구 코드 영상의 여섯 장면과 원음을 대조합니다. 실패·재시도 설명과 교육용 코드 고지를 구분하고, 제안 음성은 경고음 보존과 시간 검증이 필요하다고 설명합니다.",
+      "weighted_length": 241,
+      "url": "https://x.com/effloow/status/2123795136119504973",
+      "verified_visible": true
+    },
+    {
+      "text": "[4/4] The chapter includes comparison diagrams, an embedded exercise and a reusable evaluation prompt in four languages. Observed gaps are separated from the overall inconclusive assessment; unreviewed alternative paths remain explicit.",
+      "ko": "네 언어의 도표·실습·평가 프롬프트를 제공합니다. 확인한 누락과 전체 판정 유보를 구분하고 미검토 대체 경로를 명시합니다.",
+      "weighted_length": 236,
+      "url": "https://x.com/effloow/status/2123795137746886728",
+      "verified_visible": true
+    }
+  ],
+  "notedAt": "2026-11-20T15:06:50.138609+00:00",
+  "thread_order_and_reply_chain_verified": true,
+  "linkReply": {
+    "url": "https://x.com/effloow/status/2123795263769006519",
+    "parent": "https://x.com/effloow/status/2123795137746886728",
+    "text": "https://jangwook.net/en/series/accessibility/audio-description-prerecorded",
+    "shortUrl": "https://t.co/Ed0SE6Spqn",
+    "finalDestinationVerified": "https://jangwook.net/en/series/accessibility/audio-description-prerecorded"
+  },
+  "screenshot": "x-thread-proof.jpg",
+  "verifiedAt": "2026-11-20T15:07:55.387302+00:00"
+}

@@ -1,0 +1,82 @@
+
+> jangwook-net@2.0.0 deploy
+> node scripts/require-deploy-approval.mjs && wrangler deploy --env production
+
+
+ ⛅️ wrangler 4.145.0 (update available 4.165.0)
+───────────────────────────────────────────────
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mYou are about to upload a Worker that was last updated via the script API.[0m
+
+  Edits that have been made via the script API will be overridden by your local code and config.
+
+
+🌀 Building list of assets...
+✨ Read 2700 files from the assets directory /private/tmp/jangwook-publish-20261120-r2/.svelte-kit/cloudflare
+🌀 Starting asset upload...
+🌀 Found 45 new or modified static assets to upload. Proceeding with upload...
++ /_app/version.json
++ /labs/accessibility/common/chart.svg
++ /labs/accessibility/common/captions/zh/negation.vtt
++ /labs/accessibility/common/workshop.svg
++ /labs/accessibility/common/captions/en/shifted.vtt
++ /labs/accessibility/common/captions/ja/complete.vtt
++ /labs/accessibility/common/captions/ko/complete.vtt
++ /images/accessibility/audio-description-prerecorded-20261120/ko/timing-31d8b1a32543.svg
++ /images/accessibility/audio-description-prerecorded-20261120/zh/paths-7363e88210f0.svg
++ /images/accessibility/audio-description-prerecorded-20261120/en/paths-c44342dead4c.svg
++ /_app/immutable/entry/app.CX-WsGfV.js
++ /images/accessibility/audio-description-prerecorded-20261120/zh/scene_compare-4d09a7d58275.svg
++ /images/accessibility/audio-description-prerecorded-20261120/en/scene_compare-0e90376ebf3a.svg
++ /images/accessibility/audio-description-prerecorded-20261120/ja/storyboard-a-cc475761b515.svg
++ /images/accessibility/audio-description-prerecorded-20261120/ko/storyboard-b-6cd0bd8eedc6.svg
++ /_app/immutable/entry/start.CV8UH6kW.js
++ /labs/accessibility/common/captions/manifest.json
++ /labs/accessibility/common/captions/zh/complete.vtt
++ /labs/accessibility/common/captions/en/negation.vtt
++ /labs/accessibility/common/target.js
++ /labs/accessibility/common/captions/ja/shifted.vtt
++ /labs/accessibility/common/captions/ko/shifted.vtt
++ /images/accessibility/audio-description-prerecorded-20261120/ja/timing-1e64e5c30dcd.svg
++ /images/accessibility/audio-description-prerecorded-20261120/ko/paths-fbedebb40353.svg
++ /labs/accessibility/common/target.css
++ /ads.txt
++ /images/accessibility/audio-description-prerecorded-20261120/ko/scene_compare-b2aecbbe9d0c.svg
++ /images/accessibility/audio-description-prerecorded-20261120/zh/storyboard-a-1704a27a882f.svg
++ /images/accessibility/audio-description-prerecorded-20261120/en/storyboard-a-aa34bac1a7db.svg
++ /images/accessibility/audio-description-prerecorded-20261120/ja/storyboard-b-77e2a4f072ff.svg
++ /_app/immutable/chunks/CPqXkod3.js
++ /_app/immutable/nodes/1.CyBcVWWi.js
++ /labs/accessibility/common/captions/zh/shifted.vtt
++ /labs/accessibility/common/captions/en/complete.vtt
++ /labs/accessibility/common/captions/ja/negation.vtt
++ /labs/accessibility/common/captions/ko/negation.vtt
++ /images/accessibility/audio-description-prerecorded-20261120/zh/timing-4c72ac57d721.svg
++ /images/accessibility/audio-description-prerecorded-20261120/en/timing-969db889cc19.svg
++ /images/accessibility/audio-description-prerecorded-20261120/ja/paths-06512cab69f6.svg
++ /_app/immutable/nodes/0.BtERUq3e.js
++ /_app/immutable/chunks/kQPZ1JHU.js
++ /images/accessibility/audio-description-prerecorded-20261120/ja/scene_compare-a06f03dd66e9.svg
++ /images/accessibility/audio-description-prerecorded-20261120/ko/storyboard-a-6b47b48ff4e0.svg
++ /images/accessibility/audio-description-prerecorded-20261120/zh/storyboard-b-cceda55ec15e.svg
++ /images/accessibility/audio-description-prerecorded-20261120/en/storyboard-b-5284866ce125.svg
+Uploaded 15 of 45 assets
+Uploaded 30 of 45 assets
+Uploaded 45 of 45 assets
+✨ Success! Uploaded 45 files (2554 already uploaded) (1.69 sec)
+
+Total Upload: 5853.84 KiB / gzip: 1091.63 KiB
+Worker Startup Time: 36 ms
+Your Worker has access to the following bindings:
+Binding                                        Resource                  
+env.LEADS_DB (jangwook-leads)                  D1 Database               
+env.ASSETS                                     Assets                    
+env.MAIL_MODE ("disabled")                     Environment Variable      
+env.SITE_URL ("https://jangwook.net")          Environment Variable      
+env.FROM_EMAIL ("materials@jangwook.net")      Environment Variable      
+
+Uploaded www-jangwook-net (9.16 sec)
+Deployed www-jangwook-net triggers (1.93 sec)
+  jangwook.net (custom domain)
+  www.jangwook.net (custom domain)
+  schedule: 17 18 * * *
+Current Version ID: 97d25a5e-d73b-4099-b16c-de9d442de268

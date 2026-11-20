@@ -1,0 +1,17 @@
+{
+  "site_proof": "Local packet site-live-proof.jpg",
+  "x_proof": "Local packet x-thread-proof.jpg",
+  "source_workspace": "/Users/jangwook/workspace/www.jangwook.net/reports/daily-accessibility/2026-11-20/sc-1.2.5-r2",
+  "published_telegram_ids": [
+    3898
+  ],
+  "automation": {
+    "id": "jangwook-net-a11y",
+    "status": "ACTIVE",
+    "daily_time": "09:00",
+    "timezone": "Asia/Tokyo",
+    "first_writing_date": "2026-11-21",
+    "next_criterion": "1.2.6",
+    "future_publication_requires_approval": true
+  }
+}

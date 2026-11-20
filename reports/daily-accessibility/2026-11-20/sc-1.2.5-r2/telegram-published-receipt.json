@@ -1,0 +1,11 @@
+{
+  "4cb3dd77fcb1dd5c402ed8fd8412b12318a49b194e2ebc7cd575a4209084399b": {
+    "status": "sent",
+    "artifact": null,
+    "started_at": "2026-11-20T15:05:57.851011+00:00",
+    "message_ids": [
+      3898
+    ],
+    "delivery_id": 3045
+  }
+}

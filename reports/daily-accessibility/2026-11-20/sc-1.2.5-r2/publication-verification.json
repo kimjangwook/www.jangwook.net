@@ -1,0 +1,29 @@
+{
+  "approved": true,
+  "productionVerificationPassed": true,
+  "urls": {
+    "ko": "https://jangwook.net/series/accessibility/audio-description-prerecorded",
+    "en": "https://jangwook.net/en/series/accessibility/audio-description-prerecorded",
+    "ja": "https://jangwook.net/ja/series/accessibility/audio-description-prerecorded",
+    "zh": "https://jangwook.net/zh/series/accessibility/audio-description-prerecorded"
+  },
+  "content_hashes": {
+    "ko": "49ef4400bbae186175d41b465584fdc44fcad58bec5f9f3f8550cfed5c8c2e92",
+    "en": "a2aa5ead877c0ba29a0f3d9dc5d48bda81f5a8cbc7d87650fae204fb8cbf3b37",
+    "ja": "dbaedee42d01406c45f433dba8badb037f00033d8248c58814ec7ad231ca5df1",
+    "zh": "aca8e977f811def49edfdb0521f083a2c578652d5b224cad356ecace421fae05"
+  },
+  "releaseCommit": "1cdaa563194726484ea119569ccccf2889b26881",
+  "workerVersion": "97d25a5e-d73b-4099-b16c-de9d442de268",
+  "rollbackVersion": "916d48ab-be65-4f65-a4f3-52e441fe8028",
+  "verifiedAt": "2026-11-20T15:05:56.547353+00:00",
+  "checks": {
+    "domain_article_checks": 8,
+    "identical_svg_assets": 20,
+    "responsive_checks": 12,
+    "no_js_checks": 4,
+    "common_lab_languages": 4,
+    "original_video_identical": true
+  },
+  "first_browser_observation": "Initial checker could not acquire an axe context; a direct browser observation and fresh complete run passed. No application/content change; checker explicitly waits for the article before axe."
+}

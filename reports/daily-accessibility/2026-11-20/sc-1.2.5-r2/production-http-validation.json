@@ -1,0 +1,193 @@
+{
+  "articles": [
+    {
+      "lang": "ko",
+      "url": "https://jangwook.net/series/accessibility/audio-description-prerecorded",
+      "status": 200,
+      "hash": "49ef4400bbae186175d41b465584fdc44fcad58bec5f9f3f8550cfed5c8c2e92",
+      "exactPrompt": true
+    },
+    {
+      "lang": "ko",
+      "url": "https://www.jangwook.net/series/accessibility/audio-description-prerecorded",
+      "status": 200,
+      "hash": "49ef4400bbae186175d41b465584fdc44fcad58bec5f9f3f8550cfed5c8c2e92",
+      "exactPrompt": true
+    },
+    {
+      "lang": "en",
+      "url": "https://jangwook.net/en/series/accessibility/audio-description-prerecorded",
+      "status": 200,
+      "hash": "a2aa5ead877c0ba29a0f3d9dc5d48bda81f5a8cbc7d87650fae204fb8cbf3b37",
+      "exactPrompt": true
+    },
+    {
+      "lang": "en",
+      "url": "https://www.jangwook.net/en/series/accessibility/audio-description-prerecorded",
+      "status": 200,
+      "hash": "a2aa5ead877c0ba29a0f3d9dc5d48bda81f5a8cbc7d87650fae204fb8cbf3b37",
+      "exactPrompt": true
+    },
+    {
+      "lang": "ja",
+      "url": "https://jangwook.net/ja/series/accessibility/audio-description-prerecorded",
+      "status": 200,
+      "hash": "dbaedee42d01406c45f433dba8badb037f00033d8248c58814ec7ad231ca5df1",
+      "exactPrompt": true
+    },
+    {
+      "lang": "ja",
+      "url": "https://www.jangwook.net/ja/series/accessibility/audio-description-prerecorded",
+      "status": 200,
+      "hash": "dbaedee42d01406c45f433dba8badb037f00033d8248c58814ec7ad231ca5df1",
+      "exactPrompt": true
+    },
+    {
+      "lang": "zh",
+      "url": "https://jangwook.net/zh/series/accessibility/audio-description-prerecorded",
+      "status": 200,
+      "hash": "aca8e977f811def49edfdb0521f083a2c578652d5b224cad356ecace421fae05",
+      "exactPrompt": true
+    },
+    {
+      "lang": "zh",
+      "url": "https://www.jangwook.net/zh/series/accessibility/audio-description-prerecorded",
+      "status": 200,
+      "hash": "aca8e977f811def49edfdb0521f083a2c578652d5b224cad356ecace421fae05",
+      "exactPrompt": true
+    }
+  ],
+  "assets": [
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ko/paths-fbedebb40353.svg",
+      "status": 200,
+      "sha256": "fbedebb40353f7b10c0fc850ab35734c40a3ea2f901a9b04c4ed6650e31feeb9"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ko/storyboard-a-6b47b48ff4e0.svg",
+      "status": 200,
+      "sha256": "6b47b48ff4e044252e87e83446fa0798115875148fb9984ef3b52b6ee20eb9bd"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ko/storyboard-b-6cd0bd8eedc6.svg",
+      "status": 200,
+      "sha256": "6cd0bd8eedc642210804e13e73a568f6abba81954f78c563be07600cfa3878da"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ko/scene_compare-b2aecbbe9d0c.svg",
+      "status": 200,
+      "sha256": "b2aecbbe9d0c358869b1058ce2f8d8e7ad4e922f2d8cb02895dcfb6a66f9feaf"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ko/timing-31d8b1a32543.svg",
+      "status": 200,
+      "sha256": "31d8b1a32543fa08f1322717669dc0553571443aaa2fd05d5587348ded5f0420"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/en/paths-c44342dead4c.svg",
+      "status": 200,
+      "sha256": "c44342dead4c230b3eeadf8f59fc3b6035f8e714dfbcc3eef5d98c6ae038272b"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/en/storyboard-a-aa34bac1a7db.svg",
+      "status": 200,
+      "sha256": "aa34bac1a7dba2024bb53183c9b1e27a29a9b82906ff10e05035725ed8bc78a1"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/en/storyboard-b-5284866ce125.svg",
+      "status": 200,
+      "sha256": "5284866ce125cd8669d1eebffcc3546cff70dc34d159358b2ed2fcf7c26a152c"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/en/scene_compare-0e90376ebf3a.svg",
+      "status": 200,
+      "sha256": "0e90376ebf3aa4a2da7dcadc31d8e296b734ccf228ea7cbe96632e881a84b9c1"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/en/timing-969db889cc19.svg",
+      "status": 200,
+      "sha256": "969db889cc194223f8ba203078a5b28a867087c28a772e36f65bc0c89cbfba76"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ja/paths-06512cab69f6.svg",
+      "status": 200,
+      "sha256": "06512cab69f676671c2fe4a91536453d5ace59c4b3892e76e216a085723287ae"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ja/storyboard-a-cc475761b515.svg",
+      "status": 200,
+      "sha256": "cc475761b515c7d82ca007c5cf6ca55de95f5c450378ba14ff42ff7ffd3fac35"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ja/storyboard-b-77e2a4f072ff.svg",
+      "status": 200,
+      "sha256": "77e2a4f072ffc0d6ad3bdd7acd32c400fbb8682626c745b3fc125417c81303e8"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ja/scene_compare-a06f03dd66e9.svg",
+      "status": 200,
+      "sha256": "a06f03dd66e97024c824725d7208d48447266fcde39e131a62865ab975da29f7"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/ja/timing-1e64e5c30dcd.svg",
+      "status": 200,
+      "sha256": "1e64e5c30dcde5b871f672eec66d5dbd7b507cdeeb0862dd5076eb2df747a305"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/zh/paths-7363e88210f0.svg",
+      "status": 200,
+      "sha256": "7363e88210f0016dfd4f75614581e1148b5608005931baa17148f642dca36b1b"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/zh/storyboard-a-1704a27a882f.svg",
+      "status": 200,
+      "sha256": "1704a27a882ff2b882d0f358e513b6548c11510492d31f22274a53531b5e4cf9"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/zh/storyboard-b-cceda55ec15e.svg",
+      "status": 200,
+      "sha256": "cceda55ec15eb8686c6a0a4574ddd7d70362a03146c3b6676bee288c84454301"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/zh/scene_compare-4d09a7d58275.svg",
+      "status": 200,
+      "sha256": "4d09a7d58275714b6f7262995610a2f6a6f87544a2e1e510ce2ae4d3b522d98a"
+    },
+    {
+      "src": "/images/accessibility/audio-description-prerecorded-20261120/zh/timing-4c72ac57d721.svg",
+      "status": 200,
+      "sha256": "4c72ac57d721b72874c47afeb909f6f46980dbfa8a74784523bdde55c23a2324"
+    }
+  ],
+  "feeds": [
+    "/sitemap.xml",
+    "/rss.xml",
+    "/en/rss.xml",
+    "/ja/rss.xml",
+    "/zh/rss.xml"
+  ],
+  "lab": [
+    {
+      "lang": "ko",
+      "status": 200,
+      "version": "1.0.2"
+    },
+    {
+      "lang": "en",
+      "status": 200,
+      "version": "1.0.2"
+    },
+    {
+      "lang": "ja",
+      "status": 200,
+      "version": "1.0.2"
+    },
+    {
+      "lang": "zh",
+      "status": 200,
+      "version": "1.0.2"
+    }
+  ],
+  "errors": [],
+  "originalVideoIdentical": true
+}

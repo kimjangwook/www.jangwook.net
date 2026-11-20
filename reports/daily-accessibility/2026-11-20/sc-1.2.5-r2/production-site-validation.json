@@ -1,0 +1,130 @@
+{
+  "base": "https://jangwook.net",
+  "articles": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-description-prerecorded",
+      "hash": "49ef4400bbae186175d41b465584fdc44fcad58bec5f9f3f8550cfed5c8c2e92",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-description-prerecorded",
+      "hash": "a2aa5ead877c0ba29a0f3d9dc5d48bda81f5a8cbc7d87650fae204fb8cbf3b37",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-description-prerecorded",
+      "hash": "dbaedee42d01406c45f433dba8badb037f00033d8248c58814ec7ad231ca5df1",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-description-prerecorded",
+      "hash": "aca8e977f811def49edfdb0521f083a2c578652d5b224cad356ecace421fae05",
+      "status": 200
+    }
+  ],
+  "responsive": [
+    {
+      "lang": "ko",
+      "width": 1440,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "ja",
+      "width": 390,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "overflow": false,
+      "axe": []
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "overflow": false,
+      "axe": []
+    }
+  ],
+  "noJS": [
+    {
+      "lang": "ko",
+      "prompt": true,
+      "keyboard": true
+    },
+    {
+      "lang": "en",
+      "prompt": true,
+      "keyboard": true
+    },
+    {
+      "lang": "ja",
+      "prompt": true,
+      "keyboard": true
+    },
+    {
+      "lang": "zh",
+      "prompt": true,
+      "keyboard": true
+    }
+  ],
+  "errors": [],
+  "lab": {
+    "version": "1.0.2",
+    "videoHashMatched": true
+  }
+}
