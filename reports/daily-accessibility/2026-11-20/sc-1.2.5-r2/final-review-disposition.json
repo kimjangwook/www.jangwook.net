@@ -1,0 +1,8 @@
+{
+  "verdicts": {
+    "GPT": "pass",
+    "Gemini": "pass"
+  },
+  "after_review_changes": "Applied only three nonblocking Gemini wording notes: a/base initial scope, English source titles, issue-new-code button wording in four languages. Frozen prompts unchanged. Visual heading spacing adjusted and all 12 responsive render checks repeated.",
+  "publication_approval": false
+}

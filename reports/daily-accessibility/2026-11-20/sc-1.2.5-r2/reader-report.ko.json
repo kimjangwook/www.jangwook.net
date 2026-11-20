@@ -1,0 +1,35 @@
+{
+  "criterion": "1.2.5",
+  "scope": "Current-checkout common fixture1.0.2, initial states a/base, one 31.208333-second Korean source file",
+  "actual_decision": "inconclusive",
+  "confirmed_observations": [
+    "14-second source frame: security verification failure and retry control appear; one native-audio observation reports two beeps and no explanation in the corresponding segment.",
+    "23.5-second frame: fictional/real-account-unusable warning visible; native-audio report describes saving and old-code invalidation without that warning."
+  ],
+  "missing": [
+    "Unobserved operating-system/player alternative selection routes",
+    "Production deployment and other states",
+    "Recorded and timed correction audio; interference and repeat test after correction",
+    "Sub-second visual frames between native model samples"
+  ],
+  "model_provenance": {
+    "native_model": "gemini-4-neon",
+    "native_observations": 1,
+    "native_scope": "Original audio processing plus approximate 1-second video-frame sampling, not every visual frame",
+    "derived_review_model": "gpt-6.1-sol",
+    "derived_contexts": 3,
+    "derived_decisions": [
+      "inconclusive",
+      "inconclusive",
+      "inconclusive"
+    ]
+  },
+  "conditional_prompt_test": {
+    "cases": 8,
+    "fresh_contexts": 3,
+    "runs": 24,
+    "reference_matches": 24,
+    "scope": "Neutral case IDs; no category hints, reference answers or earlier outputs in model inputs. Eight cases share each of three fresh contexts. Conditional scenario reasoning, not original-media accuracy.",
+    "prompt_version": "0.3.1"
+  }
+}

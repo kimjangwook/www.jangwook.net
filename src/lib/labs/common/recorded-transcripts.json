@@ -1,0 +1,38 @@
+{
+  "ko": [
+    "안내자: 설정에서 보안을 선택합니다.",
+    "사용자: 이전 코드를 지금 버려도 되나요?",
+    "안내자: 아니요. 새 복구 코드를 저장하기 전에는 버리지 마세요.",
+    "[보안 확인 실패를 알리는 경고음 두 번]",
+    "안내자: 보안 확인을 다시 끝낸 뒤 발급을 확인합니다.",
+    "안내자: 새 코드를 안전한 곳에 저장합니다. 새로 발급하면 이전 코드는 더 이상 사용할 수 없습니다.",
+    "안내자: 발급 완료 화면을 확인합니다."
+  ],
+  "en": [
+    "Guide: Select Security in Settings.",
+    "User: Can I discard the old codes now?",
+    "Guide: No. Do not discard them before saving the new recovery codes.",
+    "[Two warning sounds indicating a failed security check]",
+    "Guide: Complete the security check again, then confirm issuance.",
+    "Guide: Save the new codes in a safe place. Once new codes are issued, the old codes can no longer be used.",
+    "Guide: Check the issuance complete screen."
+  ],
+  "ja": [
+    "案内役：設定でセキュリティを選択します。",
+    "利用者：以前のコードを今捨ててもよいですか？",
+    "案内役：いいえ。新しい復旧コードを保存するまでは捨てないでください。",
+    "[セキュリティ確認の失敗を知らせる警告音が2回]",
+    "案内役：セキュリティ確認をもう一度終えてから、発行を確認します。",
+    "案内役：新しいコードを安全な場所に保存します。新たに発行すると、以前のコードは使用できなくなります。",
+    "案内役：発行完了画面を確認します。"
+  ],
+  "zh": [
+    "引导员：在设置中选择安全。",
+    "用户：现在可以丢弃旧代码吗？",
+    "引导员：不可以。在保存新的恢复码之前，请不要丢弃。",
+    "[两次表示安全验证失败的警告音]",
+    "引导员：重新完成安全验证后，确认生成。",
+    "引导员：将新代码保存在安全的地方。生成新代码后，旧代码将无法再使用。",
+    "引导员：查看生成完成画面。"
+  ]
+}

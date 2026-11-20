@@ -1,0 +1,12 @@
+[
+  {
+    "catalog": "src/lib/content/catalog.json",
+    "other_entries_byte_semantics_unchanged": true,
+    "entries": 88
+  },
+  {
+    "catalog": "src/lib/content/translations.json",
+    "other_entries_byte_semantics_unchanged": true,
+    "entries": 264
+  }
+]

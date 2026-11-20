@@ -1,0 +1,41 @@
+{
+  "verdict": "pass",
+  "issues": [
+    {
+      "severity": "low",
+      "language": "all",
+      "field": "manuscript.article_md",
+      "old": "이번 기록은 공통 실습 1.0.2 버전을 로컬 서버에 렌더링한 초기 상태(`variant=a`, `state=initial`)에서 수집한 증거에 한정됩니다.",
+      "new": "이번 기록은 공통 실습 1.0.2 버전을 로컬 서버에 렌더링한 초기 상태(`variant=a`/`base`, `state=initial`)에서 수집한 증거에 한정됩니다.",
+      "reason": "Minor non-blocking scope alignment note: the body prose in ko/en/ja/zh names only variant=a (matching the embedded lab iframe), while the verified report rendered immediately below via <!-- verified-report --> and current-observations.json document both initial states (variant=a and variant=base). Because this underclaims rather than overclaims evidence and every stated fact holds for variant=a, it does not block pass."
+    },
+    {
+      "severity": "low",
+      "language": "en",
+      "field": "manuscript.article_md",
+      "old": "* [G226: Providing narration that includes audio description](https://www.w3.org/WAI/WCAG22/Techniques/general/G226)\n* [G203: Using a static text alternative to describe a talking head video](https://www.w3.org/WAI/WCAG22/Techniques/general/G203)\n* [F113: Failure of Success Criterion 1.2.5 due to omitting audio description when dialogue pauses are available](https://www.w3.org/WAI/WCAG22/Techniques/failures/F113)",
+      "new": "* [G226: Providing audio descriptions by incorporating narration in the soundtrack](https://www.w3.org/WAI/WCAG22/Techniques/general/G226)\n* [G203: Using a static text alternative to describe a talking head video](https://www.w3.org/WAI/WCAG22/Techniques/general/G203)\n* [F113: Failure of Success Criterion 1.2.5 due to not using available pauses in dialogue to provide audio descriptions of important visual content](https://www.w3.org/WAI/WCAG22/Techniques/failures/F113)",
+      "reason": "Minor non-blocking citation precision note: the URLs and meanings are accurate, but matching the exact W3C titles for G226 and F113 in the English reference list would improve verbatim fidelity."
+    },
+    {
+      "severity": "low",
+      "language": "all",
+      "field": "manuscript.article_md",
+      "old": "보안 설정 화면, 경로(설정→보안→복구 코드), 새 코드 발급 화면",
+      "new": "보안 설정 화면, 경로(설정→보안→복구 코드), '새 코드 발급' 버튼",
+      "reason": "Minor non-blocking UI wording note: gemini-video-native-result.json and dom/base-page.html describe '새 코드 발급' as a button on the Security Settings screen rather than a separate screen. The same minor phrasing appears in en/ja/zh table row 1 and storyboard scenes[0]."
+    }
+  ],
+  "strengths": [
+    "Clear, accurate WCAG 2.2 normative versus non-normative boundary and precise differentiation across Level A SC 1.2.3, Level AA SC 1.2.5, Level AAA SC 1.2.7, and the synchronized-media definitional exclusion (not_applicable).",
+    "Faithful explanation of G78, G173 combined with G226, G203 as a narrowly scoped in-scope pass path rather than a definitional exclusion or general text-alternative shortcut, and F113 pause evaluation (length, proximity, essential non-speech audio preservation, no rigid 2-second threshold).",
+    "Disciplined evidence and provenance hygiene: preserves the intentionally inconclusive overall actual_decision, distinguishes the single native Gemini media observation from the three derived GPT evidence reviews and 24 conditional scenario matches via <!-- verified-report -->, avoids treating muted browser playback or absent Chromium audioTracks API as proof, and explicitly marks proposed 12-16s narration as unproduced and unmeasured.",
+    "Effective teaching depth across the six-scene recovery code walkthrough, contrasting missing failure/re-authentication semantics at 12-15s (with alert-beep preservation) against meaning-level omission of the training-only notice at 20-26s rather than mechanical readout of dummy code R7K2-P9M4.",
+    "Consistent four-language equivalence across ko, en, ja, and zh for manuscript structure, localized figure titles/captions/alt text across all four figure types (paths, storyboard, scene_compare, timing), lab iframe/navigation URLs, and the frozen v0.3.1 evaluation prompt."
+  ],
+  "limits": [
+    "Review was conducted strictly on provided text, JSON, DOM snapshot, and audit metadata artifacts without listening to source.mp4 or visually inspecting extracted video frames.",
+    "Rendered visual layout, typography, and potential text wrapping or clipping of longer figure labels (such as timing.labels.pause across all four languages) could not be verified without rendered figure graphics.",
+    "Evidence verification is bounded to the provided local fixture 1.0.2 initial-state DOM captures, ffprobe metadata, browser muted-playback log, W3C source extracts, and audit records; live production deployment states and external OS/player track-selection paths remain unreviewed."
+  ]
+}

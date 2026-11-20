@@ -1,0 +1,25 @@
+{
+  "note": "Common player delivery tracks. Original cue intervals remain; each interval is divided into short readable phrases. Timing within an interval is proportional and requires source listening verification before publication.",
+  "languages": {
+    "ko": {
+      "complete": 16,
+      "negation": 16,
+      "shifted": 16
+    },
+    "en": {
+      "complete": 15,
+      "negation": 14,
+      "shifted": 15
+    },
+    "ja": {
+      "complete": 14,
+      "negation": 14,
+      "shifted": 14
+    },
+    "zh": {
+      "complete": 10,
+      "negation": 10,
+      "shifted": 10
+    }
+  }
+}

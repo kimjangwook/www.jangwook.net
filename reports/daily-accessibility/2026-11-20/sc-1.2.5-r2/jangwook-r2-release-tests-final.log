@@ -1,0 +1,39 @@
+
+> jangwook-net@2.0.0 test
+> node --test tests/*.test.mjs
+
+✔ localized teaching links retain destination identity without hiding source changes (0.579667ms)
+WebSocket server error: Port 24678 is already in use
+✔ language preference respects explicit selection and weighted browser languages (0.7845ms)
+✔ four real localized homes provide SSR metadata, selector links and only approved reading (1.014208ms)
+✔ all 352 documents have modification dates; only published editions have a first-publication date (0.525417ms)
+✔ latest list is limited to five approved articles in first-publication order (0.181834ms)
+✔ validation rejects malformed email, unrecognized role and missing consent (0.647333ms)
+✔ drafts are available only in local preview; public bundles exclude all drafts (0.425292ms)
+✔ lead, optional consent and captured mail persist; duplicate request creates no second mail (115.574333ms)
+✔ concurrent submissions produce one request and one captured outbox (80.407917ms)
+✔ rate limit stops the sixth request (207.447083ms)
+✔ public draft submission and nonlocal capture cannot create leads (3.317125ms)
+✔ provider acceptance records a receipt and attaches approved prompts; failures stay distinct (129.439875ms)
+✔ expired material links can be requested again with a fresh token (84.297125ms)
+✔ changed content, invalid approval dates and future publication remain private (0.1645ms)
+✔ provider acceptance followed by database failure keeps the send claim and receipt (52.201333ms)
+✔ native media headers expose length and preserve source bytes (16.163291ms)
+✔ prefix, suffix and open-ended ranges return the exact source interval (2.464625ms)
+✔ unsatisfiable ranges and validator mismatches retain HTTP semantics (0.820125ms)
+✔ media routing excludes HTML, unrelated paths and arbitrary language assets (0.2625ms)
+WebSocket server error: Port 24678 is already in use
+✔ localized overview has a real translated body, prompt, four figures and reciprocal paths (26.868ms)
+✔ all chapters have four-language preparation pages without a Korean fallback (35.292459ms)
+✔ exact translation approval and current Korean source are required outside preview (0.1705ms)
+✔ RSS and multilingual sitemap expose only approved chapters and exclude stale approvals (3.286125ms)
+✔ article learning navigation exposes only ordered metadata and honest publication state (0.829041ms)
+✔ canonical learning links preserve the reader language and prompt fragment (3.907208ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2088.323042

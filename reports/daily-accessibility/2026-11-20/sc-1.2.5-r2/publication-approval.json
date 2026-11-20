@@ -1,0 +1,28 @@
+{
+  "userInstruction": "배포하고, 내일부터 자동 글작성 시작",
+  "approvedAt": "2026-11-20T14:55:09.431Z",
+  "scope": "Today reviewed SC1.2.5 r2 four-language article, prompts and figures; future daily writing starts tomorrow, future publication requires approval",
+  "records": [
+    {
+      "lang": "ko",
+      "sourceHash": "49ef4400bbae186175d41b465584fdc44fcad58bec5f9f3f8550cfed5c8c2e92",
+      "firstPublishedAt": "2026-11-20T15:00:15.652808+00:00"
+    },
+    {
+      "lang": "en",
+      "sourceHash": "a2aa5ead877c0ba29a0f3d9dc5d48bda81f5a8cbc7d87650fae204fb8cbf3b37",
+      "firstPublishedAt": "2026-11-20T15:00:15.652808+00:00"
+    },
+    {
+      "lang": "ja",
+      "sourceHash": "dbaedee42d01406c45f433dba8badb037f00033d8248c58814ec7ad231ca5df1",
+      "firstPublishedAt": "2026-11-20T15:00:15.652808+00:00"
+    },
+    {
+      "lang": "zh",
+      "sourceHash": "aca8e977f811def49edfdb0521f083a2c578652d5b224cad356ecace421fae05",
+      "firstPublishedAt": "2026-11-20T15:00:15.652808+00:00"
+    }
+  ],
+  "publicationMetadataPreparedAt": "2026-11-20T15:00:15.652808+00:00"
+}

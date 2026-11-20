@@ -1,0 +1,23 @@
+{
+  "user_approved": true,
+  "editorial": {
+    "GPT": "pass",
+    "Gemini": "pass"
+  },
+  "typecheck": "0 errors, 0 warnings",
+  "release_tests": {
+    "passed": 25,
+    "failed": 0
+  },
+  "source_checkout_tests": {
+    "passed": 35,
+    "failed": 0
+  },
+  "content_errors": 0,
+  "build": "passed",
+  "worker_dry_run": "passed",
+  "browser": "release-local-site-validation.json",
+  "rollback_version": "916d48ab-be65-4f65-a4f3-52e441fe8028",
+  "remote_db_changes": false,
+  "mail_mode": "disabled"
+}

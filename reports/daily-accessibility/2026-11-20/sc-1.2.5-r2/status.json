@@ -1,0 +1,57 @@
+{
+  "criterion": "1.2.5",
+  "title": "화면의 실패 안내까지 소리로 전달하기: 사전 녹화 오디오 설명(SC 1.2.5)",
+  "languages": [
+    "ko",
+    "en",
+    "ja",
+    "zh"
+  ],
+  "stage": "approved_site_integrated_pending_deployment",
+  "review_pdf": "review.ko.pdf",
+  "manuscript_bundle": "accessibility-07-four-languages-20261120-r2.zip",
+  "telegram_draft_caption": "웹 접근성 07 · 오늘 글 재작성본\n사전 녹화 오디오 설명(SC 1.2.5, AA)\n\nGPT + Gemini 4 Neon 제작·독립 교차 검수\n한국어 PDF 14쪽 + 한·영·일·중 원고·전체 프롬프트\n실제 영상 6장면 대조 · 도표 4종(5패널)\n\n조건부 시나리오 24/24 일치(실제 미디어 정확도 아님).\n실제 근거 검토의 전체 판정은 유보이며 미확인 범위를 명시했습니다.\n아직 공개하지 않은 재작성 검토본입니다.",
+  "independent_reviews": {
+    "sol": "pass",
+    "neon": "pass"
+  },
+  "actual_media_observations": 1,
+  "derived_evidence_reviews": 3,
+  "scenario_runs": 24,
+  "scenario_matches": 24,
+  "actual_decision": "inconclusive",
+  "approved": true,
+  "published": false,
+  "deployed": false,
+  "created_at": "2026-11-20T13:25:41.614383+00:00",
+  "source_hashes": {
+    "ko": "a6d0b19515cd5adf986f295b5912709cc0ba4122aad1cfabd5c5805af515ba56",
+    "en": "95b8c45d5b31134f3f5c1b4c756f7c79e3737bb1ec5351457d39397f7bda978f",
+    "ja": "19eb3ad73ea5f0959a389f8e1955e6f747452b3a76f008cf3d788bd92fc1829d",
+    "zh": "aef4437cbdb44452ac5eb50351b94c4060e5df120f208e521c47e3f3719df55a"
+  },
+  "artifact_sha256": {
+    "review.ko.pdf": "9e4bc69e26b91c1e120c79b209ed8e36017187c106877e02e603b43fff080504",
+    "accessibility-07-four-languages-20261120-r2.zip": "02f5fe992eef0e64adfcd4710928b8335dc7cea6dd8e0a4b930c47c341b38ab3"
+  },
+  "telegram_draft_delivery": "sent",
+  "telegram_message_ids": [
+    3890,
+    3891
+  ],
+  "approved_content_hashes": {
+    "ko": "49ef4400bbae186175d41b465584fdc44fcad58bec5f9f3f8550cfed5c8c2e92",
+    "en": "a2aa5ead877c0ba29a0f3d9dc5d48bda81f5a8cbc7d87650fae204fb8cbf3b37",
+    "ja": "dbaedee42d01406c45f433dba8badb037f00033d8248c58814ec7ad231ca5df1",
+    "zh": "aca8e977f811def49edfdb0521f083a2c578652d5b224cad356ecace421fae05"
+  },
+  "automation": {
+    "id": "jangwook-net-a11y",
+    "status": "ACTIVE",
+    "daily_time": "09:00",
+    "timezone": "Asia/Tokyo",
+    "first_writing_date": "2026-11-21",
+    "next_criterion": "1.2.6",
+    "future_publication_requires_approval": true
+  }
+}

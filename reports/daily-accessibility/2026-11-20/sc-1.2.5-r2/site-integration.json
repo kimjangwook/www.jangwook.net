@@ -1,0 +1,31 @@
+{
+  "records": {
+    "ko": {
+      "reviewed_manuscript_sha256": "a6d0b19515cd5adf986f295b5912709cc0ba4122aad1cfabd5c5805af515ba56",
+      "body_sha256": "4b07d9eed9a009685291da67101ffd37032dfb07a3fd7600420e66d40a69efd0",
+      "prompt_sha256": "c3d04a943496d7b3f41d3462148f8af7b436c0f62d7d6a4425e6b9f0faa601be"
+    },
+    "en": {
+      "reviewed_manuscript_sha256": "95b8c45d5b31134f3f5c1b4c756f7c79e3737bb1ec5351457d39397f7bda978f",
+      "body_sha256": "76434963f7138b9730aa73d6f07ab92b1e7fd1fb2aa6af5fdb265f8a1698b66b",
+      "prompt_sha256": "300bd8859973d91921ea72525eaf159d3025d29e4d1cfd81578b35d32313a90d"
+    },
+    "ja": {
+      "reviewed_manuscript_sha256": "19eb3ad73ea5f0959a389f8e1955e6f747452b3a76f008cf3d788bd92fc1829d",
+      "body_sha256": "9649f75ea7e388838b6db5e8ba323edbdb4cda87387f1bf231d05c91568379e6",
+      "prompt_sha256": "74d80ed28248a4e1df3abae4a374363dad7e9b4104899334e8269abc67d96552"
+    },
+    "zh": {
+      "reviewed_manuscript_sha256": "aef4437cbdb44452ac5eb50351b94c4060e5df120f208e521c47e3f3719df55a",
+      "body_sha256": "44ad1ed4531a498e824c2cf6fa0402e93087b53a7042d1a25693d0ce88862053",
+      "prompt_sha256": "e8e4b3ffe534e873edfdcf66e640019b173fc50f04090f374a403dac6b3926cd"
+    }
+  },
+  "transformations": [
+    "Figure markers replaced with content-hash-named SVG references and localized expansion links",
+    "Verified report copied unchanged from reviewed localized HTML",
+    "CJK emphasis represented by equivalent strong markup",
+    "Korean source-reference heading standardized; full prompt in existing copy panel"
+  ],
+  "content_claims_changed": false
+}

@@ -1,0 +1,2 @@
+import {renderTarget} from '$lib/server/common-lab/target';
+export const GET=({url}:{url:URL})=>new Response(renderTarget(url),{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; connect-src 'none'; form-action 'self'; base-uri 'none'; frame-ancestors 'self'"}});

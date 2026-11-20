@@ -1,0 +1,12 @@
+{
+  "http": 200,
+  "version": "1.0.2",
+  "duration": 31.208333,
+  "currentTime": 0.512569,
+  "muted": true,
+  "error": null,
+  "trackKinds": [
+    "captions"
+  ],
+  "scope": "Muted playback functionality, not audio listening"
+}

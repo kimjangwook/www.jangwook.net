@@ -1,0 +1,30 @@
+[
+  {
+    "language": "ko",
+    "prompt_byte_identical": true,
+    "localized_captions_alt_preserved": true,
+    "svg_original_bytes_preserved": true,
+    "panels": 5
+  },
+  {
+    "language": "en",
+    "prompt_byte_identical": true,
+    "localized_captions_alt_preserved": true,
+    "svg_original_bytes_preserved": true,
+    "panels": 5
+  },
+  {
+    "language": "ja",
+    "prompt_byte_identical": true,
+    "localized_captions_alt_preserved": true,
+    "svg_original_bytes_preserved": true,
+    "panels": 5
+  },
+  {
+    "language": "zh",
+    "prompt_byte_identical": true,
+    "localized_captions_alt_preserved": true,
+    "svg_original_bytes_preserved": true,
+    "panels": 5
+  }
+]

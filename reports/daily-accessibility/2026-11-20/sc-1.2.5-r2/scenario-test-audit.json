@@ -1,0 +1,207 @@
+{
+  "prompt_version": "0.3.1",
+  "prompt_sha256": "c3d04a943496d7b3f41d3462148f8af7b436c0f62d7d6a4425e6b9f0faa601be",
+  "model": "gpt-6.1-sol",
+  "effort": "medium",
+  "independent_sessions": 3,
+  "cases_per_session": 8,
+  "runs": 24,
+  "matches": 24,
+  "errors": [],
+  "frozen_inputs_unchanged": true,
+  "protocol": "Neutral IDs, no category labels, no reference answers or earlier outputs in evaluator input. Eight conditions share each fresh session. Conditional reasoning, not native-media performance.",
+  "rows": [
+    {
+      "run": 1,
+      "case": "C01",
+      "decision": "pass",
+      "reference": "pass",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 1,
+      "case": "C02",
+      "decision": "fail",
+      "reference": "fail",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 1,
+      "case": "C03",
+      "decision": "pass",
+      "reference": "pass",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 1,
+      "case": "C04",
+      "decision": "not_applicable",
+      "reference": "not_applicable",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 1,
+      "case": "C05",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 1,
+      "case": "C06",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 1,
+      "case": "C07",
+      "decision": "fail",
+      "reference": "fail",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 1,
+      "case": "C08",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 2,
+      "case": "C01",
+      "decision": "pass",
+      "reference": "pass",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 2,
+      "case": "C02",
+      "decision": "fail",
+      "reference": "fail",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 2,
+      "case": "C03",
+      "decision": "pass",
+      "reference": "pass",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 2,
+      "case": "C04",
+      "decision": "not_applicable",
+      "reference": "not_applicable",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 2,
+      "case": "C05",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 2,
+      "case": "C06",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 2,
+      "case": "C07",
+      "decision": "fail",
+      "reference": "fail",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 2,
+      "case": "C08",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 3,
+      "case": "C01",
+      "decision": "pass",
+      "reference": "pass",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 3,
+      "case": "C02",
+      "decision": "fail",
+      "reference": "fail",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 3,
+      "case": "C03",
+      "decision": "pass",
+      "reference": "pass",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 3,
+      "case": "C04",
+      "decision": "not_applicable",
+      "reference": "not_applicable",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 3,
+      "case": "C05",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 3,
+      "case": "C06",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 3,
+      "case": "C07",
+      "decision": "fail",
+      "reference": "fail",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    },
+    {
+      "run": 3,
+      "case": "C08",
+      "decision": "inconclusive",
+      "reference": "inconclusive",
+      "matched": true,
+      "actual_decision": "not_assessed"
+    }
+  ]
+}
